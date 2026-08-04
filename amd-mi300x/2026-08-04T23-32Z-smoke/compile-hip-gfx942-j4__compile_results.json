@@ -1,0 +1,114 @@
+{
+  "kind": "compile",
+  "arch_tag": "hip:gfx942",
+  "warmup": 1,
+  "samples": 2,
+  "jobs": 4,
+  "clangir_commit": "8b56d41fd",
+  "scripts_commit": "ba00042",
+  "polybench_root": "/root/polybenchGpu",
+  "environment": {
+    "hostname": "rocm-7-14-software-gpu-mi300x1-192gb-devcloud-atl1",
+    "timestamp_utc": "2026-08-04T23:31:28+00:00",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8568Y+",
+    "cpu_count": "20",
+    "kernel": "6.8.0-134-generic",
+    "gpu": "AMD Instinct MI300X VF",
+    "rocm_version": "7.0.2",
+    "cuda_version": ""
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "ok": true,
+      "elapsed_mean": 0.6036985069995353,
+      "elapsed_stddev": 0.008682107375884261,
+      "elapsed_median": 0.6036985069995353,
+      "elapsed_samples": [
+        0.6098376840000128,
+        0.5975593299990578
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5446,
+        "RegAlloc": 0.0,
+        "LLVM-passes": 0.01925,
+        "ISel": 0.0011,
+        "LLVM-analysis": 0.00215
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "ok": true,
+      "elapsed_mean": 0.5980762555000183,
+      "elapsed_stddev": 0.0022669270647010247,
+      "elapsed_median": 0.5980762555000183,
+      "elapsed_samples": [
+        0.5996792149999237,
+        0.5964732960001129
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.532,
+        "RegAlloc": 0.0,
+        "LLVM-passes": 0.0175,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.00195
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "ok": true,
+      "elapsed_mean": 0.6255876284994883,
+      "elapsed_stddev": 0.005465931882298311,
+      "elapsed_median": 0.6255876284994883,
+      "elapsed_samples": [
+        0.6294526259989652,
+        0.6217226310000115
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5647500000000001,
+        "RegAlloc": 0.0,
+        "LLVM-passes": 0.0403,
+        "ISel": 0.0028,
+        "LLVM-analysis": 0.00255
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "ok": true,
+      "elapsed_mean": 0.6135613020005621,
+      "elapsed_stddev": 0.011087338162517356,
+      "elapsed_median": 0.6135613020005621,
+      "elapsed_samples": [
+        0.6214012340005866,
+        0.6057213700005377
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.55225,
+        "RegAlloc": 0.0,
+        "LLVM-passes": 0.03715,
+        "ISel": 0.00255,
+        "LLVM-analysis": 0.00215
+      },
+      "first_error": ""
+    }
+  ]
+}
