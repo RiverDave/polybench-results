@@ -1,0 +1,110 @@
+{
+  "kind": "compile",
+  "arch_tag": "cuda:sm_90",
+  "warmup": 1,
+  "samples": 2,
+  "jobs": 4,
+  "clangir_commit": "cd459f246",
+  "scripts_commit": "126e8ed",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "68-209-74-37",
+    "timestamp_utc": "2026-08-04T23:52:55+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.43997931000012613,
+      "elapsed_stddev": 0.002202527314282711,
+      "elapsed_median": 0.43997931000012613,
+      "elapsed_samples": [
+        0.43842188800044823,
+        0.44153673199980403
+      ],
+      "phases_mean": {
+        "ISel": 0.00065,
+        "LLVM-passes": 0.006699999999999999,
+        "LLVM-analysis": 0.0003,
+        "Frontend+IRGen": 0.4102
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.438817388499956,
+      "elapsed_stddev": 0.0037032080152238018,
+      "elapsed_median": 0.438817388499956,
+      "elapsed_samples": [
+        0.43619882500024687,
+        0.4414359519996651
+      ],
+      "phases_mean": {
+        "ISel": 0.0006,
+        "LLVM-passes": 0.0063999999999999994,
+        "LLVM-analysis": 0.0003,
+        "Frontend+IRGen": 0.40525
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.4635989670005074,
+      "elapsed_stddev": 0.0005378423880981848,
+      "elapsed_median": 0.4635989670005074,
+      "elapsed_samples": [
+        0.4632186550006736,
+        0.4639792790003412
+      ],
+      "phases_mean": {
+        "ISel": 0.00115,
+        "LLVM-passes": 0.0175,
+        "LLVM-analysis": 0.0005,
+        "Frontend+IRGen": 0.42025
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.4633955679992141,
+      "elapsed_stddev": 0.0009630949921408694,
+      "elapsed_median": 0.4633955679992141,
+      "elapsed_samples": [
+        0.4627145569993445,
+        0.4640765789990837
+      ],
+      "phases_mean": {
+        "ISel": 0.00115,
+        "LLVM-passes": 0.01715,
+        "LLVM-analysis": 0.0005,
+        "Frontend+IRGen": 0.4175
+      },
+      "first_error": ""
+    }
+  ]
+}
