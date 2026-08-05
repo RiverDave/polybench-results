@@ -1,0 +1,862 @@
+{
+  "kind": "runtime",
+  "arch": "gfx942",
+  "runs": 8,
+  "warmup": 3,
+  "jobs": 1,
+  "clangir_commit": "5203f106e",
+  "scripts_commit": "b849634",
+  "polybench_root": "/root/polybenchGpu",
+  "environment": {
+    "hostname": "rocm-7-14-software-gpu-mi300x1-192gb-devcloud-atl1",
+    "timestamp_utc": "2026-08-05T14:39:43+00:00",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8568Y+",
+    "cpu_count": "20",
+    "kernel": "6.8.0-134-generic",
+    "gpu": "AMD Instinct MI300X VF",
+    "rocm_version": "7.0.2",
+    "cuda_version": ""
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30856,
+      "times": [
+        0.007065,
+        0.00678,
+        0.006876,
+        0.00674,
+        0.006602,
+        0.006799,
+        0.006653,
+        0.006769
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35112,
+      "times": [
+        0.000401,
+        0.000443,
+        0.000404,
+        0.000481,
+        0.000422,
+        0.000535,
+        0.000418,
+        0.000462
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39192,
+      "times": [
+        0.008829,
+        0.008627,
+        0.008885,
+        0.009208,
+        0.00862,
+        0.008978,
+        0.008855,
+        0.008744
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43448,
+      "times": [
+        0.001641,
+        0.001721,
+        0.001676,
+        0.00182,
+        0.001661,
+        0.001727,
+        0.001662,
+        0.00174
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/3DCONV/3DConvolution.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30824,
+      "times": [
+        0.008701,
+        0.008039,
+        0.007915,
+        0.007514,
+        0.0079,
+        0.008064,
+        0.008243,
+        0.007649
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/3DCONV/3DConvolution.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35088,
+      "times": [
+        0.000983,
+        0.000937,
+        0.00099,
+        0.000899,
+        0.000957,
+        0.000915,
+        0.001072,
+        0.000951
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/3MM/3mm.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43408,
+      "times": [
+        0.008176,
+        0.009471,
+        0.007614,
+        0.007015,
+        0.007372,
+        0.007339,
+        0.006873,
+        0.006707
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/3MM/3mm.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 47656,
+      "times": [
+        0.000934,
+        0.000934,
+        0.000946,
+        0.00093,
+        0.00099,
+        0.00099,
+        0.001003,
+        0.000938
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/ADI/adi.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 47720,
+      "times": [
+        0.028035,
+        0.02769,
+        0.02719,
+        0.027089,
+        0.028299,
+        0.027675,
+        0.028601,
+        0.02776
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/ADI/adi.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 51984,
+      "times": [
+        0.026694,
+        0.027332,
+        0.027193,
+        0.027421,
+        0.027056,
+        0.026921,
+        0.027588,
+        0.026977
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/ATAX/atax.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35048,
+      "times": [
+        0.002115,
+        0.002102,
+        0.002117,
+        0.002233,
+        0.002119,
+        0.00212,
+        0.002133,
+        0.002161
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/ATAX/atax.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39304,
+      "times": [
+        0.00213,
+        0.002093,
+        0.002094,
+        0.002181,
+        0.002089,
+        0.002149,
+        0.002127,
+        0.002096
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/BICG/bicg.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35064,
+      "times": [
+        0.003511,
+        0.003535,
+        0.00357,
+        0.003536,
+        0.003577,
+        0.003502,
+        0.003595,
+        0.003476
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/BICG/bicg.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39320,
+      "times": [
+        0.003524,
+        0.00352,
+        0.003549,
+        0.00349,
+        0.00363,
+        0.003587,
+        0.00346,
+        0.003547
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/CORR/correlation.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43520,
+      "times": [
+        1.5981,
+        1.483927,
+        1.618109,
+        1.428012,
+        1.495021,
+        1.465307,
+        1.463171,
+        1.474905
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/CORR/correlation.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 47784,
+      "times": [
+        1.506576,
+        1.476808,
+        1.443429,
+        1.457961,
+        1.485769,
+        1.492995,
+        1.474752,
+        1.465753
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/COVAR/covariance.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39264,
+      "times": [
+        1.570471,
+        1.503107,
+        1.566459,
+        1.537584,
+        1.618334,
+        1.472959,
+        1.599498,
+        1.4483
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/COVAR/covariance.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43520,
+      "times": [
+        1.453186,
+        1.445169,
+        1.466479,
+        1.481815,
+        1.441234,
+        1.453809,
+        1.439639,
+        1.45762
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/DOITGEN/doitgen.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39456,
+      "times": [
+        0.011907,
+        0.011401,
+        0.011679,
+        0.012008,
+        0.011868,
+        0.011719,
+        0.01166,
+        0.011393
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/DOITGEN/doitgen.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43616,
+      "times": [
+        0.005788,
+        0.005758,
+        0.00574,
+        0.005765,
+        0.005831,
+        0.005804,
+        0.005855,
+        0.005789
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/FDTD-2D/fdtd2d.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43352,
+      "times": [
+        0.050854,
+        0.050141,
+        0.05029,
+        0.052931,
+        0.050543,
+        0.050372,
+        0.050587,
+        0.050228
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/FDTD-2D/fdtd2d.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43520,
+      "times": [
+        0.043445,
+        0.043694,
+        0.043766,
+        0.043749,
+        0.043678,
+        0.043846,
+        0.043705,
+        0.043757
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GEMM/gemm.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30792,
+      "times": [
+        0.007102,
+        0.006561,
+        0.006803,
+        0.00654,
+        0.00631,
+        0.00601,
+        0.006841,
+        0.006496
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GEMM/gemm.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35056,
+      "times": [
+        0.000516,
+        0.000577,
+        0.000533,
+        0.000578,
+        0.000662,
+        0.000568,
+        0.000513,
+        0.000574
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GEMVER/gemver.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43368,
+      "times": [
+        0.009856,
+        0.009794,
+        0.009527,
+        0.009439,
+        0.009353,
+        0.00949,
+        0.00929,
+        0.009383
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GEMVER/gemver.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43536,
+      "times": [
+        0.00315,
+        0.003122,
+        0.003232,
+        0.003085,
+        0.003199,
+        0.003128,
+        0.003176,
+        0.003109
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GESUMMV/gesummv.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30768,
+      "times": [
+        0.003942,
+        0.003911,
+        0.004148,
+        0.003953,
+        0.00393,
+        0.003787,
+        0.003888,
+        0.003863
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GESUMMV/gesummv.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35024,
+      "times": [
+        0.003892,
+        0.00401,
+        0.003915,
+        0.00392,
+        0.00386,
+        0.003829,
+        0.003894,
+        0.003859
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GRAMSCHM/gramschmidt.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43432,
+      "times": [
+        2.29939,
+        2.29901,
+        2.299997,
+        2.298716,
+        2.298914,
+        2.300043,
+        2.29984,
+        2.300376
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/GRAMSCHM/gramschmidt.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 47680,
+      "times": [
+        2.218238,
+        2.216415,
+        2.219997,
+        2.218485,
+        2.216874,
+        2.215715,
+        2.218728,
+        2.217271
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/JACOBI1D/jacobi1D.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 34848,
+      "times": [
+        0.227844,
+        0.227787,
+        0.230783,
+        0.227916,
+        0.227947,
+        0.228559,
+        0.227806,
+        0.227765
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/JACOBI1D/jacobi1D.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39104,
+      "times": [
+        0.221252,
+        0.220632,
+        0.219654,
+        0.222134,
+        0.220068,
+        0.220529,
+        0.219226,
+        0.219103
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/JACOBI2D/jacobi2D.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 34880,
+      "times": [
+        0.007243,
+        0.007052,
+        0.006885,
+        0.006948,
+        0.006804,
+        0.006859,
+        0.006961,
+        0.006855
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/JACOBI2D/jacobi2D.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39136,
+      "times": [
+        0.001185,
+        0.001138,
+        0.001108,
+        0.001171,
+        0.00116,
+        0.001219,
+        0.001144,
+        0.001187
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/LU/lu.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35000,
+      "times": [
+        0.058623,
+        0.058588,
+        0.059244,
+        0.063245,
+        0.060798,
+        0.060384,
+        0.05823,
+        0.058353
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/LU/lu.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39256,
+      "times": [
+        0.051613,
+        0.052186,
+        0.053934,
+        0.053362,
+        0.053648,
+        0.052998,
+        0.052262,
+        0.051257
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/MVT/mvt.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35000,
+      "times": [
+        0.002183,
+        0.002115,
+        0.002201,
+        0.002189,
+        0.002166,
+        0.002098,
+        0.00218,
+        0.002157
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/MVT/mvt.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39264,
+      "times": [
+        0.002122,
+        0.002082,
+        0.002082,
+        0.002141,
+        0.002109,
+        0.002143,
+        0.002079,
+        0.002147
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/SYR2K/syr2k.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30808,
+      "times": [
+        0.016324,
+        0.016389,
+        0.016146,
+        0.015979,
+        0.0164,
+        0.01604,
+        0.016139,
+        0.016584
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/SYR2K/syr2k.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35064,
+      "times": [
+        0.009691,
+        0.009745,
+        0.009885,
+        0.009853,
+        0.009655,
+        0.009542,
+        0.009753,
+        0.009731
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/SYRK/syrk.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30784,
+      "times": [
+        0.009085,
+        0.009195,
+        0.009512,
+        0.009196,
+        0.008739,
+        0.009063,
+        0.009325,
+        0.008687
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/SYRK/syrk.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35040,
+      "times": [
+        0.002975,
+        0.003126,
+        0.002967,
+        0.00296,
+        0.003033,
+        0.002953,
+        0.002991,
+        0.002917
+      ],
+      "first_error": ""
+    }
+  ]
+}
