@@ -1,0 +1,72 @@
+{
+  "kind": "compile",
+  "arch_tag": "cuda:sm_90",
+  "warmup": 2,
+  "samples": 5,
+  "jobs": 4,
+  "clangir_commit": "b5b34ff37",
+  "scripts_commit": "b849634",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "68-209-73-39",
+    "timestamp_utc": "2026-08-05T12:42:37+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.4401053665999825,
+      "elapsed_stddev": 0.004379403062393383,
+      "elapsed_median": 0.4399575040001764,
+      "elapsed_samples": [
+        0.43619947599972875,
+        0.4399575040001764,
+        0.4353729519998524,
+        0.4449700010000015,
+        0.44402690000015355
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.00028,
+        "LLVM-passes": 0.0067599999999999995,
+        "Frontend+IRGen": 0.4077,
+        "ISel": 0.00066
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.43962960420003583,
+      "elapsed_stddev": 0.006988605760673718,
+      "elapsed_median": 0.4362869800002045,
+      "elapsed_samples": [
+        0.43621997600030227,
+        0.4362869800002045,
+        0.43889191399966876,
+        0.4518589710000924,
+        0.4348901799999112
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.0064,
+        "Frontend+IRGen": 0.40515999999999996,
+        "ISel": 0.0006199999999999999
+      },
+      "first_error": ""
+    }
+  ]
+}

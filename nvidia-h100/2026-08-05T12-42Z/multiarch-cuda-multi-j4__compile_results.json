@@ -1,0 +1,222 @@
+{
+  "kind": "compile",
+  "arch_tag": "cuda:sm_80,sm_86,sm_89,sm_90",
+  "warmup": 2,
+  "samples": 5,
+  "jobs": 4,
+  "clangir_commit": "b5b34ff37",
+  "scripts_commit": "b849634",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "68-209-73-39",
+    "timestamp_utc": "2026-08-05T12:42:49+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.4363135170000533,
+      "elapsed_stddev": 0.0010567590727765946,
+      "elapsed_median": 0.4362449220002418,
+      "elapsed_samples": [
+        0.4362449220002418,
+        0.4363194900001872,
+        0.4352449439998054,
+        0.4357214080000631,
+        0.43803682099996877
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00688,
+        "Frontend+IRGen": 0.40524000000000004,
+        "ISel": 0.00068
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.4362956486001167,
+      "elapsed_stddev": 0.0009172338715840484,
+      "elapsed_median": 0.436243740000009,
+      "elapsed_samples": [
+        0.4364669720002894,
+        0.4377318930000911,
+        0.43534405199989124,
+        0.4356915860003028,
+        0.436243740000009
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.00028,
+        "LLVM-passes": 0.00664,
+        "Frontend+IRGen": 0.40540000000000004,
+        "ISel": 0.00066
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.4354817950000324,
+      "elapsed_stddev": 0.005116132070642537,
+      "elapsed_median": 0.4346227729997736,
+      "elapsed_samples": [
+        0.435284903000138,
+        0.4346227729997736,
+        0.4437658240003657,
+        0.42972594100001515,
+        0.43400953399986975
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.0066,
+        "Frontend+IRGen": 0.40668000000000004,
+        "ISel": 0.0006399999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.43690704800001184,
+      "elapsed_stddev": 0.005213863072156084,
+      "elapsed_median": 0.43511894899984327,
+      "elapsed_samples": [
+        0.43237571300005584,
+        0.43412175200001,
+        0.4372284999999465,
+        0.43511894899984327,
+        0.44569032600020364
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.00026,
+        "LLVM-passes": 0.00634,
+        "Frontend+IRGen": 0.40658000000000005,
+        "ISel": 0.00062
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.4352451882000423,
+      "elapsed_stddev": 0.002805340343522991,
+      "elapsed_median": 0.434881506000238,
+      "elapsed_samples": [
+        0.4331079460002911,
+        0.4379035910001221,
+        0.4320279649996337,
+        0.434881506000238,
+        0.4383049329999267
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00618,
+        "Frontend+IRGen": 0.40204000000000006,
+        "ISel": 0.0006
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.43551798119988233,
+      "elapsed_stddev": 0.004845729642290708,
+      "elapsed_median": 0.43579357999988133,
+      "elapsed_samples": [
+        0.4427478939996945,
+        0.43010569299985946,
+        0.4322249130000273,
+        0.4367178259999491,
+        0.43579357999988133
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.006200000000000001,
+        "Frontend+IRGen": 0.40378,
+        "ISel": 0.0006199999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.4351156601999719,
+      "elapsed_stddev": 0.0028221442417531994,
+      "elapsed_median": 0.43390923900005873,
+      "elapsed_samples": [
+        0.43173211000021183,
+        0.437499692000074,
+        0.43390923900005873,
+        0.4338908159998027,
+        0.4385464439997122
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00634,
+        "Frontend+IRGen": 0.40182,
+        "ISel": 0.0006
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.43518241099982335,
+      "elapsed_stddev": 0.0022604378243301425,
+      "elapsed_median": 0.43466410499968333,
+      "elapsed_samples": [
+        0.43278433799969207,
+        0.4381930269996701,
+        0.4334996470001897,
+        0.43466410499968333,
+        0.4367709379998814
+      ],
+      "phases_mean": {
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.0063,
+        "Frontend+IRGen": 0.40142,
+        "ISel": 0.00064
+      },
+      "first_error": ""
+    }
+  ]
+}

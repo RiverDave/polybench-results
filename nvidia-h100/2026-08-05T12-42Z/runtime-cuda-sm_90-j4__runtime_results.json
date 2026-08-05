@@ -1,0 +1,56 @@
+{
+  "kind": "runtime",
+  "arch": "sm_90",
+  "runs": 5,
+  "warmup": 2,
+  "jobs": 4,
+  "clangir_commit": "b5b34ff37",
+  "scripts_commit": "b849634",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "68-209-73-39",
+    "timestamp_utc": "2026-08-05T12:42:43+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26776,
+      "times": [
+        0.000302,
+        0.000314,
+        0.000309,
+        0.000313,
+        0.000303
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26920,
+      "times": [
+        0.000306,
+        0.000308,
+        0.000301,
+        0.000311,
+        0.000305
+      ],
+      "first_error": ""
+    }
+  ]
+}
