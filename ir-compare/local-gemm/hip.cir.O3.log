@@ -1,0 +1,789 @@
+Running pass: VerifierPass on [module]
+Running analysis: VerifierAnalysis on [module]
+Running pass: Annotation2MetadataPass on [module]
+Running pass: ForceFunctionAttrsPass on [module]
+Running pass: InferFunctionAttrsPass on [module]
+Running analysis: InnerAnalysisManagerProxy<FunctionAnalysisManager, Module> on [module]
+Running analysis: TargetLibraryAnalysis on __ockl_get_group_id
+Running analysis: TargetLibraryAnalysis on __ockl_get_local_size
+Running analysis: TargetLibraryAnalysis on __ockl_get_local_id
+Running pass: CoroEarlyPass on [module]
+Running pass: EntryExitInstrumenterPass on _ZL8block_idj (8 instructions)
+Running pass: LowerExpectIntrinsicPass on _ZL8block_idj (8 instructions)
+Running pass: SimplifyCFGPass on _ZL8block_idj (8 instructions)
+Running analysis: TargetIRAnalysis on _ZL8block_idj
+Running analysis: AssumptionAnalysis on _ZL8block_idj
+Running pass: SROAPass on _ZL8block_idj (8 instructions)
+Running analysis: DominatorTreeAnalysis on _ZL8block_idj
+Running pass: EarlyCSEPass on _ZL8block_idj (2 instructions)
+Running analysis: TargetLibraryAnalysis on _ZL8block_idj
+Running pass: CallSiteSplittingPass on _ZL8block_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL8block_idj
+Running pass: EntryExitInstrumenterPass on _ZL10block_sizej (8 instructions)
+Running pass: LowerExpectIntrinsicPass on _ZL10block_sizej (8 instructions)
+Running pass: SimplifyCFGPass on _ZL10block_sizej (8 instructions)
+Running analysis: TargetIRAnalysis on _ZL10block_sizej
+Running analysis: AssumptionAnalysis on _ZL10block_sizej
+Running pass: SROAPass on _ZL10block_sizej (8 instructions)
+Running analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Running pass: EarlyCSEPass on _ZL10block_sizej (2 instructions)
+Running analysis: TargetLibraryAnalysis on _ZL10block_sizej
+Running pass: CallSiteSplittingPass on _ZL10block_sizej (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Running pass: EntryExitInstrumenterPass on _ZL9thread_idj (8 instructions)
+Running pass: LowerExpectIntrinsicPass on _ZL9thread_idj (8 instructions)
+Running pass: SimplifyCFGPass on _ZL9thread_idj (8 instructions)
+Running analysis: TargetIRAnalysis on _ZL9thread_idj
+Running analysis: AssumptionAnalysis on _ZL9thread_idj
+Running pass: SROAPass on _ZL9thread_idj (8 instructions)
+Running analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Running pass: EarlyCSEPass on _ZL9thread_idj (2 instructions)
+Running analysis: TargetLibraryAnalysis on _ZL9thread_idj
+Running pass: CallSiteSplittingPass on _ZL9thread_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Running pass: EntryExitInstrumenterPass on gemm_kernel (107 instructions)
+Running pass: LowerExpectIntrinsicPass on gemm_kernel (107 instructions)
+Running pass: SimplifyCFGPass on gemm_kernel (107 instructions)
+Running analysis: TargetIRAnalysis on gemm_kernel
+Running analysis: AssumptionAnalysis on gemm_kernel
+Running pass: SROAPass on gemm_kernel (97 instructions)
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running pass: EarlyCSEPass on gemm_kernel (45 instructions)
+Running analysis: TargetLibraryAnalysis on gemm_kernel
+Running pass: CallSiteSplittingPass on gemm_kernel (43 instructions)
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: VerifierAnalysis on [module]
+Running pass: OpenMPOptPass on [module]
+Running pass: IPSCCPPass on [module]
+Running analysis: DominatorTreeAnalysis on _ZL8block_idj
+Running analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Running analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running pass: CalledValuePropagationPass on [module]
+Running pass: GlobalOptPass on [module]
+Running analysis: BlockFrequencyAnalysis on gemm_kernel
+Running analysis: BranchProbabilityAnalysis on gemm_kernel
+Running analysis: LoopAnalysis on gemm_kernel
+Running analysis: PostDominatorTreeAnalysis on gemm_kernel
+Running pass: PromotePass on _ZL8block_idj (2 instructions)
+Running pass: InstCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Running analysis: OptimizationRemarkEmitterAnalysis on _ZL8block_idj
+Running analysis: AAManager on _ZL8block_idj
+Running analysis: BasicAA on _ZL8block_idj
+Running analysis: ScopedNoAliasAA on _ZL8block_idj
+Running analysis: TypeBasedAA on _ZL8block_idj
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, Function> on _ZL8block_idj
+Running analysis: AMDGPUAA on _ZL8block_idj
+Running pass: AMDGPUUseNativeCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL8block_idj
+Running analysis: CycleAnalysis on _ZL8block_idj
+Running pass: SimplifyCFGPass on _ZL8block_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL8block_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Invalidating analysis: BasicAA on _ZL8block_idj
+Invalidating analysis: AAManager on _ZL8block_idj
+Invalidating analysis: CycleAnalysis on _ZL8block_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL8block_idj
+Running pass: PromotePass on _ZL10block_sizej (2 instructions)
+Running pass: InstCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Running analysis: OptimizationRemarkEmitterAnalysis on _ZL10block_sizej
+Running analysis: AAManager on _ZL10block_sizej
+Running analysis: BasicAA on _ZL10block_sizej
+Running analysis: ScopedNoAliasAA on _ZL10block_sizej
+Running analysis: TypeBasedAA on _ZL10block_sizej
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, Function> on _ZL10block_sizej
+Running analysis: AMDGPUAA on _ZL10block_sizej
+Running pass: AMDGPUUseNativeCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Running analysis: CycleAnalysis on _ZL10block_sizej
+Running pass: SimplifyCFGPass on _ZL10block_sizej (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Invalidating analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Invalidating analysis: BasicAA on _ZL10block_sizej
+Invalidating analysis: AAManager on _ZL10block_sizej
+Invalidating analysis: CycleAnalysis on _ZL10block_sizej
+Invalidating analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Running pass: PromotePass on _ZL9thread_idj (2 instructions)
+Running pass: InstCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Running analysis: OptimizationRemarkEmitterAnalysis on _ZL9thread_idj
+Running analysis: AAManager on _ZL9thread_idj
+Running analysis: BasicAA on _ZL9thread_idj
+Running analysis: ScopedNoAliasAA on _ZL9thread_idj
+Running analysis: TypeBasedAA on _ZL9thread_idj
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, Function> on _ZL9thread_idj
+Running analysis: AMDGPUAA on _ZL9thread_idj
+Running pass: AMDGPUUseNativeCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Running analysis: CycleAnalysis on _ZL9thread_idj
+Running pass: SimplifyCFGPass on _ZL9thread_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Invalidating analysis: BasicAA on _ZL9thread_idj
+Invalidating analysis: AAManager on _ZL9thread_idj
+Invalidating analysis: CycleAnalysis on _ZL9thread_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Running pass: PromotePass on gemm_kernel (43 instructions)
+Running pass: InstCombinePass on gemm_kernel (43 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Running analysis: OptimizationRemarkEmitterAnalysis on gemm_kernel
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running analysis: ScopedNoAliasAA on gemm_kernel
+Running analysis: TypeBasedAA on gemm_kernel
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, Function> on gemm_kernel
+Running analysis: AMDGPUAA on gemm_kernel
+Running pass: AMDGPUUseNativeCallsPass on gemm_kernel (43 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on gemm_kernel (43 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on gemm_kernel (43 instructions)
+Running analysis: UniformityInfoAnalysis on gemm_kernel
+Running analysis: CycleAnalysis on gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (43 instructions)
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: PostDominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BranchProbabilityAnalysis on gemm_kernel
+Invalidating analysis: BlockFrequencyAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: UniformityInfoAnalysis on gemm_kernel
+Running pass: AlwaysInlinerPass on [module]
+Running analysis: ProfileSummaryAnalysis on [module]
+Running pass: ModuleInlinerWrapperPass on [module]
+Running analysis: InlineAdvisorAnalysis on [module]
+Running pass: RequireAnalysisPass<llvm::GlobalsAA, llvm::Module, llvm::AnalysisManager<Module>> on [module]
+Running analysis: GlobalsAA on [module]
+Running analysis: CallGraphAnalysis on [module]
+Running pass: InvalidateAnalysisPass<llvm::AAManager> on _ZL8block_idj (2 instructions)
+Running pass: InvalidateAnalysisPass<llvm::AAManager> on _ZL10block_sizej (2 instructions)
+Running pass: InvalidateAnalysisPass<llvm::AAManager> on _ZL9thread_idj (2 instructions)
+Running pass: InvalidateAnalysisPass<llvm::AAManager> on gemm_kernel (43 instructions)
+Running pass: RequireAnalysisPass<llvm::ProfileSummaryAnalysis, llvm::Module, llvm::AnalysisManager<Module>> on [module]
+Running analysis: InnerAnalysisManagerProxy<CGSCCAnalysisManager, Module> on [module]
+Running analysis: LazyCallGraphAnalysis on [module]
+Running analysis: FunctionAnalysisManagerCGSCCProxy on (_ZL8block_idj)
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &> on (_ZL8block_idj)
+Running pass: DevirtSCCRepeatedPass on (_ZL8block_idj) (1 node)
+Running pass: InlinerPass on (_ZL8block_idj) (1 node)
+Running pass: PostOrderFunctionAttrsPass on (_ZL8block_idj) (1 node)
+Running pass: ArgumentPromotionPass on (_ZL8block_idj) (1 node)
+Running pass: OpenMPOptCGSCCPass on (_ZL8block_idj) (1 node)
+Running pass: AMDGPUPromoteKernelArgumentsPass on _ZL8block_idj (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL8block_idj
+Running analysis: DominatorTreeAnalysis on _ZL8block_idj
+Running analysis: AAManager on _ZL8block_idj
+Running analysis: BasicAA on _ZL8block_idj
+Running pass: InferAddressSpacesPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPULowerKernelAttributesPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUPromoteAllocaToVectorPass on _ZL8block_idj (2 instructions)
+Running analysis: LoopAnalysis on _ZL8block_idj
+Running pass: SROAPass on _ZL8block_idj (2 instructions)
+Running pass: EarlyCSEPass on _ZL8block_idj (2 instructions)
+Running pass: SpeculativeExecutionPass on _ZL8block_idj (2 instructions)
+Running pass: JumpThreadingPass on _ZL8block_idj (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL8block_idj (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL8block_idj
+Invalidating analysis: LazyValueAnalysis on _ZL8block_idj
+Running pass: JumpTableToSwitchPass on _ZL8block_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL8block_idj (2 instructions)
+Running pass: InstCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Running pass: AggressiveInstCombinePass on _ZL8block_idj (2 instructions)
+Running pass: LibCallsShrinkWrapPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL8block_idj
+Running analysis: CycleAnalysis on _ZL8block_idj
+Running pass: TailCallElimPass on _ZL8block_idj (2 instructions)
+Invalidating analysis: MemorySSAAnalysis on _ZL8block_idj
+Invalidating analysis: LoopAnalysis on _ZL8block_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Invalidating analysis: CycleAnalysis on _ZL8block_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL8block_idj
+Running pass: SimplifyCFGPass on _ZL8block_idj (2 instructions)
+Running pass: ReassociatePass on _ZL8block_idj (2 instructions)
+Running pass: ConstraintEliminationPass on _ZL8block_idj (2 instructions)
+Running analysis: LoopAnalysis on _ZL8block_idj
+Running analysis: ScalarEvolutionAnalysis on _ZL8block_idj
+Running pass: LoopSimplifyPass on _ZL8block_idj (2 instructions)
+Running pass: LCSSAPass on _ZL8block_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL8block_idj (2 instructions)
+Running pass: InstCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Running pass: LoopSimplifyPass on _ZL8block_idj (2 instructions)
+Running pass: LCSSAPass on _ZL8block_idj (2 instructions)
+Running pass: SROAPass on _ZL8block_idj (2 instructions)
+Running pass: VectorCombinePass on _ZL8block_idj (2 instructions)
+Running pass: MergedLoadStoreMotionPass on _ZL8block_idj (2 instructions)
+Running pass: GVNPass on _ZL8block_idj (2 instructions)
+Running analysis: MemoryDependenceAnalysis on _ZL8block_idj
+Running pass: SCCPPass on _ZL8block_idj (2 instructions)
+Running pass: BDCEPass on _ZL8block_idj (2 instructions)
+Running analysis: DemandedBitsAnalysis on _ZL8block_idj
+Running pass: InstCombinePass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL8block_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL8block_idj
+Running analysis: CycleAnalysis on _ZL8block_idj
+Running pass: DFAJumpThreadingPass on _ZL8block_idj (2 instructions)
+Running pass: JumpThreadingPass on _ZL8block_idj (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL8block_idj (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL8block_idj
+Invalidating analysis: LazyValueAnalysis on _ZL8block_idj
+Running pass: ADCEPass on _ZL8block_idj (2 instructions)
+Running analysis: PostDominatorTreeAnalysis on _ZL8block_idj
+Running pass: MemCpyOptPass on _ZL8block_idj (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL8block_idj
+Running pass: DSEPass on _ZL8block_idj (2 instructions)
+Running pass: MoveAutoInitPass on _ZL8block_idj (2 instructions)
+Running pass: LoopSimplifyPass on _ZL8block_idj (2 instructions)
+Running pass: LCSSAPass on _ZL8block_idj (2 instructions)
+Running pass: CoroElidePass on _ZL8block_idj (2 instructions)
+Running pass: InferAddressSpacesPass on _ZL8block_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL8block_idj (2 instructions)
+Running pass: InstCombinePass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL8block_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL8block_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL8block_idj
+Invalidating analysis: BasicAA on _ZL8block_idj
+Invalidating analysis: AAManager on _ZL8block_idj
+Invalidating analysis: LoopAnalysis on _ZL8block_idj
+Invalidating analysis: ScalarEvolutionAnalysis on _ZL8block_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL8block_idj
+Invalidating analysis: MemoryDependenceAnalysis on _ZL8block_idj
+Invalidating analysis: DemandedBitsAnalysis on _ZL8block_idj
+Invalidating analysis: CycleAnalysis on _ZL8block_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL8block_idj
+Invalidating analysis: PostDominatorTreeAnalysis on _ZL8block_idj
+Invalidating analysis: MemorySSAAnalysis on _ZL8block_idj
+Running pass: PostOrderFunctionAttrsPass on (_ZL8block_idj) (1 node)
+Running analysis: AAManager on _ZL8block_idj
+Running analysis: BasicAA on _ZL8block_idj
+Running analysis: DominatorTreeAnalysis on _ZL8block_idj
+Running pass: RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>> on _ZL8block_idj (2 instructions)
+Running analysis: ShouldNotRunFunctionPassesAnalysis on _ZL8block_idj
+Running pass: CoroSplitPass on (_ZL8block_idj) (1 node)
+Running pass: CoroAnnotationElidePass on (_ZL8block_idj) (1 node)
+Running analysis: FunctionAnalysisManagerCGSCCProxy on (_ZL10block_sizej)
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &> on (_ZL10block_sizej)
+Running pass: DevirtSCCRepeatedPass on (_ZL10block_sizej) (1 node)
+Running pass: InlinerPass on (_ZL10block_sizej) (1 node)
+Running pass: PostOrderFunctionAttrsPass on (_ZL10block_sizej) (1 node)
+Running pass: ArgumentPromotionPass on (_ZL10block_sizej) (1 node)
+Running pass: OpenMPOptCGSCCPass on (_ZL10block_sizej) (1 node)
+Running pass: AMDGPUPromoteKernelArgumentsPass on _ZL10block_sizej (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL10block_sizej
+Running analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Running analysis: AAManager on _ZL10block_sizej
+Running analysis: BasicAA on _ZL10block_sizej
+Running pass: InferAddressSpacesPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPULowerKernelAttributesPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUPromoteAllocaToVectorPass on _ZL10block_sizej (2 instructions)
+Running analysis: LoopAnalysis on _ZL10block_sizej
+Running pass: SROAPass on _ZL10block_sizej (2 instructions)
+Running pass: EarlyCSEPass on _ZL10block_sizej (2 instructions)
+Running pass: SpeculativeExecutionPass on _ZL10block_sizej (2 instructions)
+Running pass: JumpThreadingPass on _ZL10block_sizej (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL10block_sizej (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL10block_sizej
+Invalidating analysis: LazyValueAnalysis on _ZL10block_sizej
+Running pass: JumpTableToSwitchPass on _ZL10block_sizej (2 instructions)
+Running pass: SimplifyCFGPass on _ZL10block_sizej (2 instructions)
+Running pass: InstCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Running pass: AggressiveInstCombinePass on _ZL10block_sizej (2 instructions)
+Running pass: LibCallsShrinkWrapPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Running analysis: CycleAnalysis on _ZL10block_sizej
+Running pass: TailCallElimPass on _ZL10block_sizej (2 instructions)
+Invalidating analysis: MemorySSAAnalysis on _ZL10block_sizej
+Invalidating analysis: LoopAnalysis on _ZL10block_sizej
+Invalidating analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Invalidating analysis: CycleAnalysis on _ZL10block_sizej
+Invalidating analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Running pass: SimplifyCFGPass on _ZL10block_sizej (2 instructions)
+Running pass: ReassociatePass on _ZL10block_sizej (2 instructions)
+Running pass: ConstraintEliminationPass on _ZL10block_sizej (2 instructions)
+Running analysis: LoopAnalysis on _ZL10block_sizej
+Running analysis: ScalarEvolutionAnalysis on _ZL10block_sizej
+Running pass: LoopSimplifyPass on _ZL10block_sizej (2 instructions)
+Running pass: LCSSAPass on _ZL10block_sizej (2 instructions)
+Running pass: SimplifyCFGPass on _ZL10block_sizej (2 instructions)
+Running pass: InstCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Running pass: LoopSimplifyPass on _ZL10block_sizej (2 instructions)
+Running pass: LCSSAPass on _ZL10block_sizej (2 instructions)
+Running pass: SROAPass on _ZL10block_sizej (2 instructions)
+Running pass: VectorCombinePass on _ZL10block_sizej (2 instructions)
+Running pass: MergedLoadStoreMotionPass on _ZL10block_sizej (2 instructions)
+Running pass: GVNPass on _ZL10block_sizej (2 instructions)
+Running analysis: MemoryDependenceAnalysis on _ZL10block_sizej
+Running pass: SCCPPass on _ZL10block_sizej (2 instructions)
+Running pass: BDCEPass on _ZL10block_sizej (2 instructions)
+Running analysis: DemandedBitsAnalysis on _ZL10block_sizej
+Running pass: InstCombinePass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL10block_sizej (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Running analysis: CycleAnalysis on _ZL10block_sizej
+Running pass: DFAJumpThreadingPass on _ZL10block_sizej (2 instructions)
+Running pass: JumpThreadingPass on _ZL10block_sizej (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL10block_sizej (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL10block_sizej
+Invalidating analysis: LazyValueAnalysis on _ZL10block_sizej
+Running pass: ADCEPass on _ZL10block_sizej (2 instructions)
+Running analysis: PostDominatorTreeAnalysis on _ZL10block_sizej
+Running pass: MemCpyOptPass on _ZL10block_sizej (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL10block_sizej
+Running pass: DSEPass on _ZL10block_sizej (2 instructions)
+Running pass: MoveAutoInitPass on _ZL10block_sizej (2 instructions)
+Running pass: LoopSimplifyPass on _ZL10block_sizej (2 instructions)
+Running pass: LCSSAPass on _ZL10block_sizej (2 instructions)
+Running pass: CoroElidePass on _ZL10block_sizej (2 instructions)
+Running pass: InferAddressSpacesPass on _ZL10block_sizej (2 instructions)
+Running pass: SimplifyCFGPass on _ZL10block_sizej (2 instructions)
+Running pass: InstCombinePass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL10block_sizej (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL10block_sizej (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Invalidating analysis: BasicAA on _ZL10block_sizej
+Invalidating analysis: AAManager on _ZL10block_sizej
+Invalidating analysis: LoopAnalysis on _ZL10block_sizej
+Invalidating analysis: ScalarEvolutionAnalysis on _ZL10block_sizej
+Invalidating analysis: LastRunTrackingAnalysis on _ZL10block_sizej
+Invalidating analysis: MemoryDependenceAnalysis on _ZL10block_sizej
+Invalidating analysis: DemandedBitsAnalysis on _ZL10block_sizej
+Invalidating analysis: CycleAnalysis on _ZL10block_sizej
+Invalidating analysis: UniformityInfoAnalysis on _ZL10block_sizej
+Invalidating analysis: PostDominatorTreeAnalysis on _ZL10block_sizej
+Invalidating analysis: MemorySSAAnalysis on _ZL10block_sizej
+Running pass: PostOrderFunctionAttrsPass on (_ZL10block_sizej) (1 node)
+Running analysis: AAManager on _ZL10block_sizej
+Running analysis: BasicAA on _ZL10block_sizej
+Running analysis: DominatorTreeAnalysis on _ZL10block_sizej
+Running pass: RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>> on _ZL10block_sizej (2 instructions)
+Running analysis: ShouldNotRunFunctionPassesAnalysis on _ZL10block_sizej
+Running pass: CoroSplitPass on (_ZL10block_sizej) (1 node)
+Running pass: CoroAnnotationElidePass on (_ZL10block_sizej) (1 node)
+Running analysis: FunctionAnalysisManagerCGSCCProxy on (_ZL9thread_idj)
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &> on (_ZL9thread_idj)
+Running pass: DevirtSCCRepeatedPass on (_ZL9thread_idj) (1 node)
+Running pass: InlinerPass on (_ZL9thread_idj) (1 node)
+Running pass: PostOrderFunctionAttrsPass on (_ZL9thread_idj) (1 node)
+Running pass: ArgumentPromotionPass on (_ZL9thread_idj) (1 node)
+Running pass: OpenMPOptCGSCCPass on (_ZL9thread_idj) (1 node)
+Running pass: AMDGPUPromoteKernelArgumentsPass on _ZL9thread_idj (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL9thread_idj
+Running analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Running analysis: AAManager on _ZL9thread_idj
+Running analysis: BasicAA on _ZL9thread_idj
+Running pass: InferAddressSpacesPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPULowerKernelAttributesPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUPromoteAllocaToVectorPass on _ZL9thread_idj (2 instructions)
+Running analysis: LoopAnalysis on _ZL9thread_idj
+Running pass: SROAPass on _ZL9thread_idj (2 instructions)
+Running pass: EarlyCSEPass on _ZL9thread_idj (2 instructions)
+Running pass: SpeculativeExecutionPass on _ZL9thread_idj (2 instructions)
+Running pass: JumpThreadingPass on _ZL9thread_idj (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL9thread_idj (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL9thread_idj
+Invalidating analysis: LazyValueAnalysis on _ZL9thread_idj
+Running pass: JumpTableToSwitchPass on _ZL9thread_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL9thread_idj (2 instructions)
+Running pass: InstCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Running pass: AggressiveInstCombinePass on _ZL9thread_idj (2 instructions)
+Running pass: LibCallsShrinkWrapPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Running analysis: CycleAnalysis on _ZL9thread_idj
+Running pass: TailCallElimPass on _ZL9thread_idj (2 instructions)
+Invalidating analysis: MemorySSAAnalysis on _ZL9thread_idj
+Invalidating analysis: LoopAnalysis on _ZL9thread_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Invalidating analysis: CycleAnalysis on _ZL9thread_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Running pass: SimplifyCFGPass on _ZL9thread_idj (2 instructions)
+Running pass: ReassociatePass on _ZL9thread_idj (2 instructions)
+Running pass: ConstraintEliminationPass on _ZL9thread_idj (2 instructions)
+Running analysis: LoopAnalysis on _ZL9thread_idj
+Running analysis: ScalarEvolutionAnalysis on _ZL9thread_idj
+Running pass: LoopSimplifyPass on _ZL9thread_idj (2 instructions)
+Running pass: LCSSAPass on _ZL9thread_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL9thread_idj (2 instructions)
+Running pass: InstCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Running pass: LoopSimplifyPass on _ZL9thread_idj (2 instructions)
+Running pass: LCSSAPass on _ZL9thread_idj (2 instructions)
+Running pass: SROAPass on _ZL9thread_idj (2 instructions)
+Running pass: VectorCombinePass on _ZL9thread_idj (2 instructions)
+Running pass: MergedLoadStoreMotionPass on _ZL9thread_idj (2 instructions)
+Running pass: GVNPass on _ZL9thread_idj (2 instructions)
+Running analysis: MemoryDependenceAnalysis on _ZL9thread_idj
+Running pass: SCCPPass on _ZL9thread_idj (2 instructions)
+Running pass: BDCEPass on _ZL9thread_idj (2 instructions)
+Running analysis: DemandedBitsAnalysis on _ZL9thread_idj
+Running pass: InstCombinePass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL9thread_idj (2 instructions)
+Running analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Running analysis: CycleAnalysis on _ZL9thread_idj
+Running pass: DFAJumpThreadingPass on _ZL9thread_idj (2 instructions)
+Running pass: JumpThreadingPass on _ZL9thread_idj (2 instructions)
+Running pass: CorrelatedValuePropagationPass on _ZL9thread_idj (2 instructions)
+Running analysis: LazyValueAnalysis on _ZL9thread_idj
+Invalidating analysis: LazyValueAnalysis on _ZL9thread_idj
+Running pass: ADCEPass on _ZL9thread_idj (2 instructions)
+Running analysis: PostDominatorTreeAnalysis on _ZL9thread_idj
+Running pass: MemCpyOptPass on _ZL9thread_idj (2 instructions)
+Running analysis: MemorySSAAnalysis on _ZL9thread_idj
+Running pass: DSEPass on _ZL9thread_idj (2 instructions)
+Running pass: MoveAutoInitPass on _ZL9thread_idj (2 instructions)
+Running pass: LoopSimplifyPass on _ZL9thread_idj (2 instructions)
+Running pass: LCSSAPass on _ZL9thread_idj (2 instructions)
+Running pass: CoroElidePass on _ZL9thread_idj (2 instructions)
+Running pass: InferAddressSpacesPass on _ZL9thread_idj (2 instructions)
+Running pass: SimplifyCFGPass on _ZL9thread_idj (2 instructions)
+Running pass: InstCombinePass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUseNativeCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on _ZL9thread_idj (2 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on _ZL9thread_idj (2 instructions)
+Invalidating analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Invalidating analysis: BasicAA on _ZL9thread_idj
+Invalidating analysis: AAManager on _ZL9thread_idj
+Invalidating analysis: LoopAnalysis on _ZL9thread_idj
+Invalidating analysis: ScalarEvolutionAnalysis on _ZL9thread_idj
+Invalidating analysis: LastRunTrackingAnalysis on _ZL9thread_idj
+Invalidating analysis: MemoryDependenceAnalysis on _ZL9thread_idj
+Invalidating analysis: DemandedBitsAnalysis on _ZL9thread_idj
+Invalidating analysis: CycleAnalysis on _ZL9thread_idj
+Invalidating analysis: UniformityInfoAnalysis on _ZL9thread_idj
+Invalidating analysis: PostDominatorTreeAnalysis on _ZL9thread_idj
+Invalidating analysis: MemorySSAAnalysis on _ZL9thread_idj
+Running pass: PostOrderFunctionAttrsPass on (_ZL9thread_idj) (1 node)
+Running analysis: AAManager on _ZL9thread_idj
+Running analysis: BasicAA on _ZL9thread_idj
+Running analysis: DominatorTreeAnalysis on _ZL9thread_idj
+Running pass: RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>> on _ZL9thread_idj (2 instructions)
+Running analysis: ShouldNotRunFunctionPassesAnalysis on _ZL9thread_idj
+Running pass: CoroSplitPass on (_ZL9thread_idj) (1 node)
+Running pass: CoroAnnotationElidePass on (_ZL9thread_idj) (1 node)
+Running analysis: FunctionAnalysisManagerCGSCCProxy on (gemm_kernel)
+Running analysis: OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &> on (gemm_kernel)
+Running pass: DevirtSCCRepeatedPass on (gemm_kernel) (1 node)
+Running pass: InlinerPass on (gemm_kernel) (1 node)
+Running analysis: BlockFrequencyAnalysis on gemm_kernel
+Running analysis: BranchProbabilityAnalysis on gemm_kernel
+Running analysis: LoopAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: PostDominatorTreeAnalysis on gemm_kernel
+Running analysis: EphemeralValuesAnalysis on _ZL8block_idj
+Running analysis: BlockFrequencyAnalysis on _ZL8block_idj
+Running analysis: BranchProbabilityAnalysis on _ZL8block_idj
+Running analysis: LoopAnalysis on _ZL8block_idj
+Running analysis: PostDominatorTreeAnalysis on _ZL8block_idj
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running analysis: EphemeralValuesAnalysis on gemm_kernel
+Running analysis: EphemeralValuesAnalysis on _ZL10block_sizej
+Running analysis: BlockFrequencyAnalysis on _ZL10block_sizej
+Running analysis: BranchProbabilityAnalysis on _ZL10block_sizej
+Running analysis: LoopAnalysis on _ZL10block_sizej
+Running analysis: PostDominatorTreeAnalysis on _ZL10block_sizej
+Running analysis: EphemeralValuesAnalysis on _ZL9thread_idj
+Running analysis: BlockFrequencyAnalysis on _ZL9thread_idj
+Running analysis: BranchProbabilityAnalysis on _ZL9thread_idj
+Running analysis: LoopAnalysis on _ZL9thread_idj
+Running analysis: PostDominatorTreeAnalysis on _ZL9thread_idj
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: PostDominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BranchProbabilityAnalysis on gemm_kernel
+Invalidating analysis: BlockFrequencyAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: EphemeralValuesAnalysis on gemm_kernel
+Clearing all analysis results for: _ZL8block_idj
+Clearing all analysis results for: (_ZL8block_idj)
+Clearing all analysis results for: _ZL10block_sizej
+Clearing all analysis results for: (_ZL10block_sizej)
+Clearing all analysis results for: _ZL9thread_idj
+Clearing all analysis results for: (_ZL9thread_idj)
+Running pass: PostOrderFunctionAttrsPass on (gemm_kernel) (1 node)
+Running pass: ArgumentPromotionPass on (gemm_kernel) (1 node)
+Running pass: OpenMPOptCGSCCPass on (gemm_kernel) (1 node)
+Running pass: AMDGPUPromoteKernelArgumentsPass on gemm_kernel (43 instructions)
+Running analysis: MemorySSAAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running pass: InferAddressSpacesPass on gemm_kernel (49 instructions)
+Invalidating analysis: MemorySSAAnalysis on gemm_kernel
+Running pass: AMDGPULowerKernelAttributesPass on gemm_kernel (46 instructions)
+Running pass: AMDGPUPromoteAllocaToVectorPass on gemm_kernel (46 instructions)
+Running analysis: LoopAnalysis on gemm_kernel
+Running pass: SROAPass on gemm_kernel (46 instructions)
+Running pass: EarlyCSEPass on gemm_kernel (46 instructions)
+Running analysis: MemorySSAAnalysis on gemm_kernel
+Running pass: SpeculativeExecutionPass on gemm_kernel (46 instructions)
+Running pass: JumpThreadingPass on gemm_kernel (46 instructions)
+Running pass: CorrelatedValuePropagationPass on gemm_kernel (46 instructions)
+Running analysis: LazyValueAnalysis on gemm_kernel
+Invalidating analysis: LazyValueAnalysis on gemm_kernel
+Running pass: JumpTableToSwitchPass on gemm_kernel (46 instructions)
+Running pass: SimplifyCFGPass on gemm_kernel (46 instructions)
+Running pass: InstCombinePass on gemm_kernel (46 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: MemorySSAAnalysis on gemm_kernel
+Running pass: AggressiveInstCombinePass on gemm_kernel (46 instructions)
+Running pass: LibCallsShrinkWrapPass on gemm_kernel (46 instructions)
+Running pass: AMDGPUUseNativeCallsPass on gemm_kernel (46 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on gemm_kernel (46 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on gemm_kernel (46 instructions)
+Running analysis: UniformityInfoAnalysis on gemm_kernel
+Running analysis: CycleAnalysis on gemm_kernel
+Running pass: TailCallElimPass on gemm_kernel (46 instructions)
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: UniformityInfoAnalysis on gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (46 instructions)
+Running pass: ReassociatePass on gemm_kernel (46 instructions)
+Running pass: ConstraintEliminationPass on gemm_kernel (46 instructions)
+Running analysis: LoopAnalysis on gemm_kernel
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running pass: LoopSimplifyPass on gemm_kernel (46 instructions)
+Running pass: LCSSAPass on gemm_kernel (47 instructions)
+Running analysis: MemorySSAAnalysis on gemm_kernel
+Running analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LoopInstSimplifyPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopSimplifyCFGPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LICMPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopRotatePass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LICMPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: SimpleLoopUnswitchPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (50 instructions)
+Clearing all analysis results for: <possibly invalidated loop>
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Invalidating analysis: MemorySSAAnalysis on gemm_kernel
+Invalidating analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: InstCombinePass on gemm_kernel (48 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running pass: LoopSimplifyPass on gemm_kernel (48 instructions)
+Running analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Running pass: LCSSAPass on gemm_kernel (49 instructions)
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LoopIdiomRecognizePass on loop %<unnamed loop> in function gemm_kernel
+Running pass: IndVarSimplifyPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopDeletionPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopFullUnrollPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: SROAPass on gemm_kernel (49 instructions)
+Running pass: VectorCombinePass on gemm_kernel (49 instructions)
+Running pass: MergedLoadStoreMotionPass on gemm_kernel (49 instructions)
+Running pass: GVNPass on gemm_kernel (49 instructions)
+Running analysis: MemoryDependenceAnalysis on gemm_kernel
+Clearing all analysis results for: <possibly invalidated loop>
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Invalidating analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Invalidating analysis: MemoryDependenceAnalysis on gemm_kernel
+Running pass: SCCPPass on gemm_kernel (48 instructions)
+Running pass: BDCEPass on gemm_kernel (48 instructions)
+Running analysis: DemandedBitsAnalysis on gemm_kernel
+Running pass: InstCombinePass on gemm_kernel (48 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: DemandedBitsAnalysis on gemm_kernel
+Running pass: AMDGPUUseNativeCallsPass on gemm_kernel (48 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on gemm_kernel (48 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on gemm_kernel (48 instructions)
+Running analysis: UniformityInfoAnalysis on gemm_kernel
+Running analysis: CycleAnalysis on gemm_kernel
+Running pass: DFAJumpThreadingPass on gemm_kernel (48 instructions)
+Running pass: JumpThreadingPass on gemm_kernel (48 instructions)
+Running pass: CorrelatedValuePropagationPass on gemm_kernel (48 instructions)
+Running analysis: LazyValueAnalysis on gemm_kernel
+Invalidating analysis: LazyValueAnalysis on gemm_kernel
+Running pass: ADCEPass on gemm_kernel (48 instructions)
+Running analysis: PostDominatorTreeAnalysis on gemm_kernel
+Running pass: MemCpyOptPass on gemm_kernel (48 instructions)
+Running analysis: MemorySSAAnalysis on gemm_kernel
+Running pass: DSEPass on gemm_kernel (48 instructions)
+Running pass: MoveAutoInitPass on gemm_kernel (48 instructions)
+Running pass: LoopSimplifyPass on gemm_kernel (48 instructions)
+Running pass: LCSSAPass on gemm_kernel (48 instructions)
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LICMPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: CoroElidePass on gemm_kernel (48 instructions)
+Running pass: InferAddressSpacesPass on gemm_kernel (48 instructions)
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: UniformityInfoAnalysis on gemm_kernel
+Invalidating analysis: MemorySSAAnalysis on gemm_kernel
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Invalidating analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (48 instructions)
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: PostDominatorTreeAnalysis on gemm_kernel
+Running pass: InstCombinePass on gemm_kernel (47 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running pass: AMDGPUUseNativeCallsPass on gemm_kernel (47 instructions)
+Running pass: AMDGPUSimplifyLibCallsPass on gemm_kernel (47 instructions)
+Running pass: AMDGPUUniformIntrinsicCombinePass on gemm_kernel (47 instructions)
+Running analysis: UniformityInfoAnalysis on gemm_kernel
+Running analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: UniformityInfoAnalysis on gemm_kernel
+Running pass: PostOrderFunctionAttrsPass on (gemm_kernel) (1 node)
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running pass: RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>> on gemm_kernel (47 instructions)
+Running analysis: ShouldNotRunFunctionPassesAnalysis on gemm_kernel
+Running pass: CoroSplitPass on (gemm_kernel) (1 node)
+Running pass: CoroAnnotationElidePass on (gemm_kernel) (1 node)
+Invalidating analysis: CallGraphAnalysis on [module]
+Running pass: InvalidateAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis> on gemm_kernel (47 instructions)
+Invalidating analysis: ShouldNotRunFunctionPassesAnalysis on gemm_kernel
+Invalidating analysis: InlineAdvisorAnalysis on [module]
+Running pass: DeadArgumentEliminationPass on [module]
+Running pass: CoroCleanupPass on [module]
+Running pass: GlobalOptPass on [module]
+Running pass: GlobalDCEPass on [module]
+Running pass: ReversePostOrderFunctionAttrsPass on [module]
+Running pass: RecomputeGlobalsAAPass on [module]
+Running analysis: CallGraphAnalysis on [module]
+Running pass: Float2IntPass on gemm_kernel (47 instructions)
+Running pass: LowerConstantIntrinsicsPass on gemm_kernel (47 instructions)
+Running pass: ControlHeightReductionPass on gemm_kernel (47 instructions)
+Running pass: LoopSimplifyPass on gemm_kernel (47 instructions)
+Running analysis: LoopAnalysis on gemm_kernel
+Running pass: LCSSAPass on gemm_kernel (48 instructions)
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LoopRotatePass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopDeletionPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LoopDistributePass on gemm_kernel (48 instructions)
+Running analysis: LoopAccessAnalysis on gemm_kernel
+Running pass: InjectTLIMappings on gemm_kernel (48 instructions)
+Running pass: LoopVectorizePass on gemm_kernel (48 instructions)
+Running analysis: DemandedBitsAnalysis on gemm_kernel
+Running pass: InferAlignmentPass on gemm_kernel (48 instructions)
+Running pass: LoopLoadEliminationPass on gemm_kernel (48 instructions)
+Running pass: InstCombinePass on gemm_kernel (48 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (48 instructions)
+Clearing all analysis results for: <possibly invalidated loop>
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Invalidating analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Invalidating analysis: LoopAccessAnalysis on gemm_kernel
+Invalidating analysis: DemandedBitsAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Running pass: SLPVectorizerPass on gemm_kernel (47 instructions)
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: LoopAnalysis on gemm_kernel
+Running analysis: AAManager on gemm_kernel
+Running analysis: BasicAA on gemm_kernel
+Running analysis: DemandedBitsAnalysis on gemm_kernel
+Running pass: VectorCombinePass on gemm_kernel (47 instructions)
+Running pass: InstCombinePass on gemm_kernel (47 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Running pass: LoopUnrollPass on gemm_kernel (47 instructions)
+Running analysis: UniformityInfoAnalysis on gemm_kernel
+Running analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: DemandedBitsAnalysis on gemm_kernel
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: CycleAnalysis on gemm_kernel
+Invalidating analysis: UniformityInfoAnalysis on gemm_kernel
+Running pass: WarnMissedTransformationsPass on gemm_kernel (184 instructions)
+Running pass: SROAPass on gemm_kernel (184 instructions)
+Running pass: InferAlignmentPass on gemm_kernel (184 instructions)
+Running pass: InstCombinePass on gemm_kernel (184 instructions)
+Running analysis: LastRunTrackingAnalysis on gemm_kernel
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running pass: LoopSimplifyPass on gemm_kernel (180 instructions)
+Running pass: LCSSAPass on gemm_kernel (180 instructions)
+Invalidating analysis: LastRunTrackingAnalysis on gemm_kernel
+Running analysis: MemorySSAAnalysis on gemm_kernel
+Running analysis: ScalarEvolutionAnalysis on gemm_kernel
+Running analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LICMPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: LICMPass on loop %<unnamed loop> in function gemm_kernel
+Running pass: AlignmentFromAssumptionsPass on gemm_kernel (182 instructions)
+Running pass: InferAddressSpacesPass on gemm_kernel (182 instructions)
+Invalidating analysis: MemorySSAAnalysis on gemm_kernel
+Invalidating analysis: ScalarEvolutionAnalysis on gemm_kernel
+Invalidating analysis: InnerAnalysisManagerProxy<LoopAnalysisManager, Function> on gemm_kernel
+Running pass: LoopSinkPass on gemm_kernel (182 instructions)
+Running pass: InstSimplifyPass on gemm_kernel (182 instructions)
+Running pass: DivRemPairsPass on gemm_kernel (180 instructions)
+Running pass: MergeICmpsPass on gemm_kernel (180 instructions)
+Running pass: ExpandMemCmpPass on gemm_kernel (180 instructions)
+Running pass: TailCallElimPass on gemm_kernel (180 instructions)
+Invalidating analysis: LoopAnalysis on gemm_kernel
+Running pass: SimplifyCFGPass on gemm_kernel (180 instructions)
+Invalidating analysis: DominatorTreeAnalysis on gemm_kernel
+Invalidating analysis: BasicAA on gemm_kernel
+Invalidating analysis: AAManager on gemm_kernel
+Invalidating analysis: LazyCallGraphAnalysis on [module]
+Invalidating analysis: InnerAnalysisManagerProxy<CGSCCAnalysisManager, Module> on [module]
+Invalidating analysis: CallGraphAnalysis on [module]
+Running pass: GlobalDCEPass on [module]
+Running pass: ConstantMergePass on [module]
+Running pass: LowerCommentStringPass on [module]
+Running pass: AnnotationRemarksPass on gemm_kernel (178 instructions)
+Running pass: CanonicalizeAliasesPass on [module]
+Running pass: NameAnonGlobalPass on [module]
+Running pass: VerifierPass on [module]
+Running analysis: VerifierAnalysis on [module]
+Running pass: PrintModulePass on [module]
+Running analysis: ModuleSummaryIndexAnalysis on [module]
+Running analysis: BlockFrequencyAnalysis on gemm_kernel
+Running analysis: BranchProbabilityAnalysis on gemm_kernel
+Running analysis: LoopAnalysis on gemm_kernel
+Running analysis: DominatorTreeAnalysis on gemm_kernel
+Running analysis: PostDominatorTreeAnalysis on gemm_kernel
