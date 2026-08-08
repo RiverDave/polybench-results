@@ -1,0 +1,78 @@
+{
+  "kind": "runtime",
+  "arch": "gfx942",
+  "runs": 2,
+  "warmup": 1,
+  "jobs": 1,
+  "clangir_commit": "c45e6b9e4d95",
+  "scripts_commit": "de5bda2",
+  "polybench_root": "/root/polybenchGpu",
+  "environment": {
+    "hostname": "7",
+    "timestamp_utc": "2026-08-08T02:35:27+00:00",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8568Y+",
+    "cpu_count": "20",
+    "kernel": "6.8.0-134-generic",
+    "gpu": "AMD Instinct MI300X VF",
+    "rocm_version": "7.0.2",
+    "cuda_version": ""
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 30856,
+      "times": [
+        0.000466,
+        0.000472
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2DCONV/2DConvolution.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 35112,
+      "times": [
+        0.000488,
+        0.000434
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "CIR",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 39192,
+      "times": [
+        0.001671,
+        0.0018
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "HIP",
+      "file": "/root/polybenchGpu/HIP/2MM/2mm.hip.cpp",
+      "pipeline": "OG",
+      "arch": "gfx942",
+      "compile_ok": true,
+      "binary_bytes": 43448,
+      "times": [
+        0.001804,
+        0.00172
+      ],
+      "first_error": ""
+    }
+  ]
+}
