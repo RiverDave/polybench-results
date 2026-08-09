@@ -1,0 +1,12 @@
+{
+  "hostname": "209-20-158-157",
+  "timestamp_utc": "2026-08-09T02:52:40.152033+00:00",
+  "clangir_commit": "c45e6b9e4d95fb444eb1308416c10d95350d3c52",
+  "scripts_commit": "a82270d",
+  "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+  "gpu": "NVIDIA H100 PCIe",
+  "cuda_version": "12.8",
+  "sm_arch": "sm_90",
+  "gcc_install_dir": "/usr/lib/gcc/x86_64-linux-gnu/11",
+  "profile": "-j26 warmup=2 samples=5 (single) / warmup=2 samples=5 (multiarch)"
+}

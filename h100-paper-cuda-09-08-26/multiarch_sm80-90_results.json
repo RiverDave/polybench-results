@@ -1,0 +1,4222 @@
+{
+  "kind": "compile",
+  "arch_tag": "cuda:sm_80,sm_86,sm_89,sm_90",
+  "warmup": 2,
+  "samples": 5,
+  "jobs": 26,
+  "clangir_commit": "c45e6b9e4d95",
+  "scripts_commit": "a82270d",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "209-20-158-157",
+    "timestamp_utc": "2026-08-09T02:48:33+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 PCIe",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.767741161399681,
+      "elapsed_stddev": 0.13568590812041914,
+      "elapsed_median": 0.815514122001332,
+      "elapsed_samples": [
+        0.8055755839995982,
+        0.86994034899908,
+        0.5291854729985062,
+        0.8184902789998887,
+        0.815514122001332
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.71872,
+        "ISel": 0.00112,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01056
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7716550768003799,
+      "elapsed_stddev": 0.14033855117529714,
+      "elapsed_median": 0.8258266049997474,
+      "elapsed_samples": [
+        0.8226597709999623,
+        0.8553420570005983,
+        0.8327957050005352,
+        0.8258266049997474,
+        0.5216512460010563
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.72058,
+        "ISel": 0.00098,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.010579999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.7038370071997633,
+      "elapsed_stddev": 0.16030359562758054,
+      "elapsed_median": 0.8135379699997429,
+      "elapsed_samples": [
+        0.49837134200060973,
+        0.561633425000764,
+        0.8135379699997429,
+        0.8217677639986505,
+        0.8238745349990495
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6589,
+        "ISel": 0.0009400000000000001,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01082
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.7424728919999325,
+      "elapsed_stddev": 0.13570151444417344,
+      "elapsed_median": 0.8010009810004703,
+      "elapsed_samples": [
+        0.8305408970009012,
+        0.8415796850003971,
+        0.8010009810004703,
+        0.7256190489988512,
+        0.5136238479990425
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6950999999999999,
+        "ISel": 0.0009400000000000001,
+        "LLVM-analysis": 0.00037999999999999997,
+        "LLVM-passes": 0.01036
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.7289248323995707,
+      "elapsed_stddev": 0.13794869777621224,
+      "elapsed_median": 0.8042026469993289,
+      "elapsed_samples": [
+        0.8281753119990753,
+        0.8042026469993289,
+        0.8179215689997363,
+        0.691922080999575,
+        0.5024025530001381
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6808,
+        "ISel": 0.00088,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.009420000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.8212246573999437,
+      "elapsed_stddev": 0.020696668214979102,
+      "elapsed_median": 0.8185392589984986,
+      "elapsed_samples": [
+        0.7987096079996263,
+        0.8323269500015158,
+        0.8185392589984986,
+        0.8503715810002177,
+        0.80617588899986
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.7679,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01072
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.7397142686004372,
+      "elapsed_stddev": 0.13054147570925878,
+      "elapsed_median": 0.8026305540006433,
+      "elapsed_samples": [
+        0.8168338630002836,
+        0.8026305540006433,
+        0.8042178369996691,
+        0.7662457740007085,
+        0.5086433150008816
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.69156,
+        "ISel": 0.00086,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.00936
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.7391751727998781,
+      "elapsed_stddev": 0.13031090257264433,
+      "elapsed_median": 0.8066669939998974,
+      "elapsed_samples": [
+        0.8076753169989388,
+        0.8066669939998974,
+        0.8334518070005288,
+        0.7319213899991155,
+        0.5161603560009098
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6866399999999999,
+        "ISel": 0.00088,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.00942
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.8171431666003628,
+      "elapsed_stddev": 0.1201519285075506,
+      "elapsed_median": 0.857965516999684,
+      "elapsed_samples": [
+        0.857965516999684,
+        0.8767725210000208,
+        0.8968264420000196,
+        0.6047031110010721,
+        0.8494482420010172
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.75306,
+        "ISel": 0.0017000000000000001,
+        "LLVM-analysis": 0.0008200000000000001,
+        "LLVM-passes": 0.028859999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7556950673999381,
+      "elapsed_stddev": 0.1304526906218296,
+      "elapsed_median": 0.811185516000478,
+      "elapsed_samples": [
+        0.8479679559986835,
+        0.5362792590003664,
+        0.811185516000478,
+        0.7378193160002411,
+        0.8452232899999217
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.70178,
+        "ISel": 0.00178,
+        "LLVM-analysis": 0.00074,
+        "LLVM-passes": 0.028100000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.7278035051996994,
+      "elapsed_stddev": 0.16270244582371918,
+      "elapsed_median": 0.7776581589987472,
+      "elapsed_samples": [
+        0.8663275260005321,
+        0.8839682699999685,
+        0.5708847669993702,
+        0.7776581589987472,
+        0.5401788039998792
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.66652,
+        "ISel": 0.0016799999999999996,
+        "LLVM-analysis": 0.00064,
+        "LLVM-passes": 0.02464
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.8150896732004185,
+      "elapsed_stddev": 0.14160913314057622,
+      "elapsed_median": 0.8808213900010742,
+      "elapsed_samples": [
+        0.869446725000671,
+        0.8808213900010742,
+        0.8819980309999664,
+        0.8812415840002359,
+        0.5619406360001449
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.7353200000000001,
+        "ISel": 0.0018599999999999999,
+        "LLVM-analysis": 0.00076,
+        "LLVM-passes": 0.02858
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.853342924199751,
+      "elapsed_stddev": 0.034149204374918946,
+      "elapsed_median": 0.8616403460000583,
+      "elapsed_samples": [
+        0.8616403460000583,
+        0.8503825619991403,
+        0.8861491419993399,
+        0.7969660649996513,
+        0.8715765060005651
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.7854599999999999,
+        "ISel": 0.00182,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.028599999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7578832346000126,
+      "elapsed_stddev": 0.12773234376174303,
+      "elapsed_median": 0.808322106999185,
+      "elapsed_samples": [
+        0.8208939779997309,
+        0.7710161790000711,
+        0.8535946690008132,
+        0.808322106999185,
+        0.5355892400002631
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.69624,
+        "ISel": 0.0016799999999999999,
+        "LLVM-analysis": 0.00078,
+        "LLVM-passes": 0.02618
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.8135980549999658,
+      "elapsed_stddev": 0.1360830372484486,
+      "elapsed_median": 0.8567869870003051,
+      "elapsed_samples": [
+        0.9284095590010111,
+        0.8567869870003051,
+        0.8470951629988122,
+        0.5771906610007136,
+        0.8585079049989872
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.74322,
+        "ISel": 0.00198,
+        "LLVM-analysis": 0.0009,
+        "LLVM-passes": 0.030879999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.8606959326003562,
+      "elapsed_stddev": 0.044623836242351674,
+      "elapsed_median": 0.8709167840006558,
+      "elapsed_samples": [
+        0.8624910310009,
+        0.9069260800006305,
+        0.8709167840006558,
+        0.7867179599998053,
+        0.8764278079997894
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.7787200000000001,
+        "ISel": 0.0018599999999999999,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.028239999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.7919059232001018,
+      "elapsed_stddev": 0.0861415088474378,
+      "elapsed_median": 0.8253760539992072,
+      "elapsed_samples": [
+        0.8253760539992072,
+        0.8487134130009508,
+        0.8331775770002423,
+        0.6395918660000461,
+        0.8126707060000626
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.74398,
+        "ISel": 0.00116,
+        "LLVM-analysis": 0.00047999999999999996,
+        "LLVM-passes": 0.015999999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7428523054000834,
+      "elapsed_stddev": 0.1725977636999096,
+      "elapsed_median": 0.8404171829988627,
+      "elapsed_samples": [
+        0.8998231940004189,
+        0.8404171829988627,
+        0.8575570339999103,
+        0.6010966160010867,
+        0.5153675000001385
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6922999999999999,
+        "ISel": 0.00106,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.01974
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.8497217320007622,
+      "elapsed_stddev": 0.019182175910423857,
+      "elapsed_median": 0.8447997110015422,
+      "elapsed_samples": [
+        0.8282191220005188,
+        0.8628984260012658,
+        0.837321298000461,
+        0.8753701030000229,
+        0.8447997110015422
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.79918,
+        "ISel": 0.0012799999999999999,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01644
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.7847256960001687,
+      "elapsed_stddev": 0.1528464631647638,
+      "elapsed_median": 0.8486292779998621,
+      "elapsed_samples": [
+        0.8158188449997397,
+        0.8486292779998621,
+        0.8727899189998425,
+        0.8719223150001199,
+        0.5144681230012793
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.73354,
+        "ISel": 0.0011799999999999998,
+        "LLVM-analysis": 0.00047999999999999996,
+        "LLVM-passes": 0.0167
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.7731225834002544,
+      "elapsed_stddev": 0.08998153284953887,
+      "elapsed_median": 0.8090153630000714,
+      "elapsed_samples": [
+        0.8312194879999879,
+        0.8027145729993208,
+        0.6133234250009991,
+        0.8090153630000714,
+        0.8093400680008926
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.72314,
+        "ISel": 0.00126,
+        "LLVM-analysis": 0.00056,
+        "LLVM-passes": 0.014660000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7791841920003207,
+      "elapsed_stddev": 0.10815987211423533,
+      "elapsed_median": 0.8129934850003337,
+      "elapsed_samples": [
+        0.8129934850003337,
+        0.8118073050009116,
+        0.8610168710001744,
+        0.8210237170005712,
+        0.5890795819996129
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.72306,
+        "ISel": 0.0014399999999999999,
+        "LLVM-analysis": 0.00056,
+        "LLVM-passes": 0.015220000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.7510275489996274,
+      "elapsed_stddev": 0.1317547306357539,
+      "elapsed_median": 0.8109562449990335,
+      "elapsed_samples": [
+        0.8191192300000694,
+        0.8610628480000742,
+        0.8109562449990335,
+        0.7338974319991394,
+        0.5301019899998209
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6968599999999998,
+        "ISel": 0.00116,
+        "LLVM-analysis": 0.0005200000000000001,
+        "LLVM-passes": 0.013519999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.6666711059999215,
+      "elapsed_stddev": 0.13820904079835683,
+      "elapsed_median": 0.5884265800013964,
+      "elapsed_samples": [
+        0.5454155780007568,
+        0.8159184979995189,
+        0.8183762619992194,
+        0.5652186119987164,
+        0.5884265800013964
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.61312,
+        "ISel": 0.00122,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.01366
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.7901668040001824,
+      "elapsed_stddev": 0.16690077761849412,
+      "elapsed_median": 0.8871724139989965,
+      "elapsed_samples": [
+        0.9294095109999034,
+        0.891626279000775,
+        0.8871724139989965,
+        0.7087987840004644,
+        0.5338270320007723
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.72424,
+        "ISel": 0.0024999999999999996,
+        "LLVM-analysis": 0.0009400000000000001,
+        "LLVM-passes": 0.03872
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.7646433460005937,
+      "elapsed_stddev": 0.18197729292992762,
+      "elapsed_median": 0.8341068610006914,
+      "elapsed_samples": [
+        0.9264081950004766,
+        0.9230618000001414,
+        0.8341068610006914,
+        0.5850049020009465,
+        0.5546349720007129
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6908200000000001,
+        "ISel": 0.00226,
+        "LLVM-analysis": 0.0021999999999999997,
+        "LLVM-passes": 0.044059999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5556955648000439,
+      "elapsed_stddev": 0.020108175705726882,
+      "elapsed_median": 0.566684419000012,
+      "elapsed_samples": [
+        0.5759255579996534,
+        0.5672148579997156,
+        0.538875062000443,
+        0.566684419000012,
+        0.5297779270003957
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5020399999999999,
+        "ISel": 0.00172,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.02892
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5772136582003441,
+      "elapsed_stddev": 0.014796138124293819,
+      "elapsed_median": 0.5842218639991188,
+      "elapsed_samples": [
+        0.5644178910006303,
+        0.558715540000776,
+        0.5857663229999162,
+        0.5929466730012791,
+        0.5842218639991188
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5083,
+        "ISel": 0.00176,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.027899999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.6774525531993276,
+      "elapsed_stddev": 0.17803167386524527,
+      "elapsed_median": 0.5685818179990747,
+      "elapsed_samples": [
+        0.8687627330000396,
+        0.8751567229992361,
+        0.5382538489993749,
+        0.5685818179990747,
+        0.5365076429989131
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6109199999999999,
+        "ISel": 0.0021599999999999996,
+        "LLVM-analysis": 0.0009,
+        "LLVM-passes": 0.033600000000000005
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.6089315892000741,
+      "elapsed_stddev": 0.09998650812757115,
+      "elapsed_median": 0.5449057730002096,
+      "elapsed_samples": [
+        0.711231842999041,
+        0.7249619229987729,
+        0.5449057730002096,
+        0.5264622230006353,
+        0.5370961840017117
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.54962,
+        "ISel": 0.00194,
+        "LLVM-analysis": 0.0008200000000000001,
+        "LLVM-passes": 0.030679999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5558601584001736,
+      "elapsed_stddev": 0.021216670244831707,
+      "elapsed_median": 0.5539066159999493,
+      "elapsed_samples": [
+        0.5879189639999822,
+        0.5437110200000461,
+        0.5620510160006233,
+        0.5317131760002667,
+        0.5539066159999493
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49456,
+        "ISel": 0.0017399999999999998,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.0273
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.6197386476003885,
+      "elapsed_stddev": 0.15576857525851295,
+      "elapsed_median": 0.5500200490005227,
+      "elapsed_samples": [
+        0.8978265130008367,
+        0.564775599999848,
+        0.5369453149996843,
+        0.5491257610010507,
+        0.5500200490005227
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5504800000000001,
+        "ISel": 0.0019,
+        "LLVM-analysis": 0.0008,
+        "LLVM-passes": 0.03034
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5986139040007401,
+      "elapsed_stddev": 0.011249666572060658,
+      "elapsed_median": 0.5973050960001274,
+      "elapsed_samples": [
+        0.5973050960001274,
+        0.5950377799999842,
+        0.6052426540009037,
+        0.6126794910014723,
+        0.5828044990012131
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5182399999999999,
+        "ISel": 0.0023799999999999997,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.02876
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.6629926739995426,
+      "elapsed_stddev": 0.11010585016792583,
+      "elapsed_median": 0.6090331720006361,
+      "elapsed_samples": [
+        0.8548134279990336,
+        0.6090331720006361,
+        0.6041243969993957,
+        0.6566695519995847,
+        0.590322820999063
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.57618,
+        "ISel": 0.0023599999999999997,
+        "LLVM-analysis": 0.001,
+        "LLVM-passes": 0.03024
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.600528185199073,
+      "elapsed_stddev": 0.007745238509867277,
+      "elapsed_median": 0.6042643609998777,
+      "elapsed_samples": [
+        0.5877234399995359,
+        0.5989598219985055,
+        0.6042643609998777,
+        0.6070718939990911,
+        0.604621408998355
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5237400000000001,
+        "ISel": 0.0023399999999999996,
+        "LLVM-analysis": 0.0008200000000000001,
+        "LLVM-passes": 0.02854
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.6282026824002969,
+      "elapsed_stddev": 0.03641289502006887,
+      "elapsed_median": 0.608540911000091,
+      "elapsed_samples": [
+        0.6697378030003165,
+        0.6657465219996084,
+        0.6014183950010192,
+        0.608540911000091,
+        0.5955697810004494
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.52752,
+        "ISel": 0.0024,
+        "LLVM-analysis": 0.00088,
+        "LLVM-passes": 0.028000000000000004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5794227881997358,
+      "elapsed_stddev": 0.010888283772425771,
+      "elapsed_median": 0.5814587789991492,
+      "elapsed_samples": [
+        0.5615629499989154,
+        0.5884092480009713,
+        0.5779954310000903,
+        0.5814587789991492,
+        0.5876875329995528
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49016000000000004,
+        "ISel": 0.00236,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.02828
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5637409743998433,
+      "elapsed_stddev": 0.008191524533628427,
+      "elapsed_median": 0.5616050569988147,
+      "elapsed_samples": [
+        0.560342689999743,
+        0.5616050569988147,
+        0.5706781909993879,
+        0.552960166000048,
+        0.5731187680012226
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4838,
+        "ISel": 0.00244,
+        "LLVM-analysis": 0.0008200000000000001,
+        "LLVM-passes": 0.02832
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.575081427799887,
+      "elapsed_stddev": 0.01747731046856426,
+      "elapsed_median": 0.5756094589996792,
+      "elapsed_samples": [
+        0.5944539470001473,
+        0.5756094589996792,
+        0.5853341740003088,
+        0.5480355950003286,
+        0.5719739639989712
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4900399999999999,
+        "ISel": 0.00234,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.027639999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.7355482115995983,
+      "elapsed_stddev": 0.12949453556917956,
+      "elapsed_median": 0.7427329860001919,
+      "elapsed_samples": [
+        0.7686344819994702,
+        0.9214633079991472,
+        0.5686754589987686,
+        0.6762348230004136,
+        0.7427329860001919
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.6131,
+        "ISel": 0.00262,
+        "LLVM-analysis": 0.0009,
+        "LLVM-passes": 0.0303
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5292982798000594,
+      "elapsed_stddev": 0.016011871429776055,
+      "elapsed_median": 0.535265864999019,
+      "elapsed_samples": [
+        0.542352127000413,
+        0.51317776399992,
+        0.535265864999019,
+        0.5445125510013895,
+        0.5111830919995555
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48069999999999996,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01632
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.575566954399983,
+      "elapsed_stddev": 0.11828041905567308,
+      "elapsed_median": 0.5196196619999682,
+      "elapsed_samples": [
+        0.5381499230006739,
+        0.5187446639993141,
+        0.7865354139994452,
+        0.5147851090005133,
+        0.5196196619999682
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.524,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.00044,
+        "LLVM-passes": 0.01502
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5445066038006189,
+      "elapsed_stddev": 0.012309787611189525,
+      "elapsed_median": 0.5455861000009463,
+      "elapsed_samples": [
+        0.5517059690009773,
+        0.5604846080004791,
+        0.5310304080012429,
+        0.5337259339994489,
+        0.5455861000009463
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49458,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.016999999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5426531679997424,
+      "elapsed_stddev": 0.029832966082202237,
+      "elapsed_median": 0.5365397799996572,
+      "elapsed_samples": [
+        0.5381843069990282,
+        0.5365397799996572,
+        0.5941274489996431,
+        0.519291806000183,
+        0.5251224980002007
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4840000000000001,
+        "ISel": 0.0014199999999999998,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.01862
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5891592309999396,
+      "elapsed_stddev": 0.14676143073454354,
+      "elapsed_median": 0.5295260900002177,
+      "elapsed_samples": [
+        0.5315958000010141,
+        0.5223852389990498,
+        0.8512983549990167,
+        0.5295260900002177,
+        0.5109906710003997
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5397000000000001,
+        "ISel": 0.00116,
+        "LLVM-analysis": 0.00054,
+        "LLVM-passes": 0.01688
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5351915698003722,
+      "elapsed_stddev": 0.026653214774188732,
+      "elapsed_median": 0.5351447460016061,
+      "elapsed_samples": [
+        0.5614870910012542,
+        0.5351447460016061,
+        0.5241096049994667,
+        0.4966865770002187,
+        0.5585298299993156
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48019999999999996,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.015
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5134739610002725,
+      "elapsed_stddev": 0.012896551812139155,
+      "elapsed_median": 0.5077889610001876,
+      "elapsed_samples": [
+        0.5074394550010766,
+        0.5054374679984903,
+        0.5363291470002878,
+        0.5103747740013205,
+        0.5077889610001876
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46593999999999997,
+        "ISel": 0.0009400000000000001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.014779999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5234570163996978,
+      "elapsed_stddev": 0.009898443470247377,
+      "elapsed_median": 0.527199803998883,
+      "elapsed_samples": [
+        0.5331501239998033,
+        0.5311199770003441,
+        0.5117564769989258,
+        0.527199803998883,
+        0.5140587000005326
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4659,
+        "ISel": 0.0010600000000000002,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01566
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.60704435599946,
+      "elapsed_stddev": 0.13616695143408727,
+      "elapsed_median": 0.5465894039989507,
+      "elapsed_samples": [
+        0.5176266290000058,
+        0.6006685579995974,
+        0.8437056239999947,
+        0.5266315649987519,
+        0.5465894039989507
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5534,
+        "ISel": 0.0015400000000000001,
+        "LLVM-analysis": 0.0005600000000000001,
+        "LLVM-passes": 0.021240000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5371859121998568,
+      "elapsed_stddev": 0.021297595113721996,
+      "elapsed_median": 0.5274693400006072,
+      "elapsed_samples": [
+        0.5236610320007458,
+        0.5148647579990211,
+        0.5593321619999188,
+        0.5606022689989913,
+        0.5274693400006072
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48983999999999994,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.0155
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5588821819997974,
+      "elapsed_stddev": 0.04772764360485684,
+      "elapsed_median": 0.5391826240011142,
+      "elapsed_samples": [
+        0.5391826240011142,
+        0.6289094879994082,
+        0.5342845189989021,
+        0.508045096999922,
+        0.583989181999641
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50712,
+        "ISel": 0.0010799999999999998,
+        "LLVM-analysis": 0.0011,
+        "LLVM-passes": 0.01644
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5283206261996384,
+      "elapsed_stddev": 0.010019807856762878,
+      "elapsed_median": 0.5258661699990625,
+      "elapsed_samples": [
+        0.5222997749988281,
+        0.545879392999268,
+        0.5215713770012371,
+        0.5258661699990625,
+        0.525986415999796
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47354,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.00047999999999999996,
+        "LLVM-passes": 0.0154
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5213148798000475,
+      "elapsed_stddev": 0.009186776437893573,
+      "elapsed_median": 0.5229987849997997,
+      "elapsed_samples": [
+        0.5229987849997997,
+        0.5245298240006377,
+        0.5065791269989859,
+        0.5316597159999219,
+        0.5208069470008923
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47173999999999994,
+        "ISel": 0.00112,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01604
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5228417328002252,
+      "elapsed_stddev": 0.009863169265711885,
+      "elapsed_median": 0.5229535609996674,
+      "elapsed_samples": [
+        0.5088080759996956,
+        0.5280700440016517,
+        0.5229535609996674,
+        0.5192182800001319,
+        0.5351587029999791
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47412,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.015360000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5416881261997333,
+      "elapsed_stddev": 0.008237996568536264,
+      "elapsed_median": 0.5413690810000844,
+      "elapsed_samples": [
+        0.5394980649998615,
+        0.5493381599990244,
+        0.5489873789992998,
+        0.529247946000396,
+        0.5413690810000844
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4889,
+        "ISel": 0.0010800000000000002,
+        "LLVM-analysis": 0.00052,
+        "LLVM-passes": 0.016239999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5272258406002948,
+      "elapsed_stddev": 0.018415285135594057,
+      "elapsed_median": 0.5180258489999687,
+      "elapsed_samples": [
+        0.5107718769995699,
+        0.5324187580008584,
+        0.5180258489999687,
+        0.5179009930016036,
+        0.5570117259994731
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4761800000000001,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.015179999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.6012781430003088,
+      "elapsed_stddev": 0.03129150088421031,
+      "elapsed_median": 0.5998756869994395,
+      "elapsed_samples": [
+        0.5888765400013654,
+        0.5638184020008339,
+        0.5998756869994395,
+        0.6497534739992261,
+        0.604066612000679
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.51664,
+        "ISel": 0.00202,
+        "LLVM-analysis": 0.00098,
+        "LLVM-passes": 0.03104
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5859627812002145,
+      "elapsed_stddev": 0.020691857457744992,
+      "elapsed_median": 0.5844602879988088,
+      "elapsed_samples": [
+        0.5594582370013086,
+        0.574174026000037,
+        0.5996543820001534,
+        0.5844602879988088,
+        0.6120669730007648
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5097400000000001,
+        "ISel": 0.00198,
+        "LLVM-analysis": 0.00108,
+        "LLVM-passes": 0.030059999999999996
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5870257354003116,
+      "elapsed_stddev": 0.0141269393917309,
+      "elapsed_median": 0.5894350600010512,
+      "elapsed_samples": [
+        0.6056282019999344,
+        0.5663446889993793,
+        0.5894350600010512,
+        0.5899152510010026,
+        0.5838054750001902
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.51044,
+        "ISel": 0.0020399999999999997,
+        "LLVM-analysis": 0.0025600000000000006,
+        "LLVM-passes": 0.03188
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.6195970935998047,
+      "elapsed_stddev": 0.02553069461043681,
+      "elapsed_median": 0.618755568000779,
+      "elapsed_samples": [
+        0.5889552279986674,
+        0.6567829649993655,
+        0.6051573849999841,
+        0.628334322000228,
+        0.618755568000779
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.53024,
+        "ISel": 0.0021,
+        "LLVM-analysis": 0.0009599999999999999,
+        "LLVM-passes": 0.02954
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5773335956000665,
+      "elapsed_stddev": 0.0081558952931279,
+      "elapsed_median": 0.5802723830001923,
+      "elapsed_samples": [
+        0.5840236090007238,
+        0.5700262430000294,
+        0.5673244310000882,
+        0.5802723830001923,
+        0.5850213119992986
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49618,
+        "ISel": 0.002,
+        "LLVM-analysis": 0.0009599999999999999,
+        "LLVM-passes": 0.02944
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5652644449997751,
+      "elapsed_stddev": 0.013312045072515174,
+      "elapsed_median": 0.5710945079990779,
+      "elapsed_samples": [
+        0.5453505859986763,
+        0.558089113999813,
+        0.5752497470002709,
+        0.5710945079990779,
+        0.5765382700010377
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48502,
+        "ISel": 0.002,
+        "LLVM-analysis": 0.0009,
+        "LLVM-passes": 0.028860000000000004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5756508854003186,
+      "elapsed_stddev": 0.0050489504681541725,
+      "elapsed_median": 0.5728352939986507,
+      "elapsed_samples": [
+        0.5814561450006295,
+        0.5807858300013322,
+        0.5708933500009152,
+        0.5728352939986507,
+        0.5722838080000656
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49842000000000003,
+        "ISel": 0.00202,
+        "LLVM-analysis": 0.0009599999999999999,
+        "LLVM-passes": 0.02866
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5776798439997947,
+      "elapsed_stddev": 0.012997429987656677,
+      "elapsed_median": 0.5839201169983426,
+      "elapsed_samples": [
+        0.5603353669994249,
+        0.5839201169983426,
+        0.5677365990013641,
+        0.5854111520002334,
+        0.5909959849996085
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4843,
+        "ISel": 0.0019600000000000004,
+        "LLVM-analysis": 0.0009400000000000001,
+        "LLVM-passes": 0.02868
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5766737903999456,
+      "elapsed_stddev": 0.017170276966976143,
+      "elapsed_median": 0.5726367579991347,
+      "elapsed_samples": [
+        0.5978886909997527,
+        0.5911720060012158,
+        0.5726367579991347,
+        0.5601220930002455,
+        0.5615494039993791
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50888,
+        "ISel": 0.0014399999999999999,
+        "LLVM-analysis": 0.00138,
+        "LLVM-passes": 0.023280000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5670978851998371,
+      "elapsed_stddev": 0.044709173060672444,
+      "elapsed_median": 0.5564732759994513,
+      "elapsed_samples": [
+        0.5270579789994372,
+        0.5564732759994513,
+        0.533817925999756,
+        0.6377813670005708,
+        0.58035887799997
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50496,
+        "ISel": 0.0014199999999999998,
+        "LLVM-analysis": 0.00062,
+        "LLVM-passes": 0.020679999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5818850607996865,
+      "elapsed_stddev": 0.025099942883549622,
+      "elapsed_median": 0.5754433309994056,
+      "elapsed_samples": [
+        0.6017006229994877,
+        0.5641809049993753,
+        0.5754433309994056,
+        0.5543596249990514,
+        0.6137408200011123
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.51706,
+        "ISel": 0.00142,
+        "LLVM-analysis": 0.0006,
+        "LLVM-passes": 0.02158
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5673966976002702,
+      "elapsed_stddev": 0.02314042843608731,
+      "elapsed_median": 0.5675943349997397,
+      "elapsed_samples": [
+        0.5442350590001297,
+        0.5496466549993784,
+        0.5675943349997397,
+        0.5725626620005642,
+        0.6029447770015395
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50066,
+        "ISel": 0.0013800000000000002,
+        "LLVM-analysis": 0.00124,
+        "LLVM-passes": 0.02092
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5405106525995507,
+      "elapsed_stddev": 0.007214117600046376,
+      "elapsed_median": 0.5410382720001508,
+      "elapsed_samples": [
+        0.5410382720001508,
+        0.5289454599987948,
+        0.5471522269999696,
+        0.539517335999335,
+        0.5458999679995031
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4791,
+        "ISel": 0.0013800000000000002,
+        "LLVM-analysis": 0.0006,
+        "LLVM-passes": 0.0199
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5423377647999587,
+      "elapsed_stddev": 0.01634312493899496,
+      "elapsed_median": 0.5386433119983849,
+      "elapsed_samples": [
+        0.5283195499996509,
+        0.5386433119983849,
+        0.5300085070011846,
+        0.568649483999252,
+        0.546067971001321
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4727,
+        "ISel": 0.0013800000000000002,
+        "LLVM-analysis": 0.0006399999999999999,
+        "LLVM-passes": 0.019999999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5351901594007359,
+      "elapsed_stddev": 0.00812013231728635,
+      "elapsed_median": 0.5373626979999244,
+      "elapsed_samples": [
+        0.5238925000012387,
+        0.5299228150015551,
+        0.5421957100006694,
+        0.5425770740002918,
+        0.5373626979999244
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4759399999999999,
+        "ISel": 0.00136,
+        "LLVM-analysis": 0.00068,
+        "LLVM-passes": 0.02012
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5680501732000266,
+      "elapsed_stddev": 0.028724369918009883,
+      "elapsed_median": 0.5590181620009389,
+      "elapsed_samples": [
+        0.5378311219992611,
+        0.5590181620009389,
+        0.6061856310006988,
+        0.5892314329994406,
+        0.5479845179997938
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49596000000000007,
+        "ISel": 0.0014199999999999998,
+        "LLVM-analysis": 0.00064,
+        "LLVM-passes": 0.020999999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5214940177997051,
+      "elapsed_stddev": 0.012250147102682248,
+      "elapsed_median": 0.5281421589988895,
+      "elapsed_samples": [
+        0.504959558000337,
+        0.5119410209990747,
+        0.5281421589988895,
+        0.5323261130015453,
+        0.5301012379986787
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47894000000000003,
+        "ISel": 0.00076,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01076
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5245301020000624,
+      "elapsed_stddev": 0.021047076553378098,
+      "elapsed_median": 0.5219363340002019,
+      "elapsed_samples": [
+        0.5185265350010013,
+        0.5219363340002019,
+        0.5572688280008151,
+        0.5259856719985692,
+        0.49893314099972486
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47759999999999997,
+        "ISel": 0.0008199999999999999,
+        "LLVM-analysis": 0.00044,
+        "LLVM-passes": 0.0128
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5324634813998272,
+      "elapsed_stddev": 0.017894744030069375,
+      "elapsed_median": 0.5316083239995351,
+      "elapsed_samples": [
+        0.5349796139998944,
+        0.5256886970000778,
+        0.5596664000004239,
+        0.5103743719992053,
+        0.5316083239995351
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48814,
+        "ISel": 0.0009400000000000001,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01174
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5387782147994585,
+      "elapsed_stddev": 0.020086444110407223,
+      "elapsed_median": 0.5318953580008383,
+      "elapsed_samples": [
+        0.5480763419982395,
+        0.5263357949988858,
+        0.5690400210005464,
+        0.5185435579987825,
+        0.5318953580008383
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49266000000000004,
+        "ISel": 0.00072,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.01066
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5098890405999554,
+      "elapsed_stddev": 0.009582300678087737,
+      "elapsed_median": 0.5149087390000204,
+      "elapsed_samples": [
+        0.5020752889995492,
+        0.49719623800046975,
+        0.5176576670000941,
+        0.5176072699996439,
+        0.5149087390000204
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46607999999999994,
+        "ISel": 0.00074,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.010360000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5277645681995636,
+      "elapsed_stddev": 0.017930509630490143,
+      "elapsed_median": 0.5174994609988062,
+      "elapsed_samples": [
+        0.5532054600007541,
+        0.5132322360004764,
+        0.5174994609988062,
+        0.5401315299986891,
+        0.5147541539990925
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48118,
+        "ISel": 0.0007800000000000001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.010940000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5155372195997188,
+      "elapsed_stddev": 0.021320916651299007,
+      "elapsed_median": 0.5261074459995143,
+      "elapsed_samples": [
+        0.5293196900001931,
+        0.5357774709991645,
+        0.5007476249993488,
+        0.4857338660003734,
+        0.5261074459995143
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46912000000000004,
+        "ISel": 0.00072,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.01048
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5146798019999551,
+      "elapsed_stddev": 0.012190054774325318,
+      "elapsed_median": 0.5130597740007943,
+      "elapsed_samples": [
+        0.5036241960006009,
+        0.5341149999985646,
+        0.5171722449995286,
+        0.5130597740007943,
+        0.505427795000287
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46404000000000006,
+        "ISel": 0.00072,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.0105
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5139807974002906,
+      "elapsed_stddev": 0.008657785320723392,
+      "elapsed_median": 0.5117838139995001,
+      "elapsed_samples": [
+        0.5289205220014992,
+        0.5067491120007617,
+        0.5097549399997661,
+        0.512695598999926,
+        0.5117838139995001
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4781000000000001,
+        "ISel": 0.0010400000000000001,
+        "LLVM-analysis": 0.00044,
+        "LLVM-passes": 0.00966
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.524086826599887,
+      "elapsed_stddev": 0.0229391252965627,
+      "elapsed_median": 0.5233284040004946,
+      "elapsed_samples": [
+        0.5533950649987673,
+        0.5364601279998169,
+        0.4923377420000179,
+        0.5233284040004946,
+        0.5149127940003382
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48732,
+        "ISel": 0.00106,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.010960000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5238321378001274,
+      "elapsed_stddev": 0.01384811520048667,
+      "elapsed_median": 0.5213116630002332,
+      "elapsed_samples": [
+        0.5185835629999929,
+        0.525500773001113,
+        0.5080171789995802,
+        0.5213116630002332,
+        0.5457475109997176
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48584000000000005,
+        "ISel": 0.00098,
+        "LLVM-analysis": 0.00058,
+        "LLVM-passes": 0.01036
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5230140437997761,
+      "elapsed_stddev": 0.021333398156029602,
+      "elapsed_median": 0.5160952440000983,
+      "elapsed_samples": [
+        0.558854095001152,
+        0.5079370269995707,
+        0.5070109409989527,
+        0.5251729119991069,
+        0.5160952440000983
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48266,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.01014
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5125795367999672,
+      "elapsed_stddev": 0.018048671532438273,
+      "elapsed_median": 0.5029801909986418,
+      "elapsed_samples": [
+        0.5336409510000522,
+        0.5020435749993339,
+        0.4940077530009148,
+        0.5029801909986418,
+        0.5302252140008932
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46704,
+        "ISel": 0.00108,
+        "LLVM-analysis": 0.00052,
+        "LLVM-passes": 0.010159999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.505816702199445,
+      "elapsed_stddev": 0.007264132009466728,
+      "elapsed_median": 0.5022676629996567,
+      "elapsed_samples": [
+        0.508782060998783,
+        0.5172235259997251,
+        0.5011106719994132,
+        0.5022676629996567,
+        0.49969958899964695
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46658,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.00964
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.517929921400355,
+      "elapsed_stddev": 0.013401462634770557,
+      "elapsed_median": 0.5159811209996406,
+      "elapsed_samples": [
+        0.5045614460013894,
+        0.5344026870006928,
+        0.5159811209996406,
+        0.5288383259994589,
+        0.505866027000593
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47417999999999993,
+        "ISel": 0.00098,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.0104
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5226462971997534,
+      "elapsed_stddev": 0.01602525370219221,
+      "elapsed_median": 0.5275294530001702,
+      "elapsed_samples": [
+        0.5070512839993171,
+        0.5046780709999439,
+        0.5333770019988151,
+        0.5275294530001702,
+        0.540595676000521
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47768000000000005,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5218768828002794,
+      "elapsed_stddev": 0.012861696790017307,
+      "elapsed_median": 0.5281384200006869,
+      "elapsed_samples": [
+        0.5346559270001308,
+        0.5025394010008313,
+        0.5285521959995094,
+        0.5281384200006869,
+        0.5154984700002387
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4791,
+        "ISel": 0.00104,
+        "LLVM-analysis": 0.00038,
+        "LLVM-passes": 0.011640000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5113329600008001,
+      "elapsed_stddev": 0.006539855792464643,
+      "elapsed_median": 0.5076866850013175,
+      "elapsed_samples": [
+        0.518302553000467,
+        0.5051142250013072,
+        0.5076866850013175,
+        0.507021158000498,
+        0.5185401790004107
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47042,
+        "ISel": 0.0006399999999999999,
+        "LLVM-analysis": 0.00031999999999999997,
+        "LLVM-passes": 0.010220000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5180965306000871,
+      "elapsed_stddev": 0.01156938321291964,
+      "elapsed_median": 0.5157318109995686,
+      "elapsed_samples": [
+        0.5047867400007817,
+        0.5289194329998281,
+        0.509945099000106,
+        0.5310995700001513,
+        0.5157318109995686
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47972000000000004,
+        "ISel": 0.00068,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.01082
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5220411036003497,
+      "elapsed_stddev": 0.012710225157426371,
+      "elapsed_median": 0.5164297570008785,
+      "elapsed_samples": [
+        0.5156901290010865,
+        0.5164297570008785,
+        0.5126269939992198,
+        0.5440711850005755,
+        0.5213874529999885
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47906000000000004,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.00031999999999999997,
+        "LLVM-passes": 0.0111
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5051078369997413,
+      "elapsed_stddev": 0.02203064991122788,
+      "elapsed_median": 0.4963189110003441,
+      "elapsed_samples": [
+        0.5438717050001287,
+        0.4924598489997152,
+        0.4913732559998607,
+        0.5015154639986577,
+        0.4963189110003441
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46449999999999997,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.00996
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5084868160003679,
+      "elapsed_stddev": 0.017110317573806627,
+      "elapsed_median": 0.5036405789996934,
+      "elapsed_samples": [
+        0.5036405789996934,
+        0.535545169001125,
+        0.5140091110006324,
+        0.49501765000059095,
+        0.49422157099979813
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46862000000000004,
+        "ISel": 0.0006599999999999999,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0103
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5018301764004718,
+      "elapsed_stddev": 0.02483113671486364,
+      "elapsed_median": 0.4937502230004611,
+      "elapsed_samples": [
+        0.4937502230004611,
+        0.48756562100061274,
+        0.4879181920005067,
+        0.49400877700099954,
+        0.5459080689997791
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46142000000000005,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0101
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5271033021996118,
+      "elapsed_stddev": 0.020497887771900116,
+      "elapsed_median": 0.5161861259985017,
+      "elapsed_samples": [
+        0.5161861259985017,
+        0.5500384860006307,
+        0.5487515409986372,
+        0.5104845429996203,
+        0.5100558150006691
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47402,
+        "ISel": 0.00068,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01052
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5429799789999379,
+      "elapsed_stddev": 0.014176572967231484,
+      "elapsed_median": 0.5400861679991067,
+      "elapsed_samples": [
+        0.5599475119997805,
+        0.5554233950006164,
+        0.530499761000101,
+        0.5289430590000848,
+        0.5400861679991067
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49328000000000005,
+        "ISel": 0.00146,
+        "LLVM-analysis": 0.0006199999999999999,
+        "LLVM-passes": 0.019399999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5501646379998419,
+      "elapsed_stddev": 0.008167073054736558,
+      "elapsed_median": 0.5505089920006867,
+      "elapsed_samples": [
+        0.5505089920006867,
+        0.5476696160003485,
+        0.5616878839991841,
+        0.5390071509991685,
+        0.5519495469998219
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49192,
+        "ISel": 0.0014799999999999998,
+        "LLVM-analysis": 0.0006,
+        "LLVM-passes": 0.0209
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5543865034000192,
+      "elapsed_stddev": 0.03579496899365616,
+      "elapsed_median": 0.5421339540007466,
+      "elapsed_samples": [
+        0.6166987180004071,
+        0.5421339540007466,
+        0.5498929499990481,
+        0.527489150999827,
+        0.5357177440000669
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49644000000000005,
+        "ISel": 0.00148,
+        "LLVM-analysis": 0.0006,
+        "LLVM-passes": 0.01932
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5516313764001097,
+      "elapsed_stddev": 0.018698321511294226,
+      "elapsed_median": 0.5464601110015792,
+      "elapsed_samples": [
+        0.5481005359997653,
+        0.5461657480009308,
+        0.5339254809987324,
+        0.5464601110015792,
+        0.583505005999541
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49296000000000006,
+        "ISel": 0.00134,
+        "LLVM-analysis": 0.00062,
+        "LLVM-passes": 0.01902
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5197760867999023,
+      "elapsed_stddev": 0.007371641520717135,
+      "elapsed_median": 0.5170073859990225,
+      "elapsed_samples": [
+        0.5178075900003023,
+        0.5170073859990225,
+        0.5328103939991706,
+        0.5164963050010556,
+        0.5147587589999603
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46959999999999996,
+        "ISel": 0.0013,
+        "LLVM-analysis": 0.00062,
+        "LLVM-passes": 0.01822
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5254606422004144,
+      "elapsed_stddev": 0.01296882152133077,
+      "elapsed_median": 0.518197653000243,
+      "elapsed_samples": [
+        0.518197653000243,
+        0.5165527749995817,
+        0.5168708060009521,
+        0.5288875260011991,
+        0.5467944510000962
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47158,
+        "ISel": 0.00138,
+        "LLVM-analysis": 0.0006,
+        "LLVM-passes": 0.01806
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5276662659998692,
+      "elapsed_stddev": 0.008685791136988806,
+      "elapsed_median": 0.5247065929997916,
+      "elapsed_samples": [
+        0.5247065929997916,
+        0.5213380160002998,
+        0.5188937759994587,
+        0.5341548569995211,
+        0.5392380880002747
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47459999999999997,
+        "ISel": 0.0014,
+        "LLVM-analysis": 0.0006399999999999999,
+        "LLVM-passes": 0.018420000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5424829020004835,
+      "elapsed_stddev": 0.021676006952862186,
+      "elapsed_median": 0.5425946140003362,
+      "elapsed_samples": [
+        0.5163323790002323,
+        0.5425946140003362,
+        0.5759561690010742,
+        0.5338953760001459,
+        0.5436359720006294
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47969999999999996,
+        "ISel": 0.0014399999999999999,
+        "LLVM-analysis": 0.00066,
+        "LLVM-passes": 0.01878
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5165559778000898,
+      "elapsed_stddev": 0.015577696630295028,
+      "elapsed_median": 0.5151532099989709,
+      "elapsed_samples": [
+        0.5079189259995474,
+        0.5177383959999133,
+        0.5151532099989709,
+        0.5003271470013715,
+        0.5416422100006457
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47768,
+        "ISel": 0.00064,
+        "LLVM-analysis": 0.0008399999999999999,
+        "LLVM-passes": 0.00854
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5365422458002286,
+      "elapsed_stddev": 0.03149806141503324,
+      "elapsed_median": 0.5320377520001784,
+      "elapsed_samples": [
+        0.5060639700004685,
+        0.5106986139999208,
+        0.551120724001521,
+        0.582790168999054,
+        0.5320377520001784
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49246,
+        "ISel": 0.0007,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00826
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5541684088002512,
+      "elapsed_stddev": 0.026066077192787498,
+      "elapsed_median": 0.5556867870000133,
+      "elapsed_samples": [
+        0.5165936530011095,
+        0.5556867870000133,
+        0.5455282130005799,
+        0.587241642000663,
+        0.5657917489988904
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50634,
+        "ISel": 0.00068,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00878
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5346388019999722,
+      "elapsed_stddev": 0.03968374010886446,
+      "elapsed_median": 0.5155089830004727,
+      "elapsed_samples": [
+        0.5019750709998334,
+        0.5155089830004727,
+        0.5103333139995812,
+        0.5989565439995204,
+        0.5464200980004534
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48764,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.00043999999999999996,
+        "LLVM-passes": 0.00846
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5177882968000631,
+      "elapsed_stddev": 0.0164676042971808,
+      "elapsed_median": 0.5104053230006684,
+      "elapsed_samples": [
+        0.5104053230006684,
+        0.5085291720006353,
+        0.5467072689989436,
+        0.5157008170008339,
+        0.5075989029992343
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47236,
+        "ISel": 0.0006199999999999999,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.00798
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5303105662002053,
+      "elapsed_stddev": 0.026689063409720243,
+      "elapsed_median": 0.5387009719997877,
+      "elapsed_samples": [
+        0.5087471780007036,
+        0.49742617899937613,
+        0.544070425999962,
+        0.5387009719997877,
+        0.5626080760011973
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48296,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.00035999999999999997,
+        "LLVM-passes": 0.008380000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5255054423996626,
+      "elapsed_stddev": 0.014998731471144947,
+      "elapsed_median": 0.5216717429993878,
+      "elapsed_samples": [
+        0.5445030629998655,
+        0.5132289499997569,
+        0.5376514309991762,
+        0.5104720250001265,
+        0.5216717429993878
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48142000000000007,
+        "ISel": 0.0006399999999999999,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.008320000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5301951902005385,
+      "elapsed_stddev": 0.028771887312684114,
+      "elapsed_median": 0.5133389890015678,
+      "elapsed_samples": [
+        0.5133389890015678,
+        0.5097832350002136,
+        0.5690358700012439,
+        0.5059496900012164,
+        0.5528681669984508
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4763800000000001,
+        "ISel": 0.0006399999999999999,
+        "LLVM-analysis": 0.00035999999999999997,
+        "LLVM-passes": 0.00822
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.580390871399868,
+      "elapsed_stddev": 0.02261853318493345,
+      "elapsed_median": 0.5758492909990309,
+      "elapsed_samples": [
+        0.5706463769984111,
+        0.5758492909990309,
+        0.6093184380006278,
+        0.5508572880007705,
+        0.5952829630004999
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.51568,
+        "ISel": 0.0016799999999999999,
+        "LLVM-analysis": 0.0014,
+        "LLVM-passes": 0.026539999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5740804275999836,
+      "elapsed_stddev": 0.017231210871783986,
+      "elapsed_median": 0.565884528999959,
+      "elapsed_samples": [
+        0.557128468000883,
+        0.5904912609985331,
+        0.5946605650005949,
+        0.5622373149999476,
+        0.565884528999959
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.51138,
+        "ISel": 0.00166,
+        "LLVM-analysis": 0.00068,
+        "LLVM-passes": 0.02344
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5835896046002744,
+      "elapsed_stddev": 0.014980449746182472,
+      "elapsed_median": 0.5775973460004025,
+      "elapsed_samples": [
+        0.6044413279996661,
+        0.5775973460004025,
+        0.5937915230006183,
+        0.5731610980001278,
+        0.5689567280005576
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5173,
+        "ISel": 0.00186,
+        "LLVM-analysis": 0.0013,
+        "LLVM-passes": 0.027899999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.595334205200561,
+      "elapsed_stddev": 0.02649525265425167,
+      "elapsed_median": 0.5903292589991906,
+      "elapsed_samples": [
+        0.5903292589991906,
+        0.5819570130006468,
+        0.6189355710012023,
+        0.5608392480007751,
+        0.6246099350009899
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5200600000000001,
+        "ISel": 0.0016400000000000002,
+        "LLVM-analysis": 0.00066,
+        "LLVM-passes": 0.02358
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5616641857999639,
+      "elapsed_stddev": 0.020588040272309028,
+      "elapsed_median": 0.5577853519989731,
+      "elapsed_samples": [
+        0.5453376660007052,
+        0.5580220209994877,
+        0.5972126310007297,
+        0.5499632589999237,
+        0.5577853519989731
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49544,
+        "ISel": 0.00194,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.02366
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5579144562001602,
+      "elapsed_stddev": 0.010593440942685233,
+      "elapsed_median": 0.5648308930012718,
+      "elapsed_samples": [
+        0.5481687400006194,
+        0.5655986759993539,
+        0.5648308930012718,
+        0.5446418159990571,
+        0.5663321560004988
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49101999999999996,
+        "ISel": 0.0016,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.02274
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.56075294939983,
+      "elapsed_stddev": 0.017527424303128987,
+      "elapsed_median": 0.5709863859992765,
+      "elapsed_samples": [
+        0.5459723019994271,
+        0.571813780001321,
+        0.5770165909998468,
+        0.5379756879992783,
+        0.5709863859992765
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48857999999999996,
+        "ISel": 0.0015799999999999998,
+        "LLVM-analysis": 0.0007,
+        "LLVM-passes": 0.022340000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5755800868002552,
+      "elapsed_stddev": 0.03564093836608577,
+      "elapsed_median": 0.5678659270015487,
+      "elapsed_samples": [
+        0.536307358999693,
+        0.6306151730004785,
+        0.5678659270015487,
+        0.5860128730000724,
+        0.5570991019994835
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49871999999999994,
+        "ISel": 0.00162,
+        "LLVM-analysis": 0.00088,
+        "LLVM-passes": 0.02354
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.519558662999043,
+      "elapsed_stddev": 0.021477315266777777,
+      "elapsed_median": 0.5114150760000484,
+      "elapsed_samples": [
+        0.5114150760000484,
+        0.5049897819990292,
+        0.5573876679991372,
+        0.5087414439985878,
+        0.5152593449984124
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4816,
+        "ISel": 0.0006399999999999999,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00566
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5198910801995226,
+      "elapsed_stddev": 0.015815350657241416,
+      "elapsed_median": 0.517933985000127,
+      "elapsed_samples": [
+        0.5002503420000721,
+        0.5188440179990721,
+        0.517933985000127,
+        0.5179202879990044,
+        0.5445067679993372
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4797599999999999,
+        "ISel": 0.0006,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00506
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5105572134001705,
+      "elapsed_stddev": 0.018145372845123846,
+      "elapsed_median": 0.5077716039995721,
+      "elapsed_samples": [
+        0.5077716039995721,
+        0.5415335200013942,
+        0.5086768719993415,
+        0.4972097629997734,
+        0.497594308000771
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4747,
+        "ISel": 0.0009000000000000001,
+        "LLVM-analysis": 0.00031999999999999997,
+        "LLVM-passes": 0.0054199999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5176033962001384,
+      "elapsed_stddev": 0.01887873418725152,
+      "elapsed_median": 0.5098240320003242,
+      "elapsed_samples": [
+        0.5098240320003242,
+        0.5363052579996292,
+        0.5384275529995648,
+        0.507966163000674,
+        0.49549397500049963
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47817999999999994,
+        "ISel": 0.00056,
+        "LLVM-analysis": 0.00028,
+        "LLVM-passes": 0.0050999999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5094168198000262,
+      "elapsed_stddev": 0.018737382628539346,
+      "elapsed_median": 0.5037938189998385,
+      "elapsed_samples": [
+        0.4886066849994677,
+        0.5377397770007519,
+        0.51670909799941,
+        0.5002347200006625,
+        0.5037938189998385
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47168,
+        "ISel": 0.0006199999999999999,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.005300000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5130179047999264,
+      "elapsed_stddev": 0.02153890400384607,
+      "elapsed_median": 0.5193009509985131,
+      "elapsed_samples": [
+        0.49313668700051494,
+        0.540503374999389,
+        0.5229425460001949,
+        0.5193009509985131,
+        0.48920596500101965
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47547999999999996,
+        "ISel": 0.00058,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00498
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5132470804004697,
+      "elapsed_stddev": 0.03720735547702233,
+      "elapsed_median": 0.49870485400060716,
+      "elapsed_samples": [
+        0.496309394000491,
+        0.5786166800007777,
+        0.49870485400060716,
+        0.5060937550006201,
+        0.48651071899985254
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47657999999999995,
+        "ISel": 0.00056,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.0051
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.51552065439937,
+      "elapsed_stddev": 0.014006752061233464,
+      "elapsed_median": 0.5165259589994093,
+      "elapsed_samples": [
+        0.5153819999995903,
+        0.532522464000067,
+        0.5195290689989633,
+        0.5165259589994093,
+        0.4936437799988198
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4763800000000001,
+        "ISel": 0.0006,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.00526
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5237542039998516,
+      "elapsed_stddev": 0.014974305897178025,
+      "elapsed_median": 0.5308831490001467,
+      "elapsed_samples": [
+        0.531097230999876,
+        0.5408589500002563,
+        0.5086940450000839,
+        0.5308831490001467,
+        0.5072376449988951
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4875,
+        "ISel": 0.00088,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.00866
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5401996235996194,
+      "elapsed_stddev": 0.013572158554400443,
+      "elapsed_median": 0.5407020459988416,
+      "elapsed_samples": [
+        0.5407020459988416,
+        0.5457417930010706,
+        0.5338598799989995,
+        0.5585901430004014,
+        0.5221042559987836
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50516,
+        "ISel": 0.0007800000000000001,
+        "LLVM-analysis": 0.00058,
+        "LLVM-passes": 0.00828
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5062869728000805,
+      "elapsed_stddev": 0.004095886772617745,
+      "elapsed_median": 0.5071263890004047,
+      "elapsed_samples": [
+        0.5071263890004047,
+        0.5093567990006704,
+        0.5039238200006366,
+        0.5005040870000812,
+        0.5105237689986097
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46848,
+        "ISel": 0.00076,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.007840000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5085337263997645,
+      "elapsed_stddev": 0.014625166450799896,
+      "elapsed_median": 0.5048041549998743,
+      "elapsed_samples": [
+        0.49978211100096814,
+        0.4958409969985951,
+        0.509139175999735,
+        0.5048041549998743,
+        0.5331021929996496
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47128,
+        "ISel": 0.0008400000000000001,
+        "LLVM-analysis": 0.00038,
+        "LLVM-passes": 0.00848
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5051933163995272,
+      "elapsed_stddev": 0.01147205364778522,
+      "elapsed_median": 0.503153575999022,
+      "elapsed_samples": [
+        0.518982853000125,
+        0.49695777099987026,
+        0.4920757109994156,
+        0.503153575999022,
+        0.5147966709992033
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46180000000000004,
+        "ISel": 0.00078,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.0077
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5148045411995554,
+      "elapsed_stddev": 0.024858315481719313,
+      "elapsed_median": 0.4998660889996245,
+      "elapsed_samples": [
+        0.5412776489993121,
+        0.4998660889996245,
+        0.4931670009991649,
+        0.4971784249992197,
+        0.5425335420004558
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47442,
+        "ISel": 0.0008199999999999999,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.0079
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5166187105998687,
+      "elapsed_stddev": 0.020494856092332304,
+      "elapsed_median": 0.5104516579995106,
+      "elapsed_samples": [
+        0.515385075001177,
+        0.5026536770001258,
+        0.5104516579995106,
+        0.5519727379996766,
+        0.5026304049988539
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47584,
+        "ISel": 0.00072,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.00722
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5048122145999514,
+      "elapsed_stddev": 0.0087318930143657,
+      "elapsed_median": 0.5007312899997487,
+      "elapsed_samples": [
+        0.5007312899997487,
+        0.5159361149999313,
+        0.49618266700053937,
+        0.5122711219992198,
+        0.4989398790003179
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46518,
+        "ISel": 0.0007800000000000001,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.007639999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5324037894002686,
+      "elapsed_stddev": 0.020962425684083415,
+      "elapsed_median": 0.5218116420001024,
+      "elapsed_samples": [
+        0.5186678560003202,
+        0.5662923219988443,
+        0.5218116420001024,
+        0.5390841470016312,
+        0.5161629800004448
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48898,
+        "ISel": 0.0013,
+        "LLVM-analysis": 0.00041999999999999996,
+        "LLVM-passes": 0.009139999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5567945665996377,
+      "elapsed_stddev": 0.05504006410418581,
+      "elapsed_median": 0.5533464529999037,
+      "elapsed_samples": [
+        0.5681470990002708,
+        0.6434334219993616,
+        0.5533464529999037,
+        0.5086987529994076,
+        0.5103471059992444
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.5141,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.006279999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.543733363800493,
+      "elapsed_stddev": 0.016519459684811517,
+      "elapsed_median": 0.5445495929998287,
+      "elapsed_samples": [
+        0.5445495929998287,
+        0.5642214990002685,
+        0.5405878600013239,
+        0.5504078850008227,
+        0.5188999820002209
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49993999999999994,
+        "ISel": 0.0006,
+        "LLVM-analysis": 0.00031999999999999997,
+        "LLVM-passes": 0.00618
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5227757259999635,
+      "elapsed_stddev": 0.016679216375242816,
+      "elapsed_median": 0.5183207270001731,
+      "elapsed_samples": [
+        0.5055831390000094,
+        0.5290610960000777,
+        0.512570410999615,
+        0.5183207270001731,
+        0.5483432569999422
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4779,
+        "ISel": 0.0006799999999999999,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.006999999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5129585444003169,
+      "elapsed_stddev": 0.016250448020000863,
+      "elapsed_median": 0.5048204689992417,
+      "elapsed_samples": [
+        0.4971822700008488,
+        0.5020044020002388,
+        0.5278149980003946,
+        0.5048204689992417,
+        0.5329705830008606
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47173999999999994,
+        "ISel": 0.0006,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0061400000000000005
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5155564706001314,
+      "elapsed_stddev": 0.028790095952929775,
+      "elapsed_median": 0.4966340480004874,
+      "elapsed_samples": [
+        0.4966340480004874,
+        0.49374628300029144,
+        0.5555699010001263,
+        0.4949350820006657,
+        0.5368970389990864
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47232,
+        "ISel": 0.0006,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.005959999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5204872982001689,
+      "elapsed_stddev": 0.014817730737467607,
+      "elapsed_median": 0.5119210800003202,
+      "elapsed_samples": [
+        0.5119210800003202,
+        0.5369346869993024,
+        0.5090115970015177,
+        0.5363595740000164,
+        0.5082095529996877
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4779,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0066
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5127403578004305,
+      "elapsed_stddev": 0.01873796673037415,
+      "elapsed_median": 0.5177130629999738,
+      "elapsed_samples": [
+        0.5353128450005897,
+        0.4881565990017407,
+        0.5226932400000806,
+        0.49982604199976777,
+        0.5177130629999738
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46752000000000005,
+        "ISel": 0.00056,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0057
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5278268181999011,
+      "elapsed_stddev": 0.01863150507273417,
+      "elapsed_median": 0.522692571999869,
+      "elapsed_samples": [
+        0.5147027780003555,
+        0.5125513339989993,
+        0.522692571999869,
+        0.5586353149992647,
+        0.5305520920010167
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48466,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01576
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5214138662006007,
+      "elapsed_stddev": 0.008277798276924053,
+      "elapsed_median": 0.5218713560007018,
+      "elapsed_samples": [
+        0.5159832120007195,
+        0.5105349339992244,
+        0.5288978590015176,
+        0.5218713560007018,
+        0.5297819700008404
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47666000000000003,
+        "ISel": 0.00102,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0154
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5192899369998486,
+      "elapsed_stddev": 0.004668198941732535,
+      "elapsed_median": 0.5192996629994013,
+      "elapsed_samples": [
+        0.5151060490006785,
+        0.5143778050005494,
+        0.5223746769988793,
+        0.5192996629994013,
+        0.5252914909997344
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47284,
+        "ISel": 0.0010400000000000001,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.01618
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5424358505999407,
+      "elapsed_stddev": 0.013666029974649234,
+      "elapsed_median": 0.5444424239994987,
+      "elapsed_samples": [
+        0.5429225860007136,
+        0.5542532230010693,
+        0.5444424239994987,
+        0.5511034389983251,
+        0.519457581000097
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48718000000000006,
+        "ISel": 0.0011,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0161
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5299385359998269,
+      "elapsed_stddev": 0.016079744204313504,
+      "elapsed_median": 0.5222183989990299,
+      "elapsed_samples": [
+        0.5134337149993371,
+        0.5214474370004609,
+        0.5394062049999775,
+        0.5531869240003289,
+        0.5222183989990299
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47287999999999997,
+        "ISel": 0.00098,
+        "LLVM-analysis": 0.00048000000000000007,
+        "LLVM-passes": 0.01508
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5387661427997955,
+      "elapsed_stddev": 0.013937090382687346,
+      "elapsed_median": 0.5341576869996061,
+      "elapsed_samples": [
+        0.5341576869996061,
+        0.5338391929999489,
+        0.5423354960003053,
+        0.523028591000184,
+        0.5604697469989333
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48086,
+        "ISel": 0.001,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01514
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5367062117999012,
+      "elapsed_stddev": 0.01947041008277584,
+      "elapsed_median": 0.5264658929991128,
+      "elapsed_samples": [
+        0.5264658929991128,
+        0.5222146710002562,
+        0.5653738630007865,
+        0.5483753819989943,
+        0.5211012500003562
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48728,
+        "ISel": 0.0010400000000000001,
+        "LLVM-analysis": 0.00046,
+        "LLVM-passes": 0.015700000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5568891547998647,
+      "elapsed_stddev": 0.020565199826821135,
+      "elapsed_median": 0.5479651690002356,
+      "elapsed_samples": [
+        0.5479651690002356,
+        0.5786882210013573,
+        0.5394291409993457,
+        0.5389145289991575,
+        0.579448713999227
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48906,
+        "ISel": 0.00104,
+        "LLVM-analysis": 0.0005,
+        "LLVM-passes": 0.01544
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5071289748000709,
+      "elapsed_stddev": 0.007666248073799247,
+      "elapsed_median": 0.5069282929998735,
+      "elapsed_samples": [
+        0.5036088690012548,
+        0.49837799099987024,
+        0.5192087359992001,
+        0.5069282929998735,
+        0.5075209850001556
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46925999999999995,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.0075
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5088388027998008,
+      "elapsed_stddev": 0.010206596468747765,
+      "elapsed_median": 0.5079771929995331,
+      "elapsed_samples": [
+        0.5235307260008994,
+        0.4983387569991464,
+        0.5136662479999359,
+        0.5079771929995331,
+        0.5006810899994889
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47408,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.00038,
+        "LLVM-passes": 0.00824
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5182591095996031,
+      "elapsed_stddev": 0.023272094861183812,
+      "elapsed_median": 0.5062155879986676,
+      "elapsed_samples": [
+        0.5062155879986676,
+        0.5011376729999029,
+        0.5050956099985342,
+        0.5212705880003341,
+        0.5575760890005768
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4737,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.00035999999999999997,
+        "LLVM-passes": 0.00844
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5162400643999717,
+      "elapsed_stddev": 0.015414773605850824,
+      "elapsed_median": 0.5131080240007577,
+      "elapsed_samples": [
+        0.5059977029995935,
+        0.5335467610002524,
+        0.49801827000010235,
+        0.5131080240007577,
+        0.5305295639991527
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46866,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.00035999999999999997,
+        "LLVM-passes": 0.0077399999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5146033431992691,
+      "elapsed_stddev": 0.03270493318156084,
+      "elapsed_median": 0.49821121099921584,
+      "elapsed_samples": [
+        0.5252423639994959,
+        0.49281899299967336,
+        0.4893666509997274,
+        0.5673774969982333,
+        0.49821121099921584
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46452,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.00742
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5301491536003595,
+      "elapsed_stddev": 0.0220106089089037,
+      "elapsed_median": 0.5214367510016018,
+      "elapsed_samples": [
+        0.5441198320004332,
+        0.5214367510016018,
+        0.5603777189990069,
+        0.5202593209996849,
+        0.504552145001071
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46234000000000003,
+        "ISel": 0.0005,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0073999999999999995
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5672235900005035,
+      "elapsed_stddev": 0.07086587438033812,
+      "elapsed_median": 0.588849833000495,
+      "elapsed_samples": [
+        0.4856615420012531,
+        0.4986194510001951,
+        0.6316350840006635,
+        0.588849833000495,
+        0.6313520399999106
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49042,
+        "ISel": 0.0005399999999999999,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0076
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5537928795998596,
+      "elapsed_stddev": 0.022359794745343768,
+      "elapsed_median": 0.5445973420009977,
+      "elapsed_samples": [
+        0.58154067400028,
+        0.5718185890000314,
+        0.5268020669991529,
+        0.544205725998836,
+        0.5445973420009977
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4793200000000001,
+        "ISel": 0.00052,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.007540000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "CIR",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5896945193999272,
+      "elapsed_stddev": 0.06834062909678214,
+      "elapsed_median": 0.5918797450012789,
+      "elapsed_samples": [
+        0.5285630889993627,
+        0.6981598849997681,
+        0.5918797450012789,
+        0.5337169140002516,
+        0.5961529639989749
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.4997,
+        "ISel": 0.0007,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.01014
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5798813214001711,
+      "elapsed_stddev": 0.029114014960149318,
+      "elapsed_median": 0.564928644000247,
+      "elapsed_samples": [
+        0.5585036249995028,
+        0.6168131689992151,
+        0.564928644000247,
+        0.5536405310012924,
+        0.6055206380005984
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.49554,
+        "ISel": 0.00072,
+        "LLVM-analysis": 0.00033999999999999997,
+        "LLVM-passes": 0.010100000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "CIR",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.6067302200004633,
+      "elapsed_stddev": 0.015538594941731076,
+      "elapsed_median": 0.6072009620002063,
+      "elapsed_samples": [
+        0.6120102910008427,
+        0.6072009620002063,
+        0.6051384670008702,
+        0.6261740310001187,
+        0.5831273490002786
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.50844,
+        "ISel": 0.0006599999999999999,
+        "LLVM-analysis": 0.00031999999999999997,
+        "LLVM-passes": 0.0098
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5506389480004146,
+      "elapsed_stddev": 0.04892326528587675,
+      "elapsed_median": 0.5323887899994588,
+      "elapsed_samples": [
+        0.5641737030000513,
+        0.6298823900015122,
+        0.5126863479999884,
+        0.5323887899994588,
+        0.5140635090010619
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.46384,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0003,
+        "LLVM-passes": 0.00946
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "OG",
+      "arch": "sm_80",
+      "ok": true,
+      "elapsed_mean": 0.5355119266001566,
+      "elapsed_stddev": 0.04490730853297734,
+      "elapsed_median": 0.5134112029991229,
+      "elapsed_samples": [
+        0.6012094640009309,
+        0.5005690710004274,
+        0.5134112029991229,
+        0.5628362380011822,
+        0.49953365699911956
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.45836000000000005,
+        "ISel": 0.0006399999999999999,
+        "LLVM-analysis": 0.00038,
+        "LLVM-passes": 0.00922
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed_mean": 0.5623434968005313,
+      "elapsed_stddev": 0.03788733518371149,
+      "elapsed_median": 0.5606566670012398,
+      "elapsed_samples": [
+        0.5606566670012398,
+        0.52882356200098,
+        0.6045146500000556,
+        0.5213598909995198,
+        0.5963627140008612
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.48798,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.0094
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "OG",
+      "arch": "sm_89",
+      "ok": true,
+      "elapsed_mean": 0.5670266603996424,
+      "elapsed_stddev": 0.03714078783388246,
+      "elapsed_median": 0.5715154860008624,
+      "elapsed_samples": [
+        0.5715154860008624,
+        0.5577575600000273,
+        0.6098598929984291,
+        0.5857691309993243,
+        0.510231231999569
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.47506000000000004,
+        "ISel": 0.00066,
+        "LLVM-analysis": 0.0004,
+        "LLVM-passes": 0.009359999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "ok": true,
+      "elapsed_mean": 0.5206458435997774,
+      "elapsed_stddev": 0.04680915680917475,
+      "elapsed_median": 0.5069745349992445,
+      "elapsed_samples": [
+        0.489636825001071,
+        0.5912746249996417,
+        0.4738275709987647,
+        0.5415156620001653,
+        0.5069745349992445
+      ],
+      "phases_mean": {
+        "Frontend+IRGen": 0.44942000000000004,
+        "ISel": 0.0006199999999999999,
+        "LLVM-analysis": 0.00038,
+        "LLVM-passes": 0.0091
+      },
+      "first_error": ""
+    }
+  ]
+}

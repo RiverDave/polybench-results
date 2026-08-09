@@ -1,0 +1,736 @@
+{
+  "kind": "runtime",
+  "arch": "sm_90",
+  "runs": 5,
+  "warmup": 2,
+  "jobs": 26,
+  "clangir_commit": "c45e6b9e4d95",
+  "scripts_commit": "a82270d",
+  "polybench_root": "/home/ubuntu/polybenchGpu",
+  "environment": {
+    "hostname": "209-20-158-157",
+    "timestamp_utc": "2026-08-09T02:48:04+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cpu_count": "26",
+    "kernel": "6.8.0-1046-nvidia",
+    "gpu": "NVIDIA H100 PCIe",
+    "rocm_version": "",
+    "cuda_version": "12.8"
+  },
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26776,
+      "times": [
+        0.000669,
+        0.000452,
+        0.000534,
+        0.000579,
+        0.000541
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26920,
+      "times": [
+        0.00042,
+        0.000468,
+        0.000511,
+        0.002396,
+        0.000571
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 39160,
+      "times": [
+        0.003592,
+        0.025854,
+        0.007717,
+        0.003309,
+        0.009689
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/2MM/2mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 39304,
+      "times": [
+        0.003999,
+        0.033976,
+        0.005909,
+        0.003259,
+        0.004265
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26744,
+      "times": [
+        0.001642,
+        0.001652,
+        0.001654,
+        0.001703,
+        0.001816
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-3d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3DCONV/3DConvolution.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26896,
+      "times": [
+        0.001636,
+        0.001941,
+        0.002024,
+        0.00337,
+        0.001875
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 47416,
+      "times": [
+        0.001495,
+        0.001417,
+        0.001364,
+        0.001455,
+        0.003844
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/3MM/3mm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 47560,
+      "times": [
+        0.002432,
+        0.001319,
+        0.001398,
+        0.001508,
+        0.003382
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 59792,
+      "times": [
+        0.046293,
+        0.0336,
+        0.036457,
+        0.055467,
+        3.169336
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "adi",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ADI/adi.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 59944,
+      "times": [
+        0.707704,
+        0.094811,
+        0.039009,
+        0.040186,
+        1.9488
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35024,
+      "times": [
+        0.003518,
+        0.003572,
+        0.003464,
+        0.003429,
+        0.003438
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "atax",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/ATAX/atax.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35168,
+      "times": [
+        0.003454,
+        0.004996,
+        0.004703,
+        0.006193,
+        0.003403
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35040,
+      "times": [
+        0.00287,
+        0.004376,
+        0.002804,
+        0.002861,
+        0.002854
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "bicg",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/BICG/bicg.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35184,
+      "times": [
+        0.003295,
+        0.002809,
+        0.002861,
+        0.002869,
+        0.002913
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 55696,
+      "times": [
+        1.523481,
+        1.231079,
+        1.230624,
+        1.227694,
+        2.27992
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "correlation",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/CORR/correlation.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 55840,
+      "times": [
+        2.518171,
+        2.803292,
+        2.540214,
+        2.450459,
+        2.163534
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 43288,
+      "times": [
+        2.499735,
+        2.795409,
+        2.52251,
+        2.428501,
+        2.180442
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "covariance",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/COVAR/covariance.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 43432,
+      "times": [
+        1.50599,
+        1.229364,
+        1.230738,
+        1.231645,
+        2.05275
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35328,
+      "times": [
+        0.009652,
+        0.007268,
+        0.007152,
+        0.010266,
+        0.007608
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "doitgen",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/DOITGEN/doitgen.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35376,
+      "times": [
+        0.007126,
+        0.008403,
+        0.065811,
+        0.019094,
+        0.010493
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35072,
+      "times": [
+        0.076958,
+        0.073811,
+        6.737404,
+        1.296822,
+        1.009399
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/FDTD-2D/fdtd2d.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35216,
+      "times": [
+        0.088103,
+        0.072499,
+        6.756393,
+        1.285549,
+        1.102671
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30808,
+      "times": [
+        0.00072,
+        0.000715,
+        0.000742,
+        0.000758,
+        0.000734
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMM/gemm.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30960,
+      "times": [
+        0.000732,
+        0.000731,
+        0.000727,
+        0.000769,
+        0.000793
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 43280,
+      "times": [
+        0.003075,
+        0.003017,
+        0.003188,
+        0.003069,
+        0.004125
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemver",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GEMVER/gemver.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 43432,
+      "times": [
+        0.003086,
+        0.003059,
+        0.003187,
+        0.003319,
+        0.003049
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30776,
+      "times": [
+        0.029345,
+        0.005811,
+        0.0061,
+        0.002002,
+        0.002477
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gesummv",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GESUMMV/gesummv.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30920,
+      "times": [
+        0.028944,
+        0.020658,
+        0.003061,
+        0.002476,
+        0.001976
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 47424,
+      "times": [
+        6.410867,
+        4.981052,
+        3.650338,
+        3.262813,
+        2.99443
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "gramschmidt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 51664,
+      "times": [
+        7.357436,
+        4.993582,
+        3.654768,
+        3.268112,
+        3.000293
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26600,
+      "times": [
+        8.722427,
+        0.213815,
+        7.157058,
+        10.642021,
+        5.292226
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI1D/jacobi1D.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26752,
+      "times": [
+        8.728573,
+        0.229143,
+        7.203505,
+        10.655568,
+        5.302442
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26632,
+      "times": [
+        0.407894,
+        0.184385,
+        0.020765,
+        0.001001,
+        0.019176
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/JACOBI2D/jacobi2D.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30880,
+      "times": [
+        0.414659,
+        0.122925,
+        0.019564,
+        0.012174,
+        0.027974
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30888,
+      "times": [
+        2.203023,
+        1.974331,
+        2.544934,
+        2.377666,
+        1.78802
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/LU/lu.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 31032,
+      "times": [
+        0.06287,
+        0.056597,
+        1.840151,
+        2.167615,
+        2.372877
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 34976,
+      "times": [
+        0.029304,
+        0.007012,
+        0.005372,
+        0.004199,
+        0.003376
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "mvt",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/MVT/mvt.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 35128,
+      "times": [
+        0.030122,
+        0.009965,
+        0.007135,
+        0.003602,
+        0.004703
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26728,
+      "times": [
+        0.021326,
+        0.012128,
+        0.015466,
+        0.024213,
+        0.019201
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syr2k",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYR2K/syr2k.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 26880,
+      "times": [
+        0.040989,
+        0.014882,
+        0.016328,
+        0.016636,
+        0.015331
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "CIR",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30808,
+      "times": [
+        0.018596,
+        0.008103,
+        0.007531,
+        0.006485,
+        0.01383
+      ],
+      "first_error": ""
+    },
+    {
+      "benchmark": "syrk",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu/CUDA/SYRK/syrk.cu",
+      "pipeline": "OG",
+      "arch": "sm_90",
+      "compile_ok": true,
+      "binary_bytes": 30960,
+      "times": [
+        0.028128,
+        0.008263,
+        0.01014,
+        0.007323,
+        0.008746
+      ],
+      "first_error": ""
+    }
+  ]
+}
