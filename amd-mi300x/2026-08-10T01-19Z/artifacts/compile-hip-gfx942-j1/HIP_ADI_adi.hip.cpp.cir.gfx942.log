@@ -1,0 +1,1188 @@
+COMMAND: /root/llvm-project/build/bin/clang-24 -fclangir -Xclang -clangir-enable-call-conv-lowering --gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/13 -x hip --hip-path=/opt/rocm-7.0.2 --offload-arch=gfx942 --rocm-device-lib-path=/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode -D__AMDGCN_WAVEFRONT_SIZE=64 -I/root/polybenchGpu/CUDA/ADI -std=c++17 -O3 -ftime-report -mllvm -time-passes -c /root/polybenchGpu/HIP/ADI/adi.hip.cpp -I/root/polybenchGpu -I/root/polybenchGpu/HIP/ADI -o /root/polybench-gpu-audit/temp/compile-hip-gfx942-j1/HIP_ADI_adi.hip.cpp.cir.gfx942.o
+
+SAMPLES (wall seconds): ['1.5082', '1.5192', '1.5165', '1.5338', '1.5331', '1.5276', '1.5309', '1.5764']
+
+STDOUT (last sample):
+
+STDERR (last sample):
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:138:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  138 |         hipGetDeviceProperties(&deviceProp, GPU_DEVICE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rocm-7.0.2/include/hip/hip_runtime_api.h:102:32: note: expanded from macro 'hipGetDeviceProperties'
+  102 | #define hipGetDeviceProperties hipGetDevicePropertiesR0600
+      |                                ^
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:140:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  140 |         hipSetDevice( GPU_DEVICE );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:225:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  225 |         hipMalloc(&A_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:226:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  226 |         hipMalloc(&B_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:227:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  227 |         hipMalloc(&X_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:228:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  228 |         hipMemcpy(A_gpu, A, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:229:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  229 |         hipMemcpy(B_gpu, B, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:230:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  230 |         hipMemcpy(X_gpu, X, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:243:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  243 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:245:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  245 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:247:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  247 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:252:4: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  252 |                         hipDeviceSynchronize();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:256:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  256 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:261:4: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  261 |                         hipDeviceSynchronize();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:270:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  270 |         hipMemcpy(B_outputFromGpu, B_gpu, N * N * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:271:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  271 |         hipMemcpy(X_outputFromGpu, X_gpu, N * N * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:273:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  273 |         hipFree(A_gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:274:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  274 |         hipFree(B_gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:275:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  275 |         hipFree(X_gpu);
+      |         ^~~~~~~~~~~~~~
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/ocml.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/ockl.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/oclc_unsafe_math_off.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/oclc_finite_only_off.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/oclc_wavefrontsize64_on.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/oclc_isa_version_942.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+warning: Linking two modules of different data layouts: '/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode/oclc_abi_version_600.bc' is 'e-m:e-p:64:64-p1:64:64-p2:32:32-p3:32:32-p4:64:64-p5:32:32-p6:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024-v2048:2048-n32:64-S32-A5-G1-ni:7:8:9' whereas '/root/polybenchGpu/HIP/ADI/adi.hip.cpp' is 'e-m:e-n32:64-S32-A5-G1-p0:64:64:64:64-p1:64:64:64:64-p2:32:32:32:32-p3:32:32:32:32-p4:64:64:64:64-p5:32:32:32:32-p6:32:32:32:32-p7:160:256:256:32-p8:128:128:128:48-p9:192:256:256:32-i64:64-i1:8-i8:8-i16:16-i32:32-f16:16-f64:64-f128:128'
+
+19 warnings generated when compiling for gfx942.
+===-------------------------------------------------------------------------===
+                        Analysis execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0095 seconds (0.0095 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0022 ( 24.5%)   0.0001 ( 18.3%)   0.0023 ( 24.1%)   0.0023 ( 24.1%)  UniformityInfoAnalysis
+   0.0016 ( 18.0%)   0.0001 ( 12.9%)   0.0017 ( 17.7%)   0.0017 ( 17.6%)  MemorySSAAnalysis
+   0.0011 ( 12.1%)   0.0000 (  1.9%)   0.0011 ( 11.4%)   0.0011 ( 11.5%)  TargetIRAnalysis
+   0.0009 (  9.6%)   0.0000 (  3.4%)   0.0009 (  9.2%)   0.0009 (  9.2%)  VerifierAnalysis
+   0.0003 (  3.8%)   0.0001 ( 13.2%)   0.0004 (  4.4%)   0.0004 (  4.4%)  AAManager
+   0.0003 (  3.9%)   0.0000 (  8.1%)   0.0004 (  4.2%)   0.0004 (  4.3%)  DominatorTreeAnalysis
+   0.0003 (  3.5%)   0.0000 (  2.5%)   0.0003 (  3.4%)   0.0003 (  3.5%)  BranchProbabilityAnalysis
+   0.0003 (  3.4%)   0.0000 (  3.9%)   0.0003 (  3.4%)   0.0003 (  3.4%)  BlockFrequencyAnalysis
+   0.0003 (  3.4%)   0.0000 (  4.1%)   0.0003 (  3.4%)   0.0003 (  3.4%)  LoopAnalysis
+   0.0003 (  2.9%)   0.0000 (  5.1%)   0.0003 (  3.1%)   0.0003 (  3.0%)  CycleAnalysis
+   0.0003 (  2.9%)   0.0000 (  0.0%)   0.0003 (  2.7%)   0.0003 (  2.7%)  ModuleSummaryIndexAnalysis
+   0.0002 (  2.6%)   0.0000 (  1.9%)   0.0002 (  2.5%)   0.0002 (  2.5%)  PostDominatorTreeAnalysis
+   0.0001 (  1.5%)   0.0000 (  2.1%)   0.0001 (  1.5%)   0.0001 (  1.5%)  ScalarEvolutionAnalysis
+   0.0001 (  1.2%)   0.0000 (  5.6%)   0.0001 (  1.5%)   0.0001 (  1.4%)  BasicAA
+   0.0001 (  0.7%)   0.0000 (  1.6%)   0.0001 (  0.7%)   0.0001 (  0.8%)  LastRunTrackingAnalysis
+   0.0001 (  0.6%)   0.0000 (  1.9%)   0.0001 (  0.7%)   0.0001 (  0.7%)  AssumptionAnalysis
+   0.0000 (  0.6%)   0.0000 (  0.7%)   0.0001 (  0.6%)   0.0001 (  0.6%)  TargetLibraryAnalysis
+   0.0001 (  0.6%)   0.0000 (  0.0%)   0.0001 (  0.6%)   0.0001 (  0.6%)  CallGraphAnalysis
+   0.0000 (  0.4%)   0.0000 (  1.9%)   0.0001 (  0.5%)   0.0000 (  0.4%)  OptimizationRemarkEmitterAnalysis
+   0.0000 (  0.3%)   0.0000 (  1.6%)   0.0000 (  0.4%)   0.0000 (  0.4%)  ScopedNoAliasAA
+   0.0000 (  0.4%)   0.0000 (  1.2%)   0.0000 (  0.4%)   0.0000 (  0.4%)  TypeBasedAA
+   0.0000 (  0.4%)   0.0000 (  1.9%)   0.0000 (  0.5%)   0.0000 (  0.4%)  AMDGPUAA
+   0.0000 (  0.3%)   0.0000 (  1.8%)   0.0000 (  0.4%)   0.0000 (  0.4%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, Function>
+   0.0000 (  0.3%)   0.0000 (  0.9%)   0.0000 (  0.4%)   0.0000 (  0.4%)  FunctionAnalysisManagerCGSCCProxy
+   0.0000 (  0.3%)   0.0000 (  0.9%)   0.0000 (  0.3%)   0.0000 (  0.4%)  LazyValueAnalysis
+   0.0000 (  0.3%)   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0000 (  0.3%)  LazyCallGraphAnalysis
+   0.0000 (  0.3%)   0.0000 (  0.5%)   0.0000 (  0.3%)   0.0000 (  0.3%)  DemandedBitsAnalysis
+   0.0000 (  0.2%)   0.0000 (  0.2%)   0.0000 (  0.2%)   0.0000 (  0.3%)  InnerAnalysisManagerProxy<LoopAnalysisManager, Function>
+   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.2%)  GlobalsAA
+   0.0000 (  0.2%)   0.0000 (  0.5%)   0.0000 (  0.2%)   0.0000 (  0.2%)  EphemeralValuesAnalysis
+   0.0000 (  0.2%)   0.0000 (  0.5%)   0.0000 (  0.2%)   0.0000 (  0.2%)  MemoryDependenceAnalysis
+   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.2%)  LoopAccessAnalysis
+   0.0000 (  0.1%)   0.0000 (  0.5%)   0.0000 (  0.1%)   0.0000 (  0.1%)  ShouldNotRunFunctionPassesAnalysis
+   0.0000 (  0.1%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.1%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InnerAnalysisManagerProxy<FunctionAnalysisManager, Module>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ProfileSummaryAnalysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InnerAnalysisManagerProxy<CGSCCAnalysisManager, Module>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InlineAdvisorAnalysis
+   0.0089 (100.0%)   0.0006 (100.0%)   0.0095 (100.0%)   0.0095 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                          Pass execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0861 seconds (0.0859 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0195 ( 24.0%)   0.0012 ( 26.4%)   0.0208 ( 24.1%)   0.0207 ( 24.1%)  InstCombinePass
+   0.0060 (  7.4%)   0.0001 (  3.2%)   0.0061 (  7.1%)   0.0061 (  7.1%)  GVNPass
+   0.0061 (  7.5%)   0.0000 (  0.0%)   0.0061 (  7.1%)   0.0061 (  7.1%)  LoopVectorizePass
+   0.0039 (  4.7%)   0.0002 (  4.8%)   0.0041 (  4.7%)   0.0041 (  4.7%)  SimplifyCFGPass
+   0.0037 (  4.5%)   0.0002 (  3.7%)   0.0038 (  4.5%)   0.0038 (  4.5%)  InlinerPass
+   0.0034 (  4.2%)   0.0003 (  6.6%)   0.0037 (  4.3%)   0.0037 (  4.3%)  LoopUnrollPass
+   0.0030 (  3.7%)   0.0005 ( 10.1%)   0.0035 (  4.0%)   0.0034 (  4.0%)  SLPVectorizerPass
+   0.0030 (  3.7%)   0.0001 (  2.4%)   0.0031 (  3.6%)   0.0031 (  3.6%)  CorrelatedValuePropagationPass
+   0.0027 (  3.4%)   0.0000 (  0.3%)   0.0028 (  3.2%)   0.0028 (  3.2%)  DSEPass
+   0.0027 (  3.3%)   0.0000 (  0.8%)   0.0028 (  3.2%)   0.0027 (  3.2%)  LICMPass
+   0.0018 (  2.2%)   0.0005 ( 10.7%)   0.0023 (  2.7%)   0.0023 (  2.7%)  EarlyCSEPass
+   0.0020 (  2.4%)   0.0002 (  3.3%)   0.0021 (  2.5%)   0.0021 (  2.5%)  AMDGPUUniformIntrinsicCombinePass
+   0.0021 (  2.6%)   0.0000 (  0.3%)   0.0021 (  2.5%)   0.0021 (  2.5%)  LoopDeletionPass
+   0.0020 (  2.4%)   0.0000 (  0.5%)   0.0020 (  2.3%)   0.0020 (  2.3%)  IndVarSimplifyPass
+   0.0016 (  1.9%)   0.0000 (  0.0%)   0.0016 (  1.8%)   0.0016 (  1.8%)  BitcodeWriterPass
+   0.0015 (  1.8%)   0.0000 (  0.5%)   0.0015 (  1.8%)   0.0015 (  1.8%)  SCCPPass
+   0.0014 (  1.7%)   0.0000 (  0.3%)   0.0014 (  1.6%)   0.0014 (  1.6%)  LoopIdiomRecognizePass
+   0.0009 (  1.2%)   0.0000 (  0.7%)   0.0010 (  1.1%)   0.0010 (  1.1%)  ReassociatePass
+   0.0009 (  1.1%)   0.0000 (  0.4%)   0.0009 (  1.0%)   0.0009 (  1.0%)  VerifierPass
+   0.0008 (  0.9%)   0.0000 (  0.7%)   0.0008 (  0.9%)   0.0008 (  0.9%)  LoopFullUnrollPass
+   0.0007 (  0.8%)   0.0001 (  2.7%)   0.0008 (  0.9%)   0.0008 (  0.9%)  AMDGPUPromoteKernelArgumentsPass
+   0.0007 (  0.9%)   0.0000 (  0.4%)   0.0007 (  0.8%)   0.0007 (  0.8%)  LCSSAPass
+   0.0007 (  0.9%)   0.0000 (  0.3%)   0.0007 (  0.8%)   0.0007 (  0.8%)  BDCEPass
+   0.0007 (  0.8%)   0.0000 (  0.7%)   0.0007 (  0.8%)   0.0007 (  0.8%)  LoopSimplifyPass
+   0.0006 (  0.8%)   0.0001 (  1.5%)   0.0007 (  0.8%)   0.0007 (  0.8%)  PostOrderFunctionAttrsPass
+   0.0006 (  0.8%)   0.0000 (  0.9%)   0.0007 (  0.8%)   0.0007 (  0.8%)  ConstraintEliminationPass
+   0.0006 (  0.7%)   0.0000 (  0.6%)   0.0006 (  0.7%)   0.0006 (  0.7%)  InferAddressSpacesPass
+   0.0006 (  0.8%)   0.0000 (  0.0%)   0.0006 (  0.7%)   0.0006 (  0.7%)  InstSimplifyPass
+   0.0002 (  0.2%)   0.0004 (  9.5%)   0.0006 (  0.7%)   0.0006 (  0.7%)  IPSCCPPass
+   0.0005 (  0.7%)   0.0000 (  0.2%)   0.0006 (  0.6%)   0.0005 (  0.6%)  LoopInstSimplifyPass
+   0.0005 (  0.6%)   0.0000 (  0.9%)   0.0005 (  0.6%)   0.0005 (  0.6%)  SROAPass
+   0.0005 (  0.6%)   0.0000 (  0.3%)   0.0005 (  0.6%)   0.0005 (  0.6%)  ADCEPass
+   0.0005 (  0.6%)   0.0000 (  0.0%)   0.0005 (  0.6%)   0.0005 (  0.6%)  InferAlignmentPass
+   0.0005 (  0.6%)   0.0000 (  0.3%)   0.0005 (  0.6%)   0.0005 (  0.6%)  MemCpyOptPass
+   0.0004 (  0.5%)   0.0000 (  0.3%)   0.0004 (  0.5%)   0.0004 (  0.5%)  AggressiveInstCombinePass
+   0.0004 (  0.5%)   0.0000 (  0.3%)   0.0004 (  0.5%)   0.0004 (  0.5%)  GlobalOptPass
+   0.0004 (  0.5%)   0.0000 (  0.1%)   0.0004 (  0.4%)   0.0004 (  0.5%)  LoopRotatePass
+   0.0003 (  0.4%)   0.0000 (  0.2%)   0.0004 (  0.4%)   0.0004 (  0.4%)  TailCallElimPass
+   0.0003 (  0.3%)   0.0000 (  0.3%)   0.0003 (  0.3%)   0.0003 (  0.3%)  CalledValuePropagationPass
+   0.0002 (  0.3%)   0.0000 (  0.2%)   0.0002 (  0.3%)   0.0002 (  0.3%)  LoopSimplifyCFGPass
+   0.0002 (  0.3%)   0.0000 (  0.0%)   0.0002 (  0.3%)   0.0002 (  0.3%)  AlwaysInlinerPass
+   0.0002 (  0.2%)   0.0000 (  0.0%)   0.0002 (  0.2%)   0.0002 (  0.2%)  LoopDistributePass
+   0.0002 (  0.2%)   0.0000 (  0.3%)   0.0002 (  0.2%)   0.0002 (  0.2%)  VectorCombinePass
+   0.0002 (  0.2%)   0.0000 (  0.0%)   0.0002 (  0.2%)   0.0002 (  0.2%)  LoopLoadEliminationPass
+   0.0002 (  0.2%)   0.0000 (  0.1%)   0.0002 (  0.2%)   0.0002 (  0.2%)  SimpleLoopUnswitchPass
+   0.0001 (  0.1%)   0.0000 (  0.9%)   0.0002 (  0.2%)   0.0002 (  0.2%)  AMDGPUSimplifyLibCallsPass
+   0.0001 (  0.2%)   0.0000 (  0.2%)   0.0002 (  0.2%)   0.0002 (  0.2%)  SpeculativeExecutionPass
+   0.0001 (  0.1%)   0.0000 (  0.4%)   0.0001 (  0.2%)   0.0001 (  0.2%)  AMDGPUPromoteAllocaToVectorPass
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LibCallsShrinkWrapPass
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Float2IntPass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  InferFunctionAttrsPass
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  ReversePostOrderFunctionAttrsPass
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  AMDGPULowerKernelAttributesPass
+   0.0001 (  0.1%)   0.0000 (  0.4%)   0.0001 (  0.1%)   0.0001 (  0.1%)  AMDGPUUseNativeCallsPass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  JumpTableToSwitchPass
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  RequireAnalysisPass<llvm::GlobalsAA, llvm::Module, llvm::AnalysisManager<Module>>
+   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LowerExpectIntrinsicPass
+   0.0000 (  0.1%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.1%)  RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>>
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  DeadArgumentEliminationPass
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  ArgumentPromotionPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  RecomputeGlobalsAAPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  WarnMissedTransformationsPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GlobalDCEPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LowerConstantIntrinsicsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroAnnotationElidePass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  JumpThreadingPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InjectTLIMappings
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ExpandMemCmpPass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CallSiteSplittingPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DFAJumpThreadingPass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.0%)  PromotePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DivRemPairsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ControlHeightReductionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MergedLoadStoreMotionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InvalidateAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroElidePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroSplitPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MoveAutoInitPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  EntryExitInstrumenterPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptCGSCCPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InvalidateAnalysisPass<llvm::AAManager>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AssignGUIDPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MergeICmpsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AlignmentFromAssumptionsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AnnotationRemarksPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LoopSinkPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ConstantMergePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroEarlyPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  NameAnonGlobalPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Annotation2MetadataPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ForceFunctionAttrsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroCleanupPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  RequireAnalysisPass<llvm::ProfileSummaryAnalysis, llvm::Module, llvm::AnalysisManager<Module>>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LowerCommentStringPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CanonicalizeAliasesPass
+   0.0815 (100.0%)   0.0046 (100.0%)   0.0861 (100.0%)   0.0859 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                               Clang time report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.6958 seconds (0.6865 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.5777 ( 87.1%)   0.0272 ( 84.4%)   0.6049 ( 86.9%)   0.5956 ( 86.8%)  Front end
+   0.0859 ( 12.9%)   0.0050 ( 15.6%)   0.0909 ( 13.1%)   0.0909 ( 13.2%)  Optimizer
+   0.6636 (100.0%)   0.0322 (100.0%)   0.6958 (100.0%)   0.6865 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                          Pass execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0626 seconds (0.0626 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0043 (  8.5%)   0.0040 ( 32.5%)   0.0083 ( 13.2%)   0.0083 ( 13.2%)  AMDGPU DAG->DAG Pattern Instruction Selection
+   0.0019 (  3.7%)   0.0008 (  6.5%)   0.0027 (  4.2%)   0.0027 (  4.3%)  InstCombinePass
+   0.0027 (  5.3%)   0.0000 (  0.1%)   0.0027 (  4.3%)   0.0027 (  4.3%)  Machine Instruction Scheduler
+   0.0019 (  3.7%)   0.0001 (  1.2%)   0.0020 (  3.2%)   0.0020 (  3.2%)  PostRA Machine Instruction Scheduler
+   0.0013 (  2.5%)   0.0007 (  6.1%)   0.0020 (  3.2%)   0.0020 (  3.2%)  SLPVectorizerPass
+   0.0018 (  3.5%)   0.0000 (  0.0%)   0.0018 (  2.9%)   0.0018 (  2.8%)  Loop Strength Reduction
+   0.0017 (  3.3%)   0.0001 (  0.5%)   0.0017 (  2.8%)   0.0017 (  2.8%)  Live Variable Analysis
+   0.0017 (  3.4%)   0.0000 (  0.0%)   0.0017 (  2.7%)   0.0017 (  2.7%)  Straight line strength reduction
+   0.0016 (  3.1%)   0.0000 (  0.0%)   0.0016 (  2.5%)   0.0015 (  2.5%)  IndVarSimplifyPass
+   0.0012 (  2.4%)   0.0001 (  1.1%)   0.0013 (  2.1%)   0.0013 (  2.1%)  Greedy Register Allocator
+   0.0012 (  2.4%)   0.0001 (  1.1%)   0.0013 (  2.1%)   0.0013 (  2.1%)  Greedy Register Allocator #3
+   0.0010 (  2.0%)   0.0003 (  2.6%)   0.0013 (  2.1%)   0.0013 (  2.1%)  Machine Register Class Info Analysis
+   0.0011 (  2.2%)   0.0000 (  0.2%)   0.0011 (  1.8%)   0.0011 (  1.8%)  Nary reassociation
+   0.0000 (  0.1%)   0.0010 (  8.2%)   0.0010 (  1.6%)   0.0010 (  1.6%)  CallSiteSplittingPass
+   0.0010 (  1.9%)   0.0000 (  0.3%)   0.0010 (  1.6%)   0.0010 (  1.6%)  Prologue/Epilogue Insertion & Frame Finalization
+   0.0010 (  2.0%)   0.0000 (  0.0%)   0.0010 (  1.6%)   0.0010 (  1.6%)  GPU Load and Store Vectorizer
+   0.0007 (  1.5%)   0.0002 (  1.9%)   0.0010 (  1.6%)   0.0010 (  1.6%)  Function register usage analysis
+   0.0008 (  1.7%)   0.0001 (  0.9%)   0.0009 (  1.5%)   0.0009 (  1.5%)  AMDGPU Assembly Printer
+   0.0009 (  1.9%)   0.0000 (  0.0%)   0.0009 (  1.5%)   0.0009 (  1.5%)  LoopVectorizePass
+   0.0008 (  1.7%)   0.0001 (  0.5%)   0.0009 (  1.4%)   0.0009 (  1.4%)  GVNPass
+   0.0008 (  1.5%)   0.0001 (  0.4%)   0.0008 (  1.3%)   0.0008 (  1.3%)  Post RA hazard recognizer
+   0.0007 (  1.5%)   0.0000 (  0.3%)   0.0008 (  1.3%)   0.0008 (  1.3%)  Machine Common Subexpression Elimination
+   0.0007 (  1.3%)   0.0000 (  0.0%)   0.0007 (  1.1%)   0.0007 (  1.1%)  Global Value Numbering #2
+   0.0006 (  1.2%)   0.0000 (  0.4%)   0.0007 (  1.1%)   0.0007 (  1.1%)  SI insert wait instructions
+   0.0006 (  1.2%)   0.0000 (  0.2%)   0.0007 (  1.0%)   0.0007 (  1.0%)  Machine Common Subexpression Elimination #2
+   0.0005 (  0.9%)   0.0002 (  1.7%)   0.0007 (  1.0%)   0.0007 (  1.0%)  Finalize ISel and expand pseudo-instructions
+   0.0006 (  1.2%)   0.0001 (  0.5%)   0.0006 (  1.0%)   0.0006 (  1.0%)  Greedy Register Allocator #2
+   0.0006 (  1.1%)   0.0000 (  0.0%)   0.0006 (  0.9%)   0.0006 (  0.9%)  Global Value Numbering
+   0.0004 (  0.8%)   0.0001 (  0.9%)   0.0005 (  0.9%)   0.0006 (  0.9%)  Machine Module Information
+   0.0005 (  1.1%)   0.0000 (  0.1%)   0.0006 (  0.9%)   0.0005 (  0.9%)  Live Register Matrix #2
+   0.0004 (  0.8%)   0.0001 (  0.9%)   0.0005 (  0.8%)   0.0005 (  0.9%)  Function Alias Analysis Results #9
+   0.0005 (  1.1%)   0.0000 (  0.0%)   0.0005 (  0.8%)   0.0005 (  0.8%)  Induction Variable Users
+   0.0004 (  0.8%)   0.0001 (  0.8%)   0.0005 (  0.8%)   0.0005 (  0.8%)  Dominator Tree Construction #11
+   0.0005 (  1.0%)   0.0000 (  0.0%)   0.0005 (  0.8%)   0.0005 (  0.8%)  Live Register Matrix #3
+   0.0004 (  0.8%)   0.0001 (  0.8%)   0.0005 (  0.8%)   0.0005 (  0.8%)  Basic Alias Analysis (stateless AA impl) #9
+   0.0005 (  0.9%)   0.0000 (  0.2%)   0.0005 (  0.8%)   0.0005 (  0.8%)  Live Register Matrix
+   0.0004 (  0.8%)   0.0000 (  0.2%)   0.0005 (  0.7%)   0.0005 (  0.7%)  Branch relaxation pass
+   0.0004 (  0.8%)   0.0000 (  0.0%)   0.0004 (  0.7%)   0.0004 (  0.7%)  Register Coalescer
+   0.0004 (  0.8%)   0.0000 (  0.0%)   0.0004 (  0.6%)   0.0004 (  0.6%)  IPSCCPPass
+   0.0004 (  0.7%)   0.0000 (  0.2%)   0.0004 (  0.6%)   0.0004 (  0.6%)  Live Interval Analysis
+   0.0002 (  0.4%)   0.0001 (  1.2%)   0.0004 (  0.6%)   0.0004 (  0.6%)  AMDGPUUniformIntrinsicCombinePass
+   0.0002 (  0.5%)   0.0001 (  0.8%)   0.0003 (  0.5%)   0.0003 (  0.5%)  PostOrderFunctionAttrsPass
+   0.0003 (  0.5%)   0.0000 (  0.2%)   0.0003 (  0.5%)   0.0003 (  0.5%)  SCCPPass
+   0.0003 (  0.6%)   0.0000 (  0.0%)   0.0003 (  0.5%)   0.0003 (  0.5%)  EarlyCSEPass
+   0.0001 (  0.3%)   0.0001 (  1.2%)   0.0003 (  0.4%)   0.0003 (  0.5%)  InferAddressSpacesPass
+   0.0000 (  0.1%)   0.0002 (  1.7%)   0.0003 (  0.4%)   0.0003 (  0.4%)  VerifierPass
+   0.0002 (  0.5%)   0.0000 (  0.1%)   0.0003 (  0.4%)   0.0003 (  0.4%)  Machine Copy Propagation Pass
+   0.0000 (  0.0%)   0.0003 (  2.1%)   0.0003 (  0.4%)   0.0003 (  0.4%)  AMDGPUAttributorPass
+   0.0002 (  0.5%)   0.0000 (  0.0%)   0.0003 (  0.4%)   0.0003 (  0.4%)  SI Shrink Instructions
+   0.0002 (  0.5%)   0.0000 (  0.0%)   0.0002 (  0.4%)   0.0002 (  0.4%)  SI Form memory clauses
+   0.0001 (  0.3%)   0.0001 (  0.8%)   0.0002 (  0.4%)   0.0002 (  0.4%)  SI lower SGPR spill instructions
+   0.0002 (  0.4%)   0.0000 (  0.1%)   0.0002 (  0.4%)   0.0002 (  0.4%)  Machine Register Class Info Analysis #2
+   0.0001 (  0.2%)   0.0001 (  1.2%)   0.0002 (  0.4%)   0.0002 (  0.4%)  Structurize control flow
+   0.0001 (  0.2%)   0.0001 (  0.9%)   0.0002 (  0.3%)   0.0002 (  0.3%)  Code sinking
+   0.0002 (  0.4%)   0.0000 (  0.0%)   0.0002 (  0.3%)   0.0002 (  0.3%)  Early CSE
+   0.0002 (  0.4%)   0.0000 (  0.0%)   0.0002 (  0.3%)   0.0002 (  0.3%)  CodeGen Prepare
+   0.0002 (  0.3%)   0.0000 (  0.0%)   0.0002 (  0.3%)   0.0002 (  0.3%)  AMDGPU Rewrite AGPR-Copy-MFMA
+   0.0002 (  0.3%)   0.0000 (  0.1%)   0.0002 (  0.3%)   0.0002 (  0.3%)  Peephole Optimizations
+   0.0001 (  0.3%)   0.0000 (  0.1%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Machine code sinking
+   0.0000 (  0.0%)   0.0001 (  1.2%)   0.0001 (  0.2%)   0.0001 (  0.2%)  AMDGPUPromoteKernelArgumentsPass
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Two-Address instruction pass
+   0.0000 (  0.0%)   0.0001 (  1.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  ConstraintEliminationPass
+   0.0001 (  0.3%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Early Machine Loop Invariant Code Motion
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  SI Fold Operands
+   0.0001 (  0.3%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Control Flow Optimizer
+   0.0001 (  0.3%)   0.0000 (  0.0%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Split GEPs to a variadic base and a constant offset for better CSE
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  BDCEPass
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Branch Probability Basic Block Placement
+   0.0001 (  0.2%)   0.0000 (  0.3%)   0.0001 (  0.2%)   0.0001 (  0.2%)  SimplifyCFGPass
+   0.0001 (  0.2%)   0.0001 (  0.4%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Uniformity Analysis #8
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Virtual Register Rewriter #3
+   0.0001 (  0.2%)   0.0000 (  0.2%)   0.0001 (  0.2%)   0.0001 (  0.2%)  MachineDominator Tree Construction #5
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Virtual Register Rewriter
+   0.0001 (  0.1%)   0.0001 (  0.5%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Analysis if a function is memory bound
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.2%)   0.0001 (  0.2%)  LoopUnrollPass
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  DSEPass
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Slot index numbering #2
+   0.0001 (  0.2%)   0.0000 (  0.2%)   0.0001 (  0.2%)   0.0001 (  0.2%)  InferAlignmentPass
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.2%)   0.0001 (  0.2%)  Detect Dead Lanes
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.2%)   0.0001 (  0.1%)  Machine Natural Loop Construction
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis #3
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LICMPass
+   0.0001 (  0.2%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Copy Propagation Pass #2
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Early Machine Loop Invariant Code Motion #2
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Remove dead machine instructions
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #2
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Memory SSA
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #3
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  MemCpyOptPass
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Dominator Tree Construction #4
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Lower buffer fat pointer operations to buffer resources
+   0.0000 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #4
+   0.0001 (  0.2%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  CalledValuePropagationPass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LoopFullUnrollPass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LCSSAPass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Load Store Optimizer
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Fix SGPR copies
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis #4
+   0.0000 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #7
+   0.0000 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Late Instructions Cleanup Pass
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Whole Quad Mode
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Natural Loop Construction #3
+   0.0000 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LoopSimplifyPass
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Eliminate PHI nodes for register allocation
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Shrink Instructions #2
+   0.0000 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #6
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI post-RA bundler
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Natural Loop Information
+   0.0000 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Memory SSA #2
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  AMDGPU IR optimizations
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Lower control flow pseudo instructions
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  SI Fold Operands #2
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  AMDGPU Lower Kernel Arguments
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.1%)  Remove dead machine instructions #2
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Canonicalize Freeze Instructions in Loops
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Uniformity Analysis #5
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  PromotePass
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  SI Memory Legalizer
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Machine Block Frequency Analysis #2
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0000 (  0.1%)  Slot index numbering
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Early Tail Duplication
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  AggressiveInstCombinePass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Block Frequency Analysis
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Virtual Register Rewriter #2
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Machine Block Frequency Analysis
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  SI optimize exec mask operations pre-RA
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Remove dead machine instructions #3
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  GlobalOptPass
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Free MachineFunction
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Loop Invariant Code Motion
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Spill Code Placement Analysis
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Machine Loop Invariant Code Motion
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Machine Block Frequency Analysis #5
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Debug Variable Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  VectorCombinePass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  PostRA Machine Sink
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  LoopDistributePass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Constant Hoisting
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.1%)  SI annotate control flow
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.1%)  PGOIndirectCallPromotion
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Remove dead machine instructions #4
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Dominator Tree Construction #10
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Scalar Evolution Analysis #3
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Scalar Evolution Analysis #2
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Bundle Machine CFG Edges
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Live DEBUG_VALUE analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  AMDGPU Remove Incompatible Functions
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  LoopDeletionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Machine Optimization Remark Emitter
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Branch Probability Analysis #3
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  JumpThreadingPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Scalar Evolution Analysis
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  MachineDominator Tree Construction
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Machine Block Frequency Analysis #6
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  SI optimize exec mask operations
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Machine Natural Loop Construction #5
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0000 (  0.1%)   0.0000 (  0.1%)  AMDGPUPromoteAllocaToVectorPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Natural Loop Information #9
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  NoRecurseLTOInferencePass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  Scalar Evolution Analysis #4
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  SI Optimize VGPR LiveRange
+   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0000 (  0.0%)   0.0000 (  0.0%)  RequireAnalysisPass<llvm::GlobalsAA, llvm::Module, llvm::AnalysisManager<Module>>
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachinePostDominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI peephole optimizations
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Branch Probability Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Natural Loop Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Lower i1 Copies
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPULowerModuleLDSPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Live Stack Slot Analysis #2
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DivRemPairsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-Dominator Tree Construction #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-RA pseudo instruction expansion pass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Rename Disconnected Subregister Components
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SROAPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Canonicalize natural loops
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Peephole SDWA
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Branch Probability Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPUSimplifyLibCallsPass
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Pre-RA Long Branch Reg
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Library Information
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Expand IR instructions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachinePostDominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Promote Alloca
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)  Function Alias Analysis Results #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Detect single entry single exit regions
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Loop-Closed SSA Form Pass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MergedLoadStoreMotionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Pre-RA optimizations
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InferFunctionAttrsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #10
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Unify divergent function exit nodes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert required mode register values
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl)
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU IR late optimizations
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Tail Duplication
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove unreachable machine basic blocks
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Rewrite Partial Register Uses
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Virtual Register Map
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #13
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #6
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  TailCallElimPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GlobalDCEPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Live Stack Slot Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Pre-allocate WWM Registers
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DummyCGSCCPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPULowerExecSyncPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Cycle Info Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #6
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPULowerKernelAttributesPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachinePostDominator Tree Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Loop-Closed SSA Form Pass #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Virtual Register Map #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachinePostDominator Tree Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachinePostDominator Tree Construction #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #7
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #9
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Natural Loop Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Partially inline calls to library functions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominance Frontier Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Scalarize Masked Memory Intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Annotate Uniform Values
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CallGraph Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU lowering of execution synchronization
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Expand Atomic instructions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU atomic optimizations
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Assignment Tracking Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Type-Based Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Virtual Register Map #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InlinerPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Replace intrinsics with calls to vector library
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimize machine instruction PHIs
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-Dominator Tree Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #9
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Stack Slot Coloring
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove unreachable blocks from the CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Expand reduction intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #7
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPUUseNativeCallsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Assumption Cache Tracker
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Process Implicit Definitions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AnnotationRemarksPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GCN DPP Combine
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Cycle Info Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Final Branch Preparation
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #6
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-Dominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CGProfilePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Lower WWM Copies
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Fix VGPR copies
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Reserve WWM Registers
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #6
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert stack protectors
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Create Garbage Collector Module Metadata
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Unnamed pass: implement Pass::getPassName()
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LCSSA Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Memory Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #12
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ReversePostOrderFunctionAttrsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #7
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Flatten the CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #7
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove unreachable blocks from the CFG #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Merge disjoint stack slots
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower uses of LDS variables from non-kernel functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LCSSA Verifier #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Optimization Remark Emitter #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Shrink Wrapping analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Stack Frame Layout Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #10
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Function Alias Analysis Results #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ObjC ARC contraction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ArgumentPromotionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Local Stack Slot Allocation
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert XRay ops
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GCN NSA Reassign
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  WholeProgramDevirtPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DropUnnecessaryAssumesPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Stack Slot Coloring #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Memory Dependence Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Uniform Intrinsic Combine
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Init Undef Pass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Register Usage Information Collector Pass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Register Usage Information Propagation
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Library Function Lowering Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #11
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Image Intrinsic Optimizer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-Dominator Tree Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Fixup each natural loop to have a single exit block
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SI Insert Hard Clauses
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert fentry calls
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Safe Stack instrumentation pass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Insert Delay ALU
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Prepare AGPR Alloc
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Fixup Statepoint Caller Saved
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GCN Create VOPD Instructions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InvalidateAnalysisPass<llvm::AAManager>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Mark Last Scratch Load
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove Redundant DEBUG_VALUE analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Insert waits for SGPR read hazards
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower SwitchInst's to branches
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove Loads Into Fake Uses
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Scalar Evolution Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Preload Kernel Arguments Prolog
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Rewrite Undef for PHI
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Prepare inline asm insts
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Default Regalloc Eviction Advisor
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  WarnMissedTransformationsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Convert irreducible control-flow into natural loops
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Transform Information
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #8
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Sanitizer Binary Metadata
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Register Usage Information Storage
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  External Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Scoped NoAlias Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Lower VGPR Encoding
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #6
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Default Regalloc Priority Advisor
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Branch Probability Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #7
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Pass Configuration
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MoveAutoInitPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis #4
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Instrument function entry/exit with calls to e.g. mcount() (post inlining)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Profile summary info
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroAnnotationElidePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower invoke and unwind, for unwindless code generators
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Optimization Remark Emitter #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Dominator Tree Construction #7
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimization Remark Emitter #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Value Information Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimization Remark Emitter
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LowerTypeTestsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AlignmentFromAssumptionsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimization Remark Emitter #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #6
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Expand variadic functions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroSplitPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Preload Kernel Arguments
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  KernelInfoPrinter
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptCGSCCPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LoopSinkPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AllocTokenPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ExpandVariadicsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MemProfRemoveInfo
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DeadArgumentEliminationPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CrossDSOCFIPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroEarlyPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Pre-ISel Intrinsic Lowering
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  GlobalSplitPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  RelLookupTableConverterPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU lower intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ConstantMergePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroCleanupPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Inline All Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Externalize enqueued block runtime handles
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Software lowering of LDS
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPU Printf lowering
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower ctors and dtors for AMDGPU
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DropTypeTestsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  EliminateAvailableExternallyPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AMDGPUSwLowerLDSPass
+   0.0503 (100.0%)   0.0123 (100.0%)   0.0626 (100.0%)   0.0626 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                      Instruction Selection and Scheduling
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0063 seconds (0.0063 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0010 ( 29.5%)   0.0008 ( 25.3%)   0.0017 ( 27.4%)   0.0017 ( 27.5%)  Instruction Selection
+   0.0006 ( 19.3%)   0.0006 ( 20.2%)   0.0012 ( 19.7%)   0.0012 ( 19.7%)  Instruction Scheduling
+   0.0005 ( 16.0%)   0.0007 ( 22.6%)   0.0012 ( 19.2%)   0.0012 ( 19.2%)  DAG Combining 1
+   0.0005 ( 14.0%)   0.0003 ( 11.4%)   0.0008 ( 12.7%)   0.0008 ( 12.7%)  DAG Combining 2
+   0.0003 (  9.6%)   0.0002 (  7.7%)   0.0006 (  8.7%)   0.0005 (  8.7%)  Instruction Creation
+   0.0002 (  7.6%)   0.0003 (  9.2%)   0.0005 (  8.4%)   0.0005 (  8.4%)  DAG Legalization
+   0.0001 (  2.0%)   0.0001 (  1.8%)   0.0001 (  1.9%)   0.0001 (  1.8%)  Type Legalization
+   0.0000 (  1.3%)   0.0000 (  1.1%)   0.0001 (  1.2%)   0.0001 (  1.3%)  Vector Legalization
+   0.0000 (  0.8%)   0.0000 (  0.7%)   0.0000 (  0.7%)   0.0000 (  0.7%)  Instruction Scheduling Cleanup
+   0.0033 (100.0%)   0.0031 (100.0%)   0.0063 (100.0%)   0.0063 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                              Register Allocation
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0001 seconds (0.0001 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0001 (100.0%)   0.0000 (100.0%)   0.0001 (100.0%)   0.0001 (100.0%)  Seed Live Regs
+   0.0001 (100.0%)   0.0000 (100.0%)   0.0001 (100.0%)   0.0001 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                        Analysis execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0024 seconds (0.0025 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0000 (  3.5%)   0.0010 ( 58.7%)   0.0010 ( 41.1%)   0.0010 ( 40.4%)  TargetIRAnalysis
+   0.0002 ( 29.2%)   0.0001 (  5.6%)   0.0003 ( 13.1%)   0.0003 ( 12.8%)  UniformityInfoAnalysis
+   0.0000 (  6.1%)   0.0002 ( 12.6%)   0.0003 ( 10.5%)   0.0003 ( 10.4%)  VerifierAnalysis
+   0.0001 ( 16.9%)   0.0001 (  5.0%)   0.0002 (  8.8%)   0.0002 (  8.7%)  MemorySSAAnalysis
+   0.0001 ( 12.8%)   0.0001 (  4.8%)   0.0002 (  7.3%)   0.0002 (  7.8%)  AAManager
+   0.0000 (  4.3%)   0.0000 (  1.6%)   0.0001 (  2.4%)   0.0001 (  2.5%)  DominatorTreeAnalysis
+   0.0000 (  2.3%)   0.0000 (  0.2%)   0.0000 (  0.9%)   0.0000 (  1.6%)  AssumptionAnalysis
+   0.0000 (  2.3%)   0.0000 (  1.0%)   0.0000 (  1.4%)   0.0000 (  1.6%)  BasicAA
+   0.0000 (  3.2%)   0.0000 (  1.2%)   0.0000 (  1.9%)   0.0000 (  1.6%)  CycleAnalysis
+   0.0000 (  2.5%)   0.0000 (  1.1%)   0.0000 (  1.5%)   0.0000 (  1.5%)  ScalarEvolutionAnalysis
+   0.0000 (  1.9%)   0.0000 (  0.9%)   0.0000 (  1.2%)   0.0000 (  1.3%)  LazyCallGraphAnalysis
+   0.0000 (  1.4%)   0.0000 (  1.2%)   0.0000 (  1.3%)   0.0000 (  1.2%)  LoopAnalysis
+   0.0000 (  1.3%)   0.0000 (  1.0%)   0.0000 (  1.1%)   0.0000 (  1.2%)  FunctionAnalysisManagerCGSCCProxy
+   0.0000 (  1.7%)   0.0000 (  0.4%)   0.0000 (  0.8%)   0.0000 (  0.9%)  PostDominatorTreeAnalysis
+   0.0000 (  0.8%)   0.0000 (  0.6%)   0.0000 (  0.7%)   0.0000 (  0.8%)  TargetLibraryAnalysis
+   0.0000 (  0.0%)   0.0000 (  1.0%)   0.0000 (  0.7%)   0.0000 (  0.7%)  GlobalsAA
+   0.0000 (  0.8%)   0.0000 (  0.4%)   0.0000 (  0.5%)   0.0000 (  0.6%)  LastRunTrackingAnalysis
+   0.0000 (  0.5%)   0.0000 (  0.5%)   0.0000 (  0.5%)   0.0000 (  0.6%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &>
+   0.0000 (  1.0%)   0.0000 (  0.4%)   0.0000 (  0.6%)   0.0000 (  0.5%)  OptimizationRemarkEmitterAnalysis
+   0.0000 (  0.0%)   0.0000 (  0.6%)   0.0000 (  0.4%)   0.0000 (  0.4%)  CallGraphAnalysis
+   0.0000 (  1.3%)   0.0000 (  0.1%)   0.0000 (  0.5%)   0.0000 (  0.4%)  AMDGPUAA
+   0.0000 (  0.9%)   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0000 (  0.4%)  TypeBasedAA
+   0.0000 (  0.9%)   0.0000 (  0.0%)   0.0000 (  0.3%)   0.0000 (  0.3%)  ScopedNoAliasAA
+   0.0000 (  1.3%)   0.0000 (  0.1%)   0.0000 (  0.5%)   0.0000 (  0.3%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, Function>
+   0.0000 (  0.9%)   0.0000 (  0.2%)   0.0000 (  0.4%)   0.0000 (  0.3%)  LoopAccessAnalysis
+   0.0000 (  0.5%)   0.0000 (  0.1%)   0.0000 (  0.2%)   0.0000 (  0.3%)  DemandedBitsAnalysis
+   0.0000 (  0.8%)   0.0000 (  0.2%)   0.0000 (  0.4%)   0.0000 (  0.3%)  MemoryDependenceAnalysis
+   0.0000 (  0.6%)   0.0000 (  0.1%)   0.0000 (  0.2%)   0.0000 (  0.2%)  InnerAnalysisManagerProxy<LoopAnalysisManager, Function>
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.2%)  InnerAnalysisManagerProxy<CGSCCAnalysisManager, Module>
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.1%)   0.0000 (  0.2%)  InnerAnalysisManagerProxy<FunctionAnalysisManager, Module>
+   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)   0.0000 (  0.1%)  ProfileSummaryAnalysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InlineAdvisorAnalysis
+   0.0008 (100.0%)   0.0017 (100.0%)   0.0024 (100.0%)   0.0025 (100.0%)  Total
+
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:138:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  138 |         hipGetDeviceProperties(&deviceProp, GPU_DEVICE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rocm-7.0.2/include/hip/hip_runtime_api.h:102:32: note: expanded from macro 'hipGetDeviceProperties'
+  102 | #define hipGetDeviceProperties hipGetDevicePropertiesR0600
+      |                                ^
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:140:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  140 |         hipSetDevice( GPU_DEVICE );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:225:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  225 |         hipMalloc(&A_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:226:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  226 |         hipMalloc(&B_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:227:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  227 |         hipMalloc(&X_gpu, N * N * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:228:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  228 |         hipMemcpy(A_gpu, A, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:229:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  229 |         hipMemcpy(B_gpu, B, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:230:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  230 |         hipMemcpy(X_gpu, X, N * N * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:243:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  243 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:245:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  245 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:247:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  247 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:252:4: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  252 |                         hipDeviceSynchronize();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:256:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  256 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:261:4: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  261 |                         hipDeviceSynchronize();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:270:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  270 |         hipMemcpy(B_outputFromGpu, B_gpu, N * N * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:271:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  271 |         hipMemcpy(X_outputFromGpu, X_gpu, N * N * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:273:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  273 |         hipFree(A_gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:274:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  274 |         hipFree(B_gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybenchGpu/HIP/ADI/adi.hip.cpp:275:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  275 |         hipFree(X_gpu);
+      |         ^~~~~~~~~~~~~~
+19 warnings generated when compiling for host.
+===-------------------------------------------------------------------------===
+                              Register Allocation
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0032 seconds (0.0032 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0017 ( 63.5%)   0.0003 ( 61.5%)   0.0020 ( 63.2%)   0.0020 ( 63.5%)  Global Splitting
+   0.0005 ( 17.0%)   0.0001 (  9.7%)   0.0005 ( 15.9%)   0.0005 ( 15.5%)  Evict
+   0.0004 ( 14.2%)   0.0001 ( 14.6%)   0.0005 ( 14.3%)   0.0004 ( 14.2%)  Spiller
+   0.0001 (  3.1%)   0.0000 (  6.0%)   0.0001 (  3.6%)   0.0001 (  3.6%)  Seed Live Regs
+   0.0001 (  2.1%)   0.0000 (  8.2%)   0.0001 (  3.1%)   0.0001 (  3.2%)  Local Splitting
+   0.0027 (100.0%)   0.0005 (100.0%)   0.0032 (100.0%)   0.0032 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                      Instruction Selection and Scheduling
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0173 seconds (0.0173 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0031 ( 19.5%)   0.0004 ( 25.3%)   0.0035 ( 20.0%)   0.0035 ( 20.1%)  DAG Combining 1
+   0.0026 ( 16.1%)   0.0003 ( 23.1%)   0.0029 ( 16.7%)   0.0029 ( 16.8%)  Instruction Selection
+   0.0024 ( 15.2%)   0.0002 ( 10.9%)   0.0026 ( 14.8%)   0.0026 ( 14.8%)  DAG Combining 2
+   0.0015 (  9.2%)   0.0002 ( 11.0%)   0.0016 (  9.4%)   0.0016 (  9.3%)  Instruction Scheduling
+   0.0013 (  8.1%)   0.0001 (  9.5%)   0.0014 (  8.2%)   0.0014 (  8.2%)  Instruction Creation
+   0.0013 (  8.2%)   0.0001 (  8.6%)   0.0014 (  8.2%)   0.0014 (  8.2%)  DAG Legalization
+   0.0012 (  7.8%)   0.0001 (  3.8%)   0.0013 (  7.5%)   0.0013 (  7.4%)  DAG Combining after legalize types
+   0.0012 (  7.5%)   0.0001 (  5.7%)   0.0013 (  7.4%)   0.0013 (  7.3%)  Type Legalization
+   0.0008 (  5.0%)   0.0000 (  0.0%)   0.0008 (  4.6%)   0.0008 (  4.6%)  DAG Combining after legalize vectors
+   0.0003 (  2.1%)   0.0000 (  1.2%)   0.0004 (  2.0%)   0.0004 (  2.0%)  Vector Legalization
+   0.0002 (  1.1%)   0.0000 (  1.1%)   0.0002 (  1.1%)   0.0002 (  1.0%)  Instruction Scheduling Cleanup
+   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.2%)  Type Legalization 2
+   0.0159 (100.0%)   0.0015 (100.0%)   0.0173 (100.0%)   0.0173 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                        Analysis execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0037 seconds (0.0037 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0006 ( 18.5%)   0.0000 (  8.8%)   0.0006 ( 17.4%)   0.0006 ( 17.5%)  MemorySSAAnalysis
+   0.0005 ( 16.2%)   0.0000 (  3.7%)   0.0005 ( 14.8%)   0.0006 ( 15.2%)  TargetIRAnalysis
+   0.0004 ( 10.7%)   0.0000 (  0.0%)   0.0004 (  9.5%)   0.0004 (  9.5%)  VerifierAnalysis
+   0.0003 (  8.5%)   0.0000 (  8.3%)   0.0003 (  8.4%)   0.0003 (  8.4%)  AAManager
+   0.0001 (  4.4%)   0.0001 ( 16.6%)   0.0002 (  5.7%)   0.0002 (  5.7%)  DominatorTreeAnalysis
+   0.0002 (  4.7%)   0.0000 (  2.9%)   0.0002 (  4.5%)   0.0002 (  4.4%)  ScalarEvolutionAnalysis
+   0.0001 (  4.3%)   0.0000 (  4.2%)   0.0002 (  4.3%)   0.0002 (  4.2%)  LoopAnalysis
+   0.0001 (  3.4%)   0.0000 ( 10.5%)   0.0002 (  4.2%)   0.0001 (  4.0%)  BlockFrequencyAnalysis
+   0.0001 (  3.2%)   0.0000 (  9.3%)   0.0001 (  3.8%)   0.0001 (  3.6%)  BranchProbabilityAnalysis
+   0.0001 (  2.8%)   0.0000 (  5.6%)   0.0001 (  3.1%)   0.0001 (  3.2%)  PostDominatorTreeAnalysis
+   0.0001 (  2.9%)   0.0000 (  3.9%)   0.0001 (  3.0%)   0.0001 (  2.8%)  BasicAA
+   0.0001 (  2.1%)   0.0000 (  2.2%)   0.0001 (  2.1%)   0.0001 (  2.3%)  LastRunTrackingAnalysis
+   0.0001 (  2.1%)   0.0000 (  4.9%)   0.0001 (  2.4%)   0.0001 (  2.2%)  CycleAnalysis
+   0.0001 (  2.3%)   0.0000 (  0.0%)   0.0001 (  2.1%)   0.0001 (  2.1%)  CallGraphAnalysis
+   0.0001 (  1.8%)   0.0000 (  2.9%)   0.0001 (  1.9%)   0.0001 (  2.0%)  TargetLibraryAnalysis
+   0.0001 (  1.7%)   0.0000 (  1.0%)   0.0001 (  1.6%)   0.0001 (  1.5%)  DemandedBitsAnalysis
+   0.0000 (  1.2%)   0.0000 (  2.2%)   0.0000 (  1.3%)   0.0000 (  1.3%)  FunctionAnalysisManagerCGSCCProxy
+   0.0000 (  1.0%)   0.0000 (  2.4%)   0.0000 (  1.2%)   0.0000 (  1.2%)  LazyValueAnalysis
+   0.0000 (  1.1%)   0.0000 (  0.0%)   0.0000 (  0.9%)   0.0000 (  0.9%)  GlobalsAA
+   0.0000 (  0.5%)   0.0000 (  2.2%)   0.0000 (  0.7%)   0.0000 (  0.8%)  EphemeralValuesAnalysis
+   0.0000 (  0.7%)   0.0000 (  1.2%)   0.0000 (  0.7%)   0.0000 (  0.7%)  MemoryDependenceAnalysis
+   0.0000 (  0.3%)   0.0000 (  2.7%)   0.0000 (  0.5%)   0.0000 (  0.6%)  AssumptionAnalysis
+   0.0000 (  0.5%)   0.0000 (  1.2%)   0.0000 (  0.6%)   0.0000 (  0.6%)  UniformityInfoAnalysis
+   0.0000 (  0.6%)   0.0000 (  1.0%)   0.0000 (  0.6%)   0.0000 (  0.6%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, LazyCallGraph::SCC, LazyCallGraph &>
+   0.0000 (  0.5%)   0.0000 (  0.5%)   0.0000 (  0.5%)   0.0000 (  0.6%)  OptimizationRemarkEmitterAnalysis
+   0.0000 (  0.6%)   0.0000 (  0.2%)   0.0000 (  0.6%)   0.0000 (  0.6%)  InnerAnalysisManagerProxy<LoopAnalysisManager, Function>
+   0.0000 (  0.6%)   0.0000 (  0.0%)   0.0000 (  0.5%)   0.0000 (  0.5%)  LoopAccessAnalysis
+   0.0000 (  0.5%)   0.0000 (  0.0%)   0.0000 (  0.5%)   0.0000 (  0.5%)  ScopedNoAliasAA
+   0.0000 (  0.6%)   0.0000 (  0.2%)   0.0000 (  0.5%)   0.0000 (  0.5%)  OuterAnalysisManagerProxy<ModuleAnalysisManager, Function>
+   0.0000 (  0.4%)   0.0000 (  1.0%)   0.0000 (  0.5%)   0.0000 (  0.5%)  ShouldNotRunFunctionPassesAnalysis
+   0.0000 (  0.6%)   0.0000 (  0.0%)   0.0000 (  0.5%)   0.0000 (  0.5%)  TypeBasedAA
+   0.0000 (  0.5%)   0.0000 (  0.0%)   0.0000 (  0.5%)   0.0000 (  0.5%)  LazyCallGraphAnalysis
+   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.4%)  ShouldRunExtraVectorPasses
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.1%)  InnerAnalysisManagerProxy<FunctionAnalysisManager, Module>
+   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)  InnerAnalysisManagerProxy<CGSCCAnalysisManager, Module>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InlineAdvisorAnalysis
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ShouldRunExtraSimpleLoopUnswitch
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ProfileSummaryAnalysis
+   0.0033 (100.0%)   0.0004 (100.0%)   0.0037 (100.0%)   0.0037 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                          Pass execution timing report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.1370 seconds (0.1370 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0200 ( 16.9%)   0.0021 ( 11.2%)   0.0221 ( 16.1%)   0.0221 ( 16.1%)  X86 DAG->DAG Instruction Selection
+   0.0101 (  8.5%)   0.0011 (  5.7%)   0.0111 (  8.1%)   0.0111 (  8.1%)  Loop Strength Reduction
+   0.0106 (  8.9%)   0.0002 (  1.0%)   0.0108 (  7.9%)   0.0107 (  7.8%)  InstCombinePass
+   0.0090 (  7.6%)   0.0000 (  0.0%)   0.0090 (  6.6%)   0.0090 (  6.6%)  LoopVectorizePass
+   0.0043 (  3.7%)   0.0009 (  5.0%)   0.0053 (  3.8%)   0.0053 (  3.8%)  Greedy Register Allocator #2
+   0.0050 (  4.2%)   0.0000 (  0.0%)   0.0050 (  3.6%)   0.0050 (  3.6%)  SLPVectorizerPass
+   0.0035 (  3.0%)   0.0001 (  0.4%)   0.0036 (  2.6%)   0.0036 (  2.6%)  IndVarSimplifyPass
+   0.0025 (  2.2%)   0.0007 (  3.6%)   0.0032 (  2.4%)   0.0032 (  2.4%)  Machine Instruction Scheduler
+   0.0032 (  2.7%)   0.0000 (  0.0%)   0.0032 (  2.3%)   0.0032 (  2.3%)  LoopUnrollPass
+   0.0021 (  1.8%)   0.0003 (  1.7%)   0.0024 (  1.8%)   0.0024 (  1.8%)  SimplifyCFGPass
+   0.0023 (  2.0%)   0.0000 (  0.0%)   0.0023 (  1.7%)   0.0023 (  1.7%)  LoopLoadEliminationPass
+   0.0020 (  1.7%)   0.0001 (  0.3%)   0.0020 (  1.5%)   0.0020 (  1.5%)  Induction Variable Users
+   0.0013 (  1.1%)   0.0005 (  2.4%)   0.0018 (  1.3%)   0.0018 (  1.3%)  InlinerPass
+   0.0009 (  0.8%)   0.0007 (  3.9%)   0.0017 (  1.2%)   0.0017 (  1.3%)  Machine Module Information
+   0.0016 (  1.4%)   0.0000 (  0.0%)   0.0017 (  1.2%)   0.0016 (  1.2%)  LICMPass
+   0.0010 (  0.8%)   0.0006 (  3.2%)   0.0016 (  1.2%)   0.0016 (  1.2%)  SROAPass
+   0.0010 (  0.8%)   0.0005 (  2.9%)   0.0015 (  1.1%)   0.0015 (  1.1%)  EarlyCSEPass
+   0.0015 (  1.2%)   0.0001 (  0.4%)   0.0015 (  1.1%)   0.0015 (  1.1%)  GVNPass
+   0.0011 (  0.9%)   0.0003 (  1.8%)   0.0014 (  1.0%)   0.0014 (  1.0%)  Live Variable Analysis
+   0.0007 (  0.6%)   0.0006 (  3.3%)   0.0013 (  1.0%)   0.0013 (  1.0%)  Dominator Tree Construction #3
+   0.0011 (  1.0%)   0.0002 (  1.0%)   0.0013 (  1.0%)   0.0013 (  1.0%)  Register Coalescer
+   0.0006 (  0.5%)   0.0006 (  3.2%)   0.0012 (  0.9%)   0.0013 (  0.9%)  Function Alias Analysis Results #2
+   0.0007 (  0.6%)   0.0006 (  3.1%)   0.0012 (  0.9%)   0.0013 (  0.9%)  Basic Alias Analysis (stateless AA impl) #3
+   0.0011 (  0.9%)   0.0001 (  0.5%)   0.0012 (  0.8%)   0.0012 (  0.9%)  Two-Address instruction pass
+   0.0011 (  0.9%)   0.0000 (  0.1%)   0.0011 (  0.8%)   0.0011 (  0.8%)  Canonicalize Freeze Instructions in Loops
+   0.0009 (  0.7%)   0.0002 (  1.0%)   0.0010 (  0.8%)   0.0010 (  0.8%)  Live Interval Analysis
+   0.0008 (  0.7%)   0.0003 (  1.4%)   0.0010 (  0.8%)   0.0010 (  0.8%)  X86 Assembly Printer
+   0.0008 (  0.7%)   0.0001 (  0.7%)   0.0009 (  0.7%)   0.0009 (  0.7%)  CodeGen Prepare
+   0.0007 (  0.6%)   0.0003 (  1.4%)   0.0009 (  0.7%)   0.0009 (  0.7%)  Machine Common Subexpression Elimination
+   0.0008 (  0.7%)   0.0000 (  0.3%)   0.0009 (  0.7%)   0.0009 (  0.7%)  CorrelatedValuePropagationPass
+   0.0009 (  0.7%)   0.0000 (  0.1%)   0.0009 (  0.6%)   0.0009 (  0.6%)  LoopDeletionPass
+   0.0008 (  0.6%)   0.0001 (  0.3%)   0.0008 (  0.6%)   0.0008 (  0.6%)  DSEPass
+   0.0008 (  0.7%)   0.0000 (  0.0%)   0.0008 (  0.6%)   0.0008 (  0.6%)  LoopRotatePass
+   0.0007 (  0.6%)   0.0001 (  0.6%)   0.0008 (  0.6%)   0.0008 (  0.6%)  PostOrderFunctionAttrsPass
+   0.0002 (  0.2%)   0.0005 (  2.9%)   0.0008 (  0.6%)   0.0008 (  0.6%)  IPSCCPPass
+   0.0006 (  0.5%)   0.0001 (  0.5%)   0.0007 (  0.5%)   0.0007 (  0.5%)  Reaching Definitions Analysis
+   0.0004 (  0.4%)   0.0003 (  1.5%)   0.0007 (  0.5%)   0.0007 (  0.5%)  Unnamed pass: implement Pass::getPassName()
+   0.0007 (  0.6%)   0.0000 (  0.2%)   0.0007 (  0.5%)   0.0007 (  0.5%)  SCCPPass
+   0.0006 (  0.5%)   0.0000 (  0.1%)   0.0006 (  0.5%)   0.0006 (  0.5%)  LoopIdiomRecognizePass
+   0.0006 (  0.5%)   0.0001 (  0.3%)   0.0006 (  0.5%)   0.0006 (  0.5%)  JumpThreadingPass
+   0.0003 (  0.3%)   0.0003 (  1.4%)   0.0006 (  0.4%)   0.0006 (  0.4%)  Machine Register Class Info Analysis
+   0.0006 (  0.5%)   0.0000 (  0.0%)   0.0006 (  0.4%)   0.0006 (  0.4%)  SimpleLoopUnswitchPass
+   0.0004 (  0.3%)   0.0001 (  0.6%)   0.0005 (  0.4%)   0.0005 (  0.4%)  Early Machine Loop Invariant Code Motion
+   0.0004 (  0.4%)   0.0001 (  0.4%)   0.0005 (  0.4%)   0.0005 (  0.4%)  Unnamed pass: implement Pass::getPassName() #2
+   0.0003 (  0.3%)   0.0002 (  0.9%)   0.0005 (  0.4%)   0.0005 (  0.4%)  Machine Copy Propagation Pass
+   0.0004 (  0.4%)   0.0001 (  0.3%)   0.0005 (  0.3%)   0.0005 (  0.3%)  ConstraintEliminationPass
+   0.0003 (  0.3%)   0.0001 (  0.6%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Machine code sinking
+   0.0003 (  0.3%)   0.0001 (  0.8%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Peephole Optimizations
+   0.0003 (  0.3%)   0.0001 (  0.6%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Prologue/Epilogue Insertion & Frame Finalization
+   0.0004 (  0.3%)   0.0000 (  0.1%)   0.0004 (  0.3%)   0.0004 (  0.3%)  LoopSimplifyPass
+   0.0003 (  0.2%)   0.0001 (  0.8%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Virtual Register Rewriter
+   0.0003 (  0.3%)   0.0001 (  0.4%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Branch Probability Basic Block Placement
+   0.0004 (  0.3%)   0.0000 (  0.0%)   0.0004 (  0.3%)   0.0004 (  0.3%)  LoopFullUnrollPass
+   0.0004 (  0.3%)   0.0000 (  0.0%)   0.0004 (  0.3%)   0.0004 (  0.3%)  VerifierPass
+   0.0003 (  0.3%)   0.0000 (  0.2%)   0.0004 (  0.3%)   0.0004 (  0.3%)  ReassociatePass
+   0.0003 (  0.3%)   0.0001 (  0.3%)   0.0004 (  0.3%)   0.0004 (  0.3%)  Machine Copy Propagation Pass #2
+   0.0003 (  0.2%)   0.0000 (  0.2%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Control Flow Optimizer
+   0.0003 (  0.3%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  LCSSAPass
+   0.0003 (  0.2%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  MemCpyOptPass
+   0.0003 (  0.3%)   0.0000 (  0.0%)   0.0003 (  0.2%)   0.0003 (  0.2%)  InferAlignmentPass
+   0.0002 (  0.2%)   0.0001 (  0.6%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Live Range Shrink
+   0.0003 (  0.2%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  BDCEPass
+   0.0002 (  0.1%)   0.0002 (  0.9%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Machine Natural Loop Construction #3
+   0.0002 (  0.2%)   0.0001 (  0.3%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Machine InstCombiner
+   0.0003 (  0.2%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  GlobalOptPass
+   0.0003 (  0.2%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  TailCallElimPass
+   0.0003 (  0.2%)   0.0000 (  0.1%)   0.0003 (  0.2%)   0.0003 (  0.2%)  ADCEPass
+   0.0003 (  0.2%)   0.0000 (  0.0%)   0.0003 (  0.2%)   0.0003 (  0.2%)  LoopInstSimplifyPass
+   0.0003 (  0.2%)   0.0000 (  0.0%)   0.0003 (  0.2%)   0.0003 (  0.2%)  InstSimplifyPass
+   0.0002 (  0.2%)   0.0000 (  0.2%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Natural Loop Information
+   0.0002 (  0.1%)   0.0001 (  0.5%)   0.0003 (  0.2%)   0.0003 (  0.2%)  Slot index numbering #2
+   0.0002 (  0.2%)   0.0000 (  0.2%)   0.0002 (  0.2%)   0.0002 (  0.2%)  X86 Execution Dependency Fix
+   0.0002 (  0.1%)   0.0001 (  0.5%)   0.0003 (  0.2%)   0.0002 (  0.2%)  Remove dead machine instructions
+   0.0001 (  0.1%)   0.0001 (  0.5%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Dominator Tree Construction #2
+   0.0002 (  0.2%)   0.0000 (  0.0%)   0.0002 (  0.2%)   0.0002 (  0.2%)  LoopSimplifyCFGPass
+   0.0002 (  0.2%)   0.0001 (  0.3%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Machine Late Instructions Cleanup Pass
+   0.0001 (  0.1%)   0.0001 (  0.6%)   0.0002 (  0.2%)   0.0002 (  0.2%)  MachineDominator Tree Construction #5
+   0.0002 (  0.2%)   0.0000 (  0.2%)   0.0002 (  0.2%)   0.0002 (  0.2%)  X86 Byte/Word Instruction Fixup
+   0.0002 (  0.2%)   0.0000 (  0.2%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Scalar Evolution Analysis
+   0.0001 (  0.1%)   0.0001 (  0.7%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Merge disjoint stack slots
+   0.0002 (  0.2%)   0.0000 (  0.1%)   0.0002 (  0.2%)   0.0002 (  0.2%)  AggressiveInstCombinePass
+   0.0002 (  0.1%)   0.0000 (  0.2%)   0.0002 (  0.2%)   0.0002 (  0.2%)  Eliminate PHI nodes for register allocation
+   0.0002 (  0.2%)   0.0000 (  0.0%)   0.0002 (  0.2%)   0.0002 (  0.2%)  VectorCombinePass
+   0.0002 (  0.2%)   0.0000 (  0.1%)   0.0002 (  0.1%)   0.0002 (  0.1%)  CalledValuePropagationPass
+   0.0002 (  0.1%)   0.0000 (  0.2%)   0.0002 (  0.1%)   0.0002 (  0.1%)  Constant Hoisting
+   0.0001 (  0.1%)   0.0001 (  0.5%)   0.0002 (  0.1%)   0.0002 (  0.1%)  Greedy Register Allocator
+   0.0001 (  0.1%)   0.0001 (  0.4%)   0.0002 (  0.1%)   0.0002 (  0.1%)  Remove dead machine instructions #2
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0002 (  0.1%)   0.0002 (  0.1%)  Shrink Wrapping analysis
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0002 (  0.1%)   0.0002 (  0.1%)  BreakFalseDeps
+   0.0001 (  0.1%)   0.0001 (  0.3%)   0.0002 (  0.1%)   0.0002 (  0.1%)  Machine Block Frequency Analysis #3
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Loop Invariant Code Motion
+   0.0001 (  0.1%)   0.0000 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Canonicalize natural loops
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Stack Slot Coloring
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Finalize ISel and expand pseudo-instructions
+   0.0001 (  0.1%)   0.0001 (  0.4%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Expand IR instructions
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 LEA Fixup
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Live DEBUG_VALUE analysis
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Block Frequency Analysis
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  InferFunctionAttrsPass
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis #4
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Float2IntPass
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Slot index numbering
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LoopDistributePass
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Branch Probability Analysis
+   0.0001 (  0.0%)   0.0001 (  0.3%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 Optimize Call Frame
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 LEA Optimize
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Dominance Frontier Construction
+   0.0001 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  MachineDominator Tree Construction #6
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Free MachineFunction
+   0.0001 (  0.1%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis #2
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Post-Dominator Tree Construction
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Post-RA pseudo instruction expansion pass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Live Stack Slot Analysis
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  MachineDominator Tree Construction
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  LibCallsShrinkWrapPass
+   0.0001 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Natural Loop Construction #2
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Block Frequency Analysis #5
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 Fixup Vector Constants
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Init Undef Pass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Trace Metrics
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 Fixup SetCC
+   0.0001 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Cycle Info Analysis
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  RequireAnalysisPass<llvm::GlobalsAA, llvm::Module, llvm::AnalysisManager<Module>>
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Branch Probability Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  MachinePostDominator Tree Construction #2
+   0.0001 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  MachinePostDominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.1%)  Natural Loop Information #2
+   0.0001 (  0.1%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Early Tail Duplication
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Machine Natural Loop Construction
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  GlobalDCEPass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  PostRA Machine Sink
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Bundle Machine CFG Edges
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Debug Variable Analysis
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Live Register Matrix
+   0.0001 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.1%)  Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 cmov Conversion
+   0.0001 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.1%)   0.0001 (  0.1%)  RecomputeGlobalsAAPass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.1%)  MachineDominator Tree Construction #2
+   0.0001 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  X86 pseudo instruction expansion pass
+   0.0001 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.1%)   0.0001 (  0.1%)  Interleaved Access Pass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.1%)  Spill Code Placement Analysis
+   0.0001 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Expand reduction intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  LowerExpectIntrinsicPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Virtual Register Map
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Branch Probability Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  RequireAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis, llvm::Function, llvm::AnalysisManager<Function>>
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Machine Cycle Info Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Remove unreachable machine basic blocks
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Scalarize Masked Memory Intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  X86 Fixup Inst Tuning
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Post-Dominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  MachineDominator Tree Construction #7
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Partially inline calls to library functions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Remove unreachable blocks from the CFG
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Machine Natural Loop Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Check CFA info and insert CFI instructions if needed
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Function Alias Analysis Results
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  CoroAnnotationElidePass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Tail Duplication
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Expand Atomic instructions
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Machine Optimization Remark Emitter
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Natural Loop Information #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Bundle Machine CFG Edges #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Replace intrinsics with calls to vector library
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  CGProfilePass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  MachineDominator Tree Construction #4
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0001 (  0.0%)  CallSiteSplittingPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  DFAJumpThreadingPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  MachinePostDominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  X86 Avoid Store Forwarding Blocks
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0001 (  0.0%)   0.0001 (  0.0%)  Cycle Info Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower AMX type for load/store
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ReversePostOrderFunctionAttrsPass
+   0.0000 (  0.0%)   0.0000 (  0.2%)   0.0001 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl)
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Partial Reduction
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Exception handling preparation
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Process Implicit Definitions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post-Dominator Tree Construction #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Optimization Remark Emitter #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Natural Loop Information #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  WarnMissedTransformationsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AllocTokenPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ArgumentPromotionPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimize machine instruction PHIs
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LowerConstantIntrinsicsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Stack Frame Layout Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Assignment Tracking Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MachineDominator Tree Construction #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ExpandMemCmpPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Fixup Statepoint Caller Saved
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Early If-Conversion
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Tile Register Configure
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #8
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Register Allocation Pass Scoring
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Local Dynamic TLS Access Clean-up
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 insert wait instruction
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Shadow Stack GC Lowering
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert stack protectors
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Domain Reassignment Pass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DropUnnecessaryAssumesPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 EFLAGS copy lowering
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Cycle Info Analysis #2
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  JumpTableToSwitchPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Basic Alias Analysis (stateless AA impl) #2
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ObjC ARC contraction
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert XRay ops
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Post RA top-down list latency scheduler
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Argument Stack Rebase
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Tile Register Pre-configure
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Rename Disconnected Subregister Components
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove Loads Into Fake Uses
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Compressing EVEX instrs when possible
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 FP Stackifier
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Indirect Branch Tracking
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Expand indirectbr instructions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DivRemPairsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Load Value Injection (LVI) Ret-Hardening
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 PIC Global Base Reg Initialization
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Instrument function entry/exit with calls to e.g. mcount() (post inlining)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InjectTLIMappings
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  PromotePass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert KCFI indirect call checks
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Local Stack Slot Allocation
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Unpack machine instruction bundles
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Return Thunks
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Implement the 'patchable-function' attribute
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Detect Dead Lanes
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Suppress APX features for relocation
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Atom pad short functions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Lower Tile Copy
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 DynAlloca Expander
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Analyze Machine Code For Garbage Collection
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Branch Probability Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 speculative load hardening
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Safe Stack instrumentation pass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Insert fentry calls
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  StackMap Liveness Analysis
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Load Value Injection (LVI) Load Hardening
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Block Frequency Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InvalidateAnalysisPass<llvm::ShouldNotRunFunctionPassesAnalysis>
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Prepare inline asm insts
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  EntryExitInstrumenterPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Speculative Execution Side Effect Suppression
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Remove Redundant DEBUG_VALUE analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MergeICmpsPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Pseudo Probe Inserter
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Sanitizer Binary Metadata
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Optimization Remark Emitter #3
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 Indirect Thunks
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MergedLoadStoreMotionPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MoveAutoInitPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #6
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower AMX intrinsics
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #7
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Optimization Remark Emitter
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lower Garbage Collection Instructions
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Optimization Remark Emitter #4
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Contiguously Lay Out Funclets
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroSplitPass
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #5
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #9
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  X86 vzeroupper inserter
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #3
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  SpeculativeExecutionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  InvalidateAnalysisPass<llvm::AAManager>
+   0.0000 (  0.0%)   0.0000 (  0.1%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Lazy Machine Block Frequency Analysis #10
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroElidePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptCGSCCPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AlignmentFromAssumptionsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ControlHeightReductionPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AlwaysInlinerPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AssignmentTrackingPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LoopSinkPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  MemProfRemoveInfo
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  AnnotationRemarksPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Create Garbage Collector Module Metadata
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  DeadArgumentEliminationPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Library Information
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ConstantMergePass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Assumption Cache Tracker
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroEarlyPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  RelLookupTableConverterPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  CoroCleanupPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Pre-ISel Intrinsic Lowering
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Annotation2MetadataPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  EliminateAvailableExternallyPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  ForceFunctionAttrsPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  OpenMPOptPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  RequireAnalysisPass<llvm::ProfileSummaryAnalysis, llvm::Module, llvm::AnalysisManager<Module>>
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  LowerCommentStringPass
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Pass Configuration
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Profile summary info
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Library Function Lowering Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Target Transform Information
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Scoped NoAlias Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Default Regalloc Eviction Advisor
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Machine Branch Probability Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Default Regalloc Priority Advisor
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Type-Based Alias Analysis
+   0.1183 (100.0%)   0.0187 (100.0%)   0.1370 (100.0%)   0.1370 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                               Clang time report
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.7697 seconds (0.7518 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.5684 ( 81.2%)   0.0430 ( 61.3%)   0.6113 ( 79.4%)   0.5935 ( 78.9%)  Front end
+   0.0720 ( 10.3%)   0.0231 ( 32.9%)   0.0950 ( 12.3%)   0.0950 ( 12.6%)  Machine code generation
+   0.0592 (  8.5%)   0.0041 (  5.8%)   0.0633 (  8.2%)   0.0633 (  8.4%)  Optimizer
+   0.6996 (100.0%)   0.0701 (100.0%)   0.7697 (100.0%)   0.7518 (100.0%)  Total
+
