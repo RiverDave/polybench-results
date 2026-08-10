@@ -1,0 +1,97 @@
+COMMAND: /root/llvm-project/build/bin/clang-24 --gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/13 -x hip --hip-path=/opt/rocm-7.0.2 --offload-arch=gfx942 --rocm-device-lib-path=/opt/rocm-7.0.2/core-7.14/lib/llvm/amdgcn/bitcode -D__AMDGCN_WAVEFRONT_SIZE=64 -I/root/polybenchGpu/CUDA/DOITGEN -std=c++17 -O3 -DNO_CPU_REF -fno-offload-uniform-block /root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu -I/root/polybenchGpu/common -I/root/polybenchGpu/HIP/DOITGEN -I/root/polybenchGpu -lm -L/opt/rocm-7.0.2/lib -lamdhip64 -x none /root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/polybench.o /root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/polybench_shim.o -o /root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942
+
+STDOUT:
+
+STDERR:
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:124:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  124 |         hipGetDeviceProperties(&deviceProp, GPU_DEVICE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rocm-7.0.2/include/hip/hip_runtime_api.h:102:32: note: expanded from macro 'hipGetDeviceProperties'
+  102 | #define hipGetDeviceProperties hipGetDevicePropertiesR0600
+      |                                ^
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:126:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  126 |         hipSetDevice( GPU_DEVICE );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:166:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  166 |         hipMalloc(&AGpu, NR * NQ * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:167:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  167 |         hipMalloc(&C4Gpu, NP * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:168:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  168 |         hipMalloc(&sumGpu, NR * NQ * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:170:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  170 |         hipMemcpy(AGpu, A, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:171:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  171 |         hipMemcpy(C4Gpu, C4, NP * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:172:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  172 |         hipMemcpy(sumGpu, sum, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:181:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  181 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:183:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  183 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:189:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  189 |         hipMemcpy(sum_outputFromGpu, sumGpu, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:191:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  191 |         hipFree(AGpu);
+      |         ^~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:192:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  192 |         hipFree(C4Gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:193:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  193 |         hipFree(sumGpu);
+      |         ^~~~~~~~~~~~~~~
+14 warnings generated when compiling for gfx942.
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:124:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  124 |         hipGetDeviceProperties(&deviceProp, GPU_DEVICE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rocm-7.0.2/include/hip/hip_runtime_api.h:102:32: note: expanded from macro 'hipGetDeviceProperties'
+  102 | #define hipGetDeviceProperties hipGetDevicePropertiesR0600
+      |                                ^
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:126:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  126 |         hipSetDevice( GPU_DEVICE );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:166:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  166 |         hipMalloc(&AGpu, NR * NQ * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:167:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  167 |         hipMalloc(&C4Gpu, NP * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:168:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  168 |         hipMalloc(&sumGpu, NR * NQ * NP * sizeof(DATA_TYPE));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:170:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  170 |         hipMemcpy(AGpu, A, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:171:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  171 |         hipMemcpy(C4Gpu, C4, NP * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:172:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  172 |         hipMemcpy(sumGpu, sum, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyHostToDevice);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:181:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  181 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:183:3: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  183 |                 hipDeviceSynchronize();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:189:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  189 |         hipMemcpy(sum_outputFromGpu, sumGpu, NR * NQ * NP * sizeof(DATA_TYPE), hipMemcpyDeviceToHost);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:191:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  191 |         hipFree(AGpu);
+      |         ^~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:192:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  192 |         hipFree(C4Gpu);
+      |         ^~~~~~~~~~~~~~
+/root/polybench-gpu-audit/temp/fnofub/runtime-hip-gfx942-j1/build/HIP_DOITGEN_doitgen.hip.cpp.og.gfx942.cu:193:2: warning: ignoring return value of type 'hipError_t' declared with 'nodiscard' attribute [-Wunused-value]
+  193 |         hipFree(sumGpu);
+      |         ^~~~~~~~~~~~~~~
+14 warnings generated when compiling for host.
