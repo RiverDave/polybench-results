@@ -1,0 +1,13 @@
+{
+  "hostname": "129-153-183-102",
+  "timestamp_utc": "2026-08-13T19:23:47+00:00",
+  "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+  "cpu_count": "30",
+  "kernel": "6.8.0-60-generic",
+  "gpu": "NVIDIA A10",
+  "rocm_version": "",
+  "cuda_version": "12.8",
+  "driver_version": "570.148.08",
+  "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+  "os_release": "Ubuntu 22.04.5 LTS"
+}
