@@ -1,6 +1,6 @@
 PolyBench compile-phase timing: CIR vs CIR-merge.
 
-- ClangIR commit: `8a430851ae29`
+- ClangIR commit: `fb724e2f8515`
 - Scripts commit: `5058ec1`
 - arch: `cuda:sm_86`
 - PolyBench root: `/home/ubuntu/polybenchGpu`

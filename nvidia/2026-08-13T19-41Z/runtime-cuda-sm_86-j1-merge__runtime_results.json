@@ -9,7 +9,7 @@
     "CIR",
     "CIR-merge"
   ],
-  "clangir_commit": "8a430851ae29",
+  "clangir_commit": "fb724e2f8515",
   "scripts_commit": "5058ec1",
   "polybench_root": "/home/ubuntu/polybenchGpu",
   "environment": {
