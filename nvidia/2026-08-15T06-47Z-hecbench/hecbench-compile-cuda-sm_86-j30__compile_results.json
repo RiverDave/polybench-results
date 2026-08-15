@@ -1,0 +1,6769 @@
+{
+  "kind": "compile",
+  "suite": "hecbench",
+  "arch": null,
+  "warmup": 1,
+  "samples": 1,
+  "jobs": 30,
+  "merge": false,
+  "pipelines": [
+    "CIR",
+    "OG"
+  ],
+  "clangir_commit": "be46daffea1e",
+  "scripts_commit": "5d63178",
+  "hecbench_root": "/home/ubuntu/hecbench",
+  "environment": {
+    "hostname": "193-122-144-249",
+    "timestamp_utc": "2026-08-15T06:46:16+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+    "cpu_count": "30",
+    "kernel": "6.8.0-60-generic",
+    "gpu": "NVIDIA A10",
+    "rocm_version": "",
+    "cuda_version": "12.8",
+    "driver_version": "570.148.08",
+    "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+    "os_release": "Ubuntu 22.04.5 LTS",
+    "suite": "hecbench",
+    "hecbench_commit": "f95404045",
+    "manifest_commit": "f9540404573a2be7ad1d1ee4b3106fd064825fa8",
+    "manifest_path": "/home/ubuntu/polybench-gpu-audit/hecbench_suite.json",
+    "benchmark_args": "{\"accuracy\": [\"8192\", \"10000\", \"10\", \"100\"], \"ace\": [\"100\"], \"adam\": [\"10000\", \"200\", \"100\"], \"adv\": [\"7\", \"15\", \"16\"], \"aidw\": [\"10\", \"1\", \"100\"], \"all-pairs-distance\": [\"1000\"], \"aobench\": [\"1000\"], \"aop\": [\"-paths\", \"200\"], \"asmooth\": [\"10000\", \"1\", \"5\", \"1\"], \"assert\": [], \"asta\": [], \"atomicAggregate\": [\"1000\"], \"atomicCAS\": [\"10000\"], \"atomicCost\": [\"16\", \"10\"], \"atomicPerf\": [\"10\"], \"atomicReduction\": [], \"attention\": [\"8192\", \"8192\", \"0\", \"5\"], \"axhelm\": [\"3\", \"8000\", \"100\"], \"background-subtract\": [\"4096\", \"2048\", \"1\", \"102\"], \"backprop\": [\"65536\"], \"bezier-surface\": [\"-n\", \"8192\"], \"bh\": [\"300\", \"30\"], \"bilateral\": [\"2960\", \"1440\", \"0.5\", \"0.5\", \"1000\"], \"binomial\": [], \"bitonic-sort\": [\"25\", \"2\"], \"bitpacking\": [], \"black-scholes\": [\"100\"], \"bn\": [\"result\", \"10\"], \"bonds\": [\"100\"], \"boxfilter\": [\"../boxfilter-sycl/data/lenaRGB.ppm\", \"10000\"], \"bsearch\": [\"16384\", \"1\"], \"bspline-vgh\": [], \"burger\": [\"8193\", \"8193\", \"100\"], \"bwt\": [\"10000000\"], \"cbsfil\": [\"10000\", \"10000\", \"5\"], \"ccsd-trpdrv\": [\"200\", \"200\"], \"channelShuffle\": [\"2\", \"224\", \"224\", \"100\"], \"channelSum\": [\"224\", \"224\", \"100\"], \"chemv\": [], \"chi2\": [\"4000\", \"400000\", \"2000\", \"2000\", \"256\", \"1000\"], \"clenergy\": [], \"clink\": [\"10\"], \"cmp\": [\"-c0\", \"1.98e-7\", \"-c1\", \"1.77e-6\", \"-nc\", \"5\", \"-aph\", \"600\", \"-tau\", \"0.002\", \"-v\", \"2\", \"-i\", \"../cmp-cuda/data/simple-synthetic.su\"], \"cobahh\": [\"1000000\", \"10\"], \"complex\": [\"10000000\", \"1000\"], \"compute-score\": [\"-p=1000\"], \"concat\": [\"1000\"], \"concurrentKernels\": [\"4\"], \"convolution3D\": [\"32\", \"6\", \"16\", \"14\", \"14\", \"5\", \"100\"], \"convolutionSeparable\": [\"8192\", \"8192\", \"1000\"], \"cooling\": [\"1000000\", \"1000\"], \"cross\": [\"10000000\", \"100\"], \"crossEntropy\": [\"100\"], \"crs\": [\"1\", \"1\"], \"damage\": [\"50000000\", \"1000\"], \"dct8x8\": [\"8192\", \"8192\", \"100\"], \"degrid\": [], \"dense-embedding\": [\"100000\", \"256\", \"1000\"], \"dp\": [\"10000000\", \"10\"], \"dwconv\": [\"128\", \"16\", \"224\", \"224\", \"100\"], \"dxtc2\": [\"../dxtc2-sycl/data/lena_std.ppm\", \"../dxtc2-sycl/data/lena_ref.dds\", \"100\"], \"ecdh\": [\"50000000\", \"100\"], \"eigenvalue\": [\"2048\", \"10000\"], \"entropy\": [\"8192\", \"8192\", \"100\"], \"epistasis\": [\"146\", \"31339\", \"100\"], \"ert\": [\"128\", \"1024\"], \"expdist\": [\"10000\", \"10\"], \"extend2\": [\"300\"], \"f16sp\": [\"100000\"], \"fdtd3d\": [\"--dimx=192\", \"--dimy=184\", \"--timesteps=90\"], \"fft\": [\"3\", \"100\"], \"filter\": [\"100000000\", \"256\", \"100\"], \"flip\": [\"3\", \"1024\", \"100\"], \"floydwarshall\": [\"1024\", \"100\", \"16\"], \"fpc\": [\"256\", \"100\"], \"fsm\": [\"65536\"], \"fwt\": [\"100\"], \"gabor\": [\"8640\", \"15360\", \"1000\"], \"gamma-correction\": [\"7680\", \"4320\", \"256\", \"100\"], \"gaussian\": [\"-q\", \"-t\", \"-s\", \"4096\"], \"gd\": [\"../gd-cuda/gisette_scale\", \"0.0001\", \"10\", \"100\"], \"gelu\": [\"512\", \"8192\", \"512\", \"100\"], \"geodesic\": [\"1000\"], \"glu\": [\"3\", \"1024\", \"100\"], \"goulash\": [\"101\", \"5\"], \"gpp\": [], \"haccmk\": [\"1000\"], \"hausdorff\": [\"100000\", \"100000\", \"100\"], \"heat\": [\"4096\", \"1000\"], \"heat2d\": [\"1024\", \"1024\", \"100\"], \"histogram\": [\"--width=3840\", \"--height=2160\"], \"hmm\": [], \"hotspot3D\": [\"512\", \"8\", \"5000\", \"../data/hotspot3D/power_512x8\", \"../data/hotspot3D/temp_512x8\", \"output.out\"], \"hwt1d\": [\"8388608\", \"100\"], \"hybridsort\": [\"r\"], \"inversek2j\": [\"../inversek2j-sycl/coord_in.txt\", \"100000\"], \"ising\": [], \"iso2dfd\": [\"2048\", \"2048\", \"1000\"], \"jacobi\": [], \"jenkins-hash\": [\"256\", \"16777216\", \"100\"], \"knn\": [\"100\"], \"laplace\": [], \"laplace3d\": [\"128\", \"128\", \"128\", \"100\", \"1\"], \"lavaMD\": [\"-boxes1d\", \"16\"], \"layout\": [\"1000\"], \"libor\": [\"100\"], \"lid-driven-cavity\": [], \"lif\": [\"1000\", \"1000\", \"400\"], \"linearprobing\": [\"16\", \"8\"], \"logprob\": [\"100\", \"128\", \"60000\", \"100\"], \"lombscargle\": [\"100\"], \"lr\": [\"100000\", \"0\"], \"mandelbrot\": [\"1000\"], \"mask\": [\"512\", \"512\", \"512\", \"100\"], \"matrix-rotate\": [\"5000\", \"100\"], \"maxpool3d\": [\"2048\", \"2048\", \"96\", \"100\"], \"mcpr\": [\"../mcpr-cuda/alphas.csv\", \"10\"], \"md\": [\"3\", \"1000\"], \"meanshift\": [\"../meanshift-cuda/dataset/data.csv\", \"../meanshift-cuda/dataset/centroids.csv\"], \"medianfilter\": [\"../medianfilter-sycl/data/SierrasRGB.ppm\", \"1000\"], \"merge\": [\"100000\", \"100\"], \"merkle\": [], \"minimod\": [], \"minisweep\": [\"--niterations\", \"5\"], \"minkowski\": [\"100\"], \"mnist\": [\"2\"], \"mr\": [], \"mrc\": [\"10000000\", \"1000\"], \"multinomial\": [\"65536\", \"2048\", \"100\"], \"murmurhash3\": [\"100000\", \"100\"], \"nbnxm\": [\"100\"], \"nbody\": [\"20000\", \"100\"], \"nlll\": [\"2048\", \"1000\", \"1000\"], \"overlap\": [], \"overlay\": [\"640\", \"480\"], \"p4\": [\"10000\"], \"pad\": [\"-a\", \"0.1\"], \"page-rank\": [\"1000\", \"1000\"], \"particle-diffusion\": [\"10\", \"5\"], \"particlefilter\": [\"-x\", \"200\", \"-y\", \"200\", \"-z\", \"200\", \"-np\", \"10000\"], \"pathfinder\": [\"1000\", \"1000\", \"100\"], \"permute\": [\"8\", \"100\"], \"perplexity\": [\"10000\", \"50\", \"100\"], \"pns\": [\"5000\", \"100\", \"100\"], \"pointwise\": [\"100\", \"8\", \"512\", \"64\", \"100\"], \"projectile\": [\"1000\"], \"rsc\": [\"-f\", \"../rsc-cuda/input/vectors.csv\", \"-g\", \"512\"], \"s3d\": [\"-s\", \"3\", \"-n\", \"100\"], \"sc\": [\"-a\", \"0.1\"], \"sheath\": [], \"simplemoc\": [\"-s\", \"5000000\", \"-e\", \"128\", \"-n\", \"10\"], \"softmax\": [\"100000\", \"784\", \"0\", \"100\"], \"stddev\": [\"65536\", \"16384\", \"100\"], \"su3\": [], \"tissue\": [\"32\", \"100\"], \"tqs\": [\"-f\", \"../tqs-cuda/input/patternsNP100NB512FB25.txt\"], \"tridiagonal\": [\"-num_systems=30000\"], \"vanGenuchten\": [\"256\", \"256\", \"256\", \"1000\"], \"vol2col\": [\"1000\"], \"winograd\": [], \"zerocopy\": [\"100\"], \"zeropoint\": [\"10000000\", \"100\"]}",
+    "compiler_version": "clang version 24.0.0git (git@github.com:RiverDave/llvm-project.git be46daffea1ef7060cb95058ececa51419ddb235)"
+  },
+  "results": [
+    {
+      "benchmark": "atomicCost",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7533082629997807,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7533082629997807
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:53:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_d"
+    },
+    {
+      "benchmark": "atomicCAS",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7624138880000828,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7624138880000828
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/atomicCAS-cuda/kernels.h:6:47: error: use of undeclared identifier '__NV_ATOMIC_RELAXED'"
+    },
+    {
+      "benchmark": "atomicCAS",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7730020039998635,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7730020039998635
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/atomicCAS-cuda/kernels.h:6:47: error: use of undeclared identifier '__NV_ATOMIC_RELAXED'"
+    },
+    {
+      "benchmark": "asmooth",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7986938450012531,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7986938450012531
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "atomicPerf",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.8305814049999753,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.8305814049999753
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:53:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_d"
+    },
+    {
+      "benchmark": "aop",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.3060887369992997,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.3060887369992997
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:53:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_d"
+    },
+    {
+      "benchmark": "assert",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4564504249992751,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4564504249992751,
+      "elapsed_samples": [
+        1.4564504249992751
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.028399999999999998,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0033,
+        "ISel": 0.0029,
+        "Frontend+IRGen": 1.3678
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atomicAggregate",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4721924040004524,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4721924040004524,
+      "elapsed_samples": [
+        1.4721924040004524
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0447,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0033,
+        "ISel": 0.005900000000000001,
+        "Frontend+IRGen": 1.363
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "assert",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5225580429996626,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5225580429996626,
+      "elapsed_samples": [
+        1.5225580429996626
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.030899999999999997,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0029000000000000002,
+        "ISel": 0.003,
+        "Frontend+IRGen": 1.4373
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atomicCost",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5433747839997523,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5433747839997523,
+      "elapsed_samples": [
+        1.5433747839997523
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.098,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.011,
+        "Frontend+IRGen": 1.3633000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atomicAggregate",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.590624807000495,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.590624807000495,
+      "elapsed_samples": [
+        1.590624807000495
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0494,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0031000000000000003,
+        "ISel": 0.007,
+        "Frontend+IRGen": 1.4764
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "asmooth",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5905949480002164,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5905949480002164,
+      "elapsed_samples": [
+        1.5905949480002164
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.15050000000000002,
+        "RegAlloc": 0.0017,
+        "LLVM-analysis": 0.0048000000000000004,
+        "ISel": 0.0121,
+        "Frontend+IRGen": 1.3498
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "aobench",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6423509259984712,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6423509259984712,
+      "elapsed_samples": [
+        1.6423509259984712
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1466,
+        "RegAlloc": 0.0002,
+        "LLVM-analysis": 0.0060999999999999995,
+        "ISel": 0.0115,
+        "Frontend+IRGen": 1.3578000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "asta",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6862364870012243,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6862364870012243,
+      "elapsed_samples": [
+        1.6862364870012243
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0696,
+        "RegAlloc": 0.0012,
+        "LLVM-analysis": 0.0043,
+        "ISel": 0.0066,
+        "Frontend+IRGen": 1.5431
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "aidw",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.7045700879989454,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.7045700879989454
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h:1107:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "asta",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7560860060002597,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7560860060002597,
+      "elapsed_samples": [
+        1.7560860060002597
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0712,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.0038,
+        "ISel": 0.0065,
+        "Frontend+IRGen": 1.6229
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "aidw",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8067619489993376,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8067619489993376,
+      "elapsed_samples": [
+        1.8067619489993376
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.15460000000000002,
+        "RegAlloc": 0.004,
+        "LLVM-analysis": 0.0092,
+        "ISel": 0.0143,
+        "Frontend+IRGen": 1.5218000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "aobench",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7639550200001395,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7639550200001395,
+      "elapsed_samples": [
+        1.7639550200001395
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.163,
+        "RegAlloc": 0.0002,
+        "LLVM-analysis": 0.0058,
+        "ISel": 0.0124,
+        "Frontend+IRGen": 1.4706000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atomicPerf",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.790763117998722,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.790763117998722,
+      "elapsed_samples": [
+        1.790763117998722
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2846,
+        "RegAlloc": 0.0054,
+        "LLVM-analysis": 0.0113,
+        "ISel": 0.0382,
+        "Frontend+IRGen": 1.3706999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ace",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8607710090000182,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8607710090000182,
+      "elapsed_samples": [
+        1.8607710090000182
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3137,
+        "RegAlloc": 0.0053,
+        "LLVM-analysis": 0.0092,
+        "ISel": 0.0348,
+        "Frontend+IRGen": 1.3817
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ace",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.071423801999117,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.071423801999117,
+      "elapsed_samples": [
+        2.071423801999117
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3297,
+        "RegAlloc": 0.0058,
+        "LLVM-analysis": 0.0089,
+        "ISel": 0.0373,
+        "Frontend+IRGen": 1.5866
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adam",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0603216890012845,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0603216890012845,
+      "elapsed_samples": [
+        2.0603216890012845
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1234,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0051,
+        "ISel": 0.0159,
+        "Frontend+IRGen": 1.8398
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adam",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.146681897000235,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.146681897000235,
+      "elapsed_samples": [
+        2.146681897000235
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.124,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0052,
+        "ISel": 0.0157,
+        "Frontend+IRGen": 1.9346
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adv",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.380853045000549,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.380853045000549,
+      "elapsed_samples": [
+        2.380853045000549
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.373,
+        "RegAlloc": 0.0089,
+        "LLVM-analysis": 0.006200000000000001,
+        "ISel": 0.0296,
+        "Frontend+IRGen": 1.8499
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "adv",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4649753760004387,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4649753760004387,
+      "elapsed_samples": [
+        2.4649753760004387
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3641,
+        "RegAlloc": 0.0093,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.0295,
+        "Frontend+IRGen": 1.9581
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "aop",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.571339905000059,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.571339905000059,
+      "elapsed_samples": [
+        2.571339905000059
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3298,
+        "RegAlloc": 0.007,
+        "LLVM-analysis": 0.0145,
+        "ISel": 0.0315,
+        "Frontend+IRGen": 1.9316
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bh",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.0060853289996885,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.0060853289996885
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:359:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_cas_gen_i"
+    },
+    {
+      "benchmark": "atomicReduction",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.088138343000537,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.088138343000537,
+      "elapsed_samples": [
+        2.088138343000537
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1181,
+        "RegAlloc": 0.0025,
+        "LLVM-analysis": 0.0069,
+        "ISel": 0.0154,
+        "Frontend+IRGen": 1.8789000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "atomicReduction",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1889440739996644,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1889440739996644,
+      "elapsed_samples": [
+        2.1889440739996644
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1201,
+        "RegAlloc": 0.0025,
+        "LLVM-analysis": 0.0063999999999999994,
+        "ISel": 0.0159,
+        "Frontend+IRGen": 1.9895
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "axhelm",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3499245490002068,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3499245490002068,
+      "elapsed_samples": [
+        2.3499245490002068
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2077,
+        "RegAlloc": 0.003,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.014599999999999998,
+        "Frontend+IRGen": 2.0366
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "backprop",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6679323099997418,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6679323099997418,
+      "elapsed_samples": [
+        1.6679323099997418
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1927,
+        "RegAlloc": 0.0029,
+        "LLVM-analysis": 0.0045000000000000005,
+        "ISel": 0.0163,
+        "Frontend+IRGen": 1.3900000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "backprop",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7507347320006375,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7507347320006375,
+      "elapsed_samples": [
+        1.7507347320006375
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1852,
+        "RegAlloc": 0.0031,
+        "LLVM-analysis": 0.004,
+        "ISel": 0.0165,
+        "Frontend+IRGen": 1.4921000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "binomial",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5429951349997282,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5429951349997282,
+      "elapsed_samples": [
+        1.5429951349997282
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0232,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0018,
+        "ISel": 0.0028,
+        "Frontend+IRGen": 1.4567999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "binomial",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4911280069991335,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4911280069991335,
+      "elapsed_samples": [
+        1.4911280069991335
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0236,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0016,
+        "ISel": 0.0029,
+        "Frontend+IRGen": 1.4202000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bilateral",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7685727460011549,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7685727460011549,
+      "elapsed_samples": [
+        1.7685727460011549
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.14679999999999999,
+        "RegAlloc": 0.0035,
+        "LLVM-analysis": 0.0039,
+        "ISel": 0.0139,
+        "Frontend+IRGen": 1.5095
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bh",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7992505369984428,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7992505369984428,
+      "elapsed_samples": [
+        1.7992505369984428
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.24330000000000002,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.0087,
+        "ISel": 0.0267,
+        "Frontend+IRGen": 1.3779
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "background-subtract",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0445008900005632,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0445008900005632,
+      "elapsed_samples": [
+        2.0445008900005632
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1032,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.005,
+        "ISel": 0.014,
+        "Frontend+IRGen": 1.8538
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "background-subtract",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1499633039984474,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1499633039984474,
+      "elapsed_samples": [
+        2.1499633039984474
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1067,
+        "RegAlloc": 0.002,
+        "LLVM-analysis": 0.0048000000000000004,
+        "ISel": 0.0143,
+        "Frontend+IRGen": 1.9689999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bezier-surface",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1339213470000686,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1339213470000686,
+      "elapsed_samples": [
+        2.1339213470000686
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1372,
+        "RegAlloc": 0.0025,
+        "LLVM-analysis": 0.0059,
+        "ISel": 0.0123,
+        "Frontend+IRGen": 1.8847
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bitonic-sort",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.991256336999868,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.991256336999868
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h:72:4: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::integral_constant<bool, true>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "bezier-surface",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.239961993000179,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.239961993000179,
+      "elapsed_samples": [
+        2.239961993000179
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1444,
+        "RegAlloc": 0.0026,
+        "LLVM-analysis": 0.0063,
+        "ISel": 0.013000000000000001,
+        "Frontend+IRGen": 1.9955999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bitonic-sort",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0410646489999635,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0410646489999635,
+      "elapsed_samples": [
+        2.0410646489999635
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0919,
+        "RegAlloc": 0.0011,
+        "LLVM-analysis": 0.008,
+        "ISel": 0.0086,
+        "Frontend+IRGen": 1.8698000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "attention",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 3.2707814519999374,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        3.2707814519999374
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/cooperative_groups.h:91:9: error: ClangIR code gen Not Yet Implemented: NYI CheapUnalignedBitFieldAccess"
+    },
+    {
+      "benchmark": "bitpacking",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.0458078249994287,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.0458078249994287
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "bitpacking",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0727888500005065,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0727888500005065,
+      "elapsed_samples": [
+        2.0727888500005065
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.09280000000000001,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.0098,
+        "ISel": 0.0049,
+        "Frontend+IRGen": 1.9031
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "black-scholes",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8415598470000987,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8415598470000987,
+      "elapsed_samples": [
+        1.8415598470000987
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.14079999999999998,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.007299999999999999,
+        "ISel": 0.0166,
+        "Frontend+IRGen": 1.5788
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "black-scholes",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9723657079994155,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9723657079994155,
+      "elapsed_samples": [
+        1.9723657079994155
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.14889999999999998,
+        "RegAlloc": 0.0012,
+        "LLVM-analysis": 0.0071,
+        "ISel": 0.016,
+        "Frontend+IRGen": 1.7155
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "axhelm",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.2131789889990614,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.2131789889990614,
+      "elapsed_samples": [
+        3.2131789889990614
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 1.0157,
+        "RegAlloc": 0.0029,
+        "LLVM-analysis": 0.0057,
+        "ISel": 0.0286,
+        "Frontend+IRGen": 1.9021
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bilateral",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.7919395499993698,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.7919395499993698,
+      "elapsed_samples": [
+        2.7919395499993698
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 1.3242,
+        "RegAlloc": 0.0459,
+        "LLVM-analysis": 0.0059,
+        "ISel": 0.1175,
+        "Frontend+IRGen": 1.2056
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "channelShuffle",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.781738387000587,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.781738387000587
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_intrinsics.h:287:58: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_ldg_f"
+    },
+    {
+      "benchmark": "bspline-vgh",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.654208481999376,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.654208481999376,
+      "elapsed_samples": [
+        1.654208481999376
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2025,
+        "RegAlloc": 0.0035,
+        "LLVM-analysis": 0.005900000000000001,
+        "ISel": 0.0174,
+        "Frontend+IRGen": 1.3563999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bspline-vgh",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7517617409994273,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7517617409994273,
+      "elapsed_samples": [
+        1.7517617409994273
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.18230000000000002,
+        "RegAlloc": 0.0038,
+        "LLVM-analysis": 0.0034000000000000002,
+        "ISel": 0.0163,
+        "Frontend+IRGen": 1.469
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "burger",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6033978659997956,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6033978659997956,
+      "elapsed_samples": [
+        1.6033978659997956
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.126,
+        "RegAlloc": 0.0068,
+        "LLVM-analysis": 0.0042,
+        "ISel": 0.0133,
+        "Frontend+IRGen": 1.3861999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "burger",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6711353919999965,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6711353919999965,
+      "elapsed_samples": [
+        1.6711353919999965
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.132,
+        "RegAlloc": 0.007,
+        "LLVM-analysis": 0.0034999999999999996,
+        "ISel": 0.013399999999999999,
+        "Frontend+IRGen": 1.4561
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bsearch",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.0095241479994,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.0095241479994
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "bn",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.740768633000698,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.740768633000698,
+      "elapsed_samples": [
+        2.740768633000698
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.9893000000000001,
+        "RegAlloc": 0.0065,
+        "LLVM-analysis": 0.0121,
+        "ISel": 0.0739,
+        "Frontend+IRGen": 1.3827000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "boxfilter",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3260523970002396,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3260523970002396,
+      "elapsed_samples": [
+        2.3260523970002396
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0815,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.0039,
+        "ISel": 0.0072,
+        "Frontend+IRGen": 2.1663
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ccsd-trpdrv",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5025499250004941,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5025499250004941,
+      "elapsed_samples": [
+        1.5025499250004941
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1077,
+        "RegAlloc": 0.0061,
+        "LLVM-analysis": 0.0025,
+        "ISel": 0.0114,
+        "Frontend+IRGen": 1.3307000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bsearch",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0664339209997706,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0664339209997706,
+      "elapsed_samples": [
+        2.0664339209997706
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.10669999999999999,
+        "RegAlloc": 0.0011,
+        "LLVM-analysis": 0.0083,
+        "ISel": 0.0112,
+        "Frontend+IRGen": 1.8678
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ccsd-trpdrv",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5126690619999863,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5126690619999863,
+      "elapsed_samples": [
+        1.5126690619999863
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1071,
+        "RegAlloc": 0.0058,
+        "LLVM-analysis": 0.0029,
+        "ISel": 0.0118,
+        "Frontend+IRGen": 1.3327
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "boxfilter",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.255119035999087,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.255119035999087,
+      "elapsed_samples": [
+        2.255119035999087
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.07880000000000001,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.004,
+        "ISel": 0.006999999999999999,
+        "Frontend+IRGen": 2.0770999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bn",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.031610494999768,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.031610494999768,
+      "elapsed_samples": [
+        3.031610494999768
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 1.0927,
+        "RegAlloc": 0.0075,
+        "LLVM-analysis": 0.0114,
+        "ISel": 0.0953,
+        "Frontend+IRGen": 1.5578000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "channelShuffle",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5764276840000093,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5764276840000093,
+      "elapsed_samples": [
+        1.5764276840000093
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1163,
+        "RegAlloc": 0.0023,
+        "LLVM-analysis": 0.0056,
+        "ISel": 0.0103,
+        "Frontend+IRGen": 1.3653999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bwt",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.099781314998836,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.099781314998836
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "chemv",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5652500539999892,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5652500539999892,
+      "elapsed_samples": [
+        1.5652500539999892
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0473,
+        "RegAlloc": 0.0002,
+        "LLVM-analysis": 0.0022,
+        "ISel": 0.0057,
+        "Frontend+IRGen": 1.4636
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bwt",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1601321140005894,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1601321140005894,
+      "elapsed_samples": [
+        2.1601321140005894
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0781,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0073,
+        "ISel": 0.007,
+        "Frontend+IRGen": 1.9881
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "all-pairs-distance",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 5.852788303000125,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 5.852788303000125,
+      "elapsed_samples": [
+        5.852788303000125
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2137,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.011899999999999999,
+        "ISel": 0.0228,
+        "Frontend+IRGen": 5.5043
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "chemv",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.458713414000158,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.458713414000158,
+      "elapsed_samples": [
+        1.458713414000158
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.042300000000000004,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0021,
+        "ISel": 0.0055,
+        "Frontend+IRGen": 1.3554
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "all-pairs-distance",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 6.002419041999019,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        6.002419041999019
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/nvtx3/nvtxDetail/nvtxInit.h:312:5: error: ClangIR code gen Not Yet Implemented: unimplemented X86 builtin call: __sync_val_compare_and_swap_4"
+    },
+    {
+      "benchmark": "cbsfil",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.262972164999155,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.262972164999155,
+      "elapsed_samples": [
+        2.262972164999155
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2114,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.0069,
+        "ISel": 0.0193,
+        "Frontend+IRGen": 1.9303000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "accuracy",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.071441377000156,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.071441377000156,
+      "elapsed_samples": [
+        6.071441377000156
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2359,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0137,
+        "ISel": 0.0265,
+        "Frontend+IRGen": 5.6873000000000005
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cbsfil",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3245592579987715,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3245592579987715,
+      "elapsed_samples": [
+        2.3245592579987715
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2125,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.006999999999999999,
+        "ISel": 0.0199,
+        "Frontend+IRGen": 1.9868999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "accuracy",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 6.207615813000302,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        6.207615813000302
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/nvtx3/nvtxDetail/nvtxInit.h:312:5: error: ClangIR code gen Not Yet Implemented: unimplemented X86 builtin call: __sync_val_compare_and_swap_4"
+    },
+    {
+      "benchmark": "bonds",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.44147707799857,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.44147707799857,
+      "elapsed_samples": [
+        3.44147707799857
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 1.3975,
+        "RegAlloc": 0.0107,
+        "LLVM-analysis": 0.030600000000000002,
+        "ISel": 0.1482,
+        "Frontend+IRGen": 1.3348000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "clenergy",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.375340923999829,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.375340923999829,
+      "elapsed_samples": [
+        1.375340923999829
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0174,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0014,
+        "ISel": 0.0014,
+        "Frontend+IRGen": 1.3115
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "bonds",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.780056681000133,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.780056681000133,
+      "elapsed_samples": [
+        3.780056681000133
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 1.4259,
+        "RegAlloc": 0.0136,
+        "LLVM-analysis": 0.0309,
+        "ISel": 0.15189999999999998,
+        "Frontend+IRGen": 1.6971999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "clenergy",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.3919321930006845,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.3919321930006845,
+      "elapsed_samples": [
+        1.3919321930006845
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0167,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0014,
+        "ISel": 0.0013,
+        "Frontend+IRGen": 1.3164
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cobahh",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5591421549997904,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5591421549997904,
+      "elapsed_samples": [
+        1.5591421549997904
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.08639999999999999,
+        "RegAlloc": 0.0025,
+        "LLVM-analysis": 0.0046,
+        "ISel": 0.0142,
+        "Frontend+IRGen": 1.3744
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "chi2",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.352597090000927,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.352597090000927,
+      "elapsed_samples": [
+        2.352597090000927
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.103,
+        "RegAlloc": 0.0012,
+        "LLVM-analysis": 0.0049,
+        "ISel": 0.0114,
+        "Frontend+IRGen": 2.1653000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "channelSum",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.8694371479996335,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.8694371479996335
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_intrinsics.h:264:54: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_ldg_i"
+    },
+    {
+      "benchmark": "cobahh",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6826351179988706,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6826351179988706,
+      "elapsed_samples": [
+        1.6826351179988706
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0865,
+        "RegAlloc": 0.0027,
+        "LLVM-analysis": 0.0036999999999999997,
+        "ISel": 0.0137,
+        "Frontend+IRGen": 1.5099
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "chi2",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.312887583000702,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.312887583000702,
+      "elapsed_samples": [
+        2.312887583000702
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.09870000000000001,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.0046,
+        "ISel": 0.0106,
+        "Frontend+IRGen": 2.1167
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "complex",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7506268639990594,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7506268639990594,
+      "elapsed_samples": [
+        1.7506268639990594
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1575,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0084,
+        "ISel": 0.010700000000000001,
+        "Frontend+IRGen": 1.3979
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "concat",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4843002559991874,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4843002559991874,
+      "elapsed_samples": [
+        1.4843002559991874
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0482,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.0031999999999999997,
+        "ISel": 0.0044,
+        "Frontend+IRGen": 1.3702
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "concat",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.590965691000747,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.590965691000747,
+      "elapsed_samples": [
+        1.590965691000747
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.046599999999999996,
+        "RegAlloc": 0.0017,
+        "LLVM-analysis": 0.0026,
+        "ISel": 0.0046,
+        "Frontend+IRGen": 1.4835
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "complex",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9181838399999833,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9181838399999833,
+      "elapsed_samples": [
+        1.9181838399999833
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1581,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0077,
+        "ISel": 0.0109,
+        "Frontend+IRGen": 1.5614
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "concurrentKernels",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5504403229988384,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5504403229988384,
+      "elapsed_samples": [
+        1.5504403229988384
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0581,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0025,
+        "ISel": 0.0061,
+        "Frontend+IRGen": 1.4202
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "concurrentKernels",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.532493868999154,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.532493868999154,
+      "elapsed_samples": [
+        1.532493868999154
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.059899999999999995,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0031,
+        "ISel": 0.006,
+        "Frontend+IRGen": 1.3935
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "clink",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2098362730012013,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2098362730012013,
+      "elapsed_samples": [
+        2.2098362730012013
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2343,
+        "RegAlloc": 0.0039,
+        "LLVM-analysis": 0.0048,
+        "ISel": 0.017,
+        "Frontend+IRGen": 1.8493
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolutionSeparable",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.464005737001571,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.464005737001571,
+      "elapsed_samples": [
+        1.464005737001571
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0241,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0015,
+        "ISel": 0.0031,
+        "Frontend+IRGen": 1.3921000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "clink",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.340317368001706,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.340317368001706,
+      "elapsed_samples": [
+        2.340317368001706
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2475,
+        "RegAlloc": 0.0041,
+        "LLVM-analysis": 0.004900000000000001,
+        "ISel": 0.019799999999999998,
+        "Frontend+IRGen": 1.9636
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolutionSeparable",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4561680820006586,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4561680820006586,
+      "elapsed_samples": [
+        1.4561680820006586
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0235,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0017,
+        "ISel": 0.0029,
+        "Frontend+IRGen": 1.3758
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cmp",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.377746436999587,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.377746436999587
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h:69:4: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::integral_constant<bool, false>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "compute-score",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.1935721469999407,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.1935721469999407
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "attention",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.984575647999009,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.984575647999009,
+      "elapsed_samples": [
+        6.984575647999009
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3303,
+        "RegAlloc": 0.0021,
+        "LLVM-analysis": 0.0177,
+        "ISel": 0.0368,
+        "Frontend+IRGen": 6.4678
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cooling",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7078233850006654,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7078233850006654,
+      "elapsed_samples": [
+        1.7078233850006654
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1472,
+        "RegAlloc": 0.0033,
+        "LLVM-analysis": 0.0055,
+        "ISel": 0.0186,
+        "Frontend+IRGen": 1.3795000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cooling",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7333534720000898,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7333534720000898,
+      "elapsed_samples": [
+        1.7333534720000898
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1459,
+        "RegAlloc": 0.0035,
+        "LLVM-analysis": 0.0046,
+        "ISel": 0.0186,
+        "Frontend+IRGen": 1.4235
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "compute-score",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3156610340010957,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3156610340010957,
+      "elapsed_samples": [
+        2.3156610340010957
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1836,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0136,
+        "ISel": 0.019299999999999998,
+        "Frontend+IRGen": 2.0284999999999997
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cmp",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.5908783329996368,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.5908783329996368,
+      "elapsed_samples": [
+        2.5908783329996368
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2708,
+        "RegAlloc": 0.0049,
+        "LLVM-analysis": 0.0185,
+        "ISel": 0.0298,
+        "Frontend+IRGen": 2.1653000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution3D",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2188653479988716,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2188653479988716,
+      "elapsed_samples": [
+        2.2188653479988716
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2022,
+        "RegAlloc": 0.0052,
+        "LLVM-analysis": 0.0064,
+        "ISel": 0.0206,
+        "Frontend+IRGen": 1.9068
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution3D",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3699474109998846,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3699474109998846,
+      "elapsed_samples": [
+        2.3699474109998846
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2147,
+        "RegAlloc": 0.0057,
+        "LLVM-analysis": 0.006699999999999999,
+        "ISel": 0.0229,
+        "Frontend+IRGen": 2.0391000000000004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "degrid",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.197118282001611,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.197118282001611
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "ptxas fatal   : Unresolved extern function 'memcpy'"
+    },
+    {
+      "benchmark": "cross",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1100026650001382,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1100026650001382,
+      "elapsed_samples": [
+        2.1100026650001382
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.12010000000000001,
+        "RegAlloc": 0.002,
+        "LLVM-analysis": 0.0068000000000000005,
+        "ISel": 0.0141,
+        "Frontend+IRGen": 1.8929
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "cross",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.219335707999562,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.219335707999562,
+      "elapsed_samples": [
+        2.219335707999562
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1303,
+        "RegAlloc": 0.0022,
+        "LLVM-analysis": 0.0072,
+        "ISel": 0.015000000000000001,
+        "Frontend+IRGen": 2.004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dct8x8",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4706420100010291,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4706420100010291,
+      "elapsed_samples": [
+        1.4706420100010291
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0396,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0019,
+        "ISel": 0.0045,
+        "Frontend+IRGen": 1.3787
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dct8x8",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.467933345000347,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.467933345000347,
+      "elapsed_samples": [
+        1.467933345000347
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.038200000000000005,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0018,
+        "ISel": 0.0044,
+        "Frontend+IRGen": 1.3695
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "crs",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.5187752839992754,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.5187752839992754,
+      "elapsed_samples": [
+        2.5187752839992754
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.5720000000000001,
+        "RegAlloc": 0.0015,
+        "LLVM-analysis": 0.011300000000000001,
+        "ISel": 0.0441,
+        "Frontend+IRGen": 1.6956
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "crossEntropy",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.658685231999698,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.658685231999698
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/alloc_traits.h:561:7: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<class \"std::allocator<float>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "crs",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2055171779993543,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2055171779993543,
+      "elapsed_samples": [
+        2.2055171779993543
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.5487,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0115,
+        "ISel": 0.0436,
+        "Frontend+IRGen": 1.4119000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dwconv",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7692200189994765,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7692200189994765,
+      "elapsed_samples": [
+        1.7692200189994765
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.13369999999999999,
+        "RegAlloc": 0.0029,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0154,
+        "Frontend+IRGen": 1.5409
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dwconv",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7047001649989397,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7047001649989397,
+      "elapsed_samples": [
+        1.7047001649989397
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1252,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.005399999999999999,
+        "ISel": 0.015,
+        "Frontend+IRGen": 1.4757
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "degrid",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0595519119997334,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0595519119997334,
+      "elapsed_samples": [
+        2.0595519119997334
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1113,
+        "RegAlloc": 0.0023,
+        "LLVM-analysis": 0.0051,
+        "ISel": 0.0104,
+        "Frontend+IRGen": 1.8639
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dxtc2",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.765174666999883,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.765174666999883
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/dxtc2-cuda/main.cu:667:18: error: no matching function for call to 'min'"
+    },
+    {
+      "benchmark": "dxtc2",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.7865571660004207,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.7865571660004207
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/cooperative_groups.h:91:9: error: ClangIR code gen Not Yet Implemented: NYI CheapUnalignedBitFieldAccess"
+    },
+    {
+      "benchmark": "dense-embedding",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0397157900006277,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0397157900006277,
+      "elapsed_samples": [
+        2.0397157900006277
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0958,
+        "RegAlloc": 0.0037,
+        "LLVM-analysis": 0.0051,
+        "ISel": 0.0087,
+        "Frontend+IRGen": 1.8583
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dense-embedding",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.127224699999715,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.127224699999715,
+      "elapsed_samples": [
+        2.127224699999715
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0943,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0055,
+        "ISel": 0.0089,
+        "Frontend+IRGen": 1.9613
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ecdh",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6953138580011,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6953138580011,
+      "elapsed_samples": [
+        1.6953138580011
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.20750000000000002,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.007,
+        "ISel": 0.016399999999999998,
+        "Frontend+IRGen": 1.3746
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "entropy",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.619720385000619,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.619720385000619,
+      "elapsed_samples": [
+        1.619720385000619
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11739999999999999,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.0040999999999999995,
+        "ISel": 0.0119,
+        "Frontend+IRGen": 1.3810000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ecdh",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.830002874999991,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.830002874999991,
+      "elapsed_samples": [
+        1.830002874999991
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.20629999999999998,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0063,
+        "ISel": 0.0157,
+        "Frontend+IRGen": 1.5156
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "entropy",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6515772700004163,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6515772700004163,
+      "elapsed_samples": [
+        1.6515772700004163
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.111,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.0034000000000000002,
+        "ISel": 0.0111,
+        "Frontend+IRGen": 1.4264999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "expdist",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.1087121109994769,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.1087121109994769
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "eigenvalue",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.118482887999562,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.118482887999562
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "eigenvalue",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2232910570000968,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2232910570000968,
+      "elapsed_samples": [
+        2.2232910570000968
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.14100000000000001,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0087,
+        "ISel": 0.013900000000000001,
+        "Frontend+IRGen": 1.9585
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "crossEntropy",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.608767927998997,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.608767927998997,
+      "elapsed_samples": [
+        3.608767927998997
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.7636000000000001,
+        "RegAlloc": 0.0057,
+        "LLVM-analysis": 0.0255,
+        "ISel": 0.0709,
+        "Frontend+IRGen": 2.3441
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "extend2",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.595704764000402,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.595704764000402,
+      "elapsed_samples": [
+        1.595704764000402
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.07719999999999999,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.003,
+        "ISel": 0.0075,
+        "Frontend+IRGen": 1.4382000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "extend2",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5879617259997758,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5879617259997758,
+      "elapsed_samples": [
+        1.5879617259997758
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0812,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0035,
+        "ISel": 0.007899999999999999,
+        "Frontend+IRGen": 1.4167
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "channelSum",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 5.9371759469995595,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 5.9371759469995595,
+      "elapsed_samples": [
+        5.9371759469995595
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3003,
+        "RegAlloc": 0.0027,
+        "LLVM-analysis": 0.0167,
+        "ISel": 0.0276,
+        "Frontend+IRGen": 5.4745
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "epistasis",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3573345099994185,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3573345099994185,
+      "elapsed_samples": [
+        2.3573345099994185
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2195,
+        "RegAlloc": 0.0061,
+        "LLVM-analysis": 0.0063,
+        "ISel": 0.0191,
+        "Frontend+IRGen": 2.0458
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dp",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 3.0629701490015577,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        3.0629701490015577
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "fsm",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.9471194800007652,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.9471194800007652
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "ptxas fatal   : Unresolved extern function 'memset'"
+    },
+    {
+      "benchmark": "epistasis",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2837531580007635,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2837531580007635,
+      "elapsed_samples": [
+        2.2837531580007635
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.24,
+        "RegAlloc": 0.006,
+        "LLVM-analysis": 0.0068000000000000005,
+        "ISel": 0.0211,
+        "Frontend+IRGen": 1.9199000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "expdist",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2180993919992034,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2180993919992034,
+      "elapsed_samples": [
+        2.2180993919992034
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1757,
+        "RegAlloc": 0.002,
+        "LLVM-analysis": 0.0056,
+        "ISel": 0.020700000000000003,
+        "Frontend+IRGen": 1.8655
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ert",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4043134130006365,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4043134130006365,
+      "elapsed_samples": [
+        2.4043134130006365
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2745,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0201,
+        "ISel": 0.0155,
+        "Frontend+IRGen": 1.9239000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "floydwarshall",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5504198010003165,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5504198010003165,
+      "elapsed_samples": [
+        1.5504198010003165
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0687,
+        "RegAlloc": 0.0015,
+        "LLVM-analysis": 0.0026999999999999997,
+        "ISel": 0.0068000000000000005,
+        "Frontend+IRGen": 1.4257
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "floydwarshall",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5222183389996644,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5222183389996644,
+      "elapsed_samples": [
+        1.5222183389996644
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0658,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0034,
+        "ISel": 0.0066,
+        "Frontend+IRGen": 1.3824999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "flip",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.6856545789996744,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.6856545789996744
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/alloc_traits.h:561:7: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<class \"std::allocator<long>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "fpc",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5396541110003454,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5396541110003454,
+      "elapsed_samples": [
+        1.5396541110003454
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0862,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.004699999999999999,
+        "ISel": 0.0094,
+        "Frontend+IRGen": 1.3755
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fpc",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6114363760007109,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6114363760007109,
+      "elapsed_samples": [
+        1.6114363760007109
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0862,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0043,
+        "ISel": 0.0086,
+        "Frontend+IRGen": 1.4634999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "filter",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.8574448700001085,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.8574448700001085
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/cooperative_groups.h:91:9: error: ClangIR code gen Not Yet Implemented: NYI CheapUnalignedBitFieldAccess"
+    },
+    {
+      "benchmark": "flip",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8817520270004024,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8817520270004024,
+      "elapsed_samples": [
+        1.8817520270004024
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2112,
+        "RegAlloc": 0.0049,
+        "LLVM-analysis": 0.0111,
+        "ISel": 0.0191,
+        "Frontend+IRGen": 1.536
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd3d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.273111804999644,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.273111804999644,
+      "elapsed_samples": [
+        2.273111804999644
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0412,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0029,
+        "ISel": 0.0061,
+        "Frontend+IRGen": 2.1624
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fdtd3d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.361123120999764,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.361123120999764,
+      "elapsed_samples": [
+        2.361123120999764
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0444,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0037,
+        "ISel": 0.0064,
+        "Frontend+IRGen": 2.2583
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ert",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.2994776080013253,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.2994776080013253,
+      "elapsed_samples": [
+        3.2994776080013253
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.366,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0178,
+        "ISel": 0.0178,
+        "Frontend+IRGen": 2.7526
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fsm",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6137018169993098,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6137018169993098,
+      "elapsed_samples": [
+        1.6137018169993098
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1104,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0043,
+        "ISel": 0.0167,
+        "Frontend+IRGen": 1.3704
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fwt",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.499700918999224,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.499700918999224,
+      "elapsed_samples": [
+        1.499700918999224
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0567,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0037,
+        "ISel": 0.0059,
+        "Frontend+IRGen": 1.3715000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fwt",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.522978143999353,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.522978143999353,
+      "elapsed_samples": [
+        1.522978143999353
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0563,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0029000000000000002,
+        "ISel": 0.0057,
+        "Frontend+IRGen": 1.4087
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fft",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4130589389988018,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4130589389988018,
+      "elapsed_samples": [
+        2.4130589389988018
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3174,
+        "RegAlloc": 0.0031,
+        "LLVM-analysis": 0.0108,
+        "ISel": 0.0311,
+        "Frontend+IRGen": 1.9179
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gabor",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5728143920005095,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5728143920005095,
+      "elapsed_samples": [
+        1.5728143920005095
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.067,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0033,
+        "ISel": 0.0071,
+        "Frontend+IRGen": 1.4301
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gabor",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5490340149990516,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5490340149990516,
+      "elapsed_samples": [
+        1.5490340149990516
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.066,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.004,
+        "ISel": 0.0070999999999999995,
+        "Frontend+IRGen": 1.3971
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "fft",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.722919304000243,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.722919304000243,
+      "elapsed_samples": [
+        2.722919304000243
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3361,
+        "RegAlloc": 0.0039,
+        "LLVM-analysis": 0.0097,
+        "ISel": 0.0262,
+        "Frontend+IRGen": 2.2301
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "f16sp",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 3.1663496689998283,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        3.1663496689998283
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "hausdorff",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7528897209995193,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7528897209995193
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/hausdorff-cuda/main.cu:21:46: error: use of undeclared identifier '__NV_ATOMIC_RELAXED'"
+    },
+    {
+      "benchmark": "hausdorff",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7642244680009753,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7642244680009753
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/hausdorff-cuda/main.cu:21:46: error: use of undeclared identifier '__NV_ATOMIC_RELAXED'"
+    },
+    {
+      "benchmark": "gpp",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.1006512560015835,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.1006512560015835
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/gpp-cuda/kernel.h:27:11: error: no matching function for call to 'CustomComplex_conj'"
+    },
+    {
+      "benchmark": "gamma-correction",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.3856870910003636,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.3856870910003636
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/gamma-correction-cuda/utils/Img.hpp:66:3: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<class \"anon.0\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "gpp",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.126584373998412,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.126584373998412
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/gpp-cuda/kernel.h:27:11: error: no matching function for call to 'CustomComplex_conj'"
+    },
+    {
+      "benchmark": "gaussian",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.209314783998707,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.209314783998707,
+      "elapsed_samples": [
+        2.209314783998707
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1525,
+        "RegAlloc": 0.0042,
+        "LLVM-analysis": 0.0051,
+        "ISel": 0.0155,
+        "Frontend+IRGen": 1.9636
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gamma-correction",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4134283930015954,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4134283930015954,
+      "elapsed_samples": [
+        2.4134283930015954
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.13720000000000002,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.016,
+        "ISel": 0.0093,
+        "Frontend+IRGen": 2.1825
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gelu",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.991846760000044,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.991846760000044,
+      "elapsed_samples": [
+        1.991846760000044
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1429,
+        "RegAlloc": 0.002,
+        "LLVM-analysis": 0.0069,
+        "ISel": 0.013900000000000001,
+        "Frontend+IRGen": 1.7773999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "goulash",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.625753550000809,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.625753550000809,
+      "elapsed_samples": [
+        1.625753550000809
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0486,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0031,
+        "ISel": 0.0052,
+        "Frontend+IRGen": 1.5103
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gaussian",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.284509312999944,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.284509312999944,
+      "elapsed_samples": [
+        2.284509312999944
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1537,
+        "RegAlloc": 0.0042,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0149,
+        "Frontend+IRGen": 2.0512
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "goulash",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5113268299992342,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5113268299992342,
+      "elapsed_samples": [
+        1.5113268299992342
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0507,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0036,
+        "ISel": 0.0058000000000000005,
+        "Frontend+IRGen": 1.3886
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gelu",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9354132960015704,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9354132960015704,
+      "elapsed_samples": [
+        1.9354132960015704
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1427,
+        "RegAlloc": 0.0023,
+        "LLVM-analysis": 0.0073,
+        "ISel": 0.013500000000000002,
+        "Frontend+IRGen": 1.7098
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "damage",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 5.879044485000122,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 5.879044485000122,
+      "elapsed_samples": [
+        5.879044485000122
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.231,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.011600000000000001,
+        "ISel": 0.0449,
+        "Frontend+IRGen": 5.489
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "damage",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 6.028878451999844,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        6.028878451999844
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/nvtx3/nvtxDetail/nvtxInit.h:312:5: error: ClangIR code gen Not Yet Implemented: unimplemented X86 builtin call: __sync_val_compare_and_swap_4"
+    },
+    {
+      "benchmark": "geodesic",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.063373151000633,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.063373151000633,
+      "elapsed_samples": [
+        2.063373151000633
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1063,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0106,
+        "Frontend+IRGen": 1.843
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "haccmk",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5013526040002034,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5013526040002034,
+      "elapsed_samples": [
+        1.5013526040002034
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0552,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0035,
+        "ISel": 0.0063,
+        "Frontend+IRGen": 1.3711
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "glu",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.0353112100001454,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.0353112100001454
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "haccmk",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5911668690005172,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5911668690005172,
+      "elapsed_samples": [
+        1.5911668690005172
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0718,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0044,
+        "ISel": 0.0058000000000000005,
+        "Frontend+IRGen": 1.4536
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "geodesic",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.188273546000346,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.188273546000346,
+      "elapsed_samples": [
+        2.188273546000346
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1118,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0045,
+        "ISel": 0.0106,
+        "Frontend+IRGen": 1.9766
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "glu",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1838391040000715,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1838391040000715,
+      "elapsed_samples": [
+        2.1838391040000715
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1403,
+        "RegAlloc": 0.0033,
+        "LLVM-analysis": 0.011099999999999999,
+        "ISel": 0.010400000000000001,
+        "Frontend+IRGen": 1.9527999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "heat2d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5481979340002,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5481979340002,
+      "elapsed_samples": [
+        1.5481979340002
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0723,
+        "RegAlloc": 0.0021,
+        "LLVM-analysis": 0.0026,
+        "ISel": 0.006999999999999999,
+        "Frontend+IRGen": 1.4133999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gd",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.8626170419993286,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.8626170419993286
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "filter",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 4.152312060999975,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 4.152312060999975,
+      "elapsed_samples": [
+        4.152312060999975
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2086,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0144,
+        "ISel": 0.018600000000000002,
+        "Frontend+IRGen": 3.8343
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "heat2d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5357452869993722,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5357452869993722,
+      "elapsed_samples": [
+        1.5357452869993722
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0696,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.0031999999999999997,
+        "ISel": 0.006699999999999999,
+        "Frontend+IRGen": 1.3955
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hmm",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4130384670006606,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4130384670006606,
+      "elapsed_samples": [
+        1.4130384670006606
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.035100000000000006,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0012,
+        "ISel": 0.004,
+        "Frontend+IRGen": 1.3315000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "dp",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.453932782000265,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.453932782000265,
+      "elapsed_samples": [
+        6.453932782000265
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3564,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.021900000000000003,
+        "ISel": 0.0339,
+        "Frontend+IRGen": 5.9398
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "heat",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1418068050006696,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1418068050006696,
+      "elapsed_samples": [
+        2.1418068050006696
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11080000000000001,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.0060999999999999995,
+        "ISel": 0.014700000000000001,
+        "Frontend+IRGen": 1.9232
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hmm",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.3717601799999102,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.3717601799999102,
+      "elapsed_samples": [
+        1.3717601799999102
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0424,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0015,
+        "ISel": 0.0046,
+        "Frontend+IRGen": 1.2694
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "heat",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.226899205999871,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.226899205999871,
+      "elapsed_samples": [
+        2.226899205999871
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1201,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.006200000000000001,
+        "ISel": 0.0177,
+        "Frontend+IRGen": 1.996
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hotspot3D",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4905250439987867,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4905250439987867,
+      "elapsed_samples": [
+        1.4905250439987867
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0506,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0034,
+        "ISel": 0.0052,
+        "Frontend+IRGen": 1.3714
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hotspot3D",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5707800969994423,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5707800969994423,
+      "elapsed_samples": [
+        1.5707800969994423
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.068,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0062,
+        "ISel": 0.0053,
+        "Frontend+IRGen": 1.4327
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.1278730630001519,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.1278730630001519
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "hybridsort",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.502488275998985,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.502488275998985,
+      "elapsed_samples": [
+        1.502488275998985
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.09789999999999999,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0042,
+        "ISel": 0.0115,
+        "Frontend+IRGen": 1.3145
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hybridsort",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5653084660007153,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5653084660007153,
+      "elapsed_samples": [
+        1.5653084660007153
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0988,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.0033,
+        "ISel": 0.011399999999999999,
+        "Frontend+IRGen": 1.3883
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hwt1d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9389916879990778,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9389916879990778,
+      "elapsed_samples": [
+        1.9389916879990778
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0293,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0026,
+        "ISel": 0.0033,
+        "Frontend+IRGen": 1.8479
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jenkins-hash",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5265318929996283,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5265318929996283,
+      "elapsed_samples": [
+        1.5265318929996283
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0674,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0037,
+        "ISel": 0.0072,
+        "Frontend+IRGen": 1.3871
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jenkins-hash",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5950145900005737,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5950145900005737,
+      "elapsed_samples": [
+        1.5950145900005737
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0706,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.0031,
+        "ISel": 0.0074,
+        "Frontend+IRGen": 1.4606
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "hwt1d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0104187359993375,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0104187359993375,
+      "elapsed_samples": [
+        2.0104187359993375
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0318,
+        "RegAlloc": 0.0004,
+        "LLVM-analysis": 0.003,
+        "ISel": 0.0034,
+        "Frontend+IRGen": 1.9242
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "inversek2j",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.126679011998931,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.126679011998931,
+      "elapsed_samples": [
+        2.126679011998931
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.094,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.006,
+        "ISel": 0.011200000000000002,
+        "Frontend+IRGen": 1.9403000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "knn",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.57596282600025,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.57596282600025,
+      "elapsed_samples": [
+        1.57596282600025
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1202,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0123,
+        "Frontend+IRGen": 1.3645
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "inversek2j",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2017861469994386,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2017861469994386,
+      "elapsed_samples": [
+        2.2017861469994386
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1001,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.006,
+        "ISel": 0.011200000000000002,
+        "Frontend+IRGen": 2.0195
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "histogram",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.8171663419998367,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.8171663419998367
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_heap.h:223:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"__gnu_cxx::__ops::_Iter_comp_iter<less_than_value>\" {data !cir.struct<\"less_than_value\" padded {pad !cir.int<u, 8>}>}>'"
+    },
+    {
+      "benchmark": "knn",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.690455309999379,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.690455309999379,
+      "elapsed_samples": [
+        1.690455309999379
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1243,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0040999999999999995,
+        "ISel": 0.0126,
+        "Frontend+IRGen": 1.4750999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "ising",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.142552875999172,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.142552875999172,
+      "elapsed_samples": [
+        2.142552875999172
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.12140000000000001,
+        "RegAlloc": 0.0026,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0147,
+        "Frontend+IRGen": 1.9238
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "laplace3d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.686042097999234,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.686042097999234,
+      "elapsed_samples": [
+        1.686042097999234
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11879999999999999,
+        "RegAlloc": 0.0024,
+        "LLVM-analysis": 0.0031999999999999997,
+        "ISel": 0.0118,
+        "Frontend+IRGen": 1.4956
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "iso2dfd",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.0791912149998097,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.0791912149998097
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h:72:4: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::integral_constant<bool, true>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "ising",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.311279891000595,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.311279891000595,
+      "elapsed_samples": [
+        2.311279891000595
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1325,
+        "RegAlloc": 0.003,
+        "LLVM-analysis": 0.0050999999999999995,
+        "ISel": 0.015,
+        "Frontend+IRGen": 2.0861
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "jacobi",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.114384995000364,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.114384995000364,
+      "elapsed_samples": [
+        2.114384995000364
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0613,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0043,
+        "ISel": 0.006999999999999999,
+        "Frontend+IRGen": 1.9741000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "iso2dfd",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.22056116100066,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.22056116100066,
+      "elapsed_samples": [
+        2.22056116100066
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1825,
+        "RegAlloc": 0.0036,
+        "LLVM-analysis": 0.0104,
+        "ISel": 0.0189,
+        "Frontend+IRGen": 1.9418000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "laplace3d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.655162253000526,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.655162253000526,
+      "elapsed_samples": [
+        1.655162253000526
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.119,
+        "RegAlloc": 0.0023,
+        "LLVM-analysis": 0.0036,
+        "ISel": 0.012,
+        "Frontend+IRGen": 1.4531
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lavaMD",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5411449870007345,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5411449870007345,
+      "elapsed_samples": [
+        1.5411449870007345
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0808,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0036,
+        "ISel": 0.0073,
+        "Frontend+IRGen": 1.384
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lavaMD",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6014289920003648,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6014289920003648,
+      "elapsed_samples": [
+        1.6014289920003648
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0776,
+        "RegAlloc": 0.0007,
+        "LLVM-analysis": 0.0034000000000000002,
+        "ISel": 0.0087,
+        "Frontend+IRGen": 1.4604
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "f16sp",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.594654679000087,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.594654679000087,
+      "elapsed_samples": [
+        6.594654679000087
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.6063000000000001,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0329,
+        "ISel": 0.0561,
+        "Frontend+IRGen": 5.6985
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "histogram",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.289150284999778,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.289150284999778,
+      "elapsed_samples": [
+        3.289150284999778
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.7988000000000001,
+        "RegAlloc": 0.0081,
+        "LLVM-analysis": 0.0449,
+        "ISel": 0.08510000000000001,
+        "Frontend+IRGen": 2.2513
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "layout",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.983007353001085,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.983007353001085,
+      "elapsed_samples": [
+        1.983007353001085
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.056499999999999995,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0032,
+        "ISel": 0.0053,
+        "Frontend+IRGen": 1.8519
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "layout",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.050714386999971,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.050714386999971,
+      "elapsed_samples": [
+        2.050714386999971
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0627,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0037,
+        "ISel": 0.0056,
+        "Frontend+IRGen": 1.9268
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "libor",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8434664720007277,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8434664720007277,
+      "elapsed_samples": [
+        1.8434664720007277
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2341,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.0057,
+        "ISel": 0.0206,
+        "Frontend+IRGen": 1.4198
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "libor",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9341285560003598,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9341285560003598,
+      "elapsed_samples": [
+        1.9341285560003598
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.24,
+        "RegAlloc": 0.0006,
+        "LLVM-analysis": 0.005,
+        "ISel": 0.0217,
+        "Frontend+IRGen": 1.4907
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lid-driven-cavity",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9363469470008567,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9363469470008567,
+      "elapsed_samples": [
+        1.9363469470008567
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.196,
+        "RegAlloc": 0.0029,
+        "LLVM-analysis": 0.0063,
+        "ISel": 0.0238,
+        "Frontend+IRGen": 1.5992000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lif",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9003518009994878,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9003518009994878,
+      "elapsed_samples": [
+        1.9003518009994878
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0934,
+        "RegAlloc": 0.0029,
+        "LLVM-analysis": 0.0074,
+        "ISel": 0.0082,
+        "Frontend+IRGen": 1.7214999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lif",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7582121369996457,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7582121369996457,
+      "elapsed_samples": [
+        1.7582121369996457
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0874,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0063,
+        "ISel": 0.0077,
+        "Frontend+IRGen": 1.5796
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lr",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4803072790000442,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4803072790000442,
+      "elapsed_samples": [
+        1.4803072790000442
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0171,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0021,
+        "ISel": 0.0014,
+        "Frontend+IRGen": 1.4077000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lr",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4801142960004654,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4801142960004654,
+      "elapsed_samples": [
+        1.4801142960004654
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0174,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.002,
+        "ISel": 0.0014,
+        "Frontend+IRGen": 1.4182000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lombscargle",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.52799898900048,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.52799898900048,
+      "elapsed_samples": [
+        1.52799898900048
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0732,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0038,
+        "ISel": 0.0072,
+        "Frontend+IRGen": 1.3699
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lombscargle",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5969690250003623,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5969690250003623,
+      "elapsed_samples": [
+        1.5969690250003623
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0741,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0028,
+        "ISel": 0.0069,
+        "Frontend+IRGen": 1.4474
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "matrix-rotate",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.532221710000158,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.532221710000158,
+      "elapsed_samples": [
+        1.532221710000158
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.08030000000000001,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.0025,
+        "ISel": 0.0066,
+        "Frontend+IRGen": 1.394
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "matrix-rotate",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5041510040009598,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5041510040009598,
+      "elapsed_samples": [
+        1.5041510040009598
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0779,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.003,
+        "ISel": 0.0063999999999999994,
+        "Frontend+IRGen": 1.3605999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "gd",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.114834912999868,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.114834912999868,
+      "elapsed_samples": [
+        6.114834912999868
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3154,
+        "RegAlloc": 0.0037,
+        "LLVM-analysis": 0.0228,
+        "ISel": 0.03,
+        "Frontend+IRGen": 5.619400000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mask",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6950063610001962,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6950063610001962,
+      "elapsed_samples": [
+        1.6950063610001962
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1703,
+        "RegAlloc": 0.0039,
+        "LLVM-analysis": 0.0067,
+        "ISel": 0.0181,
+        "Frontend+IRGen": 1.3936000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "maxpool3d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5000446819994977,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5000446819994977,
+      "elapsed_samples": [
+        1.5000446819994977
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0588,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0031999999999999997,
+        "ISel": 0.004900000000000001,
+        "Frontend+IRGen": 1.3773
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "maxpool3d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.56155163800031,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.56155163800031,
+      "elapsed_samples": [
+        1.56155163800031
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0605,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0025,
+        "ISel": 0.0050999999999999995,
+        "Frontend+IRGen": 1.4424000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mask",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8149938089991338,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8149938089991338,
+      "elapsed_samples": [
+        1.8149938089991338
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1742,
+        "RegAlloc": 0.0036,
+        "LLVM-analysis": 0.0065,
+        "ISel": 0.0184,
+        "Frontend+IRGen": 1.5253999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "linearprobing",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.4306425279992254,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.4306425279992254
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h:1107:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "mandelbrot",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.124562484999842,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.124562484999842
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "logprob",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4899242039991805,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4899242039991805,
+      "elapsed_samples": [
+        2.4899242039991805
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11180000000000001,
+        "RegAlloc": 0.0022,
+        "LLVM-analysis": 0.0057,
+        "ISel": 0.0131,
+        "Frontend+IRGen": 2.2948000000000004
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "logprob",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.383956618999946,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.383956618999946,
+      "elapsed_samples": [
+        2.383956618999946
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1063,
+        "RegAlloc": 0.0021,
+        "LLVM-analysis": 0.0059,
+        "ISel": 0.011399999999999999,
+        "Frontend+IRGen": 2.1699
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mandelbrot",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.206024252000134,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.206024252000134,
+      "elapsed_samples": [
+        2.206024252000134
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0951,
+        "RegAlloc": 0.0002,
+        "LLVM-analysis": 0.0091,
+        "ISel": 0.008,
+        "Frontend+IRGen": 2.0251
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "linearprobing",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.5965823290007393,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.5965823290007393,
+      "elapsed_samples": [
+        2.5965823290007393
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2415,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.0261,
+        "ISel": 0.0184,
+        "Frontend+IRGen": 2.246
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "medianfilter",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.554272020001008,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.554272020001008,
+      "elapsed_samples": [
+        1.554272020001008
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0632,
+        "RegAlloc": 0.0002,
+        "LLVM-analysis": 0.0029,
+        "ISel": 0.0054,
+        "Frontend+IRGen": 1.4302000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "medianfilter",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5396635769993736,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5396635769993736,
+      "elapsed_samples": [
+        1.5396635769993736
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.058800000000000005,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0035,
+        "ISel": 0.0051,
+        "Frontend+IRGen": 1.4022999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "md",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.0910517779993825,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.0910517779993825
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:166:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::bidirectional_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "minisweep",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.0843844190003438,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.0843844190003438
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:53:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_d"
+    },
+    {
+      "benchmark": "mcpr",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.5461200610006927,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.5461200610006927,
+      "elapsed_samples": [
+        2.5461200610006927
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3351,
+        "RegAlloc": 0.0057,
+        "LLVM-analysis": 0.012900000000000002,
+        "ISel": 0.0341,
+        "Frontend+IRGen": 2.0119
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "minimod",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4413415319995693,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4413415319995693,
+      "elapsed_samples": [
+        1.4413415319995693
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0792,
+        "RegAlloc": 0.0035,
+        "LLVM-analysis": 0.0022,
+        "ISel": 0.0082,
+        "Frontend+IRGen": 1.2974
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mnist",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.0360074729996995,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.0360074729996995
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "mcpr",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.377405497998552,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.377405497998552,
+      "elapsed_samples": [
+        2.377405497998552
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3196,
+        "RegAlloc": 0.0054,
+        "LLVM-analysis": 0.0069,
+        "ISel": 0.0331,
+        "Frontend+IRGen": 1.8505
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "minimod",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5229908720011736,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5229908720011736,
+      "elapsed_samples": [
+        1.5229908720011736
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1518,
+        "RegAlloc": 0.0034,
+        "LLVM-analysis": 0.0027,
+        "ISel": 0.0207,
+        "Frontend+IRGen": 1.3019
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "md",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.22160825300125,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.22160825300125,
+      "elapsed_samples": [
+        2.22160825300125
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.159,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0149,
+        "ISel": 0.0114,
+        "Frontend+IRGen": 1.9714
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "merkle",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9863113170013094,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9863113170013094,
+      "elapsed_samples": [
+        1.9863113170013094
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0194,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0028,
+        "ISel": 0.0017,
+        "Frontend+IRGen": 1.9141
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "merkle",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9989428279986896,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9989428279986896,
+      "elapsed_samples": [
+        1.9989428279986896
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.016399999999999998,
+        "RegAlloc": 0.0001,
+        "LLVM-analysis": 0.0022,
+        "ISel": 0.0015,
+        "Frontend+IRGen": 1.9213
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "meanshift",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.6779193980000855,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.6779193980000855
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h:69:4: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::integral_constant<bool, false>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "meanshift",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.8825858519994654,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.8825858519994654,
+      "elapsed_samples": [
+        2.8825858519994654
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.23479999999999998,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.022000000000000002,
+        "ISel": 0.020999999999999998,
+        "Frontend+IRGen": 2.5199999999999996
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "nbnxm",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.161504835001324,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.161504835001324
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "mr",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8383160769990354,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8383160769990354,
+      "elapsed_samples": [
+        1.8383160769990354
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2589,
+        "RegAlloc": 0.0035,
+        "LLVM-analysis": 0.0071,
+        "ISel": 0.0227,
+        "Frontend+IRGen": 1.45
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "minkowski",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.076994574999844,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.076994574999844,
+      "elapsed_samples": [
+        2.076994574999844
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0733,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0041,
+        "ISel": 0.0068000000000000005,
+        "Frontend+IRGen": 1.9392999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mr",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7772290510001767,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7772290510001767,
+      "elapsed_samples": [
+        1.7772290510001767
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2575,
+        "RegAlloc": 0.0034,
+        "LLVM-analysis": 0.0075,
+        "ISel": 0.021500000000000002,
+        "Frontend+IRGen": 1.373
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "minkowski",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0188796220008953,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0188796220008953,
+      "elapsed_samples": [
+        2.0188796220008953
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0699,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0039,
+        "ISel": 0.0067,
+        "Frontend+IRGen": 1.8717000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "merge",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.8482707490002213,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.8482707490002213
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/predefined_ops.h:62:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"__gnu_cxx::__ops::_Iter_less_iter\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "murmurhash3",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.675352104999547,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.675352104999547,
+      "elapsed_samples": [
+        1.675352104999547
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1157,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0038,
+        "ISel": 0.0108,
+        "Frontend+IRGen": 1.4782
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "murmurhash3",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5640369499997178,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5640369499997178,
+      "elapsed_samples": [
+        1.5640369499997178
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11230000000000001,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0044,
+        "ISel": 0.0106,
+        "Frontend+IRGen": 1.3723
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "minisweep",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3586545289999776,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3586545289999776,
+      "elapsed_samples": [
+        2.3586545289999776
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.7193,
+        "RegAlloc": 0.0092,
+        "LLVM-analysis": 0.011099999999999999,
+        "ISel": 0.0524,
+        "Frontend+IRGen": 1.3817
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mnist",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2190034049999667,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2190034049999667,
+      "elapsed_samples": [
+        2.2190034049999667
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.32720000000000005,
+        "RegAlloc": 0.0019,
+        "LLVM-analysis": 0.0158,
+        "ISel": 0.037000000000000005,
+        "Frontend+IRGen": 1.6591
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mrc",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.036682533000203,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.036682533000203,
+      "elapsed_samples": [
+        2.036682533000203
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0916,
+        "RegAlloc": 0.0015,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.0117,
+        "Frontend+IRGen": 1.8593000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "mrc",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1090976979994593,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1090976979994593,
+      "elapsed_samples": [
+        2.1090976979994593
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.09659999999999999,
+        "RegAlloc": 0.0015,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.0123,
+        "Frontend+IRGen": 1.936
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "overlap",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.493445108000742,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.493445108000742,
+      "elapsed_samples": [
+        1.493445108000742
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0656,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0031,
+        "ISel": 0.0083,
+        "Frontend+IRGen": 1.3614000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "laplace",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 6.274505739998858,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        6.274505739998858
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/nvtx3/nvtxDetail/nvtxInit.h:312:5: error: ClangIR code gen Not Yet Implemented: unimplemented X86 builtin call: __sync_val_compare_and_swap_4"
+    },
+    {
+      "benchmark": "overlap",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5299998560003587,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5299998560003587,
+      "elapsed_samples": [
+        1.5299998560003587
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0667,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0025,
+        "ISel": 0.0085,
+        "Frontend+IRGen": 1.4059
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "lid-driven-cavity",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 5.38234077999914,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 5.38234077999914,
+      "elapsed_samples": [
+        5.38234077999914
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 3.8516,
+        "RegAlloc": 0.0054,
+        "LLVM-analysis": 0.0089,
+        "ISel": 0.381,
+        "Frontend+IRGen": 1.0150000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "overlay",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5715609589988162,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5715609589988162,
+      "elapsed_samples": [
+        1.5715609589988162
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0613,
+        "RegAlloc": 0.001,
+        "LLVM-analysis": 0.0031000000000000003,
+        "ISel": 0.0058,
+        "Frontend+IRGen": 1.4501
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "merge",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.278930534999745,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.278930534999745,
+      "elapsed_samples": [
+        3.278930534999745
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.8272,
+        "RegAlloc": 0.0126,
+        "LLVM-analysis": 0.0474,
+        "ISel": 0.0784,
+        "Frontend+IRGen": 2.1761
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "laplace",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 6.4300229260006745,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 6.4300229260006745,
+      "elapsed_samples": [
+        6.4300229260006745
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.5631,
+        "RegAlloc": 0.0046,
+        "LLVM-analysis": 0.0288,
+        "ISel": 0.051399999999999994,
+        "Frontend+IRGen": 5.581300000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "overlay",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4878589379986806,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4878589379986806,
+      "elapsed_samples": [
+        1.4878589379986806
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.05789999999999999,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.004,
+        "ISel": 0.0057,
+        "Frontend+IRGen": 1.3599999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "nbnxm",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3696853769997688,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3696853769997688,
+      "elapsed_samples": [
+        2.3696853769997688
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2376,
+        "RegAlloc": 0.0009,
+        "LLVM-analysis": 0.0075,
+        "ISel": 0.0322,
+        "Frontend+IRGen": 1.9653999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "p4",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.5968210619994352,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.5968210619994352
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algo.h:5658:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"__gnu_cxx::__ops::_Iter_less_iter\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "nbody",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.3634249240003555,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.3634249240003555
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h:1107:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "p4",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.634232564998456,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.634232564998456,
+      "elapsed_samples": [
+        1.634232564998456
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.08710000000000001,
+        "RegAlloc": 0.0021,
+        "LLVM-analysis": 0.0048000000000000004,
+        "ISel": 0.0108,
+        "Frontend+IRGen": 1.4529
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "permute",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.0785402249985054,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.0785402249985054
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/permute-cuda/../qkv-cuda/common.h:63:13: error: no matching function for call to 'isfinite'"
+    },
+    {
+      "benchmark": "permute",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.067934704999061,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.067934704999061
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/permute-cuda/../qkv-cuda/common.h:63:13: error: no matching function for call to 'isfinite'"
+    },
+    {
+      "benchmark": "pns",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.8354516380004497,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.8354516380004497
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/hecbench/src/pns-cuda/petri_kernel.cu:175:4: error: 'cir.cast' op result type address space does not match the address space of the operand"
+    },
+    {
+      "benchmark": "nbody",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.4667817989993637,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.4667817989993637,
+      "elapsed_samples": [
+        2.4667817989993637
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0963,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0085,
+        "ISel": 0.0069,
+        "Frontend+IRGen": 2.2937
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "page-rank",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6289358150006592,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6289358150006592,
+      "elapsed_samples": [
+        1.6289358150006592
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.118,
+        "RegAlloc": 0.002,
+        "LLVM-analysis": 0.0048000000000000004,
+        "ISel": 0.0117,
+        "Frontend+IRGen": 1.4057
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "page-rank",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6622077709998848,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6622077709998848,
+      "elapsed_samples": [
+        1.6622077709998848
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.11180000000000001,
+        "RegAlloc": 0.0021,
+        "LLVM-analysis": 0.004,
+        "ISel": 0.011699999999999999,
+        "Frontend+IRGen": 1.4536
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "particlefilter",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8818401549997361,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8818401549997361,
+      "elapsed_samples": [
+        1.8818401549997361
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.34219999999999995,
+        "RegAlloc": 0.0066,
+        "LLVM-analysis": 0.0085,
+        "ISel": 0.052500000000000005,
+        "Frontend+IRGen": 1.3485
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "perplexity",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.6246928870004922,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.6246928870004922
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h:1107:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "nlll",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.0013721539999096,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.0013721539999096,
+      "elapsed_samples": [
+        3.0013721539999096
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.426,
+        "RegAlloc": 0.0058,
+        "LLVM-analysis": 0.0173,
+        "ISel": 0.050600000000000006,
+        "Frontend+IRGen": 2.3611
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "particle-diffusion",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.101493534999463,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.101493534999463
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h:72:4: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::integral_constant<bool, true>\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "particlefilter",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1034054569990985,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1034054569990985,
+      "elapsed_samples": [
+        2.1034054569990985
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.3632,
+        "RegAlloc": 0.0076,
+        "LLVM-analysis": 0.008199999999999999,
+        "ISel": 0.0549,
+        "Frontend+IRGen": 1.5455
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pathfinder",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.951193040000362,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.951193040000362,
+      "elapsed_samples": [
+        1.951193040000362
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.054,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0029999999999999996,
+        "ISel": 0.005900000000000001,
+        "Frontend+IRGen": 1.8276
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "particle-diffusion",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.193370725000932,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.193370725000932,
+      "elapsed_samples": [
+        2.193370725000932
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1378,
+        "RegAlloc": 0.0032,
+        "LLVM-analysis": 0.0088,
+        "ISel": 0.0173,
+        "Frontend+IRGen": 1.9547999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pad",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.296100268998998,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.296100268998998
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/invoke.h:59:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::__invoke_other\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "pathfinder",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.017469307000283,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.017469307000283,
+      "elapsed_samples": [
+        2.017469307000283
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0616,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0029,
+        "ISel": 0.0061,
+        "Frontend+IRGen": 1.8961
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pad",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.365747118001309,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.365747118001309,
+      "elapsed_samples": [
+        2.365747118001309
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0915,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0102,
+        "ISel": 0.0071,
+        "Frontend+IRGen": 2.1971
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "sheath",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.9190635769991786,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.9190635769991786
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "perplexity",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7037165269994148,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7037165269994148,
+      "elapsed_samples": [
+        1.7037165269994148
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0878,
+        "RegAlloc": 0.0017,
+        "LLVM-analysis": 0.006900000000000001,
+        "ISel": 0.0066,
+        "Frontend+IRGen": 1.5325
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "nlll",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.2714169240007323,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.2714169240007323,
+      "elapsed_samples": [
+        3.2714169240007323
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.44129999999999997,
+        "RegAlloc": 0.0057,
+        "LLVM-analysis": 0.0173,
+        "ISel": 0.0526,
+        "Frontend+IRGen": 2.6276
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pointwise",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6647968489996856,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6647968489996856,
+      "elapsed_samples": [
+        1.6647968489996856
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1996,
+        "RegAlloc": 0.0098,
+        "LLVM-analysis": 0.0053,
+        "ISel": 0.020900000000000002,
+        "Frontend+IRGen": 1.3652000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pns",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.8216942259987263,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.8216942259987263,
+      "elapsed_samples": [
+        1.8216942259987263
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1799,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0062,
+        "ISel": 0.0194,
+        "Frontend+IRGen": 1.3717000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "pointwise",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.739090089000456,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.739090089000456,
+      "elapsed_samples": [
+        1.739090089000456
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.2011,
+        "RegAlloc": 0.0099,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.0217,
+        "Frontend+IRGen": 1.4448
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "stddev",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 0.7374410659995192,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        0.7374410659995192
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/home/ubuntu/llvm-project/build/lib/clang/24/include/__clang_cuda_device_functions.h:177:10: error: ClangIR code gen Not Yet Implemented: unimplemented NVPTX builtin call: __nvvm_atom_add_gen_f"
+    },
+    {
+      "benchmark": "projectile",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2576415659987106,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2576415659987106,
+      "elapsed_samples": [
+        2.2576415659987106
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1139,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0103,
+        "ISel": 0.009600000000000001,
+        "Frontend+IRGen": 2.0644
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "projectile",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1699392549999175,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1699392549999175,
+      "elapsed_samples": [
+        2.1699392549999175
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1087,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.008900000000000002,
+        "ISel": 0.0093,
+        "Frontend+IRGen": 1.969
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "simplemoc",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6752808799992636,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6752808799992636,
+      "elapsed_samples": [
+        1.6752808799992636
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1935,
+        "RegAlloc": 0.0066,
+        "LLVM-analysis": 0.0047,
+        "ISel": 0.021699999999999997,
+        "Frontend+IRGen": 1.3614
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "rsc",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.2402807990001747,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.2402807990001747
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/invoke.h:59:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::__invoke_other\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "simplemoc",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7811457389998395,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7811457389998395,
+      "elapsed_samples": [
+        1.7811457389998395
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1941,
+        "RegAlloc": 0.0069,
+        "LLVM-analysis": 0.0036,
+        "ISel": 0.022199999999999998,
+        "Frontend+IRGen": 1.4768
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "s3d",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.1471636480000598,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.1471636480000598
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h:97:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "sheath",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9002876109989302,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9002876109989302,
+      "elapsed_samples": [
+        1.9002876109989302
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.14459999999999998,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.005399999999999999,
+        "ISel": 0.0191,
+        "Frontend+IRGen": 1.6425
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "softmax",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 1.857934904999638,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        1.857934904999638
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/cooperative_groups.h:91:9: error: ClangIR code gen Not Yet Implemented: NYI CheapUnalignedBitFieldAccess"
+    },
+    {
+      "benchmark": "s3d",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.181316258998777,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.181316258998777,
+      "elapsed_samples": [
+        2.181316258998777
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0616,
+        "RegAlloc": 0.0,
+        "LLVM-analysis": 0.0077,
+        "ISel": 0.0058,
+        "Frontend+IRGen": 2.0482
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "rsc",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.3503478310012724,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.3503478310012724,
+      "elapsed_samples": [
+        2.3503478310012724
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1165,
+        "RegAlloc": 0.0018,
+        "LLVM-analysis": 0.0098,
+        "ISel": 0.0126,
+        "Frontend+IRGen": 2.1517
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "stddev",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4867680890001793,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4867680890001793,
+      "elapsed_samples": [
+        1.4867680890001793
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.050100000000000006,
+        "RegAlloc": 0.0008,
+        "LLVM-analysis": 0.0034000000000000002,
+        "ISel": 0.005200000000000001,
+        "Frontend+IRGen": 1.3587
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "sc",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.2371687490012846,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.2371687490012846
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/invoke.h:59:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::__invoke_other\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "sc",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.326532261000466,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.326532261000466,
+      "elapsed_samples": [
+        2.326532261000466
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0717,
+        "RegAlloc": 0.0003,
+        "LLVM-analysis": 0.0089,
+        "ISel": 0.006,
+        "Frontend+IRGen": 2.1706000000000003
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "tissue",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4960903329993016,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4960903329993016,
+      "elapsed_samples": [
+        1.4960903329993016
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0775,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0035,
+        "ISel": 0.008400000000000001,
+        "Frontend+IRGen": 1.3439
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "tissue",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5354456759996538,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5354456759996538,
+      "elapsed_samples": [
+        1.5354456759996538
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.07730000000000001,
+        "RegAlloc": 0.0028,
+        "LLVM-analysis": 0.0027,
+        "ISel": 0.0088,
+        "Frontend+IRGen": 1.3931
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "vanGenuchten",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4956005829990318,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4956005829990318,
+      "elapsed_samples": [
+        1.4956005829990318
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.07139999999999999,
+        "RegAlloc": 0.0016,
+        "LLVM-analysis": 0.0037,
+        "ISel": 0.0091,
+        "Frontend+IRGen": 1.3334000000000001
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "vanGenuchten",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.5194743920001201,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.5194743920001201,
+      "elapsed_samples": [
+        1.5194743920001201
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0742,
+        "RegAlloc": 0.0017,
+        "LLVM-analysis": 0.003,
+        "ISel": 0.0101,
+        "Frontend+IRGen": 1.3627
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "winograd",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.462678280999171,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.462678280999171,
+      "elapsed_samples": [
+        1.462678280999171
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0448,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0021999999999999997,
+        "ISel": 0.0041,
+        "Frontend+IRGen": 1.3528
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "vol2col",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.6878286820010544,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.6878286820010544,
+      "elapsed_samples": [
+        1.6878286820010544
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1741,
+        "RegAlloc": 0.0059,
+        "LLVM-analysis": 0.0046,
+        "ISel": 0.0164,
+        "Frontend+IRGen": 1.3915000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "winograd",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.4296681359992363,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.4296681359992363,
+      "elapsed_samples": [
+        1.4296681359992363
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.044700000000000004,
+        "RegAlloc": 0.0005,
+        "LLVM-analysis": 0.0029,
+        "ISel": 0.0037,
+        "Frontend+IRGen": 1.3212000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "vol2col",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.7169712800005072,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.7169712800005072,
+      "elapsed_samples": [
+        1.7169712800005072
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.17020000000000002,
+        "RegAlloc": 0.0059,
+        "LLVM-analysis": 0.0039,
+        "ISel": 0.0159,
+        "Frontend+IRGen": 1.4266
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "su3",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 2.09540190000007,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        2.09540190000007
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h:1107:5: error: 'cir.func' op x86_64 calling-convention lowering not yet implemented for type '!cir.struct<\"std::random_access_iterator_tag\" padded {pad !cir.int<u, 8>}>'"
+    },
+    {
+      "benchmark": "tqs",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9836304079999536,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9836304079999536,
+      "elapsed_samples": [
+        1.9836304079999536
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.042600000000000006,
+        "RegAlloc": 0.0007,
+        "LLVM-analysis": 0.0022,
+        "ISel": 0.0049,
+        "Frontend+IRGen": 1.8775
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "tqs",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.019099829998595,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.019099829998595,
+      "elapsed_samples": [
+        2.019099829998595
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0398,
+        "RegAlloc": 0.0007,
+        "LLVM-analysis": 0.0022,
+        "ISel": 0.0047,
+        "Frontend+IRGen": 1.9236
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "tridiagonal",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.0008397460005654,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.0008397460005654,
+      "elapsed_samples": [
+        2.0008397460005654
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.41680000000000006,
+        "RegAlloc": 0.0096,
+        "LLVM-analysis": 0.0137,
+        "ISel": 0.0497,
+        "Frontend+IRGen": 1.3282999999999998
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "su3",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.2051048220000666,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.2051048220000666,
+      "elapsed_samples": [
+        2.2051048220000666
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.1275,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0098,
+        "ISel": 0.0115,
+        "Frontend+IRGen": 1.9952999999999999
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "multinomial",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 5.972376974001236,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 5.972376974001236,
+      "elapsed_samples": [
+        5.972376974001236
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.22139999999999999,
+        "RegAlloc": 0.0011,
+        "LLVM-analysis": 0.0136,
+        "ISel": 0.0209,
+        "Frontend+IRGen": 5.612
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "zerocopy",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.421802803999526,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.421802803999526,
+      "elapsed_samples": [
+        1.421802803999526
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.034899999999999994,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.0023,
+        "ISel": 0.0036,
+        "Frontend+IRGen": 1.3386
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "tridiagonal",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 2.1760117930007254,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 2.1760117930007254,
+      "elapsed_samples": [
+        2.1760117930007254
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.4135,
+        "RegAlloc": 0.0087,
+        "LLVM-analysis": 0.0118,
+        "ISel": 0.0487,
+        "Frontend+IRGen": 1.5247000000000002
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "zerocopy",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.3870070099983423,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.3870070099983423,
+      "elapsed_samples": [
+        1.3870070099983423
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0346,
+        "RegAlloc": 0.0013,
+        "LLVM-analysis": 0.0029000000000000002,
+        "ISel": 0.0036,
+        "Frontend+IRGen": 1.2948
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "multinomial",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": false,
+      "elapsed": 6.09916367400001,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": NaN,
+      "elapsed_samples": [
+        6.09916367400001
+      ],
+      "samples": 1,
+      "phases": {},
+      "first_error": "/usr/include/nvtx3/nvtxDetail/nvtxInit.h:312:5: error: ClangIR code gen Not Yet Implemented: unimplemented X86 builtin call: __sync_val_compare_and_swap_4"
+    },
+    {
+      "benchmark": "zeropoint",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.9461897810015216,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.9461897810015216,
+      "elapsed_samples": [
+        1.9461897810015216
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.0847,
+        "RegAlloc": 0.0025,
+        "LLVM-analysis": 0.0046,
+        "ISel": 0.014,
+        "Frontend+IRGen": 1.7679
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "zeropoint",
+      "model": "cuda",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 1.954656795000119,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 1.954656795000119,
+      "elapsed_samples": [
+        1.954656795000119
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.08679999999999999,
+        "RegAlloc": 0.0027,
+        "LLVM-analysis": 0.0045,
+        "ISel": 0.0142,
+        "Frontend+IRGen": 1.787
+      },
+      "first_error": ""
+    },
+    {
+      "benchmark": "softmax",
+      "model": "cuda",
+      "pipeline": "OG",
+      "arch": "sm_86",
+      "ok": true,
+      "elapsed": 3.6508896939994884,
+      "elapsed_stddev": 0.0,
+      "elapsed_median": 3.6508896939994884,
+      "elapsed_samples": [
+        3.6508896939994884
+      ],
+      "samples": 1,
+      "phases": {
+        "LLVM-passes": 0.08549999999999999,
+        "RegAlloc": 0.0014,
+        "LLVM-analysis": 0.0049,
+        "ISel": 0.0075,
+        "Frontend+IRGen": 3.4528
+      },
+      "first_error": ""
+    }
+  ]
+}
