@@ -1,0 +1,5 @@
+llvm_branch=gsoc/wire-cprop-lprop-end-to-end
+llvm_commit=bb385fee62f23fdb0acb719a88fe8186167f42a5
+dynamic_polybench_commit=2a64b439206537f70278a227103943046d7ba059
+static_polybench_commit=f5613c400c78734d1e8924b1c8e79f10d3a262b1
+audit_commit=81d3b9630701a9321e1c28e334bd0491a93745f4

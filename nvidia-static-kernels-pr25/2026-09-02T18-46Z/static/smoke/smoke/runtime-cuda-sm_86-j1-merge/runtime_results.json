@@ -1,0 +1,114 @@
+{
+  "kind": "runtime",
+  "arch": "sm_86",
+  "runs": 2,
+  "warmup": 1,
+  "jobs": 1,
+  "merge": true,
+  "pipelines": [
+    "CIR",
+    "CIR-merge"
+  ],
+  "clangir_commit": "bb385fee62f2",
+  "scripts_commit": "81d3b96",
+  "polybench_root": "/home/ubuntu/polybenchGpu-static",
+  "environment": {
+    "hostname": "141-148-75-73",
+    "timestamp_utc": "2026-09-02T18:33:41+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+    "cpu_count": "30",
+    "kernel": "6.8.0-60-generic",
+    "gpu": "NVIDIA A10",
+    "rocm_version": "",
+    "cuda_version": "12.8",
+    "driver_version": "570.148.08",
+    "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+    "os_release": "Ubuntu 22.04.5 LTS",
+    "polybench_commit": "f5613c4",
+    "compiler_version": "clang version 24.0.0git (https://github.com/RiverDave/llvm-project.git bb385fee62f23fdb0acb719a88fe8186167f42a5)"
+  },
+  "no_cpu_ref": true,
+  "validate": true,
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 26864,
+      "times": [
+        0.000357,
+        0.000355
+      ],
+      "wall_times": [
+        0.5680929529999048,
+        0.5730055670001093
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "convolution-2d",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2DCONV/2DConvolution.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 26848,
+      "times": [
+        0.000359,
+        0.000369
+      ],
+      "wall_times": [
+        0.5741382629994405,
+        0.5747170839995306
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 39248,
+      "times": [
+        0.005407,
+        0.005424
+      ],
+      "wall_times": [
+        0.2217204890002904,
+        0.22060630200030573
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 39240,
+      "times": [
+        0.005421,
+        0.005422
+      ],
+      "wall_times": [
+        0.2269130109998514,
+        0.2218068169995604
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    }
+  ]
+}

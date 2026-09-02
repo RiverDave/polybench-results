@@ -1,0 +1,116 @@
+COMMAND: /home/ubuntu/llvm-project/build-pr25-clang-gcc11/bin/clang-24 -fclangir --clangir-offload-merge --gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/11 --cuda-path=/usr/lib/cuda --cuda-gpu-arch=sm_86 -std=c++17 -O3 /home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu -I/home/ubuntu/polybenchGpu-dynamic/common -I/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI -I/home/ubuntu/polybenchGpu-dynamic -lm -L/usr/lib/cuda/lib64 -lcudart -x none -o /home/ubuntu/logs/dynamic/full/runtime-cuda-sm_86-j1-merge/build/CUDA_ADI_adi.cu.cir-merge.sm_86-validate
+
+STDOUT:
+
+STDERR:
+clang-24: warning: '-x none' after last input file has no effect [-Wunused-command-line-argument]
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:242:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  242 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:244:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  244 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:246:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  246 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:251:4: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  251 |                         cudaThreadSynchronize();
+      |                         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:255:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  255 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:260:4: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  260 |                         cudaThreadSynchronize();
+      |                         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+6 warnings generated when compiling for host.
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:242:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  242 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:244:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  244 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:246:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  246 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:251:4: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  251 |                         cudaThreadSynchronize();
+      |                         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:255:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  255 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-dynamic/CUDA/ADI/adi.cu:260:4: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  260 |                         cudaThreadSynchronize();
+      |                         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+6 warnings generated when compiling for sm_86.
