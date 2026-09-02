@@ -1,0 +1,17 @@
+
+Fatbin elf code:
+================
+arch = sm_86
+code version = [1,7]
+host = linux
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZL17fdtd_step3_kerneliiPfS_S_i:
+  REG:14 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZL17fdtd_step2_kerneliiPfS_S_i:
+  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZL17fdtd_step1_kerneliiPfS_S_S_i:
+  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:396 TEXTURE:0 SURFACE:0 SAMPLER:0

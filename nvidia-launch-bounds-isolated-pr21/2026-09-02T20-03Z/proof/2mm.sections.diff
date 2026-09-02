@@ -1,0 +1,23 @@
+--- /home/ubuntu/lb-isolated-full/proof/2mm.LB-off.sections.txt	2026-09-02 20:03:44.946677442 +0000
++++ /home/ubuntu/lb-isolated-full/proof/2mm.LB-on.sections.txt	2026-09-02 20:03:44.947677444 +0000
+@@ -8,13 +8,13 @@
+   [ 3] .symtab           SYMTAB          0000000000000000 0004c0 0000f0 18      2   8  8
+   [ 4] .debug_frame      PROGBITS        0000000000000000 0005b0 0000e0 00      0   0  1
+   [ 5] .nv.info          LOPROC+0        0000000000000000 000690 000048 00      3   0  4
+-  [ 6] .nv.info._ZL11mm2_kernel2iiiiffPfS_S_ LOPROC+0        0000000000000000 0006d8 0000c4 00   I  3  13  4
+-  [ 7] .nv.info._ZL11mm2_kernel1iiiiffPfS_S_ LOPROC+0        0000000000000000 00079c 0000c4 00   I  3  14  4
+-  [ 8] .nv.callgraph     LOPROC+0x1      0000000000000000 000860 000020 08      3   0  4
+-  [ 9] .nv.rel.action    LOPROC+0xb      0000000000000000 000880 000010 08      0   0  8
+-  [10] .rel.debug_frame  REL             0000000000000000 000890 000020 10   I  3   4  8
+-  [11] .nv.constant0._ZL11mm2_kernel2iiiiffPfS_S_ PROGBITS        0000000000000000 0008b0 000190 00  AI  0  13  4
+-  [12] .nv.constant0._ZL11mm2_kernel1iiiiffPfS_S_ PROGBITS        0000000000000000 000a40 000190 00  AI  0  14  4
++  [ 6] .nv.info._ZL11mm2_kernel2iiiiffPfS_S_ LOPROC+0        0000000000000000 0006d8 0000d4 00   I  3  13  4
++  [ 7] .nv.info._ZL11mm2_kernel1iiiiffPfS_S_ LOPROC+0        0000000000000000 0007ac 0000d4 00   I  3  14  4
++  [ 8] .nv.callgraph     LOPROC+0x1      0000000000000000 000880 000020 08      3   0  4
++  [ 9] .nv.rel.action    LOPROC+0xb      0000000000000000 0008a0 000010 08      0   0  8
++  [10] .rel.debug_frame  REL             0000000000000000 0008b0 000020 10   I  3   4  8
++  [11] .nv.constant0._ZL11mm2_kernel2iiiiffPfS_S_ PROGBITS        0000000000000000 0008d0 000190 00  AI  0  13  4
++  [12] .nv.constant0._ZL11mm2_kernel1iiiiffPfS_S_ PROGBITS        0000000000000000 000a60 000190 00  AI  0  14  4
+ readelf: Warning: [13]: Unexpected value (402653192) in info field.
+   [13] .text._ZL11mm2_kernel2iiiiffPfS_S_ PROGBITS        0000000000000000 000c00 001100 00  AX  3 402653192 128
+ readelf: Warning: [14]: Unexpected value (402653193) in info field.

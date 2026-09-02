@@ -1,0 +1,5002 @@
+{
+  "schema": 1,
+  "kind": "launch-bounds-isolated",
+  "timestamp_utc": "2026-09-02T19:56:26.870826+00:00",
+  "method": {
+    "arms": {
+      "LB-off": "--clangir-offload-merge -fno-cir-infer-launch-bounds",
+      "LB-on": "--clangir-offload-merge -fcir-infer-launch-bounds"
+    },
+    "warmup_per_arm": 5,
+    "paired_runs": 20,
+    "execution_order": "alternating per pair",
+    "jobs_compile": 4,
+    "runtime_jobs": 1,
+    "ptxas": "-v",
+    "arch": "sm_86"
+  },
+  "commits": {
+    "llvm": "bb385fee62f2",
+    "audit": "81d3b96",
+    "polybench": "f5613c4"
+  },
+  "environment": {
+    "hostname": "150-136-205-255",
+    "timestamp_utc": "2026-09-02T19:56:26+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+    "cpu_count": "30",
+    "kernel": "6.8.0-60-generic",
+    "gpu": "NVIDIA A10",
+    "rocm_version": "",
+    "cuda_version": "12.8",
+    "driver_version": "570.148.08",
+    "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+    "os_release": "Ubuntu 22.04.5 LTS"
+  },
+  "gpu_snapshots": [
+    "2026/09/02 19:39:16.980, NVIDIA A10, 570.148.08, 30, 15.60, 210, 405, 0",
+    "2026/09/02 19:39:45.742, NVIDIA A10, 570.148.08, 35, 57.00, 1695, 6251, 6",
+    "2026/09/02 19:39:57.127, NVIDIA A10, 570.148.08, 37, 64.65, 1695, 6251, 6",
+    "2026/09/02 19:40:13.501, NVIDIA A10, 570.148.08, 38, 59.88, 1695, 6251, 6",
+    "2026/09/02 19:40:24.338, NVIDIA A10, 570.148.08, 39, 62.25, 1695, 6251, 0",
+    "2026/09/02 19:40:36.679, NVIDIA A10, 570.148.08, 39, 61.53, 1695, 6251, 6",
+    "2026/09/02 19:40:49.059, NVIDIA A10, 570.148.08, 40, 62.54, 1695, 6251, 5",
+    "2026/09/02 19:41:01.572, NVIDIA A10, 570.148.08, 40, 61.22, 1695, 6251, 6",
+    "2026/09/02 19:42:37.862, NVIDIA A10, 570.148.08, 48, 78.92, 1695, 6251, 6",
+    "2026/09/02 19:44:14.495, NVIDIA A10, 570.148.08, 50, 79.47, 1695, 6251, 6",
+    "2026/09/02 19:44:26.102, NVIDIA A10, 570.148.08, 48, 65.20, 1695, 6251, 6",
+    "2026/09/02 19:44:47.953, NVIDIA A10, 570.148.08, 52, 92.15, 1680, 6251, 0",
+    "2026/09/02 19:44:58.853, NVIDIA A10, 570.148.08, 49, 63.98, 1695, 6251, 0",
+    "2026/09/02 19:45:11.323, NVIDIA A10, 570.148.08, 48, 64.16, 1695, 6251, 6",
+    "2026/09/02 19:45:27.162, NVIDIA A10, 570.148.08, 47, 62.62, 1695, 6251, 0",
+    "2026/09/02 19:47:41.704, NVIDIA A10, 570.148.08, 47, 69.76, 1695, 6251, 0",
+    "2026/09/02 19:47:58.507, NVIDIA A10, 570.148.08, 46, 65.27, 1695, 6251, 0",
+    "2026/09/02 19:48:09.585, NVIDIA A10, 570.148.08, 46, 63.59, 1695, 6251, 6",
+    "2026/09/02 19:48:23.631, NVIDIA A10, 570.148.08, 46, 69.12, 1695, 6251, 6",
+    "2026/09/02 19:48:36.031, NVIDIA A10, 570.148.08, 45, 63.35, 1695, 6251, 6",
+    "2026/09/02 19:48:48.051, NVIDIA A10, 570.148.08, 46, 69.07, 1695, 6251, 6",
+    "2026/09/02 19:48:59.347, NVIDIA A10, 570.148.08, 45, 63.57, 1695, 6251, 6"
+  ],
+  "suite_ratio_on_over_off_geomean": 0.999803069676524,
+  "suite_ratio_ci95_benchmark_bootstrap": [
+    0.9994371323803198,
+    1.000167153030397
+  ],
+  "results": [
+    {
+      "benchmark": "convolution-2d",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2DCONV/2DConvolution.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.000354,
+            0.000347,
+            0.000355,
+            0.000361,
+            0.000353,
+            0.000351,
+            0.00035,
+            0.000353,
+            0.000352,
+            0.000352,
+            0.000353,
+            0.000352,
+            0.000353,
+            0.000356,
+            0.000353,
+            0.000352,
+            0.000353,
+            0.000358,
+            0.000351,
+            0.000352
+          ],
+          "LB-on": [
+            0.00035,
+            0.000352,
+            0.000361,
+            0.000352,
+            0.000352,
+            0.000351,
+            0.000361,
+            0.000353,
+            0.00036,
+            0.000349,
+            0.000355,
+            0.000353,
+            0.00036,
+            0.000353,
+            0.000347,
+            0.000351,
+            0.000348,
+            0.000352,
+            0.000355,
+            0.000352
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.5666361730000062,
+            0.5679547309999862,
+            0.5655853320000688,
+            0.5677345980000155,
+            0.56977039100002,
+            0.5691649670000061,
+            0.5666089380000585,
+            0.5660312890000796,
+            0.5685983289999967,
+            0.5678493089999392,
+            0.571060813000031,
+            0.5754781520000734,
+            0.5621517890000405,
+            0.5723240119999673,
+            0.5665843699999868,
+            0.5670654040000045,
+            0.6324716469999885,
+            0.5677825709999524,
+            0.5627844309999546,
+            0.564389250999966
+          ],
+          "LB-on": [
+            0.5725486029999729,
+            0.5654227869999886,
+            0.5674381349999749,
+            0.5730465590000904,
+            0.5664590929999349,
+            0.5655679499999451,
+            0.5662038329999177,
+            0.5645125770000732,
+            0.5644493989999546,
+            0.5627357959999699,
+            0.5703610439999238,
+            0.6203021000000035,
+            0.5701308669999889,
+            0.5686842169999409,
+            0.5684083849999979,
+            0.5632953049999969,
+            0.5673511579999513,
+            0.5712703289999581,
+            0.5684669709999071,
+            0.5638750010000422
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.000354,
+            "on": 0.00035,
+            "ratio": 0.9887005649717514
+          },
+          {
+            "off": 0.000347,
+            "on": 0.000352,
+            "ratio": 1.0144092219020173
+          },
+          {
+            "off": 0.000355,
+            "on": 0.000361,
+            "ratio": 1.0169014084507042
+          },
+          {
+            "off": 0.000361,
+            "on": 0.000352,
+            "ratio": 0.9750692520775623
+          },
+          {
+            "off": 0.000353,
+            "on": 0.000352,
+            "ratio": 0.9971671388101983
+          },
+          {
+            "off": 0.000351,
+            "on": 0.000351,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.00035,
+            "on": 0.000361,
+            "ratio": 1.0314285714285714
+          },
+          {
+            "off": 0.000353,
+            "on": 0.000353,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000352,
+            "on": 0.00036,
+            "ratio": 1.022727272727273
+          },
+          {
+            "off": 0.000352,
+            "on": 0.000349,
+            "ratio": 0.9914772727272728
+          },
+          {
+            "off": 0.000353,
+            "on": 0.000355,
+            "ratio": 1.0056657223796033
+          },
+          {
+            "off": 0.000352,
+            "on": 0.000353,
+            "ratio": 1.0028409090909092
+          },
+          {
+            "off": 0.000353,
+            "on": 0.00036,
+            "ratio": 1.019830028328612
+          },
+          {
+            "off": 0.000356,
+            "on": 0.000353,
+            "ratio": 0.9915730337078653
+          },
+          {
+            "off": 0.000353,
+            "on": 0.000347,
+            "ratio": 0.9830028328611897
+          },
+          {
+            "off": 0.000352,
+            "on": 0.000351,
+            "ratio": 0.9971590909090909
+          },
+          {
+            "off": 0.000353,
+            "on": 0.000348,
+            "ratio": 0.9858356940509915
+          },
+          {
+            "off": 0.000358,
+            "on": 0.000352,
+            "ratio": 0.9832402234636872
+          },
+          {
+            "off": 0.000351,
+            "on": 0.000355,
+            "ratio": 1.0113960113960114
+          },
+          {
+            "off": 0.000352,
+            "on": 0.000352,
+            "ratio": 1.0
+          }
+        ],
+        "ratio_geomean": 1.0008160033246645,
+        "ratio_ci95": [
+          0.9946259053806054,
+          1.0073114092311077
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_2DCONV_2DConvolution.cu.cir-merge.sm_86",
+          "binary_bytes": 26848,
+          "sha256": "0063b7bfa166a9c9a51f7da336ddfb0e36c1f3c0a1f8354b660a340b01c59b16",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_2DCONV_2DConvolution.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL20convolution2D_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_2DCONV_2DConvolution.cu.cir-merge.sm_86",
+          "binary_bytes": 26848,
+          "sha256": "6284deeb826e0964048339751a864dcef44ac7c616820b9377b2d1e22efbbe04",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_2DCONV_2DConvolution.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL20convolution2D_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "2mm",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/2MM/2mm.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.005428,
+            0.005435,
+            0.005421,
+            0.005425,
+            0.005431,
+            0.005434,
+            0.005433,
+            0.005419,
+            0.005416,
+            0.005433,
+            0.005434,
+            0.005403,
+            0.005426,
+            0.005441,
+            0.005436,
+            0.005419,
+            0.005418,
+            0.005422,
+            0.005423,
+            0.005432
+          ],
+          "LB-on": [
+            0.005431,
+            0.005419,
+            0.005421,
+            0.005406,
+            0.005433,
+            0.00541,
+            0.005425,
+            0.005419,
+            0.005422,
+            0.005422,
+            0.005417,
+            0.005432,
+            0.005438,
+            0.005419,
+            0.00541,
+            0.005403,
+            0.005428,
+            0.005425,
+            0.005414,
+            0.005423
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.22236383999995724,
+            0.2723620800001072,
+            0.2249886360000346,
+            0.223410385999955,
+            0.22052931199993964,
+            0.22357074900003227,
+            0.22161574999995537,
+            0.2696423429999868,
+            0.22349618999999166,
+            0.22051317199998266,
+            0.21909862699999394,
+            0.22155915500002266,
+            0.22171442799992747,
+            0.22076732699997592,
+            0.22191639599998325,
+            0.21971758899996985,
+            0.2214702109999962,
+            0.22267240600001514,
+            0.2211325760000591,
+            0.22132269600001564
+          ],
+          "LB-on": [
+            0.21883833499998673,
+            0.21962050700005875,
+            0.2198579680000421,
+            0.2189861199999541,
+            0.2182057329999907,
+            0.21940358299991658,
+            0.21937040799991792,
+            0.22122213099999044,
+            0.220975689999932,
+            0.2216739499999676,
+            0.22168657300005634,
+            0.22142778199997792,
+            0.22181931800002985,
+            0.21934913000006873,
+            0.225095372999931,
+            0.22062848999996731,
+            0.271928594999963,
+            0.22637099899998248,
+            0.22185237899998356,
+            0.22260050900001715
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.005428,
+            "on": 0.005431,
+            "ratio": 1.0005526897568167
+          },
+          {
+            "off": 0.005435,
+            "on": 0.005419,
+            "ratio": 0.9970561177552899
+          },
+          {
+            "off": 0.005421,
+            "on": 0.005421,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.005425,
+            "on": 0.005406,
+            "ratio": 0.9964976958525346
+          },
+          {
+            "off": 0.005431,
+            "on": 0.005433,
+            "ratio": 1.0003682563063894
+          },
+          {
+            "off": 0.005434,
+            "on": 0.00541,
+            "ratio": 0.9955833640044167
+          },
+          {
+            "off": 0.005433,
+            "on": 0.005425,
+            "ratio": 0.9985275170255844
+          },
+          {
+            "off": 0.005419,
+            "on": 0.005419,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.005416,
+            "on": 0.005422,
+            "ratio": 1.0011078286558346
+          },
+          {
+            "off": 0.005433,
+            "on": 0.005422,
+            "ratio": 0.9979753359101784
+          },
+          {
+            "off": 0.005434,
+            "on": 0.005417,
+            "ratio": 0.9968715495031285
+          },
+          {
+            "off": 0.005403,
+            "on": 0.005432,
+            "ratio": 1.005367388487877
+          },
+          {
+            "off": 0.005426,
+            "on": 0.005438,
+            "ratio": 1.0022115739034279
+          },
+          {
+            "off": 0.005441,
+            "on": 0.005419,
+            "ratio": 0.9959566256202905
+          },
+          {
+            "off": 0.005436,
+            "on": 0.00541,
+            "ratio": 0.9952170713760118
+          },
+          {
+            "off": 0.005419,
+            "on": 0.005403,
+            "ratio": 0.9970474257243033
+          },
+          {
+            "off": 0.005418,
+            "on": 0.005428,
+            "ratio": 1.0018456995201181
+          },
+          {
+            "off": 0.005422,
+            "on": 0.005425,
+            "ratio": 1.00055330136481
+          },
+          {
+            "off": 0.005423,
+            "on": 0.005414,
+            "ratio": 0.9983404019915177
+          },
+          {
+            "off": 0.005432,
+            "on": 0.005423,
+            "ratio": 0.998343151693667
+          }
+        ],
+        "ratio_geomean": 0.9989679532910559,
+        "ratio_ci95": [
+          0.9978900063490682,
+          1.0001010680179858
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_2MM_2mm.cu.cir-merge.sm_86",
+          "binary_bytes": 39240,
+          "sha256": "be9be0c6f8d9116671c69360b9389f5f2cfeb9caf0b92bb12debb3bf3b2ba069",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_2MM_2mm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mm2_kernel2iiiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm2_kernel1iiiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_2MM_2mm.cu.cir-merge.sm_86",
+          "binary_bytes": 39240,
+          "sha256": "6132c6b8e2f7c720cc19859c42e2bef44ae1d145108a1dc0daf53d84f497a2a3",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_2MM_2mm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mm2_kernel2iiiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm2_kernel1iiiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "convolution-3d",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/3DCONV/3DConvolution.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.000942,
+            0.000941,
+            0.00095,
+            0.000937,
+            0.000947,
+            0.000954,
+            0.000952,
+            0.000949,
+            0.000949,
+            0.000946,
+            0.000948,
+            0.000952,
+            0.000949,
+            0.000947,
+            0.000948,
+            0.000951,
+            0.000939,
+            0.000955,
+            0.000948,
+            0.000947
+          ],
+          "LB-on": [
+            0.000949,
+            0.000959,
+            0.000953,
+            0.00095,
+            0.000944,
+            0.000947,
+            0.000946,
+            0.000964,
+            0.000941,
+            0.000948,
+            0.00094,
+            0.000952,
+            0.00095,
+            0.000946,
+            0.000947,
+            0.000949,
+            0.000947,
+            0.000949,
+            0.000948,
+            0.000943
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.31990856999993866,
+            0.31327873300006104,
+            0.3153948010000249,
+            0.36366124400001354,
+            0.31818265300000803,
+            0.3684030279999888,
+            0.36875439799996457,
+            0.3144327830000293,
+            0.31334712599993964,
+            0.31384004699998513,
+            0.315034442999945,
+            0.31416575900004773,
+            0.31355652300010206,
+            0.3173782060000576,
+            0.3628250490000937,
+            0.31711286699999164,
+            0.3133940860000166,
+            0.3148124370000005,
+            0.32324392600003193,
+            0.3203140729999632
+          ],
+          "LB-on": [
+            0.3674042150000787,
+            0.3186811819999775,
+            0.3132996800000001,
+            0.31533398500005205,
+            0.3123744740000802,
+            0.3168703019999839,
+            0.3169383999999127,
+            0.3191506529999515,
+            0.3162484010000526,
+            0.3163543520000758,
+            0.31626697799993053,
+            0.3184171589999778,
+            0.31418992200008233,
+            0.32113002599999163,
+            0.3689936949999719,
+            0.31893547200002104,
+            0.317752143000007,
+            0.3688977399999658,
+            0.3145677009999872,
+            0.319086230000039
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.000942,
+            "on": 0.000949,
+            "ratio": 1.0074309978768576
+          },
+          {
+            "off": 0.000941,
+            "on": 0.000959,
+            "ratio": 1.0191285866099893
+          },
+          {
+            "off": 0.00095,
+            "on": 0.000953,
+            "ratio": 1.003157894736842
+          },
+          {
+            "off": 0.000937,
+            "on": 0.00095,
+            "ratio": 1.0138740661686232
+          },
+          {
+            "off": 0.000947,
+            "on": 0.000944,
+            "ratio": 0.996832101372756
+          },
+          {
+            "off": 0.000954,
+            "on": 0.000947,
+            "ratio": 0.9926624737945493
+          },
+          {
+            "off": 0.000952,
+            "on": 0.000946,
+            "ratio": 0.9936974789915966
+          },
+          {
+            "off": 0.000949,
+            "on": 0.000964,
+            "ratio": 1.0158061116965227
+          },
+          {
+            "off": 0.000949,
+            "on": 0.000941,
+            "ratio": 0.9915700737618546
+          },
+          {
+            "off": 0.000946,
+            "on": 0.000948,
+            "ratio": 1.0021141649048626
+          },
+          {
+            "off": 0.000948,
+            "on": 0.00094,
+            "ratio": 0.9915611814345991
+          },
+          {
+            "off": 0.000952,
+            "on": 0.000952,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000949,
+            "on": 0.00095,
+            "ratio": 1.0010537407797682
+          },
+          {
+            "off": 0.000947,
+            "on": 0.000946,
+            "ratio": 0.9989440337909187
+          },
+          {
+            "off": 0.000948,
+            "on": 0.000947,
+            "ratio": 0.998945147679325
+          },
+          {
+            "off": 0.000951,
+            "on": 0.000949,
+            "ratio": 0.9978969505783385
+          },
+          {
+            "off": 0.000939,
+            "on": 0.000947,
+            "ratio": 1.0085197018104368
+          },
+          {
+            "off": 0.000955,
+            "on": 0.000949,
+            "ratio": 0.993717277486911
+          },
+          {
+            "off": 0.000948,
+            "on": 0.000948,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000947,
+            "on": 0.000943,
+            "ratio": 0.9957761351636748
+          }
+        ],
+        "ratio_geomean": 1.001103683775861,
+        "ratio_ci95": [
+          0.9978846305474325,
+          1.0046398916342487
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_3DCONV_3DConvolution.cu.cir-merge.sm_86",
+          "binary_bytes": 26816,
+          "sha256": "75a5c61d7a69d0a5e19149c549103ad57515a1941bf8945e6ac8d63bc09fd1d0",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_3DCONV_3DConvolution.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL20convolution3D_kerneliiiPfS_i:\n  REG:29 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_3DCONV_3DConvolution.cu.cir-merge.sm_86",
+          "binary_bytes": 26816,
+          "sha256": "75a5c61d7a69d0a5e19149c549103ad57515a1941bf8945e6ac8d63bc09fd1d0",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_3DCONV_3DConvolution.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL20convolution3D_kerneliiiPfS_i:\n  REG:29 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "3mm",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/3MM/3mm.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.001386,
+            0.00139,
+            0.001388,
+            0.001397,
+            0.001387,
+            0.001392,
+            0.001391,
+            0.001387,
+            0.001395,
+            0.001384,
+            0.001396,
+            0.001395,
+            0.001386,
+            0.001393,
+            0.001387,
+            0.001377,
+            0.001383,
+            0.001394,
+            0.001407,
+            0.001396
+          ],
+          "LB-on": [
+            0.001398,
+            0.001398,
+            0.001387,
+            0.001403,
+            0.001378,
+            0.001403,
+            0.001398,
+            0.00138,
+            0.001392,
+            0.001393,
+            0.001386,
+            0.001386,
+            0.001387,
+            0.001391,
+            0.001398,
+            0.001386,
+            0.001386,
+            0.001391,
+            0.001388,
+            0.00139
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.20586484600005406,
+            0.20624876400006542,
+            0.2063717449999558,
+            0.20563390500001333,
+            0.20721040700004778,
+            0.20981048799990276,
+            0.20812203200000567,
+            0.26203236200001356,
+            0.21323237199999312,
+            0.20543457600001602,
+            0.2058208939999986,
+            0.20609078400002545,
+            0.2602284330000657,
+            0.2110534189999953,
+            0.20738109699993856,
+            0.20528215599995292,
+            0.2053067709999823,
+            0.20684890699999414,
+            0.20807244000002356,
+            0.2061308080000117
+          ],
+          "LB-on": [
+            0.205796552000038,
+            0.20733891999998377,
+            0.2058846290000247,
+            0.20485207399997307,
+            0.20555241199997454,
+            0.20494587000007414,
+            0.20470131000001857,
+            0.25548866299993733,
+            0.20584721299997,
+            0.2099707510000144,
+            0.20620644099994934,
+            0.2066944409999678,
+            0.2097687529999348,
+            0.20757421199994042,
+            0.21139632499989602,
+            0.2062192009999535,
+            0.20680533799998102,
+            0.20568071200000304,
+            0.2050411200000326,
+            0.20491420199994081
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.001386,
+            "on": 0.001398,
+            "ratio": 1.0086580086580086
+          },
+          {
+            "off": 0.00139,
+            "on": 0.001398,
+            "ratio": 1.0057553956834533
+          },
+          {
+            "off": 0.001388,
+            "on": 0.001387,
+            "ratio": 0.9992795389048992
+          },
+          {
+            "off": 0.001397,
+            "on": 0.001403,
+            "ratio": 1.0042949176807443
+          },
+          {
+            "off": 0.001387,
+            "on": 0.001378,
+            "ratio": 0.9935111751982697
+          },
+          {
+            "off": 0.001392,
+            "on": 0.001403,
+            "ratio": 1.0079022988505746
+          },
+          {
+            "off": 0.001391,
+            "on": 0.001398,
+            "ratio": 1.0050323508267431
+          },
+          {
+            "off": 0.001387,
+            "on": 0.00138,
+            "ratio": 0.9949531362653208
+          },
+          {
+            "off": 0.001395,
+            "on": 0.001392,
+            "ratio": 0.9978494623655915
+          },
+          {
+            "off": 0.001384,
+            "on": 0.001393,
+            "ratio": 1.0065028901734103
+          },
+          {
+            "off": 0.001396,
+            "on": 0.001386,
+            "ratio": 0.9928366762177651
+          },
+          {
+            "off": 0.001395,
+            "on": 0.001386,
+            "ratio": 0.9935483870967743
+          },
+          {
+            "off": 0.001386,
+            "on": 0.001387,
+            "ratio": 1.0007215007215007
+          },
+          {
+            "off": 0.001393,
+            "on": 0.001391,
+            "ratio": 0.9985642498205314
+          },
+          {
+            "off": 0.001387,
+            "on": 0.001398,
+            "ratio": 1.0079307858687816
+          },
+          {
+            "off": 0.001377,
+            "on": 0.001386,
+            "ratio": 1.0065359477124183
+          },
+          {
+            "off": 0.001383,
+            "on": 0.001386,
+            "ratio": 1.0021691973969633
+          },
+          {
+            "off": 0.001394,
+            "on": 0.001391,
+            "ratio": 0.9978479196556672
+          },
+          {
+            "off": 0.001407,
+            "on": 0.001388,
+            "ratio": 0.9864960909737028
+          },
+          {
+            "off": 0.001396,
+            "on": 0.00139,
+            "ratio": 0.9957020057306589
+          }
+        ],
+        "ratio_geomean": 1.0002861050599825,
+        "ratio_ci95": [
+          0.9975313646137977,
+          1.002913572102861
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_3MM_3mm.cu.cir-merge.sm_86",
+          "binary_bytes": 47504,
+          "sha256": "8b1651ec7139e57c7bea1f46e56b64140f1a24fb75f1a76ed61e9525f22b5b76",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_3MM_3mm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mm3_kernel3iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm3_kernel2iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm3_kernel1iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_3MM_3mm.cu.cir-merge.sm_86",
+          "binary_bytes": 47504,
+          "sha256": "2605c446a7e6dd32c965eba80f366121acd0e1105df0fceb249a755b2854241b",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_3MM_3mm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mm3_kernel3iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm3_kernel2iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mm3_kernel1iiiiiPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "adi",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/ADI/adi.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.016236,
+            0.01638,
+            0.016009,
+            0.016268,
+            0.01601,
+            0.016297,
+            0.016397,
+            0.016055,
+            0.016255,
+            0.016418,
+            0.016184,
+            0.016426,
+            0.01626,
+            0.016009,
+            0.016147,
+            0.016116,
+            0.016376,
+            0.01613,
+            0.016109,
+            0.016119
+          ],
+          "LB-on": [
+            0.016303,
+            0.016057,
+            0.016115,
+            0.016251,
+            0.016308,
+            0.016183,
+            0.016035,
+            0.016212,
+            0.016373,
+            0.016083,
+            0.016202,
+            0.016276,
+            0.016021,
+            0.016208,
+            0.016073,
+            0.016241,
+            0.016274,
+            0.016099,
+            0.016151,
+            0.016103
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.2821161699999948,
+            0.23039287899996452,
+            0.23036228900002698,
+            0.23151775700000599,
+            0.23061684600008903,
+            0.22870704900003602,
+            0.23404940599994006,
+            0.2300533530000166,
+            0.27991255400002046,
+            0.23064773099997637,
+            0.28015262999997503,
+            0.28109324900003685,
+            0.23703521299989916,
+            0.229003458999955,
+            0.2305648479999718,
+            0.2300881279999203,
+            0.23185010000008788,
+            0.23231737899993732,
+            0.23112030499999037,
+            0.23114936399997532
+          ],
+          "LB-on": [
+            0.23330385199994907,
+            0.28125912199993763,
+            0.2800480939999943,
+            0.28095765000000483,
+            0.23465136599998004,
+            0.2796519040000476,
+            0.2293977660000337,
+            0.23064483500002098,
+            0.23531801900003302,
+            0.2322654759999523,
+            0.22983669199993528,
+            0.28069424500006335,
+            0.22920028299995465,
+            0.23137669300001562,
+            0.2314755329999798,
+            0.22992285099996934,
+            0.23478269999998247,
+            0.28218715900004554,
+            0.2342591749999201,
+            0.22866328999998586
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.016236,
+            "on": 0.016303,
+            "ratio": 1.0041266321754128
+          },
+          {
+            "off": 0.01638,
+            "on": 0.016057,
+            "ratio": 0.9802808302808302
+          },
+          {
+            "off": 0.016009,
+            "on": 0.016115,
+            "ratio": 1.006621275532513
+          },
+          {
+            "off": 0.016268,
+            "on": 0.016251,
+            "ratio": 0.9989550036882223
+          },
+          {
+            "off": 0.01601,
+            "on": 0.016308,
+            "ratio": 1.0186133666458463
+          },
+          {
+            "off": 0.016297,
+            "on": 0.016183,
+            "ratio": 0.9930048475179482
+          },
+          {
+            "off": 0.016397,
+            "on": 0.016035,
+            "ratio": 0.9779227907544065
+          },
+          {
+            "off": 0.016055,
+            "on": 0.016212,
+            "ratio": 1.0097788850825289
+          },
+          {
+            "off": 0.016255,
+            "on": 0.016373,
+            "ratio": 1.0072593048292833
+          },
+          {
+            "off": 0.016418,
+            "on": 0.016083,
+            "ratio": 0.9795955658423682
+          },
+          {
+            "off": 0.016184,
+            "on": 0.016202,
+            "ratio": 1.0011122095897182
+          },
+          {
+            "off": 0.016426,
+            "on": 0.016276,
+            "ratio": 0.9908681358821381
+          },
+          {
+            "off": 0.01626,
+            "on": 0.016021,
+            "ratio": 0.9853013530135302
+          },
+          {
+            "off": 0.016009,
+            "on": 0.016208,
+            "ratio": 1.0124305078393405
+          },
+          {
+            "off": 0.016147,
+            "on": 0.016073,
+            "ratio": 0.995417105344646
+          },
+          {
+            "off": 0.016116,
+            "on": 0.016241,
+            "ratio": 1.0077562670637876
+          },
+          {
+            "off": 0.016376,
+            "on": 0.016274,
+            "ratio": 0.9937713727405959
+          },
+          {
+            "off": 0.01613,
+            "on": 0.016099,
+            "ratio": 0.9980781153130812
+          },
+          {
+            "off": 0.016109,
+            "on": 0.016151,
+            "ratio": 1.0026072381898319
+          },
+          {
+            "off": 0.016119,
+            "on": 0.016103,
+            "ratio": 0.9990073825919721
+          }
+        ],
+        "ratio_geomean": 0.9980648018474535,
+        "ratio_ci95": [
+          0.9931015256951672,
+          1.0028314463447447
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_ADI_adi.cu.cir-merge.sm_86",
+          "binary_bytes": 59880,
+          "sha256": "349b4fe46e634569e12189801987567649323e2ec0987af01bde093bcf9990db",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_ADI_adi.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11adi_kernel6iPfS_S_i:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel5iPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel4iPfS_S_i:\n  REG:21 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel3iPfS_S_:\n  REG:23 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel2iPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel1iPfS_S_:\n  REG:38 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_ADI_adi.cu.cir-merge.sm_86",
+          "binary_bytes": 59880,
+          "sha256": "349b4fe46e634569e12189801987567649323e2ec0987af01bde093bcf9990db",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_ADI_adi.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11adi_kernel6iPfS_S_i:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel5iPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel4iPfS_S_i:\n  REG:21 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel3iPfS_S_:\n  REG:23 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel2iPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11adi_kernel1iPfS_S_:\n  REG:38 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "atax",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/ATAX/atax.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.003046,
+            0.003036,
+            0.003039,
+            0.003039,
+            0.003038,
+            0.003045,
+            0.003042,
+            0.003041,
+            0.003039,
+            0.003041,
+            0.003041,
+            0.00304,
+            0.003042,
+            0.003043,
+            0.003045,
+            0.003042,
+            0.003044,
+            0.00304,
+            0.003042,
+            0.003039
+          ],
+          "LB-on": [
+            0.003036,
+            0.003046,
+            0.003043,
+            0.00304,
+            0.00304,
+            0.003038,
+            0.003046,
+            0.003043,
+            0.003039,
+            0.003038,
+            0.003042,
+            0.003042,
+            0.003046,
+            0.003043,
+            0.003042,
+            0.003048,
+            0.003042,
+            0.003041,
+            0.00304,
+            0.003041
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.23899743599997691,
+            0.23904515700007778,
+            0.23897268200005328,
+            0.23784014700004263,
+            0.2402131090000239,
+            0.288600873000064,
+            0.2918437640000775,
+            0.24101444600000832,
+            0.24018204800006515,
+            0.23928708199991888,
+            0.23911847700003364,
+            0.23758848099998886,
+            0.23891493500002525,
+            0.24405825700000605,
+            0.23982115299997986,
+            0.2416757080000025,
+            0.238802445000033,
+            0.23767583899996225,
+            0.24298884799998177,
+            0.239848717999962
+          ],
+          "LB-on": [
+            0.24005487199997333,
+            0.24286864900000182,
+            0.28853143800006364,
+            0.23870045700004994,
+            0.23739163200002622,
+            0.2385227910000367,
+            0.29042256100001396,
+            0.243599023999991,
+            0.24211234599999898,
+            0.2382963950000203,
+            0.24009690099990166,
+            0.24257671500004108,
+            0.24227479099999982,
+            0.23712683700000525,
+            0.23978734399997848,
+            0.23864044000004014,
+            0.23972323599991796,
+            0.23891996999998355,
+            0.29178447100002813,
+            0.24629375699998945
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.003046,
+            "on": 0.003036,
+            "ratio": 0.9967170059093894
+          },
+          {
+            "off": 0.003036,
+            "on": 0.003046,
+            "ratio": 1.0032938076416338
+          },
+          {
+            "off": 0.003039,
+            "on": 0.003043,
+            "ratio": 1.0013162224415926
+          },
+          {
+            "off": 0.003039,
+            "on": 0.00304,
+            "ratio": 1.0003290556103983
+          },
+          {
+            "off": 0.003038,
+            "on": 0.00304,
+            "ratio": 1.000658327847268
+          },
+          {
+            "off": 0.003045,
+            "on": 0.003038,
+            "ratio": 0.9977011494252873
+          },
+          {
+            "off": 0.003042,
+            "on": 0.003046,
+            "ratio": 1.0013149243918475
+          },
+          {
+            "off": 0.003041,
+            "on": 0.003043,
+            "ratio": 1.0006576783952648
+          },
+          {
+            "off": 0.003039,
+            "on": 0.003039,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.003041,
+            "on": 0.003038,
+            "ratio": 0.999013482407103
+          },
+          {
+            "off": 0.003041,
+            "on": 0.003042,
+            "ratio": 1.0003288391976324
+          },
+          {
+            "off": 0.00304,
+            "on": 0.003042,
+            "ratio": 1.000657894736842
+          },
+          {
+            "off": 0.003042,
+            "on": 0.003046,
+            "ratio": 1.0013149243918475
+          },
+          {
+            "off": 0.003043,
+            "on": 0.003043,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.003045,
+            "on": 0.003042,
+            "ratio": 0.9990147783251232
+          },
+          {
+            "off": 0.003042,
+            "on": 0.003048,
+            "ratio": 1.0019723865877712
+          },
+          {
+            "off": 0.003044,
+            "on": 0.003042,
+            "ratio": 0.9993429697766097
+          },
+          {
+            "off": 0.00304,
+            "on": 0.003041,
+            "ratio": 1.000328947368421
+          },
+          {
+            "off": 0.003042,
+            "on": 0.00304,
+            "ratio": 0.9993425378040763
+          },
+          {
+            "off": 0.003039,
+            "on": 0.003041,
+            "ratio": 1.0006581112207962
+          }
+        ],
+        "ratio_geomean": 1.0001971502000149,
+        "ratio_ci95": [
+          0.9995561569653147,
+          1.0008056702559969
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_ATAX_atax.cu.cir-merge.sm_86",
+          "binary_bytes": 35104,
+          "sha256": "13b8c8b584149579efd8df04ebb3a5209a37d44d4233fac1fc13d6fe92228eec",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_ATAX_atax.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12atax_kernel2iiPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL12atax_kernel1iiPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_ATAX_atax.cu.cir-merge.sm_86",
+          "binary_bytes": 35104,
+          "sha256": "0b7be98efedb8fcaa2fb1642795bb70abd93d3a8a78d8c82a38c0ac87efea162",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_ATAX_atax.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12atax_kernel2iiPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL12atax_kernel1iiPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "bicg",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.002393,
+            0.002389,
+            0.002394,
+            0.002395,
+            0.002404,
+            0.002392,
+            0.002393,
+            0.002398,
+            0.002392,
+            0.002394,
+            0.002403,
+            0.002389,
+            0.002399,
+            0.002391,
+            0.002393,
+            0.002391,
+            0.002391,
+            0.002394,
+            0.002405,
+            0.002392
+          ],
+          "LB-on": [
+            0.002388,
+            0.002394,
+            0.002392,
+            0.002395,
+            0.002398,
+            0.002391,
+            0.002395,
+            0.002391,
+            0.002393,
+            0.002391,
+            0.002393,
+            0.002393,
+            0.002393,
+            0.002393,
+            0.002393,
+            0.002389,
+            0.00239,
+            0.002395,
+            0.002391,
+            0.002396
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.23847182599990902,
+            0.23791816099992502,
+            0.2383628250000811,
+            0.23963735300003464,
+            0.23763254200002848,
+            0.2879112539999369,
+            0.241861057000051,
+            0.23890850899999805,
+            0.23556501500002014,
+            0.29066195300003983,
+            0.24601375500003542,
+            0.2890487980000671,
+            0.24018692799995733,
+            0.2366299440000148,
+            0.24114326799997343,
+            0.24305431499999486,
+            0.2360515130000067,
+            0.24078209599997535,
+            0.24515019900002244,
+            0.23589286700007506
+          ],
+          "LB-on": [
+            0.23540688399998544,
+            0.2398250400000279,
+            0.24220008299994333,
+            0.28892579899991233,
+            0.28867512599993006,
+            0.2938195420000511,
+            0.24110526699996626,
+            0.28918460599993523,
+            0.2374028010000302,
+            0.23757561100001112,
+            0.2945254850000083,
+            0.24334321100002398,
+            0.23894699499999206,
+            0.23810845699995298,
+            0.24032703600005334,
+            0.2388472960000172,
+            0.24303578599995035,
+            0.23602751899989016,
+            0.23591838400000142,
+            0.24053513499995915
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.002393,
+            "on": 0.002388,
+            "ratio": 0.9979105725031341
+          },
+          {
+            "off": 0.002389,
+            "on": 0.002394,
+            "ratio": 1.0020929259104228
+          },
+          {
+            "off": 0.002394,
+            "on": 0.002392,
+            "ratio": 0.9991645781119466
+          },
+          {
+            "off": 0.002395,
+            "on": 0.002395,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.002404,
+            "on": 0.002398,
+            "ratio": 0.997504159733777
+          },
+          {
+            "off": 0.002392,
+            "on": 0.002391,
+            "ratio": 0.9995819397993311
+          },
+          {
+            "off": 0.002393,
+            "on": 0.002395,
+            "ratio": 1.0008357709987463
+          },
+          {
+            "off": 0.002398,
+            "on": 0.002391,
+            "ratio": 0.9970809007506255
+          },
+          {
+            "off": 0.002392,
+            "on": 0.002393,
+            "ratio": 1.000418060200669
+          },
+          {
+            "off": 0.002394,
+            "on": 0.002391,
+            "ratio": 0.9987468671679198
+          },
+          {
+            "off": 0.002403,
+            "on": 0.002393,
+            "ratio": 0.9958385351643778
+          },
+          {
+            "off": 0.002389,
+            "on": 0.002393,
+            "ratio": 1.0016743407283382
+          },
+          {
+            "off": 0.002399,
+            "on": 0.002393,
+            "ratio": 0.9974989578991247
+          },
+          {
+            "off": 0.002391,
+            "on": 0.002393,
+            "ratio": 1.0008364700961943
+          },
+          {
+            "off": 0.002393,
+            "on": 0.002393,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.002391,
+            "on": 0.002389,
+            "ratio": 0.999163529903806
+          },
+          {
+            "off": 0.002391,
+            "on": 0.00239,
+            "ratio": 0.9995817649519031
+          },
+          {
+            "off": 0.002394,
+            "on": 0.002395,
+            "ratio": 1.0004177109440269
+          },
+          {
+            "off": 0.002405,
+            "on": 0.002391,
+            "ratio": 0.9941787941787942
+          },
+          {
+            "off": 0.002392,
+            "on": 0.002396,
+            "ratio": 1.0016722408026757
+          }
+        ],
+        "ratio_geomean": 0.9992079240115821,
+        "ratio_ci95": [
+          0.9982914366520822,
+          1.0000422769583213
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_BICG_bicg.cu.cir-merge.sm_86",
+          "binary_bytes": 35120,
+          "sha256": "5f3ba6b6219405086b0a068da845b946aedc4d42a978c01a312fa36d04551aed",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_BICG_bicg.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12bicg_kernel2iiPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL12bicg_kernel1iiPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_BICG_bicg.cu.cir-merge.sm_86",
+          "binary_bytes": 35120,
+          "sha256": "64319caa24250d5e03033a5f2da0864aafc55b74aee5cbb718e8acabc01e19b5",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_BICG_bicg.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12bicg_kernel2iiPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL12bicg_kernel1iiPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "correlation",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/CORR/correlation.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            1.684959,
+            1.683633,
+            1.683419,
+            1.685485,
+            1.684855,
+            1.685977,
+            1.68369,
+            1.685117,
+            1.684811,
+            1.684915,
+            1.684036,
+            1.684781,
+            1.685806,
+            1.685418,
+            1.684559,
+            1.684073,
+            1.685976,
+            1.684787,
+            1.683675,
+            1.686843
+          ],
+          "LB-on": [
+            1.685986,
+            1.684921,
+            1.686997,
+            1.683118,
+            1.683763,
+            1.688051,
+            1.684237,
+            1.684419,
+            1.684315,
+            1.682957,
+            1.682765,
+            1.682957,
+            1.683041,
+            1.685515,
+            1.683204,
+            1.684052,
+            1.6852,
+            1.68634,
+            1.685129,
+            1.684079
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            1.9188504329999887,
+            1.9674102490000678,
+            1.9130452179999793,
+            1.9208117089999632,
+            1.9199207110000316,
+            1.9163987610000959,
+            1.9182657860000063,
+            1.9200696810000863,
+            1.9695959499999844,
+            1.915694220999967,
+            1.968408181999962,
+            1.9172536919999175,
+            1.9741448119999632,
+            1.9207005219999473,
+            1.917860768999958,
+            1.9165435869999783,
+            1.9253702400000066,
+            1.921479215999966,
+            1.9152682239999876,
+            1.920186478000005
+          ],
+          "LB-on": [
+            1.9207224979999182,
+            1.918172778999974,
+            1.9204463000000942,
+            1.9138326530000995,
+            1.9191401230000338,
+            1.9233447120000164,
+            1.9184241379999776,
+            1.9206155929999795,
+            1.915764940000031,
+            1.9152398239999684,
+            1.913390832999994,
+            1.965544690999991,
+            1.9169591590000437,
+            1.9200432520000277,
+            1.9210562380000056,
+            1.9189563450000833,
+            1.9157213920000231,
+            1.9198961400001053,
+            1.9253002519999427,
+            1.9146790129999545
+          ]
+        },
+        "pairs": [
+          {
+            "off": 1.684959,
+            "on": 1.685986,
+            "ratio": 1.0006095103797776
+          },
+          {
+            "off": 1.683633,
+            "on": 1.684921,
+            "ratio": 1.0007650123275085
+          },
+          {
+            "off": 1.683419,
+            "on": 1.686997,
+            "ratio": 1.002125436388683
+          },
+          {
+            "off": 1.685485,
+            "on": 1.683118,
+            "ratio": 0.9985956564431009
+          },
+          {
+            "off": 1.684855,
+            "on": 1.683763,
+            "ratio": 0.9993518730098435
+          },
+          {
+            "off": 1.685977,
+            "on": 1.688051,
+            "ratio": 1.0012301472677265
+          },
+          {
+            "off": 1.68369,
+            "on": 1.684237,
+            "ratio": 1.0003248816587378
+          },
+          {
+            "off": 1.685117,
+            "on": 1.684419,
+            "ratio": 0.9995857854380439
+          },
+          {
+            "off": 1.684811,
+            "on": 1.684315,
+            "ratio": 0.9997056049610312
+          },
+          {
+            "off": 1.684915,
+            "on": 1.682957,
+            "ratio": 0.9988379235747797
+          },
+          {
+            "off": 1.684036,
+            "on": 1.682765,
+            "ratio": 0.9992452655406416
+          },
+          {
+            "off": 1.684781,
+            "on": 1.682957,
+            "ratio": 0.9989173667081953
+          },
+          {
+            "off": 1.685806,
+            "on": 1.683041,
+            "ratio": 0.9983598349988078
+          },
+          {
+            "off": 1.685418,
+            "on": 1.685515,
+            "ratio": 1.0000575524884627
+          },
+          {
+            "off": 1.684559,
+            "on": 1.683204,
+            "ratio": 0.9991956351781089
+          },
+          {
+            "off": 1.684073,
+            "on": 1.684052,
+            "ratio": 0.9999875302317656
+          },
+          {
+            "off": 1.685976,
+            "on": 1.6852,
+            "ratio": 0.9995397324754327
+          },
+          {
+            "off": 1.684787,
+            "on": 1.68634,
+            "ratio": 1.0009217782425908
+          },
+          {
+            "off": 1.683675,
+            "on": 1.685129,
+            "ratio": 1.0008635870937088
+          },
+          {
+            "off": 1.686843,
+            "on": 1.684079,
+            "ratio": 0.9983614361265394
+          }
+        ],
+        "ratio_geomean": 0.9998285754717533,
+        "ratio_ci95": [
+          0.9993977480281879,
+          1.0002782593329074
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_CORR_correlation.cu.cir-merge.sm_86",
+          "binary_bytes": 51672,
+          "sha256": "cc8d29158f9bc4f86ca6259577600faa7cfeadc5318821b2a10376f6c105372f",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_CORR_correlation.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11corr_kerneliiPfS_:\n  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL13reduce_kerneliiPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL10std_kerneliiPfS_S_:\n  REG:23 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mean_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_CORR_correlation.cu.cir-merge.sm_86",
+          "binary_bytes": 51672,
+          "sha256": "d836b07f97a84aeda0bdadff14b6076ff754bfe4b5698a1bbab5164f7a782083",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_CORR_correlation.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11corr_kerneliiPfS_:\n  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL13reduce_kerneliiPfS_S_:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL10std_kerneliiPfS_S_:\n  REG:23 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mean_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "covariance",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/COVAR/covariance.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            1.686506,
+            1.683461,
+            1.684458,
+            1.683809,
+            1.682814,
+            1.68403,
+            1.683194,
+            1.684807,
+            1.683366,
+            1.683662,
+            1.681605,
+            1.683544,
+            1.684106,
+            1.685847,
+            1.684343,
+            1.68308,
+            1.68462,
+            1.683914,
+            1.683318,
+            1.683069
+          ],
+          "LB-on": [
+            1.683742,
+            1.685478,
+            1.684822,
+            1.686136,
+            1.686347,
+            1.684451,
+            1.681961,
+            1.684359,
+            1.685951,
+            1.685807,
+            1.684704,
+            1.682527,
+            1.686246,
+            1.685615,
+            1.685428,
+            1.6828,
+            1.683275,
+            1.684133,
+            1.683471,
+            1.684955
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            1.9175917160000608,
+            1.9168303550000019,
+            1.9684623750000583,
+            1.9168041140000014,
+            1.9176178840000375,
+            1.9148882159998948,
+            1.965686756000082,
+            1.9202869140000303,
+            1.9170349620000025,
+            1.9672290030000568,
+            1.9117892749999328,
+            1.9157310059999872,
+            1.9144865990000426,
+            1.9209033580000323,
+            1.915260169000021,
+            1.9131236250000256,
+            1.9664404929999364,
+            1.9178929830000015,
+            1.9693794460000618,
+            1.9124844689999918
+          ],
+          "LB-on": [
+            1.9136113069999965,
+            1.9215514740000117,
+            1.9163397340000756,
+            1.9166712700000517,
+            1.9720681280000463,
+            1.916991768999992,
+            1.9133521329999894,
+            1.9146860429999606,
+            1.9216381569999612,
+            1.9218903720000071,
+            1.917673835999949,
+            1.9668197010000767,
+            1.9216626709999218,
+            1.9173995360000617,
+            1.9207593050000469,
+            1.9168786339999997,
+            1.963555235000058,
+            1.9181223659999205,
+            1.9643963830000075,
+            1.9170126590000791
+          ]
+        },
+        "pairs": [
+          {
+            "off": 1.686506,
+            "on": 1.683742,
+            "ratio": 0.9983611087064025
+          },
+          {
+            "off": 1.683461,
+            "on": 1.685478,
+            "ratio": 1.0011981269539358
+          },
+          {
+            "off": 1.684458,
+            "on": 1.684822,
+            "ratio": 1.0002160932477984
+          },
+          {
+            "off": 1.683809,
+            "on": 1.686136,
+            "ratio": 1.001381985724034
+          },
+          {
+            "off": 1.682814,
+            "on": 1.686347,
+            "ratio": 1.0020994595956534
+          },
+          {
+            "off": 1.68403,
+            "on": 1.684451,
+            "ratio": 1.0002499955463977
+          },
+          {
+            "off": 1.683194,
+            "on": 1.681961,
+            "ratio": 0.9992674641188122
+          },
+          {
+            "off": 1.684807,
+            "on": 1.684359,
+            "ratio": 0.9997340941722108
+          },
+          {
+            "off": 1.683366,
+            "on": 1.685951,
+            "ratio": 1.001535613764327
+          },
+          {
+            "off": 1.683662,
+            "on": 1.685807,
+            "ratio": 1.0012740086787015
+          },
+          {
+            "off": 1.681605,
+            "on": 1.684704,
+            "ratio": 1.0018428822464254
+          },
+          {
+            "off": 1.683544,
+            "on": 1.682527,
+            "ratio": 0.9993959171842257
+          },
+          {
+            "off": 1.684106,
+            "on": 1.686246,
+            "ratio": 1.0012707038630584
+          },
+          {
+            "off": 1.685847,
+            "on": 1.685615,
+            "ratio": 0.9998623837157227
+          },
+          {
+            "off": 1.684343,
+            "on": 1.685428,
+            "ratio": 1.0006441680821543
+          },
+          {
+            "off": 1.68308,
+            "on": 1.6828,
+            "ratio": 0.9998336383297289
+          },
+          {
+            "off": 1.68462,
+            "on": 1.683275,
+            "ratio": 0.9992016003609123
+          },
+          {
+            "off": 1.683914,
+            "on": 1.684133,
+            "ratio": 1.0001300541476585
+          },
+          {
+            "off": 1.683318,
+            "on": 1.683471,
+            "ratio": 1.0000908919170353
+          },
+          {
+            "off": 1.683069,
+            "on": 1.684955,
+            "ratio": 1.0011205720026928
+          }
+        ],
+        "ratio_geomean": 1.0004350608125376,
+        "ratio_ci95": [
+          1.0000085151225682,
+          1.0008614248225396
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_COVAR_covariance.cu.cir-merge.sm_86",
+          "binary_bytes": 39272,
+          "sha256": "f370ad7c4d44a11d0c4c09133ec3511cc03d750ca9ed3361c9a973b9314af4b0",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_COVAR_covariance.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12covar_kerneliiPfS_:\n  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL13reduce_kerneliiPfS_:\n  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mean_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_COVAR_covariance.cu.cir-merge.sm_86",
+          "binary_bytes": 39272,
+          "sha256": "4e779b15a141dcfe3b3521e99a85a3a20b31cd42cd292fb3fe86e81691dbfb5c",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_COVAR_covariance.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12covar_kerneliiPfS_:\n  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL13reduce_kerneliiPfS_:\n  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mean_kerneliiPfS_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "doitgen",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/DOITGEN/doitgen.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.004784,
+            0.004812,
+            0.004774,
+            0.004756,
+            0.004759,
+            0.00478,
+            0.004774,
+            0.00477,
+            0.004787,
+            0.004776,
+            0.004772,
+            0.004775,
+            0.004755,
+            0.004806,
+            0.004758,
+            0.004816,
+            0.004789,
+            0.004785,
+            0.004781,
+            0.004749
+          ],
+          "LB-on": [
+            0.004774,
+            0.00478,
+            0.004753,
+            0.004791,
+            0.004792,
+            0.004799,
+            0.004753,
+            0.004818,
+            0.004792,
+            0.004773,
+            0.004768,
+            0.004791,
+            0.004763,
+            0.004798,
+            0.004809,
+            0.004807,
+            0.004765,
+            0.004788,
+            0.004765,
+            0.004751
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.22269326899993303,
+            0.22350151199998436,
+            0.22354868500008251,
+            0.22805418000007194,
+            0.22327360199994928,
+            0.22231721299999663,
+            0.22847385099998974,
+            0.22907608700006676,
+            0.2226869710000301,
+            0.21989350499995908,
+            0.22345925799993438,
+            0.22127696500001548,
+            0.22165789200005293,
+            0.2739349080000011,
+            0.22772520499995608,
+            0.2227876379999998,
+            0.2217138009999644,
+            0.22361314299996593,
+            0.2220385379999925,
+            0.22087043600004108
+          ],
+          "LB-on": [
+            0.22718524499998693,
+            0.22297550500002217,
+            0.27862659100003384,
+            0.22343110799999977,
+            0.2227445930000158,
+            0.22229493300005743,
+            0.27107276100002764,
+            0.27925125100000514,
+            0.22376981499996873,
+            0.22021662800000286,
+            0.22243489899994984,
+            0.2267963269999882,
+            0.22105351100003645,
+            0.27292764100002387,
+            0.22409882099998413,
+            0.22232901400002447,
+            0.22888097999998536,
+            0.22269242799995936,
+            0.27160074500000064,
+            0.22347600499995224
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.004784,
+            "on": 0.004774,
+            "ratio": 0.9979096989966554
+          },
+          {
+            "off": 0.004812,
+            "on": 0.00478,
+            "ratio": 0.9933499584372403
+          },
+          {
+            "off": 0.004774,
+            "on": 0.004753,
+            "ratio": 0.995601173020528
+          },
+          {
+            "off": 0.004756,
+            "on": 0.004791,
+            "ratio": 1.007359125315391
+          },
+          {
+            "off": 0.004759,
+            "on": 0.004792,
+            "ratio": 1.0069342298802268
+          },
+          {
+            "off": 0.00478,
+            "on": 0.004799,
+            "ratio": 1.0039748953974896
+          },
+          {
+            "off": 0.004774,
+            "on": 0.004753,
+            "ratio": 0.995601173020528
+          },
+          {
+            "off": 0.00477,
+            "on": 0.004818,
+            "ratio": 1.010062893081761
+          },
+          {
+            "off": 0.004787,
+            "on": 0.004792,
+            "ratio": 1.0010444955086695
+          },
+          {
+            "off": 0.004776,
+            "on": 0.004773,
+            "ratio": 0.9993718592964825
+          },
+          {
+            "off": 0.004772,
+            "on": 0.004768,
+            "ratio": 0.9991617770326906
+          },
+          {
+            "off": 0.004775,
+            "on": 0.004791,
+            "ratio": 1.0033507853403143
+          },
+          {
+            "off": 0.004755,
+            "on": 0.004763,
+            "ratio": 1.0016824395373292
+          },
+          {
+            "off": 0.004806,
+            "on": 0.004798,
+            "ratio": 0.9983354140657511
+          },
+          {
+            "off": 0.004758,
+            "on": 0.004809,
+            "ratio": 1.010718789407314
+          },
+          {
+            "off": 0.004816,
+            "on": 0.004807,
+            "ratio": 0.9981312292358804
+          },
+          {
+            "off": 0.004789,
+            "on": 0.004765,
+            "ratio": 0.9949885153476719
+          },
+          {
+            "off": 0.004785,
+            "on": 0.004788,
+            "ratio": 1.0006269592476489
+          },
+          {
+            "off": 0.004781,
+            "on": 0.004765,
+            "ratio": 0.9966534197866556
+          },
+          {
+            "off": 0.004749,
+            "on": 0.004751,
+            "ratio": 1.0004211412929038
+          }
+        ],
+        "ratio_geomean": 1.0007522996963025,
+        "ratio_ci95": [
+          0.9986748115041055,
+          1.00293198964066
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_DOITGEN_doitgen.cu.cir-merge.sm_86",
+          "binary_bytes": 31192,
+          "sha256": "31e4e0215eb0874704dc76ae2b2eb6a2209032519a17345af1fca53895de58ca",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_DOITGEN_doitgen.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL15doitgen_kernel2PfS_S_i:\n  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:380 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL15doitgen_kernel1PfS_S_i:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:380 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_DOITGEN_doitgen.cu.cir-merge.sm_86",
+          "binary_bytes": 31192,
+          "sha256": "31e4e0215eb0874704dc76ae2b2eb6a2209032519a17345af1fca53895de58ca",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_DOITGEN_doitgen.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL15doitgen_kernel2PfS_S_i:\n  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:380 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL15doitgen_kernel1PfS_S_i:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:380 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "fdtd-2d",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/FDTD-2D/fdtd2d.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.17852,
+            0.178486,
+            0.178638,
+            0.178544,
+            0.178532,
+            0.178514,
+            0.178527,
+            0.17849,
+            0.178341,
+            0.178582,
+            0.178533,
+            0.178409,
+            0.178445,
+            0.178434,
+            0.178599,
+            0.178515,
+            0.178523,
+            0.178378,
+            0.178411,
+            0.178423
+          ],
+          "LB-on": [
+            0.178499,
+            0.17855,
+            0.178502,
+            0.178373,
+            0.178599,
+            0.178505,
+            0.178553,
+            0.178594,
+            0.178447,
+            0.178428,
+            0.178475,
+            0.178482,
+            0.178542,
+            0.178485,
+            0.178624,
+            0.178458,
+            0.178605,
+            0.178433,
+            0.178368,
+            0.178553
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.42221663299994816,
+            0.42218990000003487,
+            0.42444800500004476,
+            0.4229133940000338,
+            0.42090532800000346,
+            0.42326656900002035,
+            0.47235664100003305,
+            0.4315407309999273,
+            0.42208033300005354,
+            0.4743381609999915,
+            0.42166794199999913,
+            0.47110036499998387,
+            0.42202312599999914,
+            0.4211182999999892,
+            0.4237134520000154,
+            0.4283011449999776,
+            0.4727073899999823,
+            0.4211794309999277,
+            0.4224935940000023,
+            0.42455288999997265
+          ],
+          "LB-on": [
+            0.421458776999998,
+            0.4217533700000331,
+            0.42578977000005125,
+            0.42255556899999647,
+            0.47369289599998865,
+            0.4239617299999736,
+            0.4735871530000395,
+            0.47802415699993617,
+            0.42030362800005605,
+            0.4214699039999914,
+            0.4221048960000644,
+            0.4210182330000407,
+            0.4717425759999969,
+            0.43068987900005595,
+            0.42277397000009387,
+            0.477428089,
+            0.47929847900002187,
+            0.42758828099999846,
+            0.4198795849999897,
+            0.47222863199999665
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.17852,
+            "on": 0.178499,
+            "ratio": 0.9998823661214429
+          },
+          {
+            "off": 0.178486,
+            "on": 0.17855,
+            "ratio": 1.000358571540625
+          },
+          {
+            "off": 0.178638,
+            "on": 0.178502,
+            "ratio": 0.9992386838186724
+          },
+          {
+            "off": 0.178544,
+            "on": 0.178373,
+            "ratio": 0.9990422528900439
+          },
+          {
+            "off": 0.178532,
+            "on": 0.178599,
+            "ratio": 1.0003752828624561
+          },
+          {
+            "off": 0.178514,
+            "on": 0.178505,
+            "ratio": 0.9999495837861456
+          },
+          {
+            "off": 0.178527,
+            "on": 0.178553,
+            "ratio": 1.000145636234295
+          },
+          {
+            "off": 0.17849,
+            "on": 0.178594,
+            "ratio": 1.0005826656955572
+          },
+          {
+            "off": 0.178341,
+            "on": 0.178447,
+            "ratio": 1.0005943669711395
+          },
+          {
+            "off": 0.178582,
+            "on": 0.178428,
+            "ratio": 0.9991376510510579
+          },
+          {
+            "off": 0.178533,
+            "on": 0.178475,
+            "ratio": 0.9996751300879949
+          },
+          {
+            "off": 0.178409,
+            "on": 0.178482,
+            "ratio": 1.0004091721830177
+          },
+          {
+            "off": 0.178445,
+            "on": 0.178542,
+            "ratio": 1.0005435848580797
+          },
+          {
+            "off": 0.178434,
+            "on": 0.178485,
+            "ratio": 1.0002858199670466
+          },
+          {
+            "off": 0.178599,
+            "on": 0.178624,
+            "ratio": 1.000139978387337
+          },
+          {
+            "off": 0.178515,
+            "on": 0.178458,
+            "ratio": 0.9996806991009158
+          },
+          {
+            "off": 0.178523,
+            "on": 0.178605,
+            "ratio": 1.0004593245688231
+          },
+          {
+            "off": 0.178378,
+            "on": 0.178433,
+            "ratio": 1.000308333987375
+          },
+          {
+            "off": 0.178411,
+            "on": 0.178368,
+            "ratio": 0.9997589834707502
+          },
+          {
+            "off": 0.178423,
+            "on": 0.178553,
+            "ratio": 1.0007286056169888
+          }
+        ],
+        "ratio_geomean": 1.0000647140663093,
+        "ratio_ci95": [
+          0.9998417772200975,
+          1.0002706465192273
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_FDTD-2D_fdtd2d.cu.cir-merge.sm_86",
+          "binary_bytes": 35152,
+          "sha256": "e668c37e34eadc76953bc8a71765732f8ccc7c532a81bf71991cb759c27db845",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_FDTD-2D_fdtd2d.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL17fdtd_step3_kerneliiPfS_S_i:\n  REG:14 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL17fdtd_step2_kerneliiPfS_S_i:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL17fdtd_step1_kerneliiPfS_S_S_i:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:396 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_FDTD-2D_fdtd2d.cu.cir-merge.sm_86",
+          "binary_bytes": 35152,
+          "sha256": "e668c37e34eadc76953bc8a71765732f8ccc7c532a81bf71991cb759c27db845",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_FDTD-2D_fdtd2d.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL17fdtd_step3_kerneliiPfS_S_i:\n  REG:14 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL17fdtd_step2_kerneliiPfS_S_i:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL17fdtd_step1_kerneliiPfS_S_S_i:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:396 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "gemm",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/GEMM/gemm.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.000458,
+            0.000463,
+            0.000457,
+            0.000459,
+            0.000459,
+            0.000454,
+            0.00046,
+            0.000457,
+            0.000461,
+            0.000459,
+            0.000459,
+            0.000458,
+            0.000463,
+            0.00046,
+            0.000462,
+            0.000458,
+            0.000458,
+            0.000459,
+            0.000476,
+            0.000458
+          ],
+          "LB-on": [
+            0.000453,
+            0.000456,
+            0.00046,
+            0.000459,
+            0.000466,
+            0.000459,
+            0.00047,
+            0.000462,
+            0.00046,
+            0.000455,
+            0.000459,
+            0.000457,
+            0.000457,
+            0.000454,
+            0.000461,
+            0.000455,
+            0.00046,
+            0.000459,
+            0.000471,
+            0.000458
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.2087168580000025,
+            0.2565417430000707,
+            0.2049327690000382,
+            0.2553837760000306,
+            0.20520552699997552,
+            0.20861125600004016,
+            0.20604699400007576,
+            0.20163086100001237,
+            0.20252941699993698,
+            0.20304650800005675,
+            0.2020606129999578,
+            0.2561421059999702,
+            0.2033151180000914,
+            0.20222948399998586,
+            0.20356620600000497,
+            0.20263717600005293,
+            0.2014618690000134,
+            0.20303616299997884,
+            0.20343624199995247,
+            0.20370117400000254
+          ],
+          "LB-on": [
+            0.25447996799994144,
+            0.25578554100002293,
+            0.20556845099997645,
+            0.20411649499999385,
+            0.20295182500001374,
+            0.20399508399998467,
+            0.20233922800002802,
+            0.20384958099998585,
+            0.20243947700009812,
+            0.2047443229999999,
+            0.20503060099997583,
+            0.20374514499997076,
+            0.20424527000000126,
+            0.2034890390000328,
+            0.20398306300000968,
+            0.2027504920000638,
+            0.20377804399993238,
+            0.20498202999999648,
+            0.2527788769999688,
+            0.20916805999991084
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.000458,
+            "on": 0.000453,
+            "ratio": 0.9890829694323143
+          },
+          {
+            "off": 0.000463,
+            "on": 0.000456,
+            "ratio": 0.9848812095032399
+          },
+          {
+            "off": 0.000457,
+            "on": 0.00046,
+            "ratio": 1.0065645514223196
+          },
+          {
+            "off": 0.000459,
+            "on": 0.000459,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000459,
+            "on": 0.000466,
+            "ratio": 1.0152505446623095
+          },
+          {
+            "off": 0.000454,
+            "on": 0.000459,
+            "ratio": 1.0110132158590308
+          },
+          {
+            "off": 0.00046,
+            "on": 0.00047,
+            "ratio": 1.0217391304347825
+          },
+          {
+            "off": 0.000457,
+            "on": 0.000462,
+            "ratio": 1.0109409190371992
+          },
+          {
+            "off": 0.000461,
+            "on": 0.00046,
+            "ratio": 0.9978308026030369
+          },
+          {
+            "off": 0.000459,
+            "on": 0.000455,
+            "ratio": 0.9912854030501089
+          },
+          {
+            "off": 0.000459,
+            "on": 0.000459,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000458,
+            "on": 0.000457,
+            "ratio": 0.9978165938864628
+          },
+          {
+            "off": 0.000463,
+            "on": 0.000457,
+            "ratio": 0.9870410367170627
+          },
+          {
+            "off": 0.00046,
+            "on": 0.000454,
+            "ratio": 0.9869565217391304
+          },
+          {
+            "off": 0.000462,
+            "on": 0.000461,
+            "ratio": 0.9978354978354977
+          },
+          {
+            "off": 0.000458,
+            "on": 0.000455,
+            "ratio": 0.9934497816593886
+          },
+          {
+            "off": 0.000458,
+            "on": 0.00046,
+            "ratio": 1.0043668122270741
+          },
+          {
+            "off": 0.000459,
+            "on": 0.000459,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.000476,
+            "on": 0.000471,
+            "ratio": 0.9894957983193277
+          },
+          {
+            "off": 0.000458,
+            "on": 0.000458,
+            "ratio": 1.0
+          }
+        ],
+        "ratio_geomean": 0.9992294858139992,
+        "ratio_ci95": [
+          0.9951090794865557,
+          1.0036559913944043
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_GEMM_gemm.cu.cir-merge.sm_86",
+          "binary_bytes": 30896,
+          "sha256": "00c58bb1a33585bd24b96d8fe0a131c4768e933b3a5f56ee2f5b0f629278ae78",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_GEMM_gemm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11gemm_kerneliiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_GEMM_gemm.cu.cir-merge.sm_86",
+          "binary_bytes": 30896,
+          "sha256": "8a2674b8f01c080b9018650fc80cac5231d55978d78baf218fad64eea0092b31",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_GEMM_gemm.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11gemm_kerneliiiffPfS_S_:\n  REG:24 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "gemver",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/GEMVER/gemver.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.002709,
+            0.002706,
+            0.002704,
+            0.002706,
+            0.002703,
+            0.002701,
+            0.002707,
+            0.002706,
+            0.002705,
+            0.002696,
+            0.002702,
+            0.002715,
+            0.002707,
+            0.002709,
+            0.002704,
+            0.002714,
+            0.002709,
+            0.002701,
+            0.002703,
+            0.002703
+          ],
+          "LB-on": [
+            0.002712,
+            0.002702,
+            0.002704,
+            0.002706,
+            0.002698,
+            0.002705,
+            0.002705,
+            0.0027,
+            0.002703,
+            0.002703,
+            0.002709,
+            0.002702,
+            0.002699,
+            0.0027,
+            0.002701,
+            0.002709,
+            0.002706,
+            0.002701,
+            0.002708,
+            0.002701
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.2406776789999867,
+            0.24138888199991015,
+            0.24144774000001235,
+            0.24122260700005427,
+            0.23793817700004638,
+            0.23872908700002426,
+            0.24001311600000008,
+            0.24423755199995867,
+            0.23864335100006429,
+            0.2431266290000167,
+            0.24059132299998964,
+            0.23974973400004274,
+            0.23960305200000676,
+            0.24200061799990635,
+            0.2373673750000762,
+            0.23831208100000367,
+            0.23906600599991634,
+            0.288984623000033,
+            0.23899174199993922,
+            0.23666313399996852
+          ],
+          "LB-on": [
+            0.23856924799997614,
+            0.2885484890000498,
+            0.2437073749999854,
+            0.2400748789999625,
+            0.24058166899999378,
+            0.2914527819999648,
+            0.2398002390000329,
+            0.28733683400002974,
+            0.240598971000054,
+            0.23908031299993127,
+            0.23961132200008706,
+            0.2378784899999573,
+            0.23853428899997198,
+            0.289756366000006,
+            0.23776628999996774,
+            0.23866536699995322,
+            0.23926993899999616,
+            0.23792421600001035,
+            0.24086236499999814,
+            0.23867107000000942
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.002709,
+            "on": 0.002712,
+            "ratio": 1.0011074197120708
+          },
+          {
+            "off": 0.002706,
+            "on": 0.002702,
+            "ratio": 0.9985218033998522
+          },
+          {
+            "off": 0.002704,
+            "on": 0.002704,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.002706,
+            "on": 0.002706,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.002703,
+            "on": 0.002698,
+            "ratio": 0.9981502034776174
+          },
+          {
+            "off": 0.002701,
+            "on": 0.002705,
+            "ratio": 1.0014809329877823
+          },
+          {
+            "off": 0.002707,
+            "on": 0.002705,
+            "ratio": 0.9992611747321758
+          },
+          {
+            "off": 0.002706,
+            "on": 0.0027,
+            "ratio": 0.9977827050997783
+          },
+          {
+            "off": 0.002705,
+            "on": 0.002703,
+            "ratio": 0.9992606284658041
+          },
+          {
+            "off": 0.002696,
+            "on": 0.002703,
+            "ratio": 1.0025964391691395
+          },
+          {
+            "off": 0.002702,
+            "on": 0.002709,
+            "ratio": 1.0025906735751295
+          },
+          {
+            "off": 0.002715,
+            "on": 0.002702,
+            "ratio": 0.9952117863720074
+          },
+          {
+            "off": 0.002707,
+            "on": 0.002699,
+            "ratio": 0.9970446989287033
+          },
+          {
+            "off": 0.002709,
+            "on": 0.0027,
+            "ratio": 0.9966777408637875
+          },
+          {
+            "off": 0.002704,
+            "on": 0.002701,
+            "ratio": 0.9988905325443788
+          },
+          {
+            "off": 0.002714,
+            "on": 0.002709,
+            "ratio": 0.9981577008106117
+          },
+          {
+            "off": 0.002709,
+            "on": 0.002706,
+            "ratio": 0.9988925802879292
+          },
+          {
+            "off": 0.002701,
+            "on": 0.002701,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.002703,
+            "on": 0.002708,
+            "ratio": 1.0018497965223825
+          },
+          {
+            "off": 0.002703,
+            "on": 0.002701,
+            "ratio": 0.9992600813910469
+          }
+        ],
+        "ratio_geomean": 0.9993350382939717,
+        "ratio_ci95": [
+          0.998504799543278,
+          1.0001665479007327
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_GEMVER_gemver.cu.cir-merge.sm_86",
+          "binary_bytes": 39264,
+          "sha256": "d1e0ffd4bcda9127b07011184476c27e9464773820ed2714238c4ca7b5e7f0ef",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_GEMVER_gemver.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL14gemver_kernel3iffPfS_S_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:392 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL14gemver_kernel2iffPfS_S_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL14gemver_kernel1iffPfS_S_S_S_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_GEMVER_gemver.cu.cir-merge.sm_86",
+          "binary_bytes": 39264,
+          "sha256": "d32ed625134c8151ae8624aee47d2e5aa4f4cb72349d5ee7b33a739198ea8fb0",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_GEMVER_gemver.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL14gemver_kernel3iffPfS_S_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:392 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL14gemver_kernel2iffPfS_S_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL14gemver_kernel1iffPfS_S_S_S_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "gesummv",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/GESUMMV/gesummv.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.0018,
+            0.001802,
+            0.001773,
+            0.001806,
+            0.001787,
+            0.001777,
+            0.001769,
+            0.00178,
+            0.001794,
+            0.001818,
+            0.001799,
+            0.001787,
+            0.001801,
+            0.001799,
+            0.001774,
+            0.001793,
+            0.00177,
+            0.001773,
+            0.001806,
+            0.001799
+          ],
+          "LB-on": [
+            0.001771,
+            0.001786,
+            0.00178,
+            0.001805,
+            0.001792,
+            0.001826,
+            0.001776,
+            0.001793,
+            0.00177,
+            0.001794,
+            0.00178,
+            0.001781,
+            0.001784,
+            0.001768,
+            0.001773,
+            0.00179,
+            0.001817,
+            0.001776,
+            0.001783,
+            0.0018
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.32040911500007496,
+            0.31794441600004575,
+            0.319477820999964,
+            0.32072162800000115,
+            0.32198259300002974,
+            0.27043417499999123,
+            0.3229642569999669,
+            0.3217379440000059,
+            0.31932072300003256,
+            0.3199461860000383,
+            0.31943992699996215,
+            0.3207675549999749,
+            0.32354944199994407,
+            0.31988701700004185,
+            0.31984782200004247,
+            0.2677730479999809,
+            0.32006664100003945,
+            0.32081699099990146,
+            0.2697476019999385,
+            0.3202843800000892
+          ],
+          "LB-on": [
+            0.31765468599996893,
+            0.32058322399996086,
+            0.3206652119999944,
+            0.32110872600003404,
+            0.3218032959999846,
+            0.3194830219999858,
+            0.32120586400003504,
+            0.3193339429999469,
+            0.31821940299994367,
+            0.3197936070000651,
+            0.3205474310000227,
+            0.3196487430000161,
+            0.3190537510000695,
+            0.3193039189999354,
+            0.3199627279999504,
+            0.2710257979999824,
+            0.32119048799995653,
+            0.31673046299999896,
+            0.32056469500003004,
+            0.31955254000001787
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.0018,
+            "on": 0.001771,
+            "ratio": 0.9838888888888889
+          },
+          {
+            "off": 0.001802,
+            "on": 0.001786,
+            "ratio": 0.9911209766925638
+          },
+          {
+            "off": 0.001773,
+            "on": 0.00178,
+            "ratio": 1.0039481105470953
+          },
+          {
+            "off": 0.001806,
+            "on": 0.001805,
+            "ratio": 0.9994462901439645
+          },
+          {
+            "off": 0.001787,
+            "on": 0.001792,
+            "ratio": 1.0027979854504756
+          },
+          {
+            "off": 0.001777,
+            "on": 0.001826,
+            "ratio": 1.0275745638716938
+          },
+          {
+            "off": 0.001769,
+            "on": 0.001776,
+            "ratio": 1.0039570378745053
+          },
+          {
+            "off": 0.00178,
+            "on": 0.001793,
+            "ratio": 1.0073033707865169
+          },
+          {
+            "off": 0.001794,
+            "on": 0.00177,
+            "ratio": 0.9866220735785953
+          },
+          {
+            "off": 0.001818,
+            "on": 0.001794,
+            "ratio": 0.9867986798679869
+          },
+          {
+            "off": 0.001799,
+            "on": 0.00178,
+            "ratio": 0.989438576987215
+          },
+          {
+            "off": 0.001787,
+            "on": 0.001781,
+            "ratio": 0.9966424174594293
+          },
+          {
+            "off": 0.001801,
+            "on": 0.001784,
+            "ratio": 0.9905607995558022
+          },
+          {
+            "off": 0.001799,
+            "on": 0.001768,
+            "ratio": 0.9827682045580878
+          },
+          {
+            "off": 0.001774,
+            "on": 0.001773,
+            "ratio": 0.9994363021420519
+          },
+          {
+            "off": 0.001793,
+            "on": 0.00179,
+            "ratio": 0.9983268265476853
+          },
+          {
+            "off": 0.00177,
+            "on": 0.001817,
+            "ratio": 1.0265536723163842
+          },
+          {
+            "off": 0.001773,
+            "on": 0.001776,
+            "ratio": 1.0016920473773265
+          },
+          {
+            "off": 0.001806,
+            "on": 0.001783,
+            "ratio": 0.987264673311185
+          },
+          {
+            "off": 0.001799,
+            "on": 0.0018,
+            "ratio": 1.000555864369094
+          }
+        ],
+        "ratio_geomean": 0.9982635389123249,
+        "ratio_ci95": [
+          0.9933233014807606,
+          1.0039557616836359
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_GESUMMV_gesummv.cu.cir-merge.sm_86",
+          "binary_bytes": 30856,
+          "sha256": "57e52d28191467d404a7b9397017bc0d36807a8d05052960724d4dac09f10c31",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_GESUMMV_gesummv.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL14gesummv_kerneliffPfS_S_S_S_:\n  REG:26 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_GESUMMV_gesummv.cu.cir-merge.sm_86",
+          "binary_bytes": 30856,
+          "sha256": "c2f846bbb2c99690e175af3ca5a13d201306fa5b200b4e73e6da9424c8372b5d",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_GESUMMV_gesummv.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL14gesummv_kerneliffPfS_S_S_S_:\n  REG:26 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "gramschmidt",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/GRAMSCHM/gramschmidt.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            2.437877,
+            2.437289,
+            2.436943,
+            2.437293,
+            2.437411,
+            2.437281,
+            2.43718,
+            2.437561,
+            2.437575,
+            2.437217,
+            2.437518,
+            2.437498,
+            2.437183,
+            2.437313,
+            2.43694,
+            2.437054,
+            2.437318,
+            2.438009,
+            2.437232,
+            2.436928
+          ],
+          "LB-on": [
+            2.43722,
+            2.437906,
+            2.437668,
+            2.437478,
+            2.437781,
+            2.436912,
+            2.43802,
+            2.437037,
+            2.437829,
+            2.437968,
+            2.437332,
+            2.437079,
+            2.43728,
+            2.437513,
+            2.436966,
+            2.437856,
+            2.437317,
+            2.43769,
+            2.437353,
+            2.437199
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            2.680405056000154,
+            2.68491007800003,
+            2.6798141159999886,
+            2.686129334999805,
+            2.729034984000009,
+            2.681500342999925,
+            2.6794568049999725,
+            2.679113210000196,
+            2.68115641899999,
+            2.677165233000096,
+            2.7307355460000053,
+            2.6821070449998388,
+            2.678947825000023,
+            2.6849798619998637,
+            2.6793944460000603,
+            2.68474808499991,
+            2.679271276999998,
+            2.6810309419997793,
+            2.6795666969999274,
+            2.677711863000013
+          ],
+          "LB-on": [
+            2.678618325999878,
+            2.730465888000026,
+            2.682350250000127,
+            2.729539197999884,
+            2.6805248119999305,
+            2.678058971999917,
+            2.6853296130000217,
+            2.7293252040001335,
+            2.6825590179998926,
+            2.683682104999889,
+            2.6798101310000675,
+            2.678078029000062,
+            2.67924393699991,
+            2.679647441999805,
+            2.7291287830000783,
+            2.6836144100000183,
+            2.6791865029999826,
+            2.7294313979998606,
+            2.678910411999823,
+            2.679014656000163
+          ]
+        },
+        "pairs": [
+          {
+            "off": 2.437877,
+            "on": 2.43722,
+            "ratio": 0.9997305032206302
+          },
+          {
+            "off": 2.437289,
+            "on": 2.437906,
+            "ratio": 1.0002531501188412
+          },
+          {
+            "off": 2.436943,
+            "on": 2.437668,
+            "ratio": 1.0002975038808868
+          },
+          {
+            "off": 2.437293,
+            "on": 2.437478,
+            "ratio": 1.0000759038818887
+          },
+          {
+            "off": 2.437411,
+            "on": 2.437781,
+            "ratio": 1.0001518004144563
+          },
+          {
+            "off": 2.437281,
+            "on": 2.436912,
+            "ratio": 0.9998486017820678
+          },
+          {
+            "off": 2.43718,
+            "on": 2.43802,
+            "ratio": 1.00034466063237
+          },
+          {
+            "off": 2.437561,
+            "on": 2.437037,
+            "ratio": 0.9997850310207621
+          },
+          {
+            "off": 2.437575,
+            "on": 2.437829,
+            "ratio": 1.0001042019219921
+          },
+          {
+            "off": 2.437217,
+            "on": 2.437968,
+            "ratio": 1.000308138339754
+          },
+          {
+            "off": 2.437518,
+            "on": 2.437332,
+            "ratio": 0.9999236928711912
+          },
+          {
+            "off": 2.437498,
+            "on": 2.437079,
+            "ratio": 0.9998281024230584
+          },
+          {
+            "off": 2.437183,
+            "on": 2.43728,
+            "ratio": 1.000039800047842
+          },
+          {
+            "off": 2.437313,
+            "on": 2.437513,
+            "ratio": 1.0000820575773404
+          },
+          {
+            "off": 2.43694,
+            "on": 2.436966,
+            "ratio": 1.000010669117828
+          },
+          {
+            "off": 2.437054,
+            "on": 2.437856,
+            "ratio": 1.0003290858552991
+          },
+          {
+            "off": 2.437318,
+            "on": 2.437317,
+            "ratio": 0.9999995897129551
+          },
+          {
+            "off": 2.438009,
+            "on": 2.43769,
+            "ratio": 0.9998691555281378
+          },
+          {
+            "off": 2.437232,
+            "on": 2.437353,
+            "ratio": 1.0000496464842084
+          },
+          {
+            "off": 2.436928,
+            "on": 2.437199,
+            "ratio": 1.0001112055834231
+          }
+        ],
+        "ratio_geomean": 1.0000571083580199,
+        "ratio_ci95": [
+          0.9999777840678511,
+          1.0001366239867049
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_GRAMSCHM_gramschmidt.cu.cir-merge.sm_86",
+          "binary_bytes": 47504,
+          "sha256": "bd0f096f432e0d435cdaecbe0d331c390da9c5c540f2db176ecec16f73bbcbe8",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_GRAMSCHM_gramschmidt.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL19gramschmidt_kernel3iiPfS_S_i:\n  REG:30 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL19gramschmidt_kernel2iiPfS_S_i:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL19gramschmidt_kernel1iiPfS_S_i:\n  REG:37 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_GRAMSCHM_gramschmidt.cu.cir-merge.sm_86",
+          "binary_bytes": 47504,
+          "sha256": "bd0f096f432e0d435cdaecbe0d331c390da9c5c540f2db176ecec16f73bbcbe8",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_GRAMSCHM_gramschmidt.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL19gramschmidt_kernel3iiPfS_S_i:\n  REG:30 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL19gramschmidt_kernel2iiPfS_S_i:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL19gramschmidt_kernel1iiPfS_S_i:\n  REG:37 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:388 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "jacobi-1d-imper",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/JACOBI1D/jacobi1D.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.127807,
+            0.127781,
+            0.126652,
+            0.12756,
+            0.127763,
+            0.126622,
+            0.130161,
+            0.129421,
+            0.127909,
+            0.126151,
+            0.127617,
+            0.129468,
+            0.129119,
+            0.127019,
+            0.126832,
+            0.129471,
+            0.126969,
+            0.126308,
+            0.127639,
+            0.126679
+          ],
+          "LB-on": [
+            0.127457,
+            0.129504,
+            0.127773,
+            0.12933,
+            0.127632,
+            0.126586,
+            0.128201,
+            0.127579,
+            0.127542,
+            0.126891,
+            0.126759,
+            0.126385,
+            0.12662,
+            0.127895,
+            0.127618,
+            0.126679,
+            0.127576,
+            0.127629,
+            0.125993,
+            0.129996
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.37860389399997985,
+            0.37945147200002793,
+            0.32874835299980987,
+            0.3285343370000646,
+            0.3294239500000913,
+            0.32748093999998673,
+            0.33664230699992004,
+            0.3804669860001013,
+            0.33002021500010414,
+            0.3295880109999416,
+            0.32780834599998343,
+            0.33131759000002603,
+            0.33569541699989713,
+            0.33508483700006764,
+            0.37747947599996223,
+            0.330907421999882,
+            0.3306188689998635,
+            0.3257265390000157,
+            0.33234416899995267,
+            0.32641269399982775
+          ],
+          "LB-on": [
+            0.32889621200001784,
+            0.3297166509998988,
+            0.3279334649998873,
+            0.33426056200005405,
+            0.3275125739999112,
+            0.33084837100000186,
+            0.32891826600007334,
+            0.3276481479999802,
+            0.3301449489999868,
+            0.3265307409999423,
+            0.3257825519999642,
+            0.32870492300003207,
+            0.3307839330000206,
+            0.3288063129998591,
+            0.32812587200010057,
+            0.33068562699986614,
+            0.32789007600013065,
+            0.3326127400000587,
+            0.3265932150000026,
+            0.3360099410001567
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.127807,
+            "on": 0.127457,
+            "ratio": 0.99726149584921
+          },
+          {
+            "off": 0.127781,
+            "on": 0.129504,
+            "ratio": 1.0134840077945861
+          },
+          {
+            "off": 0.126652,
+            "on": 0.127773,
+            "ratio": 1.0088510248555096
+          },
+          {
+            "off": 0.12756,
+            "on": 0.12933,
+            "ratio": 1.0138758231420508
+          },
+          {
+            "off": 0.127763,
+            "on": 0.127632,
+            "ratio": 0.9989746640263614
+          },
+          {
+            "off": 0.126622,
+            "on": 0.126586,
+            "ratio": 0.9997156892167237
+          },
+          {
+            "off": 0.130161,
+            "on": 0.128201,
+            "ratio": 0.9849417260162415
+          },
+          {
+            "off": 0.129421,
+            "on": 0.127579,
+            "ratio": 0.9857673793279297
+          },
+          {
+            "off": 0.127909,
+            "on": 0.127542,
+            "ratio": 0.997130772658687
+          },
+          {
+            "off": 0.126151,
+            "on": 0.126891,
+            "ratio": 1.0058659860009036
+          },
+          {
+            "off": 0.127617,
+            "on": 0.126759,
+            "ratio": 0.9932767577987259
+          },
+          {
+            "off": 0.129468,
+            "on": 0.126385,
+            "ratio": 0.9761871659406185
+          },
+          {
+            "off": 0.129119,
+            "on": 0.12662,
+            "ratio": 0.9806457608872435
+          },
+          {
+            "off": 0.127019,
+            "on": 0.127895,
+            "ratio": 1.006896606019572
+          },
+          {
+            "off": 0.126832,
+            "on": 0.127618,
+            "ratio": 1.0061971742147093
+          },
+          {
+            "off": 0.129471,
+            "on": 0.126679,
+            "ratio": 0.978435325285199
+          },
+          {
+            "off": 0.126969,
+            "on": 0.127576,
+            "ratio": 1.0047806945002322
+          },
+          {
+            "off": 0.126308,
+            "on": 0.127629,
+            "ratio": 1.0104585616112993
+          },
+          {
+            "off": 0.127639,
+            "on": 0.125993,
+            "ratio": 0.9871042549690925
+          },
+          {
+            "off": 0.126679,
+            "on": 0.129996,
+            "ratio": 1.026184292582038
+          }
+        ],
+        "ratio_geomean": 0.9987159542459338,
+        "ratio_ci95": [
+          0.992888275150604,
+          1.0043972413297195
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_JACOBI1D_jacobi1D.cu.cir-merge.sm_86",
+          "binary_bytes": 26680,
+          "sha256": "d642976a5244eceb14ff8e4e5278d2b9e75111422cc67e0fc5a75e73672fbfb2",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_JACOBI1D_jacobi1D.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL21runJacobiCUDA_kernel2iPfS_:\n  REG:8 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL21runJacobiCUDA_kernel1iPfS_:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_JACOBI1D_jacobi1D.cu.cir-merge.sm_86",
+          "binary_bytes": 26680,
+          "sha256": "d642976a5244eceb14ff8e4e5278d2b9e75111422cc67e0fc5a75e73672fbfb2",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_JACOBI1D_jacobi1D.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL21runJacobiCUDA_kernel2iPfS_:\n  REG:8 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL21runJacobiCUDA_kernel1iPfS_:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:8 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "jacobi-2d-imper",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/JACOBI2D/jacobi2D.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.001008,
+            0.001005,
+            0.000997,
+            0.001008,
+            0.000998,
+            0.000997,
+            0.001001,
+            0.000995,
+            0.000993,
+            0.001008,
+            0.001005,
+            0.001,
+            0.001013,
+            0.000996,
+            0.000988,
+            0.000996,
+            0.000993,
+            0.000994,
+            0.001002,
+            0.000996
+          ],
+          "LB-on": [
+            0.000992,
+            0.001006,
+            0.001005,
+            0.001005,
+            0.001037,
+            0.00099,
+            0.001006,
+            0.000998,
+            0.000989,
+            0.001005,
+            0.000997,
+            0.001007,
+            0.001002,
+            0.000991,
+            0.000991,
+            0.001,
+            0.001011,
+            0.000993,
+            0.000998,
+            0.000992
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.21367942899996706,
+            0.21094557000014902,
+            0.20996072700017976,
+            0.21712806499999715,
+            0.266182408999839,
+            0.26610127300000386,
+            0.2631184580000081,
+            0.21324772999992092,
+            0.21168684700000995,
+            0.21118195500002912,
+            0.21621309800002564,
+            0.21783643000003394,
+            0.26154998300012267,
+            0.21100198599992837,
+            0.2669309510001767,
+            0.21223167199991622,
+            0.20975053100005425,
+            0.21481095999979516,
+            0.21119096100005663,
+            0.2090709849999257
+          ],
+          "LB-on": [
+            0.2117084999999861,
+            0.21416023500000847,
+            0.21096013199985464,
+            0.21226980400001594,
+            0.263395133999893,
+            0.2111214309998104,
+            0.21318434700015132,
+            0.21415393200004473,
+            0.21411525000007714,
+            0.21283087000006162,
+            0.21053979600014827,
+            0.21251809099999264,
+            0.21663170900001205,
+            0.21375691699995514,
+            0.21213958400016963,
+            0.21618603500019162,
+            0.21116704099995331,
+            0.21146517700003642,
+            0.21232325400001173,
+            0.21735770199984472
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.001008,
+            "on": 0.000992,
+            "ratio": 0.9841269841269842
+          },
+          {
+            "off": 0.001005,
+            "on": 0.001006,
+            "ratio": 1.0009950248756219
+          },
+          {
+            "off": 0.000997,
+            "on": 0.001005,
+            "ratio": 1.00802407221665
+          },
+          {
+            "off": 0.001008,
+            "on": 0.001005,
+            "ratio": 0.9970238095238095
+          },
+          {
+            "off": 0.000998,
+            "on": 0.001037,
+            "ratio": 1.0390781563126252
+          },
+          {
+            "off": 0.000997,
+            "on": 0.00099,
+            "ratio": 0.9929789368104313
+          },
+          {
+            "off": 0.001001,
+            "on": 0.001006,
+            "ratio": 1.004995004995005
+          },
+          {
+            "off": 0.000995,
+            "on": 0.000998,
+            "ratio": 1.0030150753768843
+          },
+          {
+            "off": 0.000993,
+            "on": 0.000989,
+            "ratio": 0.9959718026183284
+          },
+          {
+            "off": 0.001008,
+            "on": 0.001005,
+            "ratio": 0.9970238095238095
+          },
+          {
+            "off": 0.001005,
+            "on": 0.000997,
+            "ratio": 0.9920398009950249
+          },
+          {
+            "off": 0.001,
+            "on": 0.001007,
+            "ratio": 1.0070000000000001
+          },
+          {
+            "off": 0.001013,
+            "on": 0.001002,
+            "ratio": 0.9891411648568609
+          },
+          {
+            "off": 0.000996,
+            "on": 0.000991,
+            "ratio": 0.9949799196787148
+          },
+          {
+            "off": 0.000988,
+            "on": 0.000991,
+            "ratio": 1.0030364372469636
+          },
+          {
+            "off": 0.000996,
+            "on": 0.001,
+            "ratio": 1.0040160642570282
+          },
+          {
+            "off": 0.000993,
+            "on": 0.001011,
+            "ratio": 1.0181268882175227
+          },
+          {
+            "off": 0.000994,
+            "on": 0.000993,
+            "ratio": 0.998993963782696
+          },
+          {
+            "off": 0.001002,
+            "on": 0.000998,
+            "ratio": 0.996007984031936
+          },
+          {
+            "off": 0.000996,
+            "on": 0.000992,
+            "ratio": 0.9959839357429721
+          }
+        ],
+        "ratio_geomean": 1.0010643759610691,
+        "ratio_ci95": [
+          0.9966016132723524,
+          1.0063084716225024
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_JACOBI2D_jacobi2D.cu.cir-merge.sm_86",
+          "binary_bytes": 26712,
+          "sha256": "cea20d72913e5658c4cb69e18bb7d3f918194e20e179f3ae1a3fb7514eb29614",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_JACOBI2D_jacobi2D.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL21runJacobiCUDA_kernel2iPfS_:\n  REG:8 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL21runJacobiCUDA_kernel1iPfS_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_JACOBI2D_jacobi2D.cu.cir-merge.sm_86",
+          "binary_bytes": 26712,
+          "sha256": "cea20d72913e5658c4cb69e18bb7d3f918194e20e179f3ae1a3fb7514eb29614",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_JACOBI2D_jacobi2D.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL21runJacobiCUDA_kernel2iPfS_:\n  REG:8 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL21runJacobiCUDA_kernel1iPfS_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:376 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "lu",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/LU/lu.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.050399,
+            0.049995,
+            0.050009,
+            0.050133,
+            0.049965,
+            0.04998,
+            0.049888,
+            0.049869,
+            0.049838,
+            0.050554,
+            0.050097,
+            0.050233,
+            0.050136,
+            0.050118,
+            0.049631,
+            0.049794,
+            0.049894,
+            0.050198,
+            0.049847,
+            0.050132
+          ],
+          "LB-on": [
+            0.050148,
+            0.049941,
+            0.049958,
+            0.050047,
+            0.049778,
+            0.049685,
+            0.05005,
+            0.049703,
+            0.049989,
+            0.049982,
+            0.050296,
+            0.0501,
+            0.04953,
+            0.050183,
+            0.050017,
+            0.049914,
+            0.049921,
+            0.050168,
+            0.050139,
+            0.050202
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.280678097999953,
+            0.27893250399984026,
+            0.2819631400000162,
+            0.27558086600015486,
+            0.27870966699993005,
+            0.27526723500000116,
+            0.2740112469998621,
+            0.2801333849999992,
+            0.27954538700009834,
+            0.2754183770000509,
+            0.2764382900002147,
+            0.329525601999876,
+            0.2741557520000697,
+            0.27475418900007753,
+            0.27687560999993366,
+            0.27736617000005026,
+            0.2751824140000281,
+            0.2779232760001378,
+            0.2799234690000958,
+            0.28242564100014533
+          ],
+          "LB-on": [
+            0.2832261060000292,
+            0.27573930400012614,
+            0.27934591600001113,
+            0.28306306199988285,
+            0.28000632699991,
+            0.27393225100013296,
+            0.27927297099995485,
+            0.2773614359998646,
+            0.2788269010000022,
+            0.273867053999993,
+            0.27613466899993,
+            0.2794816760001595,
+            0.2747205660000418,
+            0.27450235899982545,
+            0.27341583900010846,
+            0.280286088000139,
+            0.27368463400011933,
+            0.27644018800015147,
+            0.2795082980001098,
+            0.2798975690000134
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.050399,
+            "on": 0.050148,
+            "ratio": 0.9950197424552074
+          },
+          {
+            "off": 0.049995,
+            "on": 0.049941,
+            "ratio": 0.998919891989199
+          },
+          {
+            "off": 0.050009,
+            "on": 0.049958,
+            "ratio": 0.9989801835669581
+          },
+          {
+            "off": 0.050133,
+            "on": 0.050047,
+            "ratio": 0.9982845630622544
+          },
+          {
+            "off": 0.049965,
+            "on": 0.049778,
+            "ratio": 0.9962573801661163
+          },
+          {
+            "off": 0.04998,
+            "on": 0.049685,
+            "ratio": 0.9940976390556223
+          },
+          {
+            "off": 0.049888,
+            "on": 0.05005,
+            "ratio": 1.0032472738935214
+          },
+          {
+            "off": 0.049869,
+            "on": 0.049703,
+            "ratio": 0.9966712787503259
+          },
+          {
+            "off": 0.049838,
+            "on": 0.049989,
+            "ratio": 1.0030298166058027
+          },
+          {
+            "off": 0.050554,
+            "on": 0.049982,
+            "ratio": 0.988685366143134
+          },
+          {
+            "off": 0.050097,
+            "on": 0.050296,
+            "ratio": 1.0039722937501248
+          },
+          {
+            "off": 0.050233,
+            "on": 0.0501,
+            "ratio": 0.9973523381044334
+          },
+          {
+            "off": 0.050136,
+            "on": 0.04953,
+            "ratio": 0.9879128769746289
+          },
+          {
+            "off": 0.050118,
+            "on": 0.050183,
+            "ratio": 1.0012969392234325
+          },
+          {
+            "off": 0.049631,
+            "on": 0.050017,
+            "ratio": 1.0077773971912716
+          },
+          {
+            "off": 0.049794,
+            "on": 0.049914,
+            "ratio": 1.0024099289070973
+          },
+          {
+            "off": 0.049894,
+            "on": 0.049921,
+            "ratio": 1.0005411472321322
+          },
+          {
+            "off": 0.050198,
+            "on": 0.050168,
+            "ratio": 0.9994023666281525
+          },
+          {
+            "off": 0.049847,
+            "on": 0.050139,
+            "ratio": 1.005857925251269
+          },
+          {
+            "off": 0.050132,
+            "on": 0.050202,
+            "ratio": 1.001396313731748
+          }
+        ],
+        "ratio_geomean": 0.9990432580427585,
+        "ratio_ci95": [
+          0.9967923075473838,
+          1.001144363853762
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_LU_lu.cu.cir-merge.sm_86",
+          "binary_bytes": 30976,
+          "sha256": "30d501cb4fb11a0b28dba725d6cbac353d7ec03df6441069fe85e7570c5b8cbc",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_LU_lu.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL10lu_kernel2iPfi:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:372 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL10lu_kernel1iPfi:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:372 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_LU_lu.cu.cir-merge.sm_86",
+          "binary_bytes": 30976,
+          "sha256": "30d501cb4fb11a0b28dba725d6cbac353d7ec03df6441069fe85e7570c5b8cbc",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_LU_lu.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL10lu_kernel2iPfi:\n  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:372 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL10lu_kernel1iPfi:\n  REG:16 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:372 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "mvt",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/MVT/mvt.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.003023,
+            0.003029,
+            0.003028,
+            0.00303,
+            0.003029,
+            0.003032,
+            0.003031,
+            0.003032,
+            0.003028,
+            0.003032,
+            0.003027,
+            0.003029,
+            0.00303,
+            0.003024,
+            0.003031,
+            0.003029,
+            0.003028,
+            0.003029,
+            0.003027,
+            0.003038
+          ],
+          "LB-on": [
+            0.003029,
+            0.003028,
+            0.003026,
+            0.00303,
+            0.003034,
+            0.003042,
+            0.00303,
+            0.003036,
+            0.003029,
+            0.003032,
+            0.003033,
+            0.003033,
+            0.003029,
+            0.00303,
+            0.003025,
+            0.003028,
+            0.003031,
+            0.003026,
+            0.003035,
+            0.003028
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.24184087799994813,
+            0.24134640699980991,
+            0.24384811699997044,
+            0.24080965200005267,
+            0.2400069899999835,
+            0.243195212000046,
+            0.24377514299999348,
+            0.2384787050000341,
+            0.2476205289999598,
+            0.23778010000000904,
+            0.24288944899990383,
+            0.23828851500002202,
+            0.23740052700009073,
+            0.23917105900000024,
+            0.2403255019999051,
+            0.24294494900004793,
+            0.2380433710000034,
+            0.24121662300012758,
+            0.23954468600004475,
+            0.23687981899979604
+          ],
+          "LB-on": [
+            0.29435396200005925,
+            0.23940406499991695,
+            0.24368457299988222,
+            0.23964100199987115,
+            0.2431875830000081,
+            0.2892586749999282,
+            0.2391414179999174,
+            0.2376099420000628,
+            0.23709590899989053,
+            0.23875176799992914,
+            0.24042314000007536,
+            0.2398382760000004,
+            0.24288735799996175,
+            0.23960350500010463,
+            0.23717351599998437,
+            0.24488846500003092,
+            0.23897060300009798,
+            0.2367824609998479,
+            0.23956247099999928,
+            0.24054375099990466
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.003023,
+            "on": 0.003029,
+            "ratio": 1.00198478332782
+          },
+          {
+            "off": 0.003029,
+            "on": 0.003028,
+            "ratio": 0.9996698580389567
+          },
+          {
+            "off": 0.003028,
+            "on": 0.003026,
+            "ratio": 0.9993394980184941
+          },
+          {
+            "off": 0.00303,
+            "on": 0.00303,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.003029,
+            "on": 0.003034,
+            "ratio": 1.001650709805216
+          },
+          {
+            "off": 0.003032,
+            "on": 0.003042,
+            "ratio": 1.0032981530343008
+          },
+          {
+            "off": 0.003031,
+            "on": 0.00303,
+            "ratio": 0.9996700758825471
+          },
+          {
+            "off": 0.003032,
+            "on": 0.003036,
+            "ratio": 1.0013192612137203
+          },
+          {
+            "off": 0.003028,
+            "on": 0.003029,
+            "ratio": 1.000330250990753
+          },
+          {
+            "off": 0.003032,
+            "on": 0.003032,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.003027,
+            "on": 0.003033,
+            "ratio": 1.001982160555005
+          },
+          {
+            "off": 0.003029,
+            "on": 0.003033,
+            "ratio": 1.001320567844173
+          },
+          {
+            "off": 0.00303,
+            "on": 0.003029,
+            "ratio": 0.9996699669966996
+          },
+          {
+            "off": 0.003024,
+            "on": 0.00303,
+            "ratio": 1.001984126984127
+          },
+          {
+            "off": 0.003031,
+            "on": 0.003025,
+            "ratio": 0.9980204552952822
+          },
+          {
+            "off": 0.003029,
+            "on": 0.003028,
+            "ratio": 0.9996698580389567
+          },
+          {
+            "off": 0.003028,
+            "on": 0.003031,
+            "ratio": 1.0009907529722588
+          },
+          {
+            "off": 0.003029,
+            "on": 0.003026,
+            "ratio": 0.9990095741168703
+          },
+          {
+            "off": 0.003027,
+            "on": 0.003035,
+            "ratio": 1.0026428807400065
+          },
+          {
+            "off": 0.003038,
+            "on": 0.003028,
+            "ratio": 0.9967083607636603
+          }
+        ],
+        "ratio_geomean": 1.0004618327051062,
+        "ratio_ci95": [
+          0.9997525569924528,
+          1.001138553499402
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_MVT_mvt.cu.cir-merge.sm_86",
+          "binary_bytes": 35056,
+          "sha256": "a62f7c5bc0b46b63b519599d12031d97eb8b2a8105c2504c1300acc54e6d5c1a",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_MVT_mvt.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mvt_kernel2iPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mvt_kernel1iPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_MVT_mvt.cu.cir-merge.sm_86",
+          "binary_bytes": 35056,
+          "sha256": "d740fdf8efcb877979a5c2e1c846e6136da811a82e1b5065d6b43ac3df929974",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_MVT_mvt.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11mvt_kernel2iPfS_S_:\n  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n Function _ZL11mvt_kernel1iPfS_S_:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "syr2k",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/SYR2K/syr2k.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.019324,
+            0.019323,
+            0.019322,
+            0.01932,
+            0.019328,
+            0.019331,
+            0.01932,
+            0.019325,
+            0.019327,
+            0.019318,
+            0.019323,
+            0.01932,
+            0.019318,
+            0.01932,
+            0.019324,
+            0.019326,
+            0.019326,
+            0.019329,
+            0.01932,
+            0.019327
+          ],
+          "LB-on": [
+            0.01932,
+            0.019319,
+            0.019327,
+            0.01934,
+            0.019319,
+            0.019326,
+            0.019321,
+            0.019322,
+            0.019319,
+            0.019324,
+            0.01932,
+            0.019324,
+            0.01932,
+            0.019321,
+            0.019321,
+            0.019323,
+            0.019336,
+            0.019321,
+            0.019328,
+            0.019319
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.23171911899999031,
+            0.23685838200003673,
+            0.23164041499990162,
+            0.2349262089999229,
+            0.23144053900000472,
+            0.22926487300014742,
+            0.230707756999891,
+            0.23173558400003458,
+            0.23089091800011374,
+            0.23798765199990157,
+            0.23701023800003895,
+            0.23289907699995638,
+            0.23230630699981702,
+            0.28239914699997826,
+            0.23039554599995427,
+            0.28262476299983064,
+            0.232873932000075,
+            0.23153117199990447,
+            0.2323931389998961,
+            0.23161319100017863
+          ],
+          "LB-on": [
+            0.23114294500010146,
+            0.23740058199996383,
+            0.2811606600000687,
+            0.23075068200000715,
+            0.23082853999994768,
+            0.23052559500001735,
+            0.23125688300001457,
+            0.2355518070000926,
+            0.23104214899990438,
+            0.23167240399993716,
+            0.23119500100006007,
+            0.235497690000102,
+            0.2303589949999605,
+            0.2361453389999042,
+            0.23132092900004864,
+            0.28617733999999473,
+            0.2344831890000023,
+            0.2803117259998089,
+            0.238905455999884,
+            0.2360776479999913
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.019324,
+            "on": 0.01932,
+            "ratio": 0.9997930035189402
+          },
+          {
+            "off": 0.019323,
+            "on": 0.019319,
+            "ratio": 0.9997929928065
+          },
+          {
+            "off": 0.019322,
+            "on": 0.019327,
+            "ratio": 1.0002587723838112
+          },
+          {
+            "off": 0.01932,
+            "on": 0.01934,
+            "ratio": 1.0010351966873705
+          },
+          {
+            "off": 0.019328,
+            "on": 0.019319,
+            "ratio": 0.9995343543046357
+          },
+          {
+            "off": 0.019331,
+            "on": 0.019326,
+            "ratio": 0.9997413480937354
+          },
+          {
+            "off": 0.01932,
+            "on": 0.019321,
+            "ratio": 1.0000517598343686
+          },
+          {
+            "off": 0.019325,
+            "on": 0.019322,
+            "ratio": 0.9998447606727038
+          },
+          {
+            "off": 0.019327,
+            "on": 0.019319,
+            "ratio": 0.9995860712992186
+          },
+          {
+            "off": 0.019318,
+            "on": 0.019324,
+            "ratio": 1.000310591158505
+          },
+          {
+            "off": 0.019323,
+            "on": 0.01932,
+            "ratio": 0.999844744604875
+          },
+          {
+            "off": 0.01932,
+            "on": 0.019324,
+            "ratio": 1.0002070393374742
+          },
+          {
+            "off": 0.019318,
+            "on": 0.01932,
+            "ratio": 1.0001035303861685
+          },
+          {
+            "off": 0.01932,
+            "on": 0.019321,
+            "ratio": 1.0000517598343686
+          },
+          {
+            "off": 0.019324,
+            "on": 0.019321,
+            "ratio": 0.9998447526392051
+          },
+          {
+            "off": 0.019326,
+            "on": 0.019323,
+            "ratio": 0.999844768705371
+          },
+          {
+            "off": 0.019326,
+            "on": 0.019336,
+            "ratio": 1.0005174376487633
+          },
+          {
+            "off": 0.019329,
+            "on": 0.019321,
+            "ratio": 0.9995861141290291
+          },
+          {
+            "off": 0.01932,
+            "on": 0.019328,
+            "ratio": 1.0004140786749482
+          },
+          {
+            "off": 0.019327,
+            "on": 0.019319,
+            "ratio": 0.9995860712992186
+          }
+        ],
+        "ratio_geomean": 0.9999973895959604,
+        "ratio_ci95": [
+          0.999847338158408,
+          1.0001655499956226
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_SYR2K_syr2k.cu.cir-merge.sm_86",
+          "binary_bytes": 26808,
+          "sha256": "ce1aaeef29b8ec0a5f2f698369cef113cc313211a871e72b31f3999379896bda",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_SYR2K_syr2k.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12syr2k_kerneliiffPfS_S_:\n  REG:30 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:392 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_SYR2K_syr2k.cu.cir-merge.sm_86",
+          "binary_bytes": 26808,
+          "sha256": "16cbebcbd9d8278c1324f17a2008708910437735657a3767983d4768fa513399",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_SYR2K_syr2k.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL12syr2k_kerneliiffPfS_S_:\n  REG:30 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:392 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    },
+    {
+      "benchmark": "syrk",
+      "file": "/home/ubuntu/polybenchGpu-static/CUDA/SYRK/syrk.cu",
+      "samples": {
+        "times": {
+          "LB-off": [
+            0.009968,
+            0.009964,
+            0.00996,
+            0.009959,
+            0.009958,
+            0.009963,
+            0.00996,
+            0.009958,
+            0.00996,
+            0.009957,
+            0.009959,
+            0.009961,
+            0.009958,
+            0.009959,
+            0.009961,
+            0.009957,
+            0.009959,
+            0.009959,
+            0.00996,
+            0.009971
+          ],
+          "LB-on": [
+            0.009964,
+            0.009961,
+            0.009967,
+            0.009964,
+            0.009958,
+            0.009961,
+            0.009958,
+            0.00996,
+            0.009957,
+            0.00997,
+            0.009962,
+            0.009961,
+            0.009952,
+            0.009958,
+            0.009959,
+            0.009955,
+            0.009962,
+            0.009959,
+            0.00996,
+            0.009959
+          ]
+        },
+        "wall_times": {
+          "LB-off": [
+            0.2201276069999949,
+            0.2213536510000722,
+            0.21862935999979527,
+            0.22114994599996862,
+            0.22518970400005855,
+            0.22048984599996402,
+            0.2208399940000163,
+            0.21983292200002325,
+            0.21989981000001535,
+            0.2206630779999159,
+            0.21953100100017764,
+            0.22034950600004777,
+            0.21882777799987707,
+            0.22031666599991695,
+            0.22215558199991392,
+            0.2187645529998008,
+            0.22063728800003446,
+            0.22040385500008597,
+            0.2713724240002193,
+            0.2199397480001153
+          ],
+          "LB-on": [
+            0.2199759070001619,
+            0.21848531399996318,
+            0.2205118520000724,
+            0.27318001200001163,
+            0.22020423699996172,
+            0.22077996699999858,
+            0.22231731699980628,
+            0.21806981999998243,
+            0.21979152300013993,
+            0.2198285740000756,
+            0.21826187800002117,
+            0.21904762100007247,
+            0.21997613500002444,
+            0.21882592499991915,
+            0.21691220100001374,
+            0.22151234500006467,
+            0.22061162199997852,
+            0.22122789900004136,
+            0.2257209019999209,
+            0.21961896400011938
+          ]
+        },
+        "pairs": [
+          {
+            "off": 0.009968,
+            "on": 0.009964,
+            "ratio": 0.9995987158908508
+          },
+          {
+            "off": 0.009964,
+            "on": 0.009961,
+            "ratio": 0.9996989160979525
+          },
+          {
+            "off": 0.00996,
+            "on": 0.009967,
+            "ratio": 1.0007028112449798
+          },
+          {
+            "off": 0.009959,
+            "on": 0.009964,
+            "ratio": 1.0005020584396023
+          },
+          {
+            "off": 0.009958,
+            "on": 0.009958,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.009963,
+            "on": 0.009961,
+            "ratio": 0.9997992572518317
+          },
+          {
+            "off": 0.00996,
+            "on": 0.009958,
+            "ratio": 0.9997991967871486
+          },
+          {
+            "off": 0.009958,
+            "on": 0.00996,
+            "ratio": 1.0002008435428802
+          },
+          {
+            "off": 0.00996,
+            "on": 0.009957,
+            "ratio": 0.9996987951807229
+          },
+          {
+            "off": 0.009957,
+            "on": 0.00997,
+            "ratio": 1.0013056141408054
+          },
+          {
+            "off": 0.009959,
+            "on": 0.009962,
+            "ratio": 1.0003012350637615
+          },
+          {
+            "off": 0.009961,
+            "on": 0.009961,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.009958,
+            "on": 0.009952,
+            "ratio": 0.9993974693713598
+          },
+          {
+            "off": 0.009959,
+            "on": 0.009958,
+            "ratio": 0.9998995883120795
+          },
+          {
+            "off": 0.009961,
+            "on": 0.009959,
+            "ratio": 0.9997992169460899
+          },
+          {
+            "off": 0.009957,
+            "on": 0.009955,
+            "ratio": 0.9997991362860299
+          },
+          {
+            "off": 0.009959,
+            "on": 0.009962,
+            "ratio": 1.0003012350637615
+          },
+          {
+            "off": 0.009959,
+            "on": 0.009959,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.00996,
+            "on": 0.00996,
+            "ratio": 1.0
+          },
+          {
+            "off": 0.009971,
+            "on": 0.009959,
+            "ratio": 0.9987965098786481
+          }
+        ],
+        "ratio_geomean": 0.9999799052461401,
+        "ratio_ci95": [
+          0.9997691442301865,
+          1.0002057842652161
+        ]
+      },
+      "arms": {
+        "LB-off": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-off/CUDA_SYRK_syrk.cu.cir-merge.sm_86",
+          "binary_bytes": 30888,
+          "sha256": "c427db4aacb934654cf97667c16da7367b1f22982c7d07328df9241100f273af",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-off/CUDA_SYRK_syrk.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11syrk_kerneliiffPfS_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        },
+        "LB-on": {
+          "compile_ok": true,
+          "binary": "/home/ubuntu/lb-isolated-full/build/LB-on/CUDA_SYRK_syrk.cu.cir-merge.sm_86",
+          "binary_bytes": 30888,
+          "sha256": "3f4cb89d92e7e3e738d3a9cecbb5568beb2fe4194d2cef45c01dffba109750dc",
+          "compile_log": "/home/ubuntu/lb-isolated-full/compile-logs/LB-on/CUDA_SYRK_syrk.cu.cir-merge.sm_86.log",
+          "validation": {
+            "compile_ok": true,
+            "misses": 0,
+            "status": "passed",
+            "returncode": 0
+          },
+          "resource_usage": "\nFatbin elf code:\n================\narch = sm_86\ncode version = [1,7]\nhost = linux\ncompile_size = 64bit\n\nResource usage:\n Common:\n  GLOBAL:0\n Function _ZL11syrk_kerneliiffPfS_:\n  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:384 TEXTURE:0 SURFACE:0 SAMPLER:0\n"
+        }
+      }
+    }
+  ]
+}

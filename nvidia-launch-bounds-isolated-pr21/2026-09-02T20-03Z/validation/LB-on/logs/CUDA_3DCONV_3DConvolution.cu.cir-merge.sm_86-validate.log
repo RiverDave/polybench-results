@@ -1,0 +1,32 @@
+COMMAND: /home/ubuntu/llvm-project/build-pr25-clang-gcc11/bin/clang++ -fclangir --clangir-offload-merge --gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/11 --cuda-path=/usr/local/cuda --cuda-gpu-arch=sm_86 -std=c++17 -O3 -fcir-infer-launch-bounds -Xcuda-ptxas -v /home/ubuntu/polybenchGpu-static/CUDA/3DCONV/3DConvolution.cu -I/home/ubuntu/polybenchGpu-static/common -I/home/ubuntu/polybenchGpu-static/CUDA/3DCONV -I/home/ubuntu/polybenchGpu-static -lm -L/usr/local/cuda/lib64 -lcudart -x none -o /home/ubuntu/lb-isolated-full/validation/LB-on/CUDA_3DCONV_3DConvolution.cu.cir-merge.sm_86-validate
+
+STDOUT:
+
+STDERR:
+clang++: warning: '-x none' after last input file has no effect [-Wunused-command-line-argument]
+/home/ubuntu/polybenchGpu-static/CUDA/3DCONV/3DConvolution.cu:162:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  162 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+1 warning generated when compiling for host.
+/home/ubuntu/polybenchGpu-static/CUDA/3DCONV/3DConvolution.cu:162:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  162 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+1 warning generated when compiling for sm_86.
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_ZL20convolution3D_kerneliiiPfS_i' for 'sm_86'
+ptxas info    : Function properties for _ZL20convolution3D_kerneliiiPfS_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 29 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 3.516 ms

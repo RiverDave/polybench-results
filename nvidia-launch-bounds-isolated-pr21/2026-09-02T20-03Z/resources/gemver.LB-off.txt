@@ -1,0 +1,17 @@
+
+Fatbin elf code:
+================
+arch = sm_86
+code version = [1,7]
+host = linux
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZL14gemver_kernel3iffPfS_S_:
+  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:392 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZL14gemver_kernel2iffPfS_S_S_:
+  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:400 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZL14gemver_kernel1iffPfS_S_S_S_:
+  REG:18 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:408 TEXTURE:0 SURFACE:0 SAMPLER:0

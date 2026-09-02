@@ -1,0 +1,140 @@
+!s32i = !cir.int<s, 32>
+!s64i = !cir.int<s, 64>
+!u32i = !cir.int<u, 32>
+!u64i = !cir.int<u, 64>
+!u8i = !cir.int<u, 8>
+!void = !cir.void
+!rec___cuda_builtin_blockDim_t = !cir.struct<"__cuda_builtin_blockDim_t" padded {pad !u8i}>
+!rec___cuda_builtin_blockIdx_t = !cir.struct<"__cuda_builtin_blockIdx_t" padded {pad !u8i}>
+!rec___cuda_builtin_threadIdx_t = !cir.struct<"__cuda_builtin_threadIdx_t" padded {pad !u8i}>
+!rec_dim3 = !cir.struct<"dim3" {data !u32i, data !u32i, data !u32i}>
+module {
+  cir.offload.container {
+    builtin.module @host attributes {cir.lang = #cir.lang<cxx>, cir.module_asm = [], cir.offload.bundle_id = "host-x86_64-unknown-linux-gnu", cir.offload.kind = #cir.offload_kind<host>, cir.record_layouts = {dim3 = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 4>}, cir.triple = "arm64-apple-macosx26.0.0", dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "o", "dlti.legal_int_widths" = array<i32: 32, 64>, "dlti.stack_alignment" = 128 : i64, "dlti.function_pointer_alignment" = #dlti.function_pointer_alignment<32, function_dependent = true>, !cir.ptr<!cir.void> = #cir.ptr_spec<size = 64, abi = 64, preferred = 64, index = 64>>} {
+      cir.func no_inline linkonce_odr @_ZN4dim3C2Ejjj(%arg0: !cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, %arg1: !u32i {llvm.noundef}, %arg2: !u32i {llvm.noundef}, %arg3: !u32i {llvm.noundef}) func_info<#cir.cxx_ctor<!rec_dim3, custom>> attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5"} {
+        %0 = cir.get_member %arg0[0] {name = "x"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+        cir.store align(4) %arg1, %0 : !u32i, !cir.ptr<!u32i>
+        %1 = cir.get_member %arg0[1] {name = "y"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+        cir.store align(4) %arg2, %1 : !u32i, !cir.ptr<!u32i>
+        %2 = cir.get_member %arg0[2] {name = "z"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+        cir.store align(4) %arg3, %2 : !u32i, !cir.ptr<!u32i>
+        cir.return
+      }
+      cir.func no_inline linkonce_odr @_ZN4dim3C1Ejjj(%arg0: !cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, %arg1: !u32i {llvm.noundef}, %arg2: !u32i {llvm.noundef}, %arg3: !u32i {llvm.noundef}) func_info<#cir.cxx_ctor<!rec_dim3, custom>> attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5"} {
+        cir.call @_ZN4dim3C2Ejjj(%arg0, %arg1, %arg2, %arg3) : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+        cir.return
+      }
+      cir.func private @__cudaPushCallConfiguration(!rec_dim3, !rec_dim3, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !s32i attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5"}
+      cir.func private dso_local @__cudaPopCallConfiguration(!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!void>>) -> !s32i
+      cir.func private dso_local @cudaLaunchKernel(!cir.ptr<!void>, !rec_dim3, !rec_dim3, !cir.ptr<!cir.ptr<!void>>, !u64i, !cir.ptr<!void>) -> !s32i
+      cir.func no_inline internal private dso_local @_ZL28__device_stub__direct_kernelifPi(%arg0: !s32i {llvm.noundef}, %arg1: !cir.float {llvm.noundef}, %arg2: !cir.ptr<!s32i> {llvm.noundef}) attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5", cu.kernel_name = #cir.cu.kernel_name<"_ZL13direct_kernelifPi">} {
+        %0 = cir.const #cir.int<2> : !u32i
+        %1 = cir.const #cir.int<1> : !u32i
+        %2 = cir.const #cir.int<0> : !u32i
+        %3 = cir.alloca "n" align(4) init : !cir.ptr<!s32i>
+        %4 = cir.alloca "scale" align(4) init : !cir.ptr<!cir.float>
+        %5 = cir.alloca "out" align(8) init : !cir.ptr<!cir.ptr<!s32i>>
+        cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+        cir.store %arg1, %4 : !cir.float, !cir.ptr<!cir.float>
+        cir.store %arg2, %5 : !cir.ptr<!s32i>, !cir.ptr<!cir.ptr<!s32i>>
+        %6 = cir.alloca "kernel_args" align(16) : !cir.ptr<!cir.array<!cir.ptr<!void> x 3>>
+        %7 = cir.cast array_to_ptrdecay %6 : !cir.ptr<!cir.array<!cir.ptr<!void> x 3>> -> !cir.ptr<!cir.ptr<!void>>
+        %8 = cir.ptr_stride %7, %2 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+        %9 = cir.cast bitcast %3 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+        cir.store %9, %8 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+        %10 = cir.ptr_stride %7, %1 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+        %11 = cir.cast bitcast %4 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+        cir.store %11, %10 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+        %12 = cir.ptr_stride %7, %0 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+        %13 = cir.cast bitcast %5 : !cir.ptr<!cir.ptr<!s32i>> -> !cir.ptr<!void>
+        cir.store %13, %12 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+        %14 = cir.alloca "grid_dim" align(8) : !cir.ptr<!rec_dim3>
+        %15 = cir.alloca "block_dim" align(8) : !cir.ptr<!rec_dim3>
+        %16 = cir.alloca "shared_mem" align(8) : !cir.ptr<!u64i>
+        %17 = cir.alloca "stream" align(8) : !cir.ptr<!cir.ptr<!void>>
+        %18 = cir.call @__cudaPopCallConfiguration(%14, %15, %16, %17) : (!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!void>>) -> !s32i
+        %19 = cir.get_global @_ZL28__device_stub__direct_kernelifPi : !cir.ptr<!cir.func<(!s32i, !cir.float, !cir.ptr<!s32i>)>>
+        %20 = cir.cast bitcast %19 : !cir.ptr<!cir.func<(!s32i, !cir.float, !cir.ptr<!s32i>)>> -> !cir.ptr<!void>
+        %21 = cir.load %16 : !cir.ptr<!u64i>, !u64i
+        %22 = cir.load %17 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+        %23 = cir.load align(8) %14 : !cir.ptr<!rec_dim3>, !rec_dim3
+        %24 = cir.load align(8) %15 : !cir.ptr<!rec_dim3>, !rec_dim3
+        %25 = cir.call @cudaLaunchKernel(%20, %23, %24, %7, %21, %22) : (!cir.ptr<!void> {llvm.noundef}, !rec_dim3, !rec_dim3, !cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> (!s32i {llvm.noundef})
+        cir.return
+      }
+      cir.func no_inline internal private dso_local @_ZL13launch_directPi(%arg0: !cir.ptr<!s32i> {llvm.noundef}) attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5"} {
+        %0 = cir.const #cir.ptr<null> : !cir.ptr<!s32i>
+        %1 = cir.const #cir.ptr<null> : !cir.ptr<!void>
+        %2 = cir.const #cir.int<0> : !u64i
+        %3 = cir.const #cir.int<1> : !u32i
+        %4 = cir.const #cir.int<256> : !u32i
+        %5 = cir.alloca "block" align(4) init : !cir.ptr<!rec_dim3>
+        %6 = cir.alloca "grid" align(4) init : !cir.ptr<!rec_dim3>
+        cir.call @_ZN4dim3C1Ejjj(%5, %4, %3, %3) : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+        cir.call @_ZN4dim3C1Ejjj(%6, %3, %3, %3) : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+        %7 = cir.load %6 : !cir.ptr<!rec_dim3>, !rec_dim3
+        %8 = cir.load %5 : !cir.ptr<!rec_dim3>, !rec_dim3
+        %9 = cir.call @__cudaPushCallConfiguration(%7, %8, %2, %1) : (!rec_dim3, !rec_dim3, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !s32i
+        %10 = cir.cast int_to_bool %9 : !s32i -> !cir.bool
+        cir.if %10 {
+        } else {
+          %11 = cir.const #cir.int<256> : !s32i
+          %12 = cir.const #cir.fp<2.000000e+00> : !cir.float
+          cir.call @_ZL28__device_stub__direct_kernelifPi(%11, %12, %0) {cu.kernel_name = #cir.cu.kernel_name<"_ZL13direct_kernelifPi">} : (!s32i {llvm.noundef}, !cir.float {llvm.noundef}, !cir.ptr<!s32i> {llvm.noundef}) -> ()
+        }
+        cir.return
+      }
+      cir.func no_inline @main() -> (!s32i {llvm.noundef}) attributes {"cir.target-cpu" = "apple-m1", "cir.target-features" = "+aes,+altnzcv,+ccdp,+ccidx,+ccpp,+complxnum,+crc,+dit,+dotprod,+flagm,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a", "cir.tune-cpu" = "apple-m5"} {
+        %0 = cir.const #cir.ptr<null> : !cir.ptr<!s32i>
+        %1 = cir.const #cir.int<0> : !s32i
+        cir.call @_ZL13launch_directPi(%0) : (!cir.ptr<!s32i> {llvm.noundef}) -> ()
+        cir.return %1 : !s32i
+      }
+    }
+    builtin.module @device_cuda_nvptx64_nvidia_cuda__sm_86 attributes {cir.lang = #cir.lang<cxx>, cir.module_asm = [], cir.offload.bundle_id = "cuda-nvptx64-nvidia-cuda--sm_86", cir.offload.kind = #cir.offload_kind<device>, cir.record_layouts = {__cuda_builtin_blockDim_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_blockIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_threadIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>}, cir.triple = "nvptx64-nvidia-cuda", dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<6> = dense<32> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, i256 = dense<256> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.legal_int_widths" = array<i32: 16, 32, 64>, !cir.ptr<!cir.void> = #cir.ptr_spec<size = 64, abi = 64, preferred = 64, index = 64>>} {
+      cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockIdx : !rec___cuda_builtin_blockIdx_t {alignment = 1 : i64}
+      cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockDim : !rec___cuda_builtin_blockDim_t {alignment = 1 : i64}
+      cir.global "private" constant extern_weak dso_local  target_address_space(1) @threadIdx : !rec___cuda_builtin_threadIdx_t {alignment = 1 : i64}
+      cir.func always_inline comdat linkonce_odr dso_local @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+sm_86", convergent} {
+        %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ctaid.x"  : () -> !s32i
+        %1 = cir.cast integral %0 : !s32i -> !u32i
+        cir.return %1 : !u32i
+      }
+      cir.func always_inline comdat linkonce_odr dso_local @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+sm_86", convergent} {
+        %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ntid.x"  : () -> !s32i
+        %1 = cir.cast integral %0 : !s32i -> !u32i
+        cir.return %1 : !u32i
+      }
+      cir.func always_inline comdat linkonce_odr dso_local @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+sm_86", convergent} {
+        %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.tid.x"  : () -> !s32i
+        %1 = cir.cast integral %0 : !s32i -> !u32i
+        cir.return %1 : !u32i
+      }
+      cir.func no_inline comdat dso_local @_ZL13direct_kernelifPi(%arg0: !s32i {llvm.noundef}, %arg1: !cir.float {llvm.noundef}, %arg2: !cir.ptr<!s32i> {llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+sm_86", convergent} {
+        %0 = cir.const #cir.ptr<null> : !cir.ptr<!s32i>
+        %1 = cir.const #cir.fp<2.000000e+00> : !cir.float
+        %2 = cir.const #cir.int<256> : !s32i
+        %3 = cir.get_global @blockIdx : !cir.ptr<!rec___cuda_builtin_blockIdx_t, target_address_space(1)>
+        %4 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent} : () -> (!u32i {llvm.noundef})
+        %5 = cir.get_global @blockDim : !cir.ptr<!rec___cuda_builtin_blockDim_t, target_address_space(1)>
+        %6 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent} : () -> (!u32i {llvm.noundef})
+        %7 = cir.mul %4, %6 : !u32i
+        %8 = cir.get_global @threadIdx : !cir.ptr<!rec___cuda_builtin_threadIdx_t, target_address_space(1)>
+        %9 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent} : () -> (!u32i {llvm.noundef})
+        %10 = cir.add %7, %9 : !u32i
+        %11 = cir.cast integral %10 : !u32i -> !s32i
+        cir.scope {
+          %12 = cir.cmp lt %11, %2 : !s32i
+          cir.if %12 {
+            %13 = cir.cast float_to_int %1 : !cir.float -> !s32i
+            %14 = cir.cast integral %11 : !s32i -> !s64i
+            %15 = cir.ptr_stride %0, %14 : (!cir.ptr<!s32i>, !s64i) -> !cir.ptr<!s32i>
+            cir.store align(4) %13, %15 : !s32i, !cir.ptr<!s32i>
+          }
+        }
+        cir.return
+      }
+    }
+  }
+}
+

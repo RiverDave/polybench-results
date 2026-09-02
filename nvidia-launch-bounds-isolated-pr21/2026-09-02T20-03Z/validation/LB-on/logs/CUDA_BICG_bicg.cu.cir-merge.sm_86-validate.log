@@ -1,0 +1,55 @@
+COMMAND: /home/ubuntu/llvm-project/build-pr25-clang-gcc11/bin/clang++ -fclangir --clangir-offload-merge --gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/11 --cuda-path=/usr/local/cuda --cuda-gpu-arch=sm_86 -std=c++17 -O3 -fcir-infer-launch-bounds -Xcuda-ptxas -v /home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu -I/home/ubuntu/polybenchGpu-static/common -I/home/ubuntu/polybenchGpu-static/CUDA/BICG -I/home/ubuntu/polybenchGpu-static -lm -L/usr/local/cuda/lib64 -lcudart -x none -o /home/ubuntu/lb-isolated-full/validation/LB-on/CUDA_BICG_bicg.cu.cir-merge.sm_86-validate
+
+STDOUT:
+
+STDERR:
+clang++: warning: '-x none' after last input file has no effect [-Wunused-command-line-argument]
+/home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu:205:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  205 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu:207:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  207 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+2 warnings generated when compiling for host.
+/home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu:205:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  205 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/polybenchGpu-static/CUDA/BICG/bicg.cu:207:2: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  207 |         cudaThreadSynchronize();
+      |         ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+2 warnings generated when compiling for sm_86.
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_ZL12bicg_kernel2iiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _ZL12bicg_kernel2iiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 8.055 ms
+ptxas info    : Compiling entry function '_ZL12bicg_kernel1iiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _ZL12bicg_kernel1iiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.445 ms
