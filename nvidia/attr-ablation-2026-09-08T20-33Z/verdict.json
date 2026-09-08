@@ -1,0 +1,127 @@
+{
+ "2MM.fa": {
+  "sass_identical": true,
+  "sass_diff_lines": 0,
+  "kernels": 2,
+  "attrs_added_by_functionattrs": {
+   "_ZL11mm2_kernel1iiiiffPfS_S_": {
+    "readonly": 0,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 6
+   },
+   "_ZL11mm2_kernel2iiiiffPfS_S_": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 6
+   }
+  },
+  "res": {
+   "regs": [
+    "26",
+    "24"
+   ]
+  }
+ },
+ "2MM.restr_archive": {
+  "sass_identical": false,
+  "sass_diff_lines": 904
+ },
+ "3MM.fa": {
+  "sass_identical": true,
+  "sass_diff_lines": 0,
+  "kernels": 3,
+  "attrs_added_by_functionattrs": {
+   "_ZL11mm3_kernel1iiiiiPfS_S_": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 5
+   },
+   "_ZL11mm3_kernel2iiiiiPfS_S_": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 5
+   },
+   "_ZL11mm3_kernel3iiiiiPfS_S_": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 5
+   }
+  },
+  "res": {
+   "regs": [
+    "26",
+    "26",
+    "26"
+   ]
+  }
+ },
+ "3MM.restr_archive": {
+  "sass_identical": false,
+  "sass_diff_lines": 1234
+ },
+ "GEMM.fa": {
+  "sass_identical": true,
+  "sass_diff_lines": 0,
+  "kernels": 1,
+  "attrs_added_by_functionattrs": {
+   "_ZL11gemm_kerneliiiffPfS_S_": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 5
+   }
+  },
+  "res": {
+   "regs": [
+    "24"
+   ]
+  }
+ },
+ "GEMM.restr_archive": {
+  "sass_identical": false,
+  "sass_diff_lines": 483
+ },
+ "GRAMSCHM.fa": {
+  "sass_identical": true,
+  "sass_diff_lines": 0,
+  "kernels": 3,
+  "attrs_added_by_functionattrs": {
+   "_ZL19gramschmidt_kernel1iiPfS_S_i": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 2
+   },
+   "_ZL19gramschmidt_kernel2iiPfS_S_i": {
+    "readonly": 1,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 2
+   },
+   "_ZL19gramschmidt_kernel3iiPfS_S_i": {
+    "readonly": 0,
+    "nocapture": 0,
+    "noalias": 0,
+    "params": 2
+   }
+  },
+  "res": {
+   "regs": [
+    "30",
+    "16",
+    "39"
+   ]
+  }
+ },
+ "GRAMSCHM.restr_archive": {
+  "sass_identical": false,
+  "sass_diff_lines": 1475
+ },
+ "_attrs_binding": [],
+ "_verdict": "ALL_ATTRS_DEAD"
+}
