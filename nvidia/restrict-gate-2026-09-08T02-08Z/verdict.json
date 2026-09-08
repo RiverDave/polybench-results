@@ -1,0 +1,65 @@
+{
+  "2MM": {
+    "sass_identical": false,
+    "sass_diff_lines": 904,
+    "kernels_base": 2,
+    "kernels_restr": 2,
+    "regs_base": [
+      "26",
+      "24"
+    ],
+    "regs_restr": [
+      "40",
+      "40"
+    ],
+    "res_identical": false
+  },
+  "3MM": {
+    "sass_identical": false,
+    "sass_diff_lines": 1234,
+    "kernels_base": 3,
+    "kernels_restr": 3,
+    "regs_base": [
+      "26",
+      "26",
+      "26"
+    ],
+    "regs_restr": [
+      "39",
+      "39",
+      "39"
+    ],
+    "res_identical": false
+  },
+  "GEMM": {
+    "sass_identical": false,
+    "sass_diff_lines": 483,
+    "kernels_base": 1,
+    "kernels_restr": 1,
+    "regs_base": [
+      "24"
+    ],
+    "regs_restr": [
+      "40"
+    ],
+    "res_identical": false
+  },
+  "GRAMSCHM": {
+    "sass_identical": false,
+    "sass_diff_lines": 1475,
+    "kernels_base": 3,
+    "kernels_restr": 3,
+    "regs_base": [
+      "30",
+      "16",
+      "39"
+    ],
+    "regs_restr": [
+      "32",
+      "16",
+      "38"
+    ],
+    "res_identical": false
+  },
+  "_gate_verdict": "SASS_DELTA"
+}
