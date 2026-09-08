@@ -1,0 +1,72 @@
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:196:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  196 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:198:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  198 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:200:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  200 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+3 warnings generated when compiling for sm_86.
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_ZL19gramschmidt_kernel3iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _ZL19gramschmidt_kernel3iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 15.968 ms
+ptxas info    : Compiling entry function '_ZL19gramschmidt_kernel2iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _ZL19gramschmidt_kernel2iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 5.376 ms
+ptxas info    : Compiling entry function '_ZL19gramschmidt_kernel1iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _ZL19gramschmidt_kernel1iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 7.977 ms
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:196:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  196 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:198:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  198 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+/home/ubuntu/rt/src/polybenchGpu/CUDA/GRAMSCHM/gramschmidt.cu:200:3: warning: 'cudaThreadSynchronize' is deprecated [-Wdeprecated-declarations]
+  200 |                 cudaThreadSynchronize();
+      |                 ^
+/usr/include/cuda_runtime_api.h:1172:8: note: 'cudaThreadSynchronize' has been explicitly marked deprecated here
+ 1172 | extern __CUDA_DEPRECATED __host__ cudaError_t CUDARTAPI cudaThreadSynchronize(void);
+      |        ^
+/usr/include/cuda_runtime_api.h:280:42: note: expanded from macro '__CUDA_DEPRECATED'
+  280 | #define __CUDA_DEPRECATED __attribute__((deprecated))
+      |                                          ^
+3 warnings generated when compiling for host.
