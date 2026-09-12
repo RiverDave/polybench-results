@@ -1,0 +1,46 @@
+{
+  "campaign": "launch-noalias runtime A/B — OffloadLaunchNoalias in cir-offload-merge",
+  "date": "2026-09-12",
+  "question": "Does closed-world-proven llvm.noalias on device-kernel pointer args (pass ON) produce a real device-side speedup?",
+  "pins": {
+    "llvm": "fbda065af219",
+    "corpus": "f5613c4 (experiment/static-kernels-pr25 — static kernels, closed-world favorable case)",
+    "harness": "81d3b96",
+    "machine": "Lambda A10 24GB us-east-1, Ubuntu 22.04.5, CUDA 12.8, driver 570.148.08",
+    "protocol": "3 warmup + 8 timed (zoom: 23), serialized -j1 via --accurate-mode, validation on"
+  },
+  "runs": {
+    "A_pass_on": "nvidia/2026-09-12T07-42Z",
+    "B_pass_off": "nvidia/2026-09-12T07-56Z",
+    "A_zoom23": "nvidia/2026-09-12T08-46Z",
+    "B_zoom23": "nvidia/2026-09-12T09-00Z",
+    "compile_on": "nvidia/2026-09-12T09-15Z",
+    "compile_off": "nvidia/2026-09-12T09-31Z"
+  },
+  "result": {
+    "geomean_speedup_B_over_A": 1.6722,
+    "movers_ci_excl_1": "14/21",
+    "top_movers": {"correlation": 7.17, "covariance": 7.08, "bicg": 2.37, "2mm": 2.28, "3mm": 2.26, "gramschmidt": 2.24},
+    "flat": ["fdtd-2d", "jacobi-1d-imper", "convolution-2d", "lu", "jacobi-2d-imper", "convolution-3d"],
+    "zoom23": {"correlation": 7.166, "covariance": 7.073, "2mm": 2.286, "gramschmidt": 2.241, "lu_control": 1.006}
+  },
+  "compile_axis": {
+    "merge_total_s_on_off": [2.111, 2.105],
+    "standard_cir_total_s_on_off": [1.866, 1.867],
+    "pass_cost_per_bench_s": 0.006,
+    "verdict": "pass compile-time cost noise-level (~0.3%); merge pipeline itself +0.24s"
+  },
+  "evidence": {
+    "container_diff_attrs_only": true,
+    "sass": {"correlation_instrs_on_off": [1080, 1400], "2mm_instrs_on_off": [512, 576], "gramschmidt_instrs_on_off": [848, 1104], "lu": "byte-identical"},
+    "no_merge_artifacts_identical_across_runs": "21/21",
+    "repeatability_zoom_vs_main_armA": "<0.5% absolute times",
+    "remark_capture_full_corpus": "47/47 kernels [Passed], 0 [Missed], matches local map exactly"
+  },
+  "caveats": [
+    "static single-TU corpus = favorable closed-world ceiling; exported kernels drop today",
+    "magnitude vs 2026-09-08 restrict arm (2MM +0.7% then vs 2.28x now) not fully reconciled — attr-set + tree drift hypotheses",
+    "first zoom attempt discarded (runner default -j4 = concurrent GPU sharing; LU control moved 1.30x => invalid)"
+  ],
+  "artifacts": "full bundle (runs, zoom, compile, sass, ptx, containers, remarks, logs, MANIFEST.sha256) preserved on persistent FS /lambda/nfs/cir-build-cache/artifacts-2026-09-12 and in the lab repo projects/gsoc-2026/launch-noalias-experiment/box-artifacts/"
+}
