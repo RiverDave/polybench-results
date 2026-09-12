@@ -1,0 +1,58 @@
+{
+  "campaign": "KACP-stack runtime 3-arm — inline+KACP+canonicalize vs launch-noalias vs full package",
+  "date": "2026-09-12",
+  "question": "Does the KACP stack (host-wrapper inlining + kernel-arg constant propagation + canonicalize) produce a device-side runtime benefit on PolyBench/GPU — alone (A vs B) and on top of the launch-noalias pass (B vs C)?",
+  "pins": {
+    "llvm": "b21a0cb9ddee (gsoc/aa-launch-noalias; detached checkout on the box)",
+    "corpus": "f5613c4 (experiment/static-kernels-pr25 — static kernels, closed-world favorable case)",
+    "harness": "81d3b96",
+    "machine": "Lambda A10 24GB us-east-1, Ubuntu 22.04.5, CUDA 12.8, driver 570.148.08",
+    "protocol": "3 warmup + 8 timed, serialized -j1 via --accurate-mode, validation on (42/42 v/CIR + v/CIR-merge per arm)"
+  },
+  "arms": {
+    "A_control": {
+      "flags": "-fno-clangir-offload-merge-inline -fno-clangir-offload-merge-const-prop -fno-clangir-offload-merge-launch-noalias",
+      "stamp": "nvidia/2026-09-12T20-38Z",
+      "note": "stamp reconstructed verbatim from on-disk run output; the original publish hung on GitHub SSH host-key verification (fresh box had no known_hosts) before creating the stamp"
+    },
+    "B_kacp_stack": {"flags": "-fno-clangir-offload-merge-launch-noalias", "stamp": "nvidia/2026-09-12T20-58Z"},
+    "C_full_package": {"flags": "(defaults)", "stamp": "nvidia/2026-09-12T21-10Z"}
+  },
+  "result": {
+    "convention": "S(X;Y) = tX/tY; >1 means Y faster than X",
+    "geomean": {"S_A_B": 1.0005, "S_B_C": 1.6124, "S_A_C": 1.6132},
+    "verdict": "The KACP stack is RUNTIME-NEUTRAL on this corpus despite a ~25-30% instruction reduction: B-vs-A geomean 1.0005, all significant per-bench CIs within +/-1% except gramschmidt (0.971, small regression) and lu (0.995). The full package's 1.61x is entirely the launch-noalias pass; it reproduces the Sep-12 campaign (1.6722x) within run-to-run band.",
+    "control_CIR_pipeline_geomeans": {"S_A_B": 0.9986, "S_B_C": 1.0006, "S_A_C": 0.9992},
+    "ci95": {
+      "S_A_B": "8/21 significant: gramschmidt 0.971 [0.970,0.971] (only >1% move, a regression), lu 0.995 [0.992,0.999]; the rest of the significant set <=+/-1% (atax 1.003, bicg 1.005, covariance 0.998, gesummv 1.009, mvt 1.001, syrk 1.001); 13 crossing 1",
+      "S_B_C": "15/21 entirely above 1; 0 below; 6 crossing (convolution-2d, convolution-3d, fdtd-2d, jacobi-1d-imper, jacobi-2d-imper, lu)"
+    },
+    "top_movers_B_C": {"correlation": 4.626, "covariance": 4.277, "bicg": 2.467, "3mm": 2.335, "2mm": 2.294, "gramschmidt": 2.183, "gemver": 2.101, "doitgen": 2.035}
+  },
+  "instruction_axis": {
+    "local_full_corpus_A_to_B": {
+      "IR": "3561 -> 2687 instruction lines (-24.5%)",
+      "PTX": "2971 -> 2158 instructions (-27.4%)",
+      "source": "kacp-fullscan/tool_scan.md (tool-based scan through cir-offload-merge, local lowering, all 21 benchmarks)"
+    },
+    "sass_box_binaries_7bench_subset": {
+      "totals": "A=3696 B=2584 (-30%) C=2760",
+      "highlights": {
+        "gramschmidt_k3": "624 -> 96 (-85%)",
+        "gramschmidt_k1": "328 -> 96",
+        "corr_k2": "344 -> 232",
+        "2mm_k1": "304 -> 248",
+        "2mm_k2": "272 -> 216"
+      },
+      "regression": "convolution-3d kernel 104 -> 128 (+24) — matches the local PTX +13 anomaly",
+      "controls": {"lu": "144/40 unchanged in all three arms", "syr2k_kernel": "80/80/72 (A=B; C differs only via noalias)", "doitgen": "A=B (216/216)"}
+    },
+    "interpretation": "The corpus is memory-bound; eliminating address/launch-arg computation does not move wall time. Instruction-count metrics are not predictive of runtime here — the noalias pass wins by changing memory access behavior, not by removing instructions."
+  },
+  "artifacts": {
+    "lab_dir": "~/dev/lab/projects/gsoc-2026/kacp-fullscan/",
+    "lab_contents": "3arm-artifacts/ (stamps + temp-armA/B/C logs + 21 SASS dumps + MANIFEST.sha256), tool_scan.md (A->B full-corpus IR/PTX), 3arm_analysis.md (runtime table + CIs), 3arm_sass.md, analyze_3arm.py, sass_counts.py, scan_kacp_tool.py",
+    "box_fs_persistent": "/lambda/nfs/cir-build-cache/artifacts-kacp-3arm/ and artifacts-kacp-3arm-2026-09-12.tar.gz",
+    "runtime_cost": "instance 9536f9048d194c48a838d23d412b2808, 19:53Z-21:15Z (~1h24m, ~= $1.8), terminated and verified gone"
+  }
+}
