@@ -19,7 +19,7 @@
   },
   "result": {
     "geomean_speedup_B_over_A": 1.6722,
-    "movers_ci_excl_1": "14/21",
+    "ci95_classification": "15/21 CIs entirely above 1; 1 entirely below (convolution-3d 0.988 [0.979, 0.996]); 5 crossing 1 (conv-2d, fdtd-2d, jacobi-1d-imper, jacobi-2d-imper, lu)",
     "top_movers": {"correlation": 7.17, "covariance": 7.08, "bicg": 2.37, "2mm": 2.28, "3mm": 2.26, "gramschmidt": 2.24},
     "flat": ["fdtd-2d", "jacobi-1d-imper", "convolution-2d", "lu", "jacobi-2d-imper", "convolution-3d"],
     "zoom23": {
