@@ -22,7 +22,12 @@
     "movers_ci_excl_1": "14/21",
     "top_movers": {"correlation": 7.17, "covariance": 7.08, "bicg": 2.37, "2mm": 2.28, "3mm": 2.26, "gramschmidt": 2.24},
     "flat": ["fdtd-2d", "jacobi-1d-imper", "convolution-2d", "lu", "jacobi-2d-imper", "convolution-3d"],
-    "zoom23": {"correlation": 7.166, "covariance": 7.073, "2mm": 2.286, "gramschmidt": 2.241, "lu_control": 1.006}
+    "zoom23": {
+      "definition": "independent second run pair, 23 samples/benchmark, 5-benchmark subset (3 top movers + gramschmidt anchor + lu control); ratios are the same quantity as the main table: cross-run pass ON vs pass OFF on the merge arm",
+      "ratios": {"correlation": 7.166, "covariance": 7.073, "2mm": 2.286, "gramschmidt": 2.241, "lu_control": 1.006},
+      "subset_geomean_NOT_comparable_to_campaign": 3.0437
+    },
+    "ratio_families_note": "stamps' own summary.md tables show within-run CIR-merge/CIR (e.g. correlation 0.1401 in run A); the campaign/zoom tables in this verdict are cross-run pass-on/off ratios (correlation 7.17). Different denominators; 1/0.140 ~= 7.1 because the no-merge arm behaves like pass-off within noise."
   },
   "compile_axis": {
     "merge_total_s_on_off": [2.111, 2.105],
