@@ -1,0 +1,3 @@
+Reconstructed publish for ARM A (control): the original publish attempt hung on
+GitHub SSH host-key verification (fresh box had no known_hosts) before the stamp
+was created. All files copied verbatim from temp-armA/ on disk.
