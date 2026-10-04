@@ -1,0 +1,90 @@
+{
+  "compiler_pin": "f5bc26e1837a893954e06c75ddfb12222dd35fe9",
+  "cir_inliner_scheduled": false,
+  "benchmarks": [
+    {
+      "benchmark": "2MM",
+      "original_kernels": 2,
+      "cloned_kernels": 2,
+      "added_noalias": 6,
+      "sass_changed_clones": 2,
+      "kernels": [
+        {
+          "kernel": "_Z11mm2_kernel1iiiiffPfS_S_",
+          "clone": "_Z11mm2_kernel1iiiiffPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        },
+        {
+          "kernel": "_Z11mm2_kernel2iiiiffPfS_S_",
+          "clone": "_Z11mm2_kernel2iiiiffPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        }
+      ]
+    },
+    {
+      "benchmark": "3MM",
+      "original_kernels": 3,
+      "cloned_kernels": 3,
+      "added_noalias": 9,
+      "sass_changed_clones": 3,
+      "kernels": [
+        {
+          "kernel": "_Z11mm3_kernel1iiiiiPfS_S_",
+          "clone": "_Z11mm3_kernel1iiiiiPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        },
+        {
+          "kernel": "_Z11mm3_kernel2iiiiiPfS_S_",
+          "clone": "_Z11mm3_kernel2iiiiiPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        },
+        {
+          "kernel": "_Z11mm3_kernel3iiiiiPfS_S_",
+          "clone": "_Z11mm3_kernel3iiiiiPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        }
+      ]
+    },
+    {
+      "benchmark": "GEMM",
+      "original_kernels": 1,
+      "cloned_kernels": 1,
+      "added_noalias": 3,
+      "sass_changed_clones": 1,
+      "kernels": [
+        {
+          "kernel": "_Z11gemm_kerneliiiffPfS_S_",
+          "clone": "_Z11gemm_kerneliiiffPfS_S___noalias",
+          "pointer_facts": 3,
+          "sass_changed": true
+        }
+      ]
+    },
+    {
+      "benchmark": "LU",
+      "original_kernels": 2,
+      "cloned_kernels": 2,
+      "added_noalias": 2,
+      "sass_changed_clones": 0,
+      "kernels": [
+        {
+          "kernel": "_Z10lu_kernel1iPfi",
+          "clone": "_Z10lu_kernel1iPfi__noalias",
+          "pointer_facts": 1,
+          "sass_changed": false
+        },
+        {
+          "kernel": "_Z10lu_kernel2iPfi",
+          "clone": "_Z10lu_kernel2iPfi__noalias",
+          "pointer_facts": 1,
+          "sass_changed": false
+        }
+      ]
+    }
+  ]
+}

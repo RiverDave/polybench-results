@@ -1,0 +1,28 @@
+{
+  "checks": [
+    {
+      "benchmark": "2mm",
+      "no_merge_sass_identical": true,
+      "original_merge_kernels_unchanged": true,
+      "preflight_matches_timing_binaries": true
+    },
+    {
+      "benchmark": "3mm",
+      "no_merge_sass_identical": true,
+      "original_merge_kernels_unchanged": true,
+      "preflight_matches_timing_binaries": true
+    },
+    {
+      "benchmark": "gemm",
+      "no_merge_sass_identical": true,
+      "original_merge_kernels_unchanged": true,
+      "preflight_matches_timing_binaries": true
+    },
+    {
+      "benchmark": "lu",
+      "no_merge_sass_identical": true,
+      "original_merge_kernels_unchanged": true,
+      "preflight_matches_timing_binaries": true
+    }
+  ]
+}

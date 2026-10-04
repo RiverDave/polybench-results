@@ -1,0 +1,221 @@
+{
+  "compiler_pin": "f5bc26e1837a893954e06c75ddfb12222dd35fe9",
+  "purpose": "cloning-enabled pointer-facts A/B, external-linkage four-case subset",
+  "published_tags": {
+    "A-control": "nvidia/2026-10-04T10-02Z-cloning-A-control",
+    "B-cloning": "nvidia/2026-10-04T10-03Z-cloning-B-cloning"
+  },
+  "method": {
+    "warmups": 3,
+    "samples": 8,
+    "jobs": 1,
+    "statistic": "ratio of arithmetic mean GPU-region times, A-control/B-cloning",
+    "ci": "independent within-arm bootstrap, percentile 95%",
+    "replicates": 20000,
+    "seed": 20261004,
+    "scope_limit": "single GPU/session, selected subset; confidence intervals do not quantify between-session drift"
+  },
+  "inliner": {
+    "cir_merge_function_inliner": "not scheduled in this branch",
+    "llvm_backend_inlining": "unchanged"
+  },
+  "validation": {
+    "records": 16,
+    "passed": 16,
+    "mismatches": 0
+  },
+  "rows": [
+    {
+      "benchmark": "2mm",
+      "control_ms": 5.413125,
+      "treatment_ms": 2.400625,
+      "speedup_control_over_treatment": 2.254881541265296,
+      "ci95": [
+        2.252510769573604,
+        2.2572246810726373
+      ],
+      "classification": "speedup",
+      "control_cv": 0.0014459999887528512,
+      "treatment_cv": 0.0007019080514500492,
+      "no_merge_free_control": {
+        "control_ms": 5.412,
+        "treatment_ms": 5.407875000000001,
+        "speedup_control_over_treatment": 1.0007627765064835,
+        "ci95": [
+          0.9993762125590281,
+          1.0022885411128322
+        ],
+        "classification": "CI crosses 1",
+        "control_cv": 0.002019279009492699,
+        "treatment_cv": 0.00092951748119978
+      },
+      "effects": {
+        "benchmark": "2MM",
+        "original_kernels": 2,
+        "cloned_kernels": 2,
+        "added_noalias": 6,
+        "sass_changed_clones": 2,
+        "kernels": [
+          {
+            "kernel": "_Z11mm2_kernel1iiiiffPfS_S_",
+            "clone": "_Z11mm2_kernel1iiiiffPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          },
+          {
+            "kernel": "_Z11mm2_kernel2iiiiffPfS_S_",
+            "clone": "_Z11mm2_kernel2iiiiffPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          }
+        ]
+      }
+    },
+    {
+      "benchmark": "3mm",
+      "control_ms": 1.38125,
+      "treatment_ms": 0.634625,
+      "speedup_control_over_treatment": 2.1764821745125076,
+      "ci95": [
+        2.165977594313693,
+        2.186400561064172
+      ],
+      "classification": "speedup",
+      "control_cv": 0.005027077464828369,
+      "treatment_cv": 0.0052557274233312155,
+      "no_merge_free_control": {
+        "control_ms": 1.378625,
+        "treatment_ms": 1.375375,
+        "speedup_control_over_treatment": 1.0023629919112969,
+        "ci95": [
+          0.9983667543780056,
+          1.007191641311515
+        ],
+        "classification": "CI crosses 1",
+        "control_cv": 0.005200925935704559,
+        "treatment_cv": 0.004430085470127753
+      },
+      "effects": {
+        "benchmark": "3MM",
+        "original_kernels": 3,
+        "cloned_kernels": 3,
+        "added_noalias": 9,
+        "sass_changed_clones": 3,
+        "kernels": [
+          {
+            "kernel": "_Z11mm3_kernel1iiiiiPfS_S_",
+            "clone": "_Z11mm3_kernel1iiiiiPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          },
+          {
+            "kernel": "_Z11mm3_kernel2iiiiiPfS_S_",
+            "clone": "_Z11mm3_kernel2iiiiiPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          },
+          {
+            "kernel": "_Z11mm3_kernel3iiiiiPfS_S_",
+            "clone": "_Z11mm3_kernel3iiiiiPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          }
+        ]
+      }
+    },
+    {
+      "benchmark": "gemm",
+      "control_ms": 0.45837500000000003,
+      "treatment_ms": 0.25387499999999996,
+      "speedup_control_over_treatment": 1.805514524864599,
+      "ci95": [
+        1.7850194552529182,
+        1.8235586481113322
+      ],
+      "classification": "speedup",
+      "control_cv": 0.004029041559499123,
+      "treatment_cv": 0.01609503240904675,
+      "no_merge_free_control": {
+        "control_ms": 0.458,
+        "treatment_ms": 0.46025,
+        "speedup_control_over_treatment": 0.9951113525258013,
+        "ci95": [
+          0.9902676399026764,
+          1.000280217419207
+        ],
+        "classification": "CI crosses 1",
+        "control_cv": 0.0036906299333122885,
+        "treatment_cv": 0.006846200046593555
+      },
+      "effects": {
+        "benchmark": "GEMM",
+        "original_kernels": 1,
+        "cloned_kernels": 1,
+        "added_noalias": 3,
+        "sass_changed_clones": 1,
+        "kernels": [
+          {
+            "kernel": "_Z11gemm_kerneliiiffPfS_S_",
+            "clone": "_Z11gemm_kerneliiiffPfS_S___noalias",
+            "pointer_facts": 3,
+            "sass_changed": true
+          }
+        ]
+      }
+    },
+    {
+      "benchmark": "lu",
+      "control_ms": 49.882625,
+      "treatment_ms": 50.043625,
+      "speedup_control_over_treatment": 0.9967828070008917,
+      "ci95": [
+        0.9910613054588725,
+        1.003171162096326
+      ],
+      "classification": "CI crosses 1",
+      "control_cv": 0.0065897129251792025,
+      "treatment_cv": 0.006686156743229083,
+      "no_merge_free_control": {
+        "control_ms": 49.911625,
+        "treatment_ms": 49.87775,
+        "speedup_control_over_treatment": 1.0006791605475387,
+        "ci95": [
+          0.9965964917889893,
+          1.0045599147834605
+        ],
+        "classification": "CI crosses 1",
+        "control_cv": 0.004052844521401467,
+        "treatment_cv": 0.0045734088845727095
+      },
+      "effects": {
+        "benchmark": "LU",
+        "original_kernels": 2,
+        "cloned_kernels": 2,
+        "added_noalias": 2,
+        "sass_changed_clones": 0,
+        "kernels": [
+          {
+            "kernel": "_Z10lu_kernel1iPfi",
+            "clone": "_Z10lu_kernel1iPfi__noalias",
+            "pointer_facts": 1,
+            "sass_changed": false
+          },
+          {
+            "kernel": "_Z10lu_kernel2iPfi",
+            "clone": "_Z10lu_kernel2iPfi__noalias",
+            "pointer_facts": 1,
+            "sass_changed": false
+          }
+        ]
+      }
+    }
+  ],
+  "subset_geomean_speedup": 1.7239318474108938,
+  "subset_geomean_ci95": [
+    1.7179351818351043,
+    1.7294744015559276
+  ],
+  "all_no_merge_control_cis_cross_one": true,
+  "lu_unchanged_sass_control_ci_crosses_one": true,
+  "keep_running": true
+}
