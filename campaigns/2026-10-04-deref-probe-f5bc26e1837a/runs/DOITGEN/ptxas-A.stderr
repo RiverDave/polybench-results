@@ -1,0 +1,21 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z15doitgen_kernel2PfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z15doitgen_kernel2PfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 1.660 ms
+ptxas info    : Compiling entry function '_Z15doitgen_kernel2PfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z15doitgen_kernel2PfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 1.067 ms
+ptxas info    : Compiling entry function '_Z15doitgen_kernel1PfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z15doitgen_kernel1PfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 13.391 ms
+ptxas info    : Compiling entry function '_Z15doitgen_kernel1PfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z15doitgen_kernel1PfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 7.208 ms

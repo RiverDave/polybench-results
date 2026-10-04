@@ -1,0 +1,11 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z20convolution3D_kerneliiiPfS_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z20convolution3D_kerneliiiPfS_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 3.083 ms
+ptxas info    : Compiling entry function '_Z20convolution3D_kerneliiiPfS_i' for 'sm_86'
+ptxas info    : Function properties for _Z20convolution3D_kerneliiiPfS_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 2.441 ms

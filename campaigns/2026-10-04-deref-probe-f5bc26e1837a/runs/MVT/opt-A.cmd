@@ -1,0 +1,1 @@
+/home/ubuntu/llvm-project/build/bin/opt -S -mtriple=nvptx64-nvidia-cuda -mcpu=sm_86 -mattr=+ptx80 -passes=default<O3> -verify-each /home/ubuntu/aa-deref-20261004/runs/MVT/A/raw.device.ll -o /home/ubuntu/aa-deref-20261004/runs/MVT/A/opt.ll

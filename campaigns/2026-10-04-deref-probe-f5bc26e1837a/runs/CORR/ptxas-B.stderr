@@ -1,0 +1,41 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z11corr_kerneliiPfS___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11corr_kerneliiPfS___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 376 bytes cmem[0]
+ptxas info    : Compile time = 8.821 ms
+ptxas info    : Compiling entry function '_Z11corr_kerneliiPfS_' for 'sm_86'
+ptxas info    : Function properties for _Z11corr_kerneliiPfS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 0 barriers, 376 bytes cmem[0]
+ptxas info    : Compile time = 8.778 ms
+ptxas info    : Compiling entry function '_Z13reduce_kerneliiPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z13reduce_kerneliiPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 5.243 ms
+ptxas info    : Compiling entry function '_Z13reduce_kerneliiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z13reduce_kerneliiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.888 ms
+ptxas info    : Compiling entry function '_Z10std_kerneliiPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z10std_kerneliiPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 14.029 ms
+ptxas info    : Compiling entry function '_Z10std_kerneliiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z10std_kerneliiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 13.175 ms
+ptxas info    : Compiling entry function '_Z11mean_kerneliiPfS___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11mean_kerneliiPfS___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 376 bytes cmem[0]
+ptxas info    : Compile time = 10.876 ms
+ptxas info    : Compiling entry function '_Z11mean_kerneliiPfS_' for 'sm_86'
+ptxas info    : Function properties for _Z11mean_kerneliiPfS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, used 0 barriers, 376 bytes cmem[0]
+ptxas info    : Compile time = 12.480 ms

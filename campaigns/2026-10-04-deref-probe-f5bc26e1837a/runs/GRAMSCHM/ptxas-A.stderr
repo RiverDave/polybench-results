@@ -1,0 +1,31 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel3iiPfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel3iiPfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 10.257 ms
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel3iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel3iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 15.018 ms
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel2iiPfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel2iiPfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 4.837 ms
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel2iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel2iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 4.723 ms
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel1iiPfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel1iiPfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 7.819 ms
+ptxas info    : Compiling entry function '_Z19gramschmidt_kernel1iiPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z19gramschmidt_kernel1iiPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 8.014 ms

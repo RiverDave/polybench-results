@@ -1,0 +1,11 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z11syrk_kerneliiffPfS___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11syrk_kerneliiffPfS___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.434 ms
+ptxas info    : Compiling entry function '_Z11syrk_kerneliiffPfS_' for 'sm_86'
+ptxas info    : Function properties for _Z11syrk_kerneliiffPfS_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.288 ms

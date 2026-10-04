@@ -1,0 +1,1 @@
+/home/ubuntu/llvm-project/build/bin/clang -cc1 -triple nvptx64-nvidia-cuda -target-cpu sm_86 -target-feature +ptx80 -x cir -fclangir -emit-llvm -disable-llvm-passes -O3 /home/ubuntu/aa-deref-20261004/runs/3MM/A/device.cir -o /home/ubuntu/aa-deref-20261004/runs/3MM/A/raw.device.ll

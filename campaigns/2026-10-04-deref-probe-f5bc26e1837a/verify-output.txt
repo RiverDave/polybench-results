@@ -1,0 +1,31 @@
+TOY WITH -> SELECT (branch removed)
+TOY WITHOUT -> BRANCH KEPT
+TOY load+store (deref) -> BRANCH KEPT
+RAW strip-identity residual: [('2DCONV', 0), ('2MM', 0), ('3DCONV', 0), ('3MM', 0), ('ADI', 0), ('ATAX', 0), ('BICG', 0), ('CORR', 0), ('COVAR', 0), ('DOITGEN', 0), ('FDTD-2D', 0), ('GEMM', 0), ('GEMVER', 0), ('GESUMMV', 0), ('GRAMSCHM', 0), ('JACOBI1D', 0), ('JACOBI2D', 0), ('LU', 0), ('MVT', 0), ('SYR2K', 0), ('SYRK', 0)]
+  nonzero: []
+TIME 2MM A {'opt': 29.3, 'llc': 28.9, 'ptxas': 36.6} ms median x5
+TIME 2MM B {'opt': 29.1, 'llc': 28.7, 'ptxas': 36.5} ms median x5
+TIME 3MM A {'opt': 40.3, 'llc': 38.6, 'ptxas': 49.6} ms median x5
+TIME 3MM B {'opt': 40.3, 'llc': 39.1, 'ptxas': 49.4} ms median x5
+RES 2DCONV injected 2 resolved {"_Z20convolution2D_kerneliiPfS_": {"2": 67108864, "3": 67108864}}
+RES 2MM injected 6 resolved {"_Z11mm2_kernel1iiiiffPfS_S_": {"6": 4194304, "7": 4194304, "8": 4194304}, "_Z11mm2_kernel2iiiiffPfS_S_": {"6": 4194304, "7": 4194304, "8": 4194304}}
+RES 3DCONV injected 2 resolved {"_Z20convolution3D_kerneliiiPfS_i": {"3": 67108864, "4": 67108864}}
+RES 3MM injected 9 resolved {"_Z11mm3_kernel1iiiiiPfS_S_": {"5": 1048576, "6": 1048576, "7": 1048576}, "_Z11mm3_kernel2iiiiiPfS_S_": {"5": 1048576, "6": 1048576, "7": 1048576}, "_Z11mm3_kernel3iiiiiPfS_S_": {"5": 1048576, "6": 1048576, "7": 1048576}}
+RES ADI injected 18 resolved {"_Z11adi_kernel1iPfS_S_": {"1": 4194304, "2": 4194304, "3": 4194304}, "_Z11adi_kernel2iPfS_S_": {"1": 4194304, "2": 4194304, "3": 4194304}, "_Z11adi_kernel3iPfS_S_": {"1": 4194304, "2": 4194304, "3": 4194304}, "_Z11adi_kernel4iPfS_S_i": {"1": 4194304, "2": 4194304, "3": 4194304}, "_Z11adi_kernel5iPfS_S_": {"1": 4194304, "2": 4194304, "3": 4194304}, "_Z11adi_kernel6iPfS_S_i": {"1": 4194304, "2": 4194304, "3": 4194304}}
+RES ATAX injected 6 resolved {"_Z12atax_kernel1iiPfS_S_": {"2": 67108864, "3": 16384, "4": 16384}, "_Z12atax_kernel2iiPfS_S_": {"2": 67108864, "3": 16384, "4": 16384}}
+RES BICG injected 6 resolved {"_Z12bicg_kernel1iiPfS_S_": {"2": 67108864, "3": 16384, "4": 16384}, "_Z12bicg_kernel2iiPfS_S_": {"2": 67108864, "3": 16384, "4": 16384}}
+RES CORR injected 10 resolved {"_Z11mean_kerneliiPfS_": {"2": 8192, "3": 16777216}, "_Z10std_kerneliiPfS_S_": {"2": 8192, "3": 8192, "4": 16777216}, "_Z13reduce_kerneliiPfS_S_": {"2": 8192, "3": 8192, "4": 16777216}, "_Z11corr_kerneliiPfS_": {"2": 16777216, "3": 16777216}}
+RES COVAR injected 6 resolved {"_Z11mean_kerneliiPfS_": {"2": 8192, "3": 16777216}, "_Z13reduce_kerneliiPfS_": {"2": 8192, "3": 16777216}, "_Z12covar_kerneliiPfS_": {"2": 16777216, "3": 16777216}}
+RES DOITGEN injected 6 resolved {"_Z15doitgen_kernel1PfS_S_i": {"0": 8388608, "1": 8388608, "2": 65536}, "_Z15doitgen_kernel2PfS_S_i": {"0": 8388608, "1": 8388608, "2": 65536}}
+RES FDTD-2D injected 10 resolved {"_Z17fdtd_step1_kerneliiPfS_S_S_i": {"2": 2000, "3": 16777216, "4": 16777216, "5": 16777216}, "_Z17fdtd_step2_kerneliiPfS_S_i": {"2": 16777216, "3": 16777216, "4": 16777216}, "_Z17fdtd_step3_kerneliiPfS_S_i": {"2": 16777216, "3": 16777216, "4": 16777216}}
+RES GEMM injected 3 resolved {"_Z11gemm_kerneliiiffPfS_S_": {"5": 1048576, "6": 1048576, "7": 1048576}}
+RES GEMVER injected 12 resolved {"_Z14gemver_kernel1iffPfS_S_S_S_": {"3": 67108864, "4": 16384, "5": 16384, "6": 16384, "7": 16384}, "_Z14gemver_kernel2iffPfS_S_S_": {"3": 67108864, "4": 16384, "5": 16384, "6": 16384}, "_Z14gemver_kernel3iffPfS_S_": {"3": 67108864, "4": 16384, "5": 16384}}
+RES GESUMMV injected 5 resolved {"_Z14gesummv_kerneliffPfS_S_S_S_": {"3": 67108864, "4": 67108864, "5": 16384, "6": 16384, "7": 16384}}
+RES GRAMSCHM injected 9 resolved {"_Z19gramschmidt_kernel1iiPfS_S_i": {"2": 16777216, "3": 16777216, "4": 16777216}, "_Z19gramschmidt_kernel2iiPfS_S_i": {"2": 16777216, "3": 16777216, "4": 16777216}, "_Z19gramschmidt_kernel3iiPfS_S_i": {"2": 16777216, "3": 16777216, "4": 16777216}}
+RES JACOBI1D injected 4 resolved {"_Z21runJacobiCUDA_kernel1iPfS_": {"1": 16384, "2": 16384}, "_Z21runJacobiCUDA_kernel2iPfS_": {"1": 16384, "2": 16384}}
+RES JACOBI2D injected 4 resolved {"_Z21runJacobiCUDA_kernel1iPfS_": {"1": 4000000, "2": 4000000}, "_Z21runJacobiCUDA_kernel2iPfS_": {"1": 4000000, "2": 4000000}}
+RES LU injected 2 resolved {"_Z10lu_kernel1iPfi": {"1": 16777216}, "_Z10lu_kernel2iPfi": {"1": 16777216}}
+RES MVT injected 6 resolved {"_Z11mvt_kernel1iPfS_S_": {"1": 67108864, "2": 16384, "3": 16384}, "_Z11mvt_kernel2iPfS_S_": {"1": 67108864, "2": 16384, "3": 16384}}
+RES SYR2K injected 3 resolved {"_Z12syr2k_kerneliiffPfS_S_": {"4": 4194304, "5": 4194304, "6": 4194304}}
+RES SYRK injected 2 resolved {"_Z11syrk_kerneliiffPfS_": {"4": 4194304, "5": 4194304}}
+VERIFY-DONE

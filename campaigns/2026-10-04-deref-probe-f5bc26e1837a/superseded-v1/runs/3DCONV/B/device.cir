@@ -1,0 +1,999 @@
+module @device_cuda_nvptx64_nvidia_cuda__sm_86 attributes {cir.default_tls_model = #cir.tls_model<tls_dyn>, cir.int_type_width = 32 : i32, cir.lang = #cir.lang<cxx>, cir.lowering_lang_options = #cir.lowering_lang_options<exceptions = true, threadsafe_statics = false, cuda = true, cuda_is_device = true, hip = false, gpu_rdc = false, openmp = false, openmp_is_target_device = false, clang_abi_compat = 16>, cir.module_asm = [], cir.offload.bundle_id = "cuda-nvptx64-nvidia-cuda--sm_86", cir.offload.kind = #cir.offload<device>, cir.opt_info = #cir.opt_info<level = 3, size = 0>, cir.record_layouts = {__cuda_builtin_blockDim_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_blockIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_threadIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>}, cir.sdk_version = "12.8", cir.size_type_width = 64 : i32, cir.triple = "nvptx64-nvidia-cuda", dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<6> = dense<32> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, i256 = dense<256> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.legal_int_widths" = array<i32: 16, 32, 64>, !cir.ptr<!cir.void> = #cir.ptr_spec<size = 64, abi = 64, preferred = 64, index = 64>>} {
+  cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockIdx : !cir.struct<"__cuda_builtin_blockIdx_t" {pad !cir.int<u, 8>}> {alignment = 1 : i64}
+  cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockDim : !cir.struct<"__cuda_builtin_blockDim_t" {pad !cir.int<u, 8>}> {alignment = 1 : i64}
+  cir.global "private" constant extern_weak dso_local  target_address_space(1) @threadIdx : !cir.struct<"__cuda_builtin_threadIdx_t" {pad !cir.int<u, 8>}> {alignment = 1 : i64}
+  cir.func no_inline dso_local @_Z20convolution3D_kerneliiiPfS_i(%arg0: !cir.int<s, 32> {llvm.noundef}, %arg1: !cir.int<s, 32> {llvm.noundef}, %arg2: !cir.int<s, 32> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noundef}, %arg5: !cir.int<s, 32> {llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.const #cir.bool<false> : !cir.bool
+    %1 = cir.const #cir.int<0> : !cir.int<s, 32>
+    %2 = cir.const #cir.int<256> : !cir.int<s, 32>
+    %3 = cir.const #cir.int<1> : !cir.int<s, 32>
+    %4 = cir.const #cir.int<10> : !cir.int<s, 32>
+    %5 = cir.const #cir.int<7> : !cir.int<s, 32>
+    %6 = cir.const #cir.int<4> : !cir.int<s, 32>
+    %7 = cir.const #cir.int<-9> : !cir.int<s, 32>
+    %8 = cir.const #cir.int<6> : !cir.int<s, 32>
+    %9 = cir.const #cir.int<-3> : !cir.int<s, 32>
+    %10 = cir.const #cir.int<-8> : !cir.int<s, 32>
+    %11 = cir.const #cir.int<5> : !cir.int<s, 32>
+    %12 = cir.const #cir.int<2> : !cir.int<s, 32>
+    %13 = cir.alloca "ni" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %14 = cir.alloca "nj" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %15 = cir.alloca "nk" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %16 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+    %17 = cir.alloca "B" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+    %18 = cir.alloca "i" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %19 = cir.alloca "k" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %20 = cir.alloca "j" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %21 = cir.alloca "c11" align(4) : !cir.ptr<!cir.float>
+    %22 = cir.alloca "c12" align(4) : !cir.ptr<!cir.float>
+    %23 = cir.alloca "c13" align(4) : !cir.ptr<!cir.float>
+    %24 = cir.alloca "c21" align(4) : !cir.ptr<!cir.float>
+    %25 = cir.alloca "c22" align(4) : !cir.ptr<!cir.float>
+    %26 = cir.alloca "c23" align(4) : !cir.ptr<!cir.float>
+    %27 = cir.alloca "c31" align(4) : !cir.ptr<!cir.float>
+    %28 = cir.alloca "c32" align(4) : !cir.ptr<!cir.float>
+    %29 = cir.alloca "c33" align(4) : !cir.ptr<!cir.float>
+    cir.store %arg0, %13 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg1, %14 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg2, %15 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg3, %16 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+    cir.store %arg4, %17 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+    cir.store %arg5, %18 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.lifetime.start %19 : !cir.ptr<!cir.int<s, 32>>
+    cir.cleanup.scope {
+      %30 = cir.get_global @blockIdx : !cir.ptr<!cir.struct<"__cuda_builtin_blockIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %31 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %32 = cir.get_global @blockDim : !cir.ptr<!cir.struct<"__cuda_builtin_blockDim_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %33 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %34 = cir.mul %31, %33 : !cir.int<u, 32>
+      %35 = cir.get_global @threadIdx : !cir.ptr<!cir.struct<"__cuda_builtin_threadIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %36 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %37 = cir.add %34, %36 : !cir.int<u, 32>
+      %38 = cir.cast integral %37 : !cir.int<u, 32> -> !cir.int<s, 32>
+      cir.store align(4) %38, %19 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+      cir.lifetime.start %20 : !cir.ptr<!cir.int<s, 32>>
+      cir.cleanup.scope {
+        %39 = cir.get_global @blockIdx : !cir.ptr<!cir.struct<"__cuda_builtin_blockIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %40 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %41 = cir.get_global @blockDim : !cir.ptr<!cir.struct<"__cuda_builtin_blockDim_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %42 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %43 = cir.mul %40, %42 : !cir.int<u, 32>
+        %44 = cir.get_global @threadIdx : !cir.ptr<!cir.struct<"__cuda_builtin_threadIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %45 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %46 = cir.add %43, %45 : !cir.int<u, 32>
+        %47 = cir.cast integral %46 : !cir.int<u, 32> -> !cir.int<s, 32>
+        cir.store align(4) %47, %20 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+        cir.lifetime.start %21 : !cir.ptr<!cir.float>
+        cir.cleanup.scope {
+          cir.lifetime.start %22 : !cir.ptr<!cir.float>
+          cir.cleanup.scope {
+            cir.lifetime.start %23 : !cir.ptr<!cir.float>
+            cir.cleanup.scope {
+              cir.lifetime.start %24 : !cir.ptr<!cir.float>
+              cir.cleanup.scope {
+                cir.lifetime.start %25 : !cir.ptr<!cir.float>
+                cir.cleanup.scope {
+                  cir.lifetime.start %26 : !cir.ptr<!cir.float>
+                  cir.cleanup.scope {
+                    cir.lifetime.start %27 : !cir.ptr<!cir.float>
+                    cir.cleanup.scope {
+                      cir.lifetime.start %28 : !cir.ptr<!cir.float>
+                      cir.cleanup.scope {
+                        cir.lifetime.start %29 : !cir.ptr<!cir.float>
+                        cir.cleanup.scope {
+                          %48 = cir.cast int_to_float %12 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %48, %21 : !cir.float, !cir.ptr<!cir.float>
+                          %49 = cir.cast int_to_float %11 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %49, %24 : !cir.float, !cir.ptr<!cir.float>
+                          %50 = cir.cast int_to_float %10 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %50, %27 : !cir.float, !cir.ptr<!cir.float>
+                          %51 = cir.cast int_to_float %9 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %51, %22 : !cir.float, !cir.ptr<!cir.float>
+                          %52 = cir.cast int_to_float %8 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %52, %25 : !cir.float, !cir.ptr<!cir.float>
+                          %53 = cir.cast int_to_float %7 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %53, %28 : !cir.float, !cir.ptr<!cir.float>
+                          %54 = cir.cast int_to_float %6 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %54, %23 : !cir.float, !cir.ptr<!cir.float>
+                          %55 = cir.cast int_to_float %5 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %55, %26 : !cir.float, !cir.ptr<!cir.float>
+                          %56 = cir.cast int_to_float %4 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %56, %29 : !cir.float, !cir.ptr<!cir.float>
+                          cir.scope {
+                            %57 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                            %58 = cir.load align(4) %13 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                            %59 = cir.sub nsw %58, %3 : !cir.int<s, 32>
+                            %60 = cir.cmp lt %57, %59 : !cir.int<s, 32>
+                            %61 = cir.ternary(%60, true {
+                              %66 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.load align(4) %14 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.cmp lt %66, %68 : !cir.int<s, 32>
+                              cir.yield %69 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %62 = cir.ternary(%61, true {
+                              %66 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.load align(4) %15 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.cmp lt %66, %68 : !cir.int<s, 32>
+                              cir.yield %69 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %63 = cir.ternary(%62, true {
+                              %66 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %64 = cir.ternary(%63, true {
+                              %66 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %65 = cir.ternary(%64, true {
+                              %66 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            cir.if %65 {
+                              %66 = cir.load align(4) %21 : !cir.ptr<!cir.float>, !cir.float
+                              %67 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %70 = cir.mul nsw %68, %69 : !cir.int<s, 32>
+                              %71 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %72 = cir.sub nsw %71, %3 : !cir.int<s, 32>
+                              %73 = cir.mul nsw %72, %2 : !cir.int<s, 32>
+                              %74 = cir.add nsw %70, %73 : !cir.int<s, 32>
+                              %75 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %76 = cir.sub nsw %75, %3 : !cir.int<s, 32>
+                              %77 = cir.add nsw %74, %76 : !cir.int<s, 32>
+                              %78 = cir.cast integral %77 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %79 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %80 = cir.ptr_stride %79, %78 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %81 = cir.load align(4) %80 : !cir.ptr<!cir.float>, !cir.float
+                              %82 = cir.fmul %66, %81 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %83 = cir.load align(4) %23 : !cir.ptr<!cir.float>, !cir.float
+                              %84 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %85 = cir.add nsw %84, %3 : !cir.int<s, 32>
+                              %86 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %87 = cir.mul nsw %85, %86 : !cir.int<s, 32>
+                              %88 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %89 = cir.sub nsw %88, %3 : !cir.int<s, 32>
+                              %90 = cir.mul nsw %89, %2 : !cir.int<s, 32>
+                              %91 = cir.add nsw %87, %90 : !cir.int<s, 32>
+                              %92 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %93 = cir.sub nsw %92, %3 : !cir.int<s, 32>
+                              %94 = cir.add nsw %91, %93 : !cir.int<s, 32>
+                              %95 = cir.cast integral %94 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %96 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %97 = cir.ptr_stride %96, %95 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %98 = cir.load align(4) %97 : !cir.ptr<!cir.float>, !cir.float
+                              %99 = cir.fmul %83, %98 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %100 = cir.fadd %82, %99 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %101 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                              %102 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %103 = cir.sub nsw %102, %3 : !cir.int<s, 32>
+                              %104 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %105 = cir.mul nsw %103, %104 : !cir.int<s, 32>
+                              %106 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %107 = cir.sub nsw %106, %3 : !cir.int<s, 32>
+                              %108 = cir.mul nsw %107, %2 : !cir.int<s, 32>
+                              %109 = cir.add nsw %105, %108 : !cir.int<s, 32>
+                              %110 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %111 = cir.sub nsw %110, %3 : !cir.int<s, 32>
+                              %112 = cir.add nsw %109, %111 : !cir.int<s, 32>
+                              %113 = cir.cast integral %112 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %114 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %115 = cir.ptr_stride %114, %113 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %116 = cir.load align(4) %115 : !cir.ptr<!cir.float>, !cir.float
+                              %117 = cir.fmul %101, %116 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %118 = cir.fadd %100, %117 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %119 = cir.load align(4) %26 : !cir.ptr<!cir.float>, !cir.float
+                              %120 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %121 = cir.add nsw %120, %3 : !cir.int<s, 32>
+                              %122 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %123 = cir.mul nsw %121, %122 : !cir.int<s, 32>
+                              %124 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %125 = cir.sub nsw %124, %3 : !cir.int<s, 32>
+                              %126 = cir.mul nsw %125, %2 : !cir.int<s, 32>
+                              %127 = cir.add nsw %123, %126 : !cir.int<s, 32>
+                              %128 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %129 = cir.sub nsw %128, %3 : !cir.int<s, 32>
+                              %130 = cir.add nsw %127, %129 : !cir.int<s, 32>
+                              %131 = cir.cast integral %130 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %132 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %133 = cir.ptr_stride %132, %131 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %134 = cir.load align(4) %133 : !cir.ptr<!cir.float>, !cir.float
+                              %135 = cir.fmul %119, %134 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %136 = cir.fadd %118, %135 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %137 = cir.load align(4) %27 : !cir.ptr<!cir.float>, !cir.float
+                              %138 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %139 = cir.sub nsw %138, %3 : !cir.int<s, 32>
+                              %140 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %141 = cir.mul nsw %139, %140 : !cir.int<s, 32>
+                              %142 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %143 = cir.sub nsw %142, %3 : !cir.int<s, 32>
+                              %144 = cir.mul nsw %143, %2 : !cir.int<s, 32>
+                              %145 = cir.add nsw %141, %144 : !cir.int<s, 32>
+                              %146 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %147 = cir.sub nsw %146, %3 : !cir.int<s, 32>
+                              %148 = cir.add nsw %145, %147 : !cir.int<s, 32>
+                              %149 = cir.cast integral %148 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %150 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %151 = cir.ptr_stride %150, %149 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %152 = cir.load align(4) %151 : !cir.ptr<!cir.float>, !cir.float
+                              %153 = cir.fmul %137, %152 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %154 = cir.fadd %136, %153 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %155 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                              %156 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %157 = cir.add nsw %156, %3 : !cir.int<s, 32>
+                              %158 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %159 = cir.mul nsw %157, %158 : !cir.int<s, 32>
+                              %160 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %161 = cir.sub nsw %160, %3 : !cir.int<s, 32>
+                              %162 = cir.mul nsw %161, %2 : !cir.int<s, 32>
+                              %163 = cir.add nsw %159, %162 : !cir.int<s, 32>
+                              %164 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %165 = cir.sub nsw %164, %3 : !cir.int<s, 32>
+                              %166 = cir.add nsw %163, %165 : !cir.int<s, 32>
+                              %167 = cir.cast integral %166 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %168 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %169 = cir.ptr_stride %168, %167 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %170 = cir.load align(4) %169 : !cir.ptr<!cir.float>, !cir.float
+                              %171 = cir.fmul %155, %170 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %172 = cir.fadd %154, %171 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %173 = cir.load align(4) %22 : !cir.ptr<!cir.float>, !cir.float
+                              %174 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %175 = cir.add nsw %174, %1 : !cir.int<s, 32>
+                              %176 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %177 = cir.mul nsw %175, %176 : !cir.int<s, 32>
+                              %178 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %179 = cir.sub nsw %178, %3 : !cir.int<s, 32>
+                              %180 = cir.mul nsw %179, %2 : !cir.int<s, 32>
+                              %181 = cir.add nsw %177, %180 : !cir.int<s, 32>
+                              %182 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %183 = cir.add nsw %182, %1 : !cir.int<s, 32>
+                              %184 = cir.add nsw %181, %183 : !cir.int<s, 32>
+                              %185 = cir.cast integral %184 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %186 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %187 = cir.ptr_stride %186, %185 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %188 = cir.load align(4) %187 : !cir.ptr<!cir.float>, !cir.float
+                              %189 = cir.fmul %173, %188 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %190 = cir.fadd %172, %189 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %191 = cir.load align(4) %25 : !cir.ptr<!cir.float>, !cir.float
+                              %192 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %193 = cir.add nsw %192, %1 : !cir.int<s, 32>
+                              %194 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %195 = cir.mul nsw %193, %194 : !cir.int<s, 32>
+                              %196 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %197 = cir.add nsw %196, %1 : !cir.int<s, 32>
+                              %198 = cir.mul nsw %197, %2 : !cir.int<s, 32>
+                              %199 = cir.add nsw %195, %198 : !cir.int<s, 32>
+                              %200 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %201 = cir.add nsw %200, %1 : !cir.int<s, 32>
+                              %202 = cir.add nsw %199, %201 : !cir.int<s, 32>
+                              %203 = cir.cast integral %202 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %204 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %205 = cir.ptr_stride %204, %203 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %206 = cir.load align(4) %205 : !cir.ptr<!cir.float>, !cir.float
+                              %207 = cir.fmul %191, %206 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %208 = cir.fadd %190, %207 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %209 = cir.load align(4) %28 : !cir.ptr<!cir.float>, !cir.float
+                              %210 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %211 = cir.add nsw %210, %1 : !cir.int<s, 32>
+                              %212 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %213 = cir.mul nsw %211, %212 : !cir.int<s, 32>
+                              %214 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %215 = cir.add nsw %214, %3 : !cir.int<s, 32>
+                              %216 = cir.mul nsw %215, %2 : !cir.int<s, 32>
+                              %217 = cir.add nsw %213, %216 : !cir.int<s, 32>
+                              %218 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %219 = cir.add nsw %218, %1 : !cir.int<s, 32>
+                              %220 = cir.add nsw %217, %219 : !cir.int<s, 32>
+                              %221 = cir.cast integral %220 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %222 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %223 = cir.ptr_stride %222, %221 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %224 = cir.load align(4) %223 : !cir.ptr<!cir.float>, !cir.float
+                              %225 = cir.fmul %209, %224 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %226 = cir.fadd %208, %225 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %227 = cir.load align(4) %21 : !cir.ptr<!cir.float>, !cir.float
+                              %228 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %229 = cir.sub nsw %228, %3 : !cir.int<s, 32>
+                              %230 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %231 = cir.mul nsw %229, %230 : !cir.int<s, 32>
+                              %232 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %233 = cir.sub nsw %232, %3 : !cir.int<s, 32>
+                              %234 = cir.mul nsw %233, %2 : !cir.int<s, 32>
+                              %235 = cir.add nsw %231, %234 : !cir.int<s, 32>
+                              %236 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %237 = cir.add nsw %236, %3 : !cir.int<s, 32>
+                              %238 = cir.add nsw %235, %237 : !cir.int<s, 32>
+                              %239 = cir.cast integral %238 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %240 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %241 = cir.ptr_stride %240, %239 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %242 = cir.load align(4) %241 : !cir.ptr<!cir.float>, !cir.float
+                              %243 = cir.fmul %227, %242 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %244 = cir.fadd %226, %243 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %245 = cir.load align(4) %23 : !cir.ptr<!cir.float>, !cir.float
+                              %246 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %247 = cir.add nsw %246, %3 : !cir.int<s, 32>
+                              %248 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %249 = cir.mul nsw %247, %248 : !cir.int<s, 32>
+                              %250 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %251 = cir.sub nsw %250, %3 : !cir.int<s, 32>
+                              %252 = cir.mul nsw %251, %2 : !cir.int<s, 32>
+                              %253 = cir.add nsw %249, %252 : !cir.int<s, 32>
+                              %254 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %255 = cir.add nsw %254, %3 : !cir.int<s, 32>
+                              %256 = cir.add nsw %253, %255 : !cir.int<s, 32>
+                              %257 = cir.cast integral %256 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %258 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %259 = cir.ptr_stride %258, %257 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %260 = cir.load align(4) %259 : !cir.ptr<!cir.float>, !cir.float
+                              %261 = cir.fmul %245, %260 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %262 = cir.fadd %244, %261 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %263 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                              %264 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %265 = cir.sub nsw %264, %3 : !cir.int<s, 32>
+                              %266 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %267 = cir.mul nsw %265, %266 : !cir.int<s, 32>
+                              %268 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %269 = cir.add nsw %268, %1 : !cir.int<s, 32>
+                              %270 = cir.mul nsw %269, %2 : !cir.int<s, 32>
+                              %271 = cir.add nsw %267, %270 : !cir.int<s, 32>
+                              %272 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %273 = cir.add nsw %272, %3 : !cir.int<s, 32>
+                              %274 = cir.add nsw %271, %273 : !cir.int<s, 32>
+                              %275 = cir.cast integral %274 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %276 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %277 = cir.ptr_stride %276, %275 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %278 = cir.load align(4) %277 : !cir.ptr<!cir.float>, !cir.float
+                              %279 = cir.fmul %263, %278 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %280 = cir.fadd %262, %279 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %281 = cir.load align(4) %26 : !cir.ptr<!cir.float>, !cir.float
+                              %282 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %283 = cir.add nsw %282, %3 : !cir.int<s, 32>
+                              %284 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %285 = cir.mul nsw %283, %284 : !cir.int<s, 32>
+                              %286 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %287 = cir.add nsw %286, %1 : !cir.int<s, 32>
+                              %288 = cir.mul nsw %287, %2 : !cir.int<s, 32>
+                              %289 = cir.add nsw %285, %288 : !cir.int<s, 32>
+                              %290 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %291 = cir.add nsw %290, %3 : !cir.int<s, 32>
+                              %292 = cir.add nsw %289, %291 : !cir.int<s, 32>
+                              %293 = cir.cast integral %292 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %294 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %295 = cir.ptr_stride %294, %293 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %296 = cir.load align(4) %295 : !cir.ptr<!cir.float>, !cir.float
+                              %297 = cir.fmul %281, %296 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %298 = cir.fadd %280, %297 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %299 = cir.load align(4) %27 : !cir.ptr<!cir.float>, !cir.float
+                              %300 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %301 = cir.sub nsw %300, %3 : !cir.int<s, 32>
+                              %302 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %303 = cir.mul nsw %301, %302 : !cir.int<s, 32>
+                              %304 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %305 = cir.add nsw %304, %3 : !cir.int<s, 32>
+                              %306 = cir.mul nsw %305, %2 : !cir.int<s, 32>
+                              %307 = cir.add nsw %303, %306 : !cir.int<s, 32>
+                              %308 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %309 = cir.add nsw %308, %3 : !cir.int<s, 32>
+                              %310 = cir.add nsw %307, %309 : !cir.int<s, 32>
+                              %311 = cir.cast integral %310 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %312 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %313 = cir.ptr_stride %312, %311 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %314 = cir.load align(4) %313 : !cir.ptr<!cir.float>, !cir.float
+                              %315 = cir.fmul %299, %314 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %316 = cir.fadd %298, %315 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %317 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                              %318 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %319 = cir.add nsw %318, %3 : !cir.int<s, 32>
+                              %320 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %321 = cir.mul nsw %319, %320 : !cir.int<s, 32>
+                              %322 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %323 = cir.add nsw %322, %3 : !cir.int<s, 32>
+                              %324 = cir.mul nsw %323, %2 : !cir.int<s, 32>
+                              %325 = cir.add nsw %321, %324 : !cir.int<s, 32>
+                              %326 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %327 = cir.add nsw %326, %3 : !cir.int<s, 32>
+                              %328 = cir.add nsw %325, %327 : !cir.int<s, 32>
+                              %329 = cir.cast integral %328 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %330 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %331 = cir.ptr_stride %330, %329 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %332 = cir.load align(4) %331 : !cir.ptr<!cir.float>, !cir.float
+                              %333 = cir.fmul %317, %332 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %334 = cir.fadd %316, %333 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %335 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %336 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %337 = cir.mul nsw %335, %336 : !cir.int<s, 32>
+                              %338 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %339 = cir.mul nsw %338, %2 : !cir.int<s, 32>
+                              %340 = cir.add nsw %337, %339 : !cir.int<s, 32>
+                              %341 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %342 = cir.add nsw %340, %341 : !cir.int<s, 32>
+                              %343 = cir.cast integral %342 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %344 = cir.load align(8) %17 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %345 = cir.ptr_stride %344, %343 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              cir.store align(4) %334, %345 : !cir.float, !cir.ptr<!cir.float>
+                            }
+                          }
+                          cir.yield
+                        } cleanup all {
+                          cir.lifetime.end %29 : !cir.ptr<!cir.float>
+                          cir.yield
+                        }
+                        cir.yield
+                      } cleanup all {
+                        cir.lifetime.end %28 : !cir.ptr<!cir.float>
+                        cir.yield
+                      }
+                      cir.yield
+                    } cleanup all {
+                      cir.lifetime.end %27 : !cir.ptr<!cir.float>
+                      cir.yield
+                    }
+                    cir.yield
+                  } cleanup all {
+                    cir.lifetime.end %26 : !cir.ptr<!cir.float>
+                    cir.yield
+                  }
+                  cir.yield
+                } cleanup all {
+                  cir.lifetime.end %25 : !cir.ptr<!cir.float>
+                  cir.yield
+                }
+                cir.yield
+              } cleanup all {
+                cir.lifetime.end %24 : !cir.ptr<!cir.float>
+                cir.yield
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %23 : !cir.ptr<!cir.float>
+              cir.yield
+            }
+            cir.yield
+          } cleanup all {
+            cir.lifetime.end %22 : !cir.ptr<!cir.float>
+            cir.yield
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %21 : !cir.ptr<!cir.float>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %20 : !cir.ptr<!cir.int<s, 32>>
+        cir.yield
+      }
+      cir.yield
+    } cleanup all {
+      cir.lifetime.end %19 : !cir.ptr<!cir.int<s, 32>>
+      cir.yield
+    }
+    cir.return
+  }
+  cir.func no_inline dso_local @_Z20convolution3D_kerneliiiPfS_i__noalias(%arg0: !cir.int<s, 32> {llvm.noundef}, %arg1: !cir.int<s, 32> {llvm.noundef}, %arg2: !cir.int<s, 32> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noalias, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noalias, llvm.noundef}, %arg5: !cir.int<s, 32> {llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.const #cir.bool<false> : !cir.bool
+    %1 = cir.const #cir.int<0> : !cir.int<s, 32>
+    %2 = cir.const #cir.int<256> : !cir.int<s, 32>
+    %3 = cir.const #cir.int<1> : !cir.int<s, 32>
+    %4 = cir.const #cir.int<10> : !cir.int<s, 32>
+    %5 = cir.const #cir.int<7> : !cir.int<s, 32>
+    %6 = cir.const #cir.int<4> : !cir.int<s, 32>
+    %7 = cir.const #cir.int<-9> : !cir.int<s, 32>
+    %8 = cir.const #cir.int<6> : !cir.int<s, 32>
+    %9 = cir.const #cir.int<-3> : !cir.int<s, 32>
+    %10 = cir.const #cir.int<-8> : !cir.int<s, 32>
+    %11 = cir.const #cir.int<5> : !cir.int<s, 32>
+    %12 = cir.const #cir.int<2> : !cir.int<s, 32>
+    %13 = cir.alloca "ni" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %14 = cir.alloca "nj" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %15 = cir.alloca "nk" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %16 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+    %17 = cir.alloca "B" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+    %18 = cir.alloca "i" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %19 = cir.alloca "k" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %20 = cir.alloca "j" align(4) init : !cir.ptr<!cir.int<s, 32>>
+    %21 = cir.alloca "c11" align(4) : !cir.ptr<!cir.float>
+    %22 = cir.alloca "c12" align(4) : !cir.ptr<!cir.float>
+    %23 = cir.alloca "c13" align(4) : !cir.ptr<!cir.float>
+    %24 = cir.alloca "c21" align(4) : !cir.ptr<!cir.float>
+    %25 = cir.alloca "c22" align(4) : !cir.ptr<!cir.float>
+    %26 = cir.alloca "c23" align(4) : !cir.ptr<!cir.float>
+    %27 = cir.alloca "c31" align(4) : !cir.ptr<!cir.float>
+    %28 = cir.alloca "c32" align(4) : !cir.ptr<!cir.float>
+    %29 = cir.alloca "c33" align(4) : !cir.ptr<!cir.float>
+    cir.store %arg0, %13 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg1, %14 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg2, %15 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.store %arg3, %16 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+    cir.store %arg4, %17 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+    cir.store %arg5, %18 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+    cir.lifetime.start %19 : !cir.ptr<!cir.int<s, 32>>
+    cir.cleanup.scope {
+      %30 = cir.get_global @blockIdx : !cir.ptr<!cir.struct<"__cuda_builtin_blockIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %31 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %32 = cir.get_global @blockDim : !cir.ptr<!cir.struct<"__cuda_builtin_blockDim_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %33 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %34 = cir.mul %31, %33 : !cir.int<u, 32>
+      %35 = cir.get_global @threadIdx : !cir.ptr<!cir.struct<"__cuda_builtin_threadIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+      %36 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+      %37 = cir.add %34, %36 : !cir.int<u, 32>
+      %38 = cir.cast integral %37 : !cir.int<u, 32> -> !cir.int<s, 32>
+      cir.store align(4) %38, %19 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+      cir.lifetime.start %20 : !cir.ptr<!cir.int<s, 32>>
+      cir.cleanup.scope {
+        %39 = cir.get_global @blockIdx : !cir.ptr<!cir.struct<"__cuda_builtin_blockIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %40 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %41 = cir.get_global @blockDim : !cir.ptr<!cir.struct<"__cuda_builtin_blockDim_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %42 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %43 = cir.mul %40, %42 : !cir.int<u, 32>
+        %44 = cir.get_global @threadIdx : !cir.ptr<!cir.struct<"__cuda_builtin_threadIdx_t" {pad !cir.int<u, 8>}>, target_address_space(1)>
+        %45 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv() {convergent, uniform_work_group_size} : () -> (!cir.int<u, 32> {llvm.noundef})
+        %46 = cir.add %43, %45 : !cir.int<u, 32>
+        %47 = cir.cast integral %46 : !cir.int<u, 32> -> !cir.int<s, 32>
+        cir.store align(4) %47, %20 : !cir.int<s, 32>, !cir.ptr<!cir.int<s, 32>>
+        cir.lifetime.start %21 : !cir.ptr<!cir.float>
+        cir.cleanup.scope {
+          cir.lifetime.start %22 : !cir.ptr<!cir.float>
+          cir.cleanup.scope {
+            cir.lifetime.start %23 : !cir.ptr<!cir.float>
+            cir.cleanup.scope {
+              cir.lifetime.start %24 : !cir.ptr<!cir.float>
+              cir.cleanup.scope {
+                cir.lifetime.start %25 : !cir.ptr<!cir.float>
+                cir.cleanup.scope {
+                  cir.lifetime.start %26 : !cir.ptr<!cir.float>
+                  cir.cleanup.scope {
+                    cir.lifetime.start %27 : !cir.ptr<!cir.float>
+                    cir.cleanup.scope {
+                      cir.lifetime.start %28 : !cir.ptr<!cir.float>
+                      cir.cleanup.scope {
+                        cir.lifetime.start %29 : !cir.ptr<!cir.float>
+                        cir.cleanup.scope {
+                          %48 = cir.cast int_to_float %12 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %48, %21 : !cir.float, !cir.ptr<!cir.float>
+                          %49 = cir.cast int_to_float %11 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %49, %24 : !cir.float, !cir.ptr<!cir.float>
+                          %50 = cir.cast int_to_float %10 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %50, %27 : !cir.float, !cir.ptr<!cir.float>
+                          %51 = cir.cast int_to_float %9 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %51, %22 : !cir.float, !cir.ptr<!cir.float>
+                          %52 = cir.cast int_to_float %8 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %52, %25 : !cir.float, !cir.ptr<!cir.float>
+                          %53 = cir.cast int_to_float %7 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %53, %28 : !cir.float, !cir.ptr<!cir.float>
+                          %54 = cir.cast int_to_float %6 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %54, %23 : !cir.float, !cir.ptr<!cir.float>
+                          %55 = cir.cast int_to_float %5 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %55, %26 : !cir.float, !cir.ptr<!cir.float>
+                          %56 = cir.cast int_to_float %4 : !cir.int<s, 32> -> !cir.float
+                          cir.store align(4) %56, %29 : !cir.float, !cir.ptr<!cir.float>
+                          cir.scope {
+                            %57 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                            %58 = cir.load align(4) %13 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                            %59 = cir.sub nsw %58, %3 : !cir.int<s, 32>
+                            %60 = cir.cmp lt %57, %59 : !cir.int<s, 32>
+                            %61 = cir.ternary(%60, true {
+                              %66 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.load align(4) %14 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.cmp lt %66, %68 : !cir.int<s, 32>
+                              cir.yield %69 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %62 = cir.ternary(%61, true {
+                              %66 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.load align(4) %15 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.cmp lt %66, %68 : !cir.int<s, 32>
+                              cir.yield %69 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %63 = cir.ternary(%62, true {
+                              %66 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %64 = cir.ternary(%63, true {
+                              %66 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            %65 = cir.ternary(%64, true {
+                              %66 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %67 = cir.cmp gt %66, %1 : !cir.int<s, 32>
+                              cir.yield %67 : !cir.bool
+                            }, false {
+                              cir.yield %0 : !cir.bool
+                            }) : (!cir.bool) -> !cir.bool
+                            cir.if %65 {
+                              %66 = cir.load align(4) %21 : !cir.ptr<!cir.float>, !cir.float
+                              %67 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %68 = cir.sub nsw %67, %3 : !cir.int<s, 32>
+                              %69 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %70 = cir.mul nsw %68, %69 : !cir.int<s, 32>
+                              %71 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %72 = cir.sub nsw %71, %3 : !cir.int<s, 32>
+                              %73 = cir.mul nsw %72, %2 : !cir.int<s, 32>
+                              %74 = cir.add nsw %70, %73 : !cir.int<s, 32>
+                              %75 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %76 = cir.sub nsw %75, %3 : !cir.int<s, 32>
+                              %77 = cir.add nsw %74, %76 : !cir.int<s, 32>
+                              %78 = cir.cast integral %77 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %79 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %80 = cir.ptr_stride %79, %78 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %81 = cir.load align(4) %80 : !cir.ptr<!cir.float>, !cir.float
+                              %82 = cir.fmul %66, %81 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %83 = cir.load align(4) %23 : !cir.ptr<!cir.float>, !cir.float
+                              %84 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %85 = cir.add nsw %84, %3 : !cir.int<s, 32>
+                              %86 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %87 = cir.mul nsw %85, %86 : !cir.int<s, 32>
+                              %88 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %89 = cir.sub nsw %88, %3 : !cir.int<s, 32>
+                              %90 = cir.mul nsw %89, %2 : !cir.int<s, 32>
+                              %91 = cir.add nsw %87, %90 : !cir.int<s, 32>
+                              %92 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %93 = cir.sub nsw %92, %3 : !cir.int<s, 32>
+                              %94 = cir.add nsw %91, %93 : !cir.int<s, 32>
+                              %95 = cir.cast integral %94 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %96 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %97 = cir.ptr_stride %96, %95 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %98 = cir.load align(4) %97 : !cir.ptr<!cir.float>, !cir.float
+                              %99 = cir.fmul %83, %98 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %100 = cir.fadd %82, %99 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %101 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                              %102 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %103 = cir.sub nsw %102, %3 : !cir.int<s, 32>
+                              %104 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %105 = cir.mul nsw %103, %104 : !cir.int<s, 32>
+                              %106 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %107 = cir.sub nsw %106, %3 : !cir.int<s, 32>
+                              %108 = cir.mul nsw %107, %2 : !cir.int<s, 32>
+                              %109 = cir.add nsw %105, %108 : !cir.int<s, 32>
+                              %110 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %111 = cir.sub nsw %110, %3 : !cir.int<s, 32>
+                              %112 = cir.add nsw %109, %111 : !cir.int<s, 32>
+                              %113 = cir.cast integral %112 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %114 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %115 = cir.ptr_stride %114, %113 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %116 = cir.load align(4) %115 : !cir.ptr<!cir.float>, !cir.float
+                              %117 = cir.fmul %101, %116 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %118 = cir.fadd %100, %117 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %119 = cir.load align(4) %26 : !cir.ptr<!cir.float>, !cir.float
+                              %120 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %121 = cir.add nsw %120, %3 : !cir.int<s, 32>
+                              %122 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %123 = cir.mul nsw %121, %122 : !cir.int<s, 32>
+                              %124 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %125 = cir.sub nsw %124, %3 : !cir.int<s, 32>
+                              %126 = cir.mul nsw %125, %2 : !cir.int<s, 32>
+                              %127 = cir.add nsw %123, %126 : !cir.int<s, 32>
+                              %128 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %129 = cir.sub nsw %128, %3 : !cir.int<s, 32>
+                              %130 = cir.add nsw %127, %129 : !cir.int<s, 32>
+                              %131 = cir.cast integral %130 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %132 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %133 = cir.ptr_stride %132, %131 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %134 = cir.load align(4) %133 : !cir.ptr<!cir.float>, !cir.float
+                              %135 = cir.fmul %119, %134 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %136 = cir.fadd %118, %135 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %137 = cir.load align(4) %27 : !cir.ptr<!cir.float>, !cir.float
+                              %138 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %139 = cir.sub nsw %138, %3 : !cir.int<s, 32>
+                              %140 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %141 = cir.mul nsw %139, %140 : !cir.int<s, 32>
+                              %142 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %143 = cir.sub nsw %142, %3 : !cir.int<s, 32>
+                              %144 = cir.mul nsw %143, %2 : !cir.int<s, 32>
+                              %145 = cir.add nsw %141, %144 : !cir.int<s, 32>
+                              %146 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %147 = cir.sub nsw %146, %3 : !cir.int<s, 32>
+                              %148 = cir.add nsw %145, %147 : !cir.int<s, 32>
+                              %149 = cir.cast integral %148 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %150 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %151 = cir.ptr_stride %150, %149 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %152 = cir.load align(4) %151 : !cir.ptr<!cir.float>, !cir.float
+                              %153 = cir.fmul %137, %152 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %154 = cir.fadd %136, %153 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %155 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                              %156 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %157 = cir.add nsw %156, %3 : !cir.int<s, 32>
+                              %158 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %159 = cir.mul nsw %157, %158 : !cir.int<s, 32>
+                              %160 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %161 = cir.sub nsw %160, %3 : !cir.int<s, 32>
+                              %162 = cir.mul nsw %161, %2 : !cir.int<s, 32>
+                              %163 = cir.add nsw %159, %162 : !cir.int<s, 32>
+                              %164 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %165 = cir.sub nsw %164, %3 : !cir.int<s, 32>
+                              %166 = cir.add nsw %163, %165 : !cir.int<s, 32>
+                              %167 = cir.cast integral %166 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %168 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %169 = cir.ptr_stride %168, %167 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %170 = cir.load align(4) %169 : !cir.ptr<!cir.float>, !cir.float
+                              %171 = cir.fmul %155, %170 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %172 = cir.fadd %154, %171 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %173 = cir.load align(4) %22 : !cir.ptr<!cir.float>, !cir.float
+                              %174 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %175 = cir.add nsw %174, %1 : !cir.int<s, 32>
+                              %176 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %177 = cir.mul nsw %175, %176 : !cir.int<s, 32>
+                              %178 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %179 = cir.sub nsw %178, %3 : !cir.int<s, 32>
+                              %180 = cir.mul nsw %179, %2 : !cir.int<s, 32>
+                              %181 = cir.add nsw %177, %180 : !cir.int<s, 32>
+                              %182 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %183 = cir.add nsw %182, %1 : !cir.int<s, 32>
+                              %184 = cir.add nsw %181, %183 : !cir.int<s, 32>
+                              %185 = cir.cast integral %184 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %186 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %187 = cir.ptr_stride %186, %185 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %188 = cir.load align(4) %187 : !cir.ptr<!cir.float>, !cir.float
+                              %189 = cir.fmul %173, %188 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %190 = cir.fadd %172, %189 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %191 = cir.load align(4) %25 : !cir.ptr<!cir.float>, !cir.float
+                              %192 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %193 = cir.add nsw %192, %1 : !cir.int<s, 32>
+                              %194 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %195 = cir.mul nsw %193, %194 : !cir.int<s, 32>
+                              %196 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %197 = cir.add nsw %196, %1 : !cir.int<s, 32>
+                              %198 = cir.mul nsw %197, %2 : !cir.int<s, 32>
+                              %199 = cir.add nsw %195, %198 : !cir.int<s, 32>
+                              %200 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %201 = cir.add nsw %200, %1 : !cir.int<s, 32>
+                              %202 = cir.add nsw %199, %201 : !cir.int<s, 32>
+                              %203 = cir.cast integral %202 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %204 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %205 = cir.ptr_stride %204, %203 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %206 = cir.load align(4) %205 : !cir.ptr<!cir.float>, !cir.float
+                              %207 = cir.fmul %191, %206 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %208 = cir.fadd %190, %207 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %209 = cir.load align(4) %28 : !cir.ptr<!cir.float>, !cir.float
+                              %210 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %211 = cir.add nsw %210, %1 : !cir.int<s, 32>
+                              %212 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %213 = cir.mul nsw %211, %212 : !cir.int<s, 32>
+                              %214 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %215 = cir.add nsw %214, %3 : !cir.int<s, 32>
+                              %216 = cir.mul nsw %215, %2 : !cir.int<s, 32>
+                              %217 = cir.add nsw %213, %216 : !cir.int<s, 32>
+                              %218 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %219 = cir.add nsw %218, %1 : !cir.int<s, 32>
+                              %220 = cir.add nsw %217, %219 : !cir.int<s, 32>
+                              %221 = cir.cast integral %220 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %222 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %223 = cir.ptr_stride %222, %221 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %224 = cir.load align(4) %223 : !cir.ptr<!cir.float>, !cir.float
+                              %225 = cir.fmul %209, %224 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %226 = cir.fadd %208, %225 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %227 = cir.load align(4) %21 : !cir.ptr<!cir.float>, !cir.float
+                              %228 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %229 = cir.sub nsw %228, %3 : !cir.int<s, 32>
+                              %230 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %231 = cir.mul nsw %229, %230 : !cir.int<s, 32>
+                              %232 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %233 = cir.sub nsw %232, %3 : !cir.int<s, 32>
+                              %234 = cir.mul nsw %233, %2 : !cir.int<s, 32>
+                              %235 = cir.add nsw %231, %234 : !cir.int<s, 32>
+                              %236 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %237 = cir.add nsw %236, %3 : !cir.int<s, 32>
+                              %238 = cir.add nsw %235, %237 : !cir.int<s, 32>
+                              %239 = cir.cast integral %238 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %240 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %241 = cir.ptr_stride %240, %239 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %242 = cir.load align(4) %241 : !cir.ptr<!cir.float>, !cir.float
+                              %243 = cir.fmul %227, %242 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %244 = cir.fadd %226, %243 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %245 = cir.load align(4) %23 : !cir.ptr<!cir.float>, !cir.float
+                              %246 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %247 = cir.add nsw %246, %3 : !cir.int<s, 32>
+                              %248 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %249 = cir.mul nsw %247, %248 : !cir.int<s, 32>
+                              %250 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %251 = cir.sub nsw %250, %3 : !cir.int<s, 32>
+                              %252 = cir.mul nsw %251, %2 : !cir.int<s, 32>
+                              %253 = cir.add nsw %249, %252 : !cir.int<s, 32>
+                              %254 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %255 = cir.add nsw %254, %3 : !cir.int<s, 32>
+                              %256 = cir.add nsw %253, %255 : !cir.int<s, 32>
+                              %257 = cir.cast integral %256 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %258 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %259 = cir.ptr_stride %258, %257 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %260 = cir.load align(4) %259 : !cir.ptr<!cir.float>, !cir.float
+                              %261 = cir.fmul %245, %260 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %262 = cir.fadd %244, %261 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %263 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                              %264 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %265 = cir.sub nsw %264, %3 : !cir.int<s, 32>
+                              %266 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %267 = cir.mul nsw %265, %266 : !cir.int<s, 32>
+                              %268 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %269 = cir.add nsw %268, %1 : !cir.int<s, 32>
+                              %270 = cir.mul nsw %269, %2 : !cir.int<s, 32>
+                              %271 = cir.add nsw %267, %270 : !cir.int<s, 32>
+                              %272 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %273 = cir.add nsw %272, %3 : !cir.int<s, 32>
+                              %274 = cir.add nsw %271, %273 : !cir.int<s, 32>
+                              %275 = cir.cast integral %274 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %276 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %277 = cir.ptr_stride %276, %275 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %278 = cir.load align(4) %277 : !cir.ptr<!cir.float>, !cir.float
+                              %279 = cir.fmul %263, %278 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %280 = cir.fadd %262, %279 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %281 = cir.load align(4) %26 : !cir.ptr<!cir.float>, !cir.float
+                              %282 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %283 = cir.add nsw %282, %3 : !cir.int<s, 32>
+                              %284 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %285 = cir.mul nsw %283, %284 : !cir.int<s, 32>
+                              %286 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %287 = cir.add nsw %286, %1 : !cir.int<s, 32>
+                              %288 = cir.mul nsw %287, %2 : !cir.int<s, 32>
+                              %289 = cir.add nsw %285, %288 : !cir.int<s, 32>
+                              %290 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %291 = cir.add nsw %290, %3 : !cir.int<s, 32>
+                              %292 = cir.add nsw %289, %291 : !cir.int<s, 32>
+                              %293 = cir.cast integral %292 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %294 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %295 = cir.ptr_stride %294, %293 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %296 = cir.load align(4) %295 : !cir.ptr<!cir.float>, !cir.float
+                              %297 = cir.fmul %281, %296 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %298 = cir.fadd %280, %297 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %299 = cir.load align(4) %27 : !cir.ptr<!cir.float>, !cir.float
+                              %300 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %301 = cir.sub nsw %300, %3 : !cir.int<s, 32>
+                              %302 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %303 = cir.mul nsw %301, %302 : !cir.int<s, 32>
+                              %304 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %305 = cir.add nsw %304, %3 : !cir.int<s, 32>
+                              %306 = cir.mul nsw %305, %2 : !cir.int<s, 32>
+                              %307 = cir.add nsw %303, %306 : !cir.int<s, 32>
+                              %308 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %309 = cir.add nsw %308, %3 : !cir.int<s, 32>
+                              %310 = cir.add nsw %307, %309 : !cir.int<s, 32>
+                              %311 = cir.cast integral %310 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %312 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %313 = cir.ptr_stride %312, %311 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %314 = cir.load align(4) %313 : !cir.ptr<!cir.float>, !cir.float
+                              %315 = cir.fmul %299, %314 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %316 = cir.fadd %298, %315 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %317 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                              %318 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %319 = cir.add nsw %318, %3 : !cir.int<s, 32>
+                              %320 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %321 = cir.mul nsw %319, %320 : !cir.int<s, 32>
+                              %322 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %323 = cir.add nsw %322, %3 : !cir.int<s, 32>
+                              %324 = cir.mul nsw %323, %2 : !cir.int<s, 32>
+                              %325 = cir.add nsw %321, %324 : !cir.int<s, 32>
+                              %326 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %327 = cir.add nsw %326, %3 : !cir.int<s, 32>
+                              %328 = cir.add nsw %325, %327 : !cir.int<s, 32>
+                              %329 = cir.cast integral %328 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %330 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %331 = cir.ptr_stride %330, %329 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              %332 = cir.load align(4) %331 : !cir.ptr<!cir.float>, !cir.float
+                              %333 = cir.fmul %317, %332 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %334 = cir.fadd %316, %333 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                              %335 = cir.load align(4) %18 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %336 = cir.mul nsw %2, %2 : !cir.int<s, 32>
+                              %337 = cir.mul nsw %335, %336 : !cir.int<s, 32>
+                              %338 = cir.load align(4) %20 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %339 = cir.mul nsw %338, %2 : !cir.int<s, 32>
+                              %340 = cir.add nsw %337, %339 : !cir.int<s, 32>
+                              %341 = cir.load align(4) %19 : !cir.ptr<!cir.int<s, 32>>, !cir.int<s, 32>
+                              %342 = cir.add nsw %340, %341 : !cir.int<s, 32>
+                              %343 = cir.cast integral %342 : !cir.int<s, 32> -> !cir.int<s, 64>
+                              %344 = cir.load align(8) %17 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                              %345 = cir.ptr_stride %344, %343 : (!cir.ptr<!cir.float>, !cir.int<s, 64>) -> !cir.ptr<!cir.float>
+                              cir.store align(4) %334, %345 : !cir.float, !cir.ptr<!cir.float>
+                            }
+                          }
+                          cir.yield
+                        } cleanup all {
+                          cir.lifetime.end %29 : !cir.ptr<!cir.float>
+                          cir.yield
+                        }
+                        cir.yield
+                      } cleanup all {
+                        cir.lifetime.end %28 : !cir.ptr<!cir.float>
+                        cir.yield
+                      }
+                      cir.yield
+                    } cleanup all {
+                      cir.lifetime.end %27 : !cir.ptr<!cir.float>
+                      cir.yield
+                    }
+                    cir.yield
+                  } cleanup all {
+                    cir.lifetime.end %26 : !cir.ptr<!cir.float>
+                    cir.yield
+                  }
+                  cir.yield
+                } cleanup all {
+                  cir.lifetime.end %25 : !cir.ptr<!cir.float>
+                  cir.yield
+                }
+                cir.yield
+              } cleanup all {
+                cir.lifetime.end %24 : !cir.ptr<!cir.float>
+                cir.yield
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %23 : !cir.ptr<!cir.float>
+              cir.yield
+            }
+            cir.yield
+          } cleanup all {
+            cir.lifetime.end %22 : !cir.ptr<!cir.float>
+            cir.yield
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %21 : !cir.ptr<!cir.float>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %20 : !cir.ptr<!cir.int<s, 32>>
+        cir.yield
+      }
+      cir.yield
+    } cleanup all {
+      cir.lifetime.end %19 : !cir.ptr<!cir.int<s, 32>>
+      cir.yield
+    }
+    cir.return
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ctaid.x"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ntid.x"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.tid.x"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ctaid.y"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ntid.y"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+  cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv() -> (!cir.int<u, 32> {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+    %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.tid.y"  : () -> !cir.int<s, 32>
+    %1 = cir.cast integral %0 : !cir.int<s, 32> -> !cir.int<u, 32>
+    cir.return %1 : !cir.int<u, 32>
+  }
+}

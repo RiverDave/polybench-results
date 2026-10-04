@@ -1,0 +1,36 @@
+{
+  "benches": 21,
+  "injected_params": 131,
+  "all_cubin_equal": true,
+  "all_ptx_equal": true,
+  "all_raw_ll_strip_identical": true,
+  "all_opt_residual_zero": true,
+  "all_kernel_names_equal": true,
+  "any_llvm_opt_changed": false,
+  "any_ptx_changed": false,
+  "any_sass_changed": false,
+  "any_regs_changed": false,
+  "any_unresolved": false
+}
+2DCONV     inj=  2 derefB=4 derefA=0 clean
+2MM        inj=  6 derefB=12 derefA=0 clean
+3DCONV     inj=  2 derefB=4 derefA=0 clean
+3MM        inj=  9 derefB=18 derefA=0 clean
+ADI        inj= 18 derefB=36 derefA=0 clean
+ATAX       inj=  6 derefB=12 derefA=0 clean
+BICG       inj=  6 derefB=12 derefA=0 clean
+CORR       inj= 10 derefB=20 derefA=0 clean
+COVAR      inj=  6 derefB=12 derefA=0 clean
+DOITGEN    inj=  6 derefB=12 derefA=0 clean
+FDTD-2D    inj= 10 derefB=20 derefA=0 clean
+GEMM       inj=  3 derefB=6 derefA=0 clean
+GEMVER     inj= 12 derefB=24 derefA=0 clean
+GESUMMV    inj=  5 derefB=10 derefA=0 clean
+GRAMSCHM   inj=  9 derefB=18 derefA=0 clean
+JACOBI1D   inj=  4 derefB=8 derefA=0 clean
+JACOBI2D   inj=  4 derefB=8 derefA=0 clean
+LU         inj=  2 derefB=4 derefA=0 clean
+MVT        inj=  6 derefB=12 derefA=0 clean
+SYR2K      inj=  3 derefB=6 derefA=0 clean
+SYRK       inj=  2 derefB=4 derefA=0 clean
+DONE-LAYER-CHECK

@@ -1,0 +1,21 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z10lu_kernel2iPfi__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z10lu_kernel2iPfi__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 1.850 ms
+ptxas info    : Compiling entry function '_Z10lu_kernel2iPfi' for 'sm_86'
+ptxas info    : Function properties for _Z10lu_kernel2iPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 12 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 1.269 ms
+ptxas info    : Compiling entry function '_Z10lu_kernel1iPfi__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z10lu_kernel1iPfi__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 5.060 ms
+ptxas info    : Compiling entry function '_Z10lu_kernel1iPfi' for 'sm_86'
+ptxas info    : Function properties for _Z10lu_kernel1iPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 4.713 ms

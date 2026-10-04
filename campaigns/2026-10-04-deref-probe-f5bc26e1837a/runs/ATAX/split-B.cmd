@@ -1,0 +1,1 @@
+/home/ubuntu/llvm-project/build/bin/cir-offload-merge -split -input=/home/ubuntu/aa-deref-20261004/runs/ATAX/B.combined.cir -targets=host-x86_64-unknown-linux-gnu,cuda-nvptx64-nvidia-cuda--sm_86 -output=/home/ubuntu/aa-deref-20261004/runs/ATAX/B/host.cir -output=/home/ubuntu/aa-deref-20261004/runs/ATAX/B/device.cir

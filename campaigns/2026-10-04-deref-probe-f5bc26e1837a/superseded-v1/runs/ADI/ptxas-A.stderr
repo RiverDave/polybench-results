@@ -1,0 +1,61 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z11adi_kernel6iPfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel6iPfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 6.009 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel6iPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel6iPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 5.293 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel5iPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel5iPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.768 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel5iPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel5iPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.714 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel4iPfS_S_i__noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel4iPfS_S_i__noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 5.721 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel4iPfS_S_i' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel4iPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, used 0 barriers, 388 bytes cmem[0]
+ptxas info    : Compile time = 5.650 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel3iPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel3iPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.763 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel3iPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel3iPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.304 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel2iPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel2iPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.734 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel2iPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel2iPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.561 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel1iPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel1iPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 35 registers, used 0 barriers, 384 bytes cmem[0], 8 bytes cmem[2]
+ptxas info    : Compile time = 9.640 ms
+ptxas info    : Compiling entry function '_Z11adi_kernel1iPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z11adi_kernel1iPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 0 barriers, 384 bytes cmem[0], 8 bytes cmem[2]
+ptxas info    : Compile time = 15.209 ms

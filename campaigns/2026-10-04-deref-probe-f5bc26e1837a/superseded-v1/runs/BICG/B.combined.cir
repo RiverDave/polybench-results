@@ -1,0 +1,2000 @@
+!rec_CUstream_st = !cir.struct<"CUstream_st" incomplete>
+!rec__IO_codecvt = !cir.struct<"_IO_codecvt" incomplete>
+!rec__IO_marker = !cir.struct<"_IO_marker" incomplete>
+!rec__IO_wide_data = !cir.struct<"_IO_wide_data" incomplete>
+!s32i = !cir.int<s, 32>
+!s64i = !cir.int<s, 64>
+!s8i = !cir.int<s, 8>
+!u16i = !cir.int<u, 16>
+!u32i = !cir.int<u, 32>
+!u64i = !cir.int<u, 64>
+!u8i = !cir.int<u, 8>
+!void = !cir.void
+#false = #cir.bool<false> : !cir.bool
+#true = #cir.bool<true> : !cir.bool
+!rec___cuda_builtin_blockDim_t = !cir.struct<"__cuda_builtin_blockDim_t" {pad !u8i}>
+!rec___cuda_builtin_blockIdx_t = !cir.struct<"__cuda_builtin_blockIdx_t" {pad !u8i}>
+!rec___cuda_builtin_threadIdx_t = !cir.struct<"__cuda_builtin_threadIdx_t" {pad !u8i}>
+!rec_anon_struct = !cir.struct<{data !u64i, data !u32i}>
+!rec_dim3 = !cir.struct<"dim3" {data !u32i, data !u32i, data !u32i}>
+!rec_timeval = !cir.struct<"timeval" {data !s64i, data !s64i}>
+!rec_CUuuid_st = !cir.struct<"CUuuid_st" {data !cir.array<!s8i x 16>}>
+!rec__IO_FILE = !cir.struct<"_IO_FILE" {data !s32i, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!s8i>, data !cir.ptr<!rec__IO_marker>, data !cir.ptr<!cir.struct<"_IO_FILE">>, data !s32i, data !s32i, data !s64i, data !u16i, data !s8i, data !cir.array<!s8i x 1>, data !cir.ptr<!void>, data !s64i, data !cir.ptr<!rec__IO_codecvt>, data !cir.ptr<!rec__IO_wide_data>, data !cir.ptr<!cir.struct<"_IO_FILE">>, data !cir.ptr<!void>, data !u64i, data !s32i, data !cir.array<!s8i x 20>}>
+!rec_cudaDeviceProp = !cir.struct<"cudaDeviceProp" {data !cir.array<!s8i x 256>, data !rec_CUuuid_st, data !cir.array<!s8i x 8>, data !u32i, data !u64i, data !u64i, data !s32i, data !s32i, data !u64i, data !s32i, data !cir.array<!s32i x 3>, data !cir.array<!s32i x 3>, data !s32i, data !u64i, data !s32i, data !s32i, data !u64i, data !u64i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 3>, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 3>, data !cir.array<!s32i x 3>, data !s32i, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 3>, data !cir.array<!s32i x 2>, data !s32i, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 3>, data !cir.array<!s32i x 2>, data !cir.array<!s32i x 3>, data !s32i, data !cir.array<!s32i x 2>, data !u64i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !u64i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !u64i, data !s32i, data !s32i, data !s32i, data !s32i, data !u64i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !s32i, data !u32i, data !s32i, data !u32i, data !s32i, data !s32i, data !s32i, data !s32i, data !cir.array<!s32i x 63>}>
+module attributes {cir.offload.container} {
+  module @host attributes {cir.default_tls_model = #cir.tls_model<tls_dyn>, cir.int_type_width = 32 : i32, cir.lang = #cir.lang<cxx>, cir.lowering_lang_options = #cir.lowering_lang_options<exceptions = true, threadsafe_statics = true, cuda = true, cuda_is_device = false, hip = false, gpu_rdc = false, openmp = false, openmp_is_target_device = false, clang_abi_compat = 16>, cir.module_asm = [], cir.offload.bundle_id = "host-x86_64-unknown-linux-gnu", cir.offload.kind = #cir.offload<host>, cir.opt_info = #cir.opt_info<level = 3, size = 0>, cir.record_layouts = {CUuuid_st = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 1>, _IO_FILE = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 8>, cudaDeviceProp = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 8>, dim3 = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 4>, timeval = #cir.record_layout<arg_passing_kind = can_pass_in_regs, has_trivial_dtor = true, record_align = 8>}, cir.sdk_version = "12.8", cir.size_type_width = 64 : i32, cir.triple = "x86_64-unknown-linux-gnu", dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<270> = dense<32> : vector<4xi64>, !llvm.ptr<271> = dense<32> : vector<4xi64>, !llvm.ptr<272> = dense<64> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, f80 = dense<128> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.mangling_mode" = "e", "dlti.legal_int_widths" = array<i32: 8, 16, 32, 64>, "dlti.stack_alignment" = 128 : i64, !cir.ptr<!cir.void> = #cir.ptr_spec<size = 64, abi = 64, preferred = 64, index = 64>>} {
+    cir.global "private" constant cir_private dso_local @".str" = #cir.const_array<"Non-Matching CPU-GPU Outputs Beyond Error Threshold of %4.2f Percent: %d\0A" : !cir.array<!s8i x 73>, trailing_zeros> : !cir.array<!s8i x 74> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.1" = #cir.const_array<"setting device %d with name %s\0A" : !cir.array<!s8i x 31>, trailing_zeros> : !cir.array<!s8i x 32> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.2" = #cir.const_array<"GPU Time in seconds:\0A" : !cir.array<!s8i x 21>, trailing_zeros> : !cir.array<!s8i x 22> {alignment = 1 : i64}
+    cir.global external dso_local @polybench_papi_counters_threadid = #cir.int<0> : !s32i {alignment = 4 : i64}
+    cir.global external dso_local @polybench_program_total_flops = #cir.fp<0.000000e+00> : !cir.double {alignment = 8 : i64}
+    cir.global external dso_local @polybench_t_start = #cir.fp<0.000000e+00> : !cir.double {alignment = 8 : i64}
+    cir.global external dso_local @polybench_t_end = #cir.fp<0.000000e+00> : !cir.double {alignment = 8 : i64}
+    cir.global external dso_local @polybench_c_start = #cir.int<0> : !u64i {alignment = 8 : i64}
+    cir.global external dso_local @polybench_c_end = #cir.int<0> : !u64i {alignment = 8 : i64}
+    cir.global "private" constant cir_private dso_local @".str.3" = #cir.const_array<"tmp <= 10.0" : !cir.array<!s8i x 11>, trailing_zeros> : !cir.array<!s8i x 12> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.4" = #cir.const_array<"/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/BICG/../../common/polybench.c" : !cir.array<!s8i x 87>, trailing_zeros> : !cir.array<!s8i x 88> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @__PRETTY_FUNCTION__._Z21polybench_flush_cachev = #cir.const_array<"void polybench_flush_cache()" : !cir.array<!s8i x 28>, trailing_zeros> : !cir.array<!s8i x 29> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.5" = #cir.const_array<"%0.6f\0A" : !cir.array<!s8i x 6>, trailing_zeros> : !cir.array<!s8i x 7> {alignment = 1 : i64}
+    cir.global "private" external @stderr : !cir.ptr<!rec__IO_FILE> {alignment = 8 : i64}
+    cir.global "private" constant cir_private dso_local @".str.6" = #cir.const_array<"\0A" : !cir.array<!s8i x 1>, trailing_zeros> : !cir.array<!s8i x 2> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.7" = #cir.const_array<"%0.2lf " : !cir.array<!s8i x 7>, trailing_zeros> : !cir.array<!s8i x 8> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.8" = #cir.const_array<"Error return from gettimeofday: %d" : !cir.array<!s8i x 34>, trailing_zeros> : !cir.array<!s8i x 35> {alignment = 1 : i64}
+    cir.global "private" constant cir_private dso_local @".str.9" = #cir.const_array<"[PolyBench] posix_memalign: cannot allocate memory" : !cir.array<!s8i x 50>, trailing_zeros> : !cir.array<!s8i x 51> {alignment = 1 : i64}
+    cir.func dso_local @_Z6absValf(%arg0: !cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<-1> : !s32i
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.alloca "__retval" align(4) : !cir.ptr<!cir.float>
+      cir.scope {
+        %3 = cir.cast int_to_float %1 : !s32i -> !cir.float
+        %4 = cir.cmp lt %arg0, %3 : !cir.float
+        cir.if %4 {
+          %5 = cir.cast int_to_float %0 : !s32i -> !cir.float
+          %6 = cir.fmul %arg0, %5 : !cir.float
+          cir.store %6, %2 : !cir.float, !cir.ptr<!cir.float>
+          %7 = cir.load %2 : !cir.ptr<!cir.float>, !cir.float
+          cir.return %7 : !cir.float
+        } else {
+          cir.store %arg0, %2 : !cir.float, !cir.ptr<!cir.float>
+          %5 = cir.load %2 : !cir.ptr<!cir.float>, !cir.float
+          cir.return %5 : !cir.float
+        }
+      }
+      cir.unreachable
+    }
+    cir.func dso_local @_Z11percentDiffdd(%arg0: !cir.double {llvm.noundef}, %arg1: !cir.double {llvm.noundef}) -> (!cir.float {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #false
+      %1 = cir.const #cir.fp<0.000000e+00> : !cir.float
+      %2 = cir.const #cir.fp<9.99999993E-9> : !cir.float
+      %3 = cir.const #cir.fp<1.000000e+02> : !cir.float
+      %4 = cir.const #cir.fp<1.000000e-02> : !cir.double
+      %5 = cir.alloca "val2" align(8) init : !cir.ptr<!cir.double>
+      %6 = cir.alloca "__retval" align(4) : !cir.ptr<!cir.float>
+      cir.store %arg1, %5 : !cir.double, !cir.ptr<!cir.double>
+      cir.scope {
+        %7 = cir.cast floating %arg0 : !cir.double -> !cir.float
+        %8 = cir.call @_Z6absValf(%7) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+        %9 = cir.cast floating %8 : !cir.float -> !cir.double
+        %10 = cir.cmp lt %9, %4 : !cir.double
+        %11 = cir.ternary(%10, true {
+          %12 = cir.load align(8) %5 : !cir.ptr<!cir.double>, !cir.double
+          %13 = cir.cast floating %12 : !cir.double -> !cir.float
+          %14 = cir.call @_Z6absValf(%13) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+          %15 = cir.cast floating %14 : !cir.float -> !cir.double
+          %16 = cir.cmp lt %15, %4 : !cir.double
+          cir.yield %16 : !cir.bool
+        }, false {
+          cir.yield %0 : !cir.bool
+        }) : (!cir.bool) -> !cir.bool
+        cir.if %11 {
+          cir.store %1, %6 : !cir.float, !cir.ptr<!cir.float>
+          %12 = cir.load %6 : !cir.ptr<!cir.float>, !cir.float
+          cir.return %12 : !cir.float
+        } else {
+          %12 = cir.load align(8) %5 : !cir.ptr<!cir.double>, !cir.double
+          %13 = cir.fsub %arg0, %12 : !cir.double
+          %14 = cir.cast floating %13 : !cir.double -> !cir.float
+          %15 = cir.call @_Z6absValf(%14) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+          %16 = cir.cast floating %2 : !cir.float -> !cir.double
+          %17 = cir.fadd %arg0, %16 : !cir.double
+          %18 = cir.cast floating %17 : !cir.double -> !cir.float
+          %19 = cir.call @_Z6absValf(%18) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+          %20 = cir.fdiv %15, %19 : !cir.float
+          %21 = cir.call @_Z6absValf(%20) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+          %22 = cir.fmul %3, %21 : !cir.float
+          cir.store %22, %6 : !cir.float, !cir.ptr<!cir.float>
+          %23 = cir.load %6 : !cir.ptr<!cir.float>, !cir.float
+          cir.return %23 : !cir.float
+        }
+      }
+      cir.unreachable
+    }
+    cir.func dso_local @_Z10init_arrayiiPA4096_fPfS1_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.array<!cir.float x 4096>> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<4096> : !s32i
+      %1 = cir.const #cir.fp<3.1415926535897931> : !cir.double
+      %2 = cir.const #cir.int<0> : !s32i
+      %3 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %6 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+      %9 = cir.alloca "j" align(4) : !cir.ptr<!s32i>
+      cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %4 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %5 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      cir.store %arg3, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        cir.lifetime.start %9 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          cir.scope {
+            cir.store align(4) %2, %8 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %11 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.cmp lt %10, %11 : !s32i
+              cir.condition(%12)
+            } body {
+              cir.scope {
+                %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                %11 = cir.cast int_to_float %10 : !s32i -> !cir.double
+                %12 = cir.fmul %11, %1 : !cir.double
+                %13 = cir.cast floating %12 : !cir.double -> !cir.float
+                %14 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                %15 = cir.cast integral %14 : !s32i -> !s64i
+                %16 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %17 = cir.ptr_stride %16, %15 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                cir.store align(4) %13, %17 : !cir.float, !cir.ptr<!cir.float>
+              }
+              cir.yield
+            } step {
+              %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %11 = cir.inc nsw %10 : !s32i
+              cir.store align(4) %11, %8 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.scope {
+            cir.store align(4) %2, %8 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %11 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.cmp lt %10, %11 : !s32i
+              cir.condition(%12)
+            } body {
+              cir.scope {
+                %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                %11 = cir.cast int_to_float %10 : !s32i -> !cir.double
+                %12 = cir.fmul %11, %1 : !cir.double
+                %13 = cir.cast floating %12 : !cir.double -> !cir.float
+                %14 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                %15 = cir.cast integral %14 : !s32i -> !s64i
+                %16 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %17 = cir.ptr_stride %16, %15 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                cir.store align(4) %13, %17 : !cir.float, !cir.ptr<!cir.float>
+                cir.scope {
+                  cir.store align(4) %2, %9 : !s32i, !cir.ptr<!s32i>
+                  cir.for : cond {
+                    %18 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                    %19 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                    %20 = cir.cmp lt %18, %19 : !s32i
+                    cir.condition(%20)
+                  } body {
+                    cir.scope {
+                      %18 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                      %19 = cir.cast int_to_float %18 : !s32i -> !cir.float
+                      %20 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %21 = cir.cast int_to_float %20 : !s32i -> !cir.float
+                      %22 = cir.fmul %19, %21 : !cir.float
+                      %23 = cir.cast int_to_float %0 : !s32i -> !cir.float
+                      %24 = cir.fdiv %22, %23 : !cir.float
+                      %25 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %26 = cir.cast integral %25 : !s32i -> !s64i
+                      %27 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                      %28 = cir.cast integral %27 : !s32i -> !s64i
+                      %29 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %30 = cir.ptr_stride %29, %28 : (!cir.ptr<!cir.array<!cir.float x 4096>>, !s64i) -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %31 = cir.get_element %30[%26 : !s64i] : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                      cir.store align(4) %24, %31 : !cir.float, !cir.ptr<!cir.float>
+                    }
+                    cir.yield
+                  } step {
+                    %18 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                    %19 = cir.inc nsw %18 : !s32i
+                    cir.store align(4) %19, %9 : !s32i, !cir.ptr<!s32i>
+                    cir.yield
+                  }
+                }
+              }
+              cir.yield
+            } step {
+              %10 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %11 = cir.inc nsw %10 : !s32i
+              cir.store align(4) %11, %8 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %9 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func dso_local @_Z14compareResultsiiPfS_S_S_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}, %arg5: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.fp<5.000000e-01> : !cir.double
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %3 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %5 = cir.alloca "s_outputFromGpu" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "q_outputFromGpu" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+      %9 = cir.alloca "fail" align(4) : !cir.ptr<!s32i>
+      cir.store %arg0, %2 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %4 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg5, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        cir.lifetime.start %9 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          cir.store align(4) %1, %9 : !s32i, !cir.ptr<!s32i>
+          cir.scope {
+            cir.store align(4) %1, %8 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %16 = cir.load align(4) %2 : !cir.ptr<!s32i>, !s32i
+              %17 = cir.cmp lt %15, %16 : !s32i
+              cir.condition(%17)
+            } body {
+              cir.scope {
+                cir.scope {
+                  %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                  %16 = cir.cast integral %15 : !s32i -> !s64i
+                  %17 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                  %18 = cir.ptr_stride %17, %16 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                  %19 = cir.load align(4) %18 : !cir.ptr<!cir.float>, !cir.float
+                  %20 = cir.cast floating %19 : !cir.float -> !cir.double
+                  %21 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                  %22 = cir.cast integral %21 : !s32i -> !s64i
+                  %23 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                  %24 = cir.ptr_stride %23, %22 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                  %25 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                  %26 = cir.cast floating %25 : !cir.float -> !cir.double
+                  %27 = cir.call @_Z11percentDiffdd(%20, %26) {uniform_work_group_size} : (!cir.double {llvm.noundef}, !cir.double {llvm.noundef}) -> (!cir.float {llvm.noundef})
+                  %28 = cir.cast floating %27 : !cir.float -> !cir.double
+                  %29 = cir.cmp gt %28, %0 : !cir.double
+                  cir.if %29 {
+                    %30 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                    %31 = cir.inc nsw %30 : !s32i
+                    cir.store align(4) %31, %9 : !s32i, !cir.ptr<!s32i>
+                  }
+                }
+              }
+              cir.yield
+            } step {
+              %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %16 = cir.inc nsw %15 : !s32i
+              cir.store align(4) %16, %8 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.scope {
+            cir.store align(4) %1, %8 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %16 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+              %17 = cir.cmp lt %15, %16 : !s32i
+              cir.condition(%17)
+            } body {
+              cir.scope {
+                cir.scope {
+                  %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                  %16 = cir.cast integral %15 : !s32i -> !s64i
+                  %17 = cir.load align(8) %4 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                  %18 = cir.ptr_stride %17, %16 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                  %19 = cir.load align(4) %18 : !cir.ptr<!cir.float>, !cir.float
+                  %20 = cir.cast floating %19 : !cir.float -> !cir.double
+                  %21 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                  %22 = cir.cast integral %21 : !s32i -> !s64i
+                  %23 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                  %24 = cir.ptr_stride %23, %22 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                  %25 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                  %26 = cir.cast floating %25 : !cir.float -> !cir.double
+                  %27 = cir.call @_Z11percentDiffdd(%20, %26) {uniform_work_group_size} : (!cir.double {llvm.noundef}, !cir.double {llvm.noundef}) -> (!cir.float {llvm.noundef})
+                  %28 = cir.cast floating %27 : !cir.float -> !cir.double
+                  %29 = cir.cmp gt %28, %0 : !cir.double
+                  cir.if %29 {
+                    %30 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                    %31 = cir.inc nsw %30 : !s32i
+                    cir.store align(4) %31, %9 : !s32i, !cir.ptr<!s32i>
+                  }
+                }
+              }
+              cir.yield
+            } step {
+              %15 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+              %16 = cir.inc nsw %15 : !s32i
+              cir.store align(4) %16, %8 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          %10 = cir.get_global @printf : !cir.ptr<!cir.func<(!cir.ptr<!s8i>, ...) -> !s32i>>
+          %11 = cir.get_global @".str" : !cir.ptr<!cir.array<!s8i x 74>>
+          %12 = cir.cast array_to_ptrdecay %11 : !cir.ptr<!cir.array<!s8i x 74>> -> !cir.ptr<!s8i>
+          %13 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+          %14 = cir.call @printf(%12, %0, %13) {uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}, !cir.double {llvm.noundef}, !s32i {llvm.noundef}) -> !s32i
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %9 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func private @printf(!cir.ptr<!s8i> {llvm.noundef}, ...) -> !s32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func dso_local @_Z13GPU_argv_initv() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<0> : !s32i
+      %1 = cir.alloca "deviceProp" align(8) : !cir.ptr<!rec_cudaDeviceProp>
+      cir.lifetime.start %1 : !cir.ptr<!rec_cudaDeviceProp>
+      cir.cleanup.scope {
+        %2 = cir.call @cudaGetDeviceProperties_v2(%1, %0) {uniform_work_group_size} : (!cir.ptr<!rec_cudaDeviceProp> {llvm.noundef}, !s32i {llvm.noundef}) -> !u32i
+        %3 = cir.get_global @printf : !cir.ptr<!cir.func<(!cir.ptr<!s8i>, ...) -> !s32i>>
+        %4 = cir.get_global @".str.1" : !cir.ptr<!cir.array<!s8i x 32>>
+        %5 = cir.cast array_to_ptrdecay %4 : !cir.ptr<!cir.array<!s8i x 32>> -> !cir.ptr<!s8i>
+        %6 = cir.get_member %1[0] {name = "name"} : !cir.ptr<!rec_cudaDeviceProp> -> !cir.ptr<!cir.array<!s8i x 256>>
+        %7 = cir.cast array_to_ptrdecay %6 : !cir.ptr<!cir.array<!s8i x 256>> -> !cir.ptr<!s8i>
+        %8 = cir.call @printf(%5, %0, %7) {uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) -> !s32i
+        %9 = cir.call @cudaSetDevice(%0) {uniform_work_group_size} : (!s32i {llvm.noundef}) -> !u32i
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %1 : !cir.ptr<!rec_cudaDeviceProp>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func private @cudaGetDeviceProperties_v2(!cir.ptr<!rec_cudaDeviceProp> {llvm.noundef}, !s32i {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func private @cudaSetDevice(!s32i {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func dso_local @_Z27__device_stub__bicg_kernel1iiPfS_S_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel1iiPfS_S_">, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4> : !u32i
+      %1 = cir.const #cir.int<3> : !u32i
+      %2 = cir.const #cir.int<2> : !u32i
+      %3 = cir.const #cir.int<1> : !u32i
+      %4 = cir.const #cir.int<0> : !u32i
+      %5 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %6 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %7 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %8 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %9 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %10 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %11 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg0, %7 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %8 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %9 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %10 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %11 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      %12 = cir.alloca "kernel_args" align(16) : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>>
+      %13 = cir.cast array_to_ptrdecay %12 : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>> -> !cir.ptr<!cir.ptr<!void>>
+      %14 = cir.ptr_stride %13, %4 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %15 = cir.cast bitcast %7 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %15, %14 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %16 = cir.ptr_stride %13, %3 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %17 = cir.cast bitcast %8 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %17, %16 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %18 = cir.ptr_stride %13, %2 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %19 = cir.cast bitcast %9 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %19, %18 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %20 = cir.ptr_stride %13, %1 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %21 = cir.cast bitcast %10 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %21, %20 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %22 = cir.ptr_stride %13, %0 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %23 = cir.cast bitcast %11 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %23, %22 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %24 = cir.alloca "grid_dim" align(8) : !cir.ptr<!rec_dim3>
+      %25 = cir.alloca "block_dim" align(8) : !cir.ptr<!rec_dim3>
+      %26 = cir.alloca "shared_mem" align(8) : !cir.ptr<!u64i>
+      %27 = cir.alloca "stream" align(8) : !cir.ptr<!cir.ptr<!rec_CUstream_st>>
+      %28 = cir.call @__cudaPopCallConfiguration(%24, %25, %26, %27) : (!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!rec_CUstream_st>>) -> !s32i
+      %29 = cir.get_global @_Z27__device_stub__bicg_kernel1iiPfS_S_ : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>>
+      %30 = cir.cast bitcast %29 : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>> -> !cir.ptr<!void>
+      %31 = cir.load %26 : !cir.ptr<!u64i>, !u64i
+      %32 = cir.load %27 : !cir.ptr<!cir.ptr<!rec_CUstream_st>>, !cir.ptr<!rec_CUstream_st>
+      %33 = cir.load align(8) %24 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %34 = cir.load align(8) %25 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %35 = cir.cast bitcast %6 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %33, %35 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %36 = cir.get_member %6[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %37 = cir.load %36 : !cir.ptr<!u64i>, !u64i
+      %38 = cir.get_member %6[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %39 = cir.load %38 : !cir.ptr<!u32i>, !u32i
+      %40 = cir.cast bitcast %5 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %34, %40 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %41 = cir.get_member %5[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %42 = cir.load %41 : !cir.ptr<!u64i>, !u64i
+      %43 = cir.get_member %5[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %44 = cir.load %43 : !cir.ptr<!u32i>, !u32i
+      %45 = cir.call @cudaLaunchKernel(%30, %37, %39, %42, %44, %13, %31, %32) : (!cir.ptr<!void> {llvm.noundef}, !u64i, !u32i, !u64i, !u32i, !cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}, !cir.ptr<!rec_CUstream_st> {llvm.noundef}) -> (!u32i {llvm.noundef})
+      cir.return
+    }
+    cir.func internal private dso_local @_Z27__device_stub__bicg_kernel1iiPfS_S___noalias(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}) attributes {cir.offload.specialization_clone, "cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel1iiPfS_S___noalias">, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4> : !u32i
+      %1 = cir.const #cir.int<3> : !u32i
+      %2 = cir.const #cir.int<2> : !u32i
+      %3 = cir.const #cir.int<1> : !u32i
+      %4 = cir.const #cir.int<0> : !u32i
+      %5 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %6 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %7 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %8 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %9 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %10 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %11 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg0, %7 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %8 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %9 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %10 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %11 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      %12 = cir.alloca "kernel_args" align(16) : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>>
+      %13 = cir.cast array_to_ptrdecay %12 : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>> -> !cir.ptr<!cir.ptr<!void>>
+      %14 = cir.ptr_stride %13, %4 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %15 = cir.cast bitcast %7 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %15, %14 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %16 = cir.ptr_stride %13, %3 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %17 = cir.cast bitcast %8 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %17, %16 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %18 = cir.ptr_stride %13, %2 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %19 = cir.cast bitcast %9 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %19, %18 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %20 = cir.ptr_stride %13, %1 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %21 = cir.cast bitcast %10 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %21, %20 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %22 = cir.ptr_stride %13, %0 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %23 = cir.cast bitcast %11 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %23, %22 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %24 = cir.alloca "grid_dim" align(8) : !cir.ptr<!rec_dim3>
+      %25 = cir.alloca "block_dim" align(8) : !cir.ptr<!rec_dim3>
+      %26 = cir.alloca "shared_mem" align(8) : !cir.ptr<!u64i>
+      %27 = cir.alloca "stream" align(8) : !cir.ptr<!cir.ptr<!rec_CUstream_st>>
+      %28 = cir.call @__cudaPopCallConfiguration(%24, %25, %26, %27) : (!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!rec_CUstream_st>>) -> !s32i
+      %29 = cir.get_global @_Z27__device_stub__bicg_kernel1iiPfS_S___noalias : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>>
+      %30 = cir.cast bitcast %29 : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>> -> !cir.ptr<!void>
+      %31 = cir.load %26 : !cir.ptr<!u64i>, !u64i
+      %32 = cir.load %27 : !cir.ptr<!cir.ptr<!rec_CUstream_st>>, !cir.ptr<!rec_CUstream_st>
+      %33 = cir.load align(8) %24 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %34 = cir.load align(8) %25 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %35 = cir.cast bitcast %6 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %33, %35 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %36 = cir.get_member %6[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %37 = cir.load %36 : !cir.ptr<!u64i>, !u64i
+      %38 = cir.get_member %6[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %39 = cir.load %38 : !cir.ptr<!u32i>, !u32i
+      %40 = cir.cast bitcast %5 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %34, %40 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %41 = cir.get_member %5[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %42 = cir.load %41 : !cir.ptr<!u64i>, !u64i
+      %43 = cir.get_member %5[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %44 = cir.load %43 : !cir.ptr<!u32i>, !u32i
+      %45 = cir.call @cudaLaunchKernel(%30, %37, %39, %42, %44, %13, %31, %32) : (!cir.ptr<!void> {llvm.noundef}, !u64i, !u32i, !u64i, !u32i, !cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}, !cir.ptr<!rec_CUstream_st> {llvm.noundef}) -> (!u32i {llvm.noundef})
+      cir.return
+    }
+    cir.func private dso_local @__cudaPopCallConfiguration(!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!rec_CUstream_st>>) -> !s32i
+    cir.func private dso_local @cudaLaunchKernel(!cir.ptr<!void>, !u64i, !u32i, !u64i, !u32i, !cir.ptr<!cir.ptr<!void>>, !u64i, !cir.ptr<!rec_CUstream_st>) -> !u32i
+    cir.func dso_local @_Z27__device_stub__bicg_kernel2iiPfS_S_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel2iiPfS_S_">, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4> : !u32i
+      %1 = cir.const #cir.int<3> : !u32i
+      %2 = cir.const #cir.int<2> : !u32i
+      %3 = cir.const #cir.int<1> : !u32i
+      %4 = cir.const #cir.int<0> : !u32i
+      %5 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %6 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %7 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %8 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %9 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %10 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %11 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg0, %7 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %8 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %9 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %10 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %11 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      %12 = cir.alloca "kernel_args" align(16) : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>>
+      %13 = cir.cast array_to_ptrdecay %12 : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>> -> !cir.ptr<!cir.ptr<!void>>
+      %14 = cir.ptr_stride %13, %4 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %15 = cir.cast bitcast %7 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %15, %14 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %16 = cir.ptr_stride %13, %3 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %17 = cir.cast bitcast %8 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %17, %16 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %18 = cir.ptr_stride %13, %2 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %19 = cir.cast bitcast %9 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %19, %18 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %20 = cir.ptr_stride %13, %1 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %21 = cir.cast bitcast %10 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %21, %20 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %22 = cir.ptr_stride %13, %0 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %23 = cir.cast bitcast %11 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %23, %22 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %24 = cir.alloca "grid_dim" align(8) : !cir.ptr<!rec_dim3>
+      %25 = cir.alloca "block_dim" align(8) : !cir.ptr<!rec_dim3>
+      %26 = cir.alloca "shared_mem" align(8) : !cir.ptr<!u64i>
+      %27 = cir.alloca "stream" align(8) : !cir.ptr<!cir.ptr<!rec_CUstream_st>>
+      %28 = cir.call @__cudaPopCallConfiguration(%24, %25, %26, %27) : (!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!rec_CUstream_st>>) -> !s32i
+      %29 = cir.get_global @_Z27__device_stub__bicg_kernel2iiPfS_S_ : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>>
+      %30 = cir.cast bitcast %29 : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>> -> !cir.ptr<!void>
+      %31 = cir.load %26 : !cir.ptr<!u64i>, !u64i
+      %32 = cir.load %27 : !cir.ptr<!cir.ptr<!rec_CUstream_st>>, !cir.ptr<!rec_CUstream_st>
+      %33 = cir.load align(8) %24 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %34 = cir.load align(8) %25 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %35 = cir.cast bitcast %6 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %33, %35 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %36 = cir.get_member %6[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %37 = cir.load %36 : !cir.ptr<!u64i>, !u64i
+      %38 = cir.get_member %6[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %39 = cir.load %38 : !cir.ptr<!u32i>, !u32i
+      %40 = cir.cast bitcast %5 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %34, %40 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %41 = cir.get_member %5[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %42 = cir.load %41 : !cir.ptr<!u64i>, !u64i
+      %43 = cir.get_member %5[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %44 = cir.load %43 : !cir.ptr<!u32i>, !u32i
+      %45 = cir.call @cudaLaunchKernel(%30, %37, %39, %42, %44, %13, %31, %32) : (!cir.ptr<!void> {llvm.noundef}, !u64i, !u32i, !u64i, !u32i, !cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}, !cir.ptr<!rec_CUstream_st> {llvm.noundef}) -> (!u32i {llvm.noundef})
+      cir.return
+    }
+    cir.func internal private dso_local @_Z27__device_stub__bicg_kernel2iiPfS_S___noalias(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}) attributes {cir.offload.specialization_clone, "cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel2iiPfS_S___noalias">, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4> : !u32i
+      %1 = cir.const #cir.int<3> : !u32i
+      %2 = cir.const #cir.int<2> : !u32i
+      %3 = cir.const #cir.int<1> : !u32i
+      %4 = cir.const #cir.int<0> : !u32i
+      %5 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %6 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %7 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %8 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %9 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %10 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %11 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg0, %7 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %8 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %9 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %10 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %11 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      %12 = cir.alloca "kernel_args" align(16) : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>>
+      %13 = cir.cast array_to_ptrdecay %12 : !cir.ptr<!cir.array<!cir.ptr<!void> x 5>> -> !cir.ptr<!cir.ptr<!void>>
+      %14 = cir.ptr_stride %13, %4 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %15 = cir.cast bitcast %7 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %15, %14 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %16 = cir.ptr_stride %13, %3 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %17 = cir.cast bitcast %8 : !cir.ptr<!s32i> -> !cir.ptr<!void>
+      cir.store %17, %16 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %18 = cir.ptr_stride %13, %2 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %19 = cir.cast bitcast %9 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %19, %18 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %20 = cir.ptr_stride %13, %1 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %21 = cir.cast bitcast %10 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %21, %20 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %22 = cir.ptr_stride %13, %0 : (!cir.ptr<!cir.ptr<!void>>, !u32i) -> !cir.ptr<!cir.ptr<!void>>
+      %23 = cir.cast bitcast %11 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!void>
+      cir.store %23, %22 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+      %24 = cir.alloca "grid_dim" align(8) : !cir.ptr<!rec_dim3>
+      %25 = cir.alloca "block_dim" align(8) : !cir.ptr<!rec_dim3>
+      %26 = cir.alloca "shared_mem" align(8) : !cir.ptr<!u64i>
+      %27 = cir.alloca "stream" align(8) : !cir.ptr<!cir.ptr<!rec_CUstream_st>>
+      %28 = cir.call @__cudaPopCallConfiguration(%24, %25, %26, %27) : (!cir.ptr<!rec_dim3>, !cir.ptr<!rec_dim3>, !cir.ptr<!u64i>, !cir.ptr<!cir.ptr<!rec_CUstream_st>>) -> !s32i
+      %29 = cir.get_global @_Z27__device_stub__bicg_kernel2iiPfS_S___noalias : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>>
+      %30 = cir.cast bitcast %29 : !cir.ptr<!cir.func<(!s32i, !s32i, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>, !cir.ptr<!cir.float>)>> -> !cir.ptr<!void>
+      %31 = cir.load %26 : !cir.ptr<!u64i>, !u64i
+      %32 = cir.load %27 : !cir.ptr<!cir.ptr<!rec_CUstream_st>>, !cir.ptr<!rec_CUstream_st>
+      %33 = cir.load align(8) %24 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %34 = cir.load align(8) %25 : !cir.ptr<!rec_dim3>, !rec_dim3
+      %35 = cir.cast bitcast %6 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %33, %35 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %36 = cir.get_member %6[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %37 = cir.load %36 : !cir.ptr<!u64i>, !u64i
+      %38 = cir.get_member %6[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %39 = cir.load %38 : !cir.ptr<!u32i>, !u32i
+      %40 = cir.cast bitcast %5 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+      cir.store %34, %40 : !rec_dim3, !cir.ptr<!rec_dim3>
+      %41 = cir.get_member %5[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+      %42 = cir.load %41 : !cir.ptr<!u64i>, !u64i
+      %43 = cir.get_member %5[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+      %44 = cir.load %43 : !cir.ptr<!u32i>, !u32i
+      %45 = cir.call @cudaLaunchKernel(%30, %37, %39, %42, %44, %13, %31, %32) : (!cir.ptr<!void> {llvm.noundef}, !u64i, !u32i, !u64i, !u32i, !cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}, !cir.ptr<!rec_CUstream_st> {llvm.noundef}) -> (!u32i {llvm.noundef})
+      cir.return
+    }
+    cir.func dso_local @_Z8bicg_cpuiiPA4096_fPfS1_S1_S1_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.array<!cir.float x 4096>> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}, %arg5: !cir.ptr<!cir.float> {llvm.noundef}, %arg6: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.fp<0.000000e+00> : !cir.double
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %3 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %5 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %9 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+      %10 = cir.alloca "j" align(4) : !cir.ptr<!s32i>
+      cir.store %arg0, %2 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %4 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      cir.store %arg3, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg5, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg6, %8 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %9 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        cir.lifetime.start %10 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          cir.scope {
+            cir.store align(4) %1, %9 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %11 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+              %13 = cir.cmp lt %11, %12 : !s32i
+              cir.condition(%13)
+            } body {
+              cir.scope {
+                %11 = cir.cast floating %0 : !cir.double -> !cir.float
+                %12 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                %13 = cir.cast integral %12 : !s32i -> !s64i
+                %14 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %15 = cir.ptr_stride %14, %13 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                cir.store align(4) %11, %15 : !cir.float, !cir.ptr<!cir.float>
+              }
+              cir.yield
+            } step {
+              %11 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.inc nsw %11 : !s32i
+              cir.store align(4) %12, %9 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.scope {
+            cir.store align(4) %1, %9 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %11 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.load align(4) %2 : !cir.ptr<!s32i>, !s32i
+              %13 = cir.cmp lt %11, %12 : !s32i
+              cir.condition(%13)
+            } body {
+              cir.scope {
+                %11 = cir.cast floating %0 : !cir.double -> !cir.float
+                %12 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                %13 = cir.cast integral %12 : !s32i -> !s64i
+                %14 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %15 = cir.ptr_stride %14, %13 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                cir.store align(4) %11, %15 : !cir.float, !cir.ptr<!cir.float>
+                cir.scope {
+                  cir.store align(4) %1, %10 : !s32i, !cir.ptr<!s32i>
+                  cir.for : cond {
+                    %16 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                    %17 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+                    %18 = cir.cmp lt %16, %17 : !s32i
+                    cir.condition(%18)
+                  } body {
+                    cir.scope {
+                      %16 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                      %17 = cir.cast integral %16 : !s32i -> !s64i
+                      %18 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %19 = cir.ptr_stride %18, %17 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      %20 = cir.load align(4) %19 : !cir.ptr<!cir.float>, !cir.float
+                      %21 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %22 = cir.cast integral %21 : !s32i -> !s64i
+                      %23 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %24 = cir.ptr_stride %23, %22 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      %25 = cir.load align(4) %24 : !cir.ptr<!cir.float>, !cir.float
+                      %26 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                      %27 = cir.cast integral %26 : !s32i -> !s64i
+                      %28 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %29 = cir.cast integral %28 : !s32i -> !s64i
+                      %30 = cir.load align(8) %4 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %31 = cir.ptr_stride %30, %29 : (!cir.ptr<!cir.array<!cir.float x 4096>>, !s64i) -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %32 = cir.get_element %31[%27 : !s64i] : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                      %33 = cir.load align(4) %32 : !cir.ptr<!cir.float>, !cir.float
+                      %34 = cir.fmuladd %25, %33, %20 : !cir.float
+                      %35 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                      %36 = cir.cast integral %35 : !s32i -> !s64i
+                      %37 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %38 = cir.ptr_stride %37, %36 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      cir.store align(4) %34, %38 : !cir.float, !cir.ptr<!cir.float>
+                      %39 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %40 = cir.cast integral %39 : !s32i -> !s64i
+                      %41 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %42 = cir.ptr_stride %41, %40 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      %43 = cir.load align(4) %42 : !cir.ptr<!cir.float>, !cir.float
+                      %44 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                      %45 = cir.cast integral %44 : !s32i -> !s64i
+                      %46 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %47 = cir.cast integral %46 : !s32i -> !s64i
+                      %48 = cir.load align(8) %4 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %49 = cir.ptr_stride %48, %47 : (!cir.ptr<!cir.array<!cir.float x 4096>>, !s64i) -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                      %50 = cir.get_element %49[%45 : !s64i] : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                      %51 = cir.load align(4) %50 : !cir.ptr<!cir.float>, !cir.float
+                      %52 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                      %53 = cir.cast integral %52 : !s32i -> !s64i
+                      %54 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %55 = cir.ptr_stride %54, %53 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      %56 = cir.load align(4) %55 : !cir.ptr<!cir.float>, !cir.float
+                      %57 = cir.fmuladd %51, %56, %43 : !cir.float
+                      %58 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                      %59 = cir.cast integral %58 : !s32i -> !s64i
+                      %60 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %61 = cir.ptr_stride %60, %59 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                      cir.store align(4) %57, %61 : !cir.float, !cir.ptr<!cir.float>
+                    }
+                    cir.yield
+                  } step {
+                    %16 = cir.load align(4) %10 : !cir.ptr<!s32i>, !s32i
+                    %17 = cir.inc nsw %16 : !s32i
+                    cir.store align(4) %17, %10 : !s32i, !cir.ptr<!s32i>
+                    cir.yield
+                  }
+                }
+              }
+              cir.yield
+            } step {
+              %11 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+              %12 = cir.inc nsw %11 : !s32i
+              cir.store align(4) %12, %9 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %10 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %9 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func dso_local @_Z8bicgCudaiiPA4096_fPfS1_S1_S1_S1_S1_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.array<!cir.float x 4096>> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.noundef}, %arg5: !cir.ptr<!cir.float> {llvm.noundef}, %arg6: !cir.ptr<!cir.float> {llvm.noundef}, %arg7: !cir.ptr<!cir.float> {llvm.noundef}, %arg8: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<2> : !u32i
+      %1 = cir.const #cir.ptr<null> : !cir.ptr<!void>
+      %2 = cir.const #cir.int<0> : !u64i
+      %3 = cir.const #cir.int<4096> : !s32i
+      %4 = cir.const #cir.int<256> : !u32i
+      %5 = cir.const #cir.int<1> : !u32i
+      %6 = cir.const #cir.int<4096> : !u64i
+      %7 = cir.const #cir.int<4> : !u64i
+      %8 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %9 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %10 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %11 = cir.alloca "coerce" align(8) : !cir.ptr<!rec_anon_struct>
+      %12 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %13 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %14 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %15 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %16 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %17 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %18 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %19 = cir.alloca "s_outputFromGpu" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %20 = cir.alloca "q_outputFromGpu" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %21 = cir.alloca "A_gpu" align(8) : !cir.ptr<!cir.ptr<!cir.float>>
+      %22 = cir.alloca "q_gpu" align(8) : !cir.ptr<!cir.ptr<!cir.float>>
+      %23 = cir.alloca "p_gpu" align(8) : !cir.ptr<!cir.ptr<!cir.float>>
+      %24 = cir.alloca "r_gpu" align(8) : !cir.ptr<!cir.ptr<!cir.float>>
+      %25 = cir.alloca "s_gpu" align(8) : !cir.ptr<!cir.ptr<!cir.float>>
+      %26 = cir.alloca "block" align(4) init : !cir.ptr<!rec_dim3>
+      %27 = cir.alloca "grid1" align(4) init : !cir.ptr<!rec_dim3>
+      %28 = cir.alloca "grid2" align(4) init : !cir.ptr<!rec_dim3>
+      %29 = cir.alloca "agg.tmp0" align(4) : !cir.ptr<!rec_dim3>
+      %30 = cir.alloca "agg.tmp1" align(4) : !cir.ptr<!rec_dim3>
+      %31 = cir.alloca "agg.tmp2" align(4) : !cir.ptr<!rec_dim3>
+      %32 = cir.alloca "agg.tmp3" align(4) : !cir.ptr<!rec_dim3>
+      cir.store %arg0, %12 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %13 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %14 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      cir.store %arg3, %15 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %16 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg5, %17 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg6, %18 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg7, %19 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg8, %20 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %21 : !cir.ptr<!cir.ptr<!cir.float>>
+      cir.cleanup.scope {
+        cir.lifetime.start %22 : !cir.ptr<!cir.ptr<!cir.float>>
+        cir.cleanup.scope {
+          cir.lifetime.start %23 : !cir.ptr<!cir.ptr<!cir.float>>
+          cir.cleanup.scope {
+            cir.lifetime.start %24 : !cir.ptr<!cir.ptr<!cir.float>>
+            cir.cleanup.scope {
+              cir.lifetime.start %25 : !cir.ptr<!cir.ptr<!cir.float>>
+              cir.cleanup.scope {
+                %33 = cir.cast bitcast %21 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!cir.ptr<!void>>
+                %34 = cir.mul %7, %6 : !u64i
+                %35 = cir.mul %34, %6 : !u64i
+                %36 = cir.call @cudaMalloc(%33, %35) {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i
+                %37 = cir.cast bitcast %24 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!cir.ptr<!void>>
+                %38 = cir.mul %7, %6 : !u64i
+                %39 = cir.call @cudaMalloc(%37, %38) {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i
+                %40 = cir.cast bitcast %25 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!cir.ptr<!void>>
+                %41 = cir.mul %7, %6 : !u64i
+                %42 = cir.call @cudaMalloc(%40, %41) {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i
+                %43 = cir.cast bitcast %23 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!cir.ptr<!void>>
+                %44 = cir.mul %7, %6 : !u64i
+                %45 = cir.call @cudaMalloc(%43, %44) {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i
+                %46 = cir.cast bitcast %22 : !cir.ptr<!cir.ptr<!cir.float>> -> !cir.ptr<!cir.ptr<!void>>
+                %47 = cir.mul %7, %6 : !u64i
+                %48 = cir.call @cudaMalloc(%46, %47) {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i
+                %49 = cir.load align(8) %21 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %50 = cir.cast bitcast %49 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %51 = cir.load align(8) %14 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                %52 = cir.cast bitcast %51 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                %53 = cir.mul %7, %6 : !u64i
+                %54 = cir.mul %53, %6 : !u64i
+                %55 = cir.call @cudaMemcpy(%50, %52, %54, %5) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                %56 = cir.load align(8) %24 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %57 = cir.cast bitcast %56 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %58 = cir.load align(8) %15 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %59 = cir.cast bitcast %58 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %60 = cir.mul %7, %6 : !u64i
+                %61 = cir.call @cudaMemcpy(%57, %59, %60, %5) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                %62 = cir.load align(8) %25 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %63 = cir.cast bitcast %62 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %64 = cir.load align(8) %16 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %65 = cir.cast bitcast %64 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %66 = cir.mul %7, %6 : !u64i
+                %67 = cir.call @cudaMemcpy(%63, %65, %66, %5) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                %68 = cir.load align(8) %23 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %69 = cir.cast bitcast %68 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %70 = cir.load align(8) %17 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %71 = cir.cast bitcast %70 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %72 = cir.mul %7, %6 : !u64i
+                %73 = cir.call @cudaMemcpy(%69, %71, %72, %5) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                %74 = cir.load align(8) %22 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %75 = cir.cast bitcast %74 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %76 = cir.load align(8) %18 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %77 = cir.cast bitcast %76 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                %78 = cir.mul %7, %6 : !u64i
+                %79 = cir.call @cudaMemcpy(%75, %77, %78, %5) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                cir.lifetime.start %26 : !cir.ptr<!rec_dim3>
+                cir.cleanup.scope {
+                  cir.call @_ZN4dim3C2Ejjj(%26, %4, %5, %5) {uniform_work_group_size} : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+                  cir.lifetime.start %27 : !cir.ptr<!rec_dim3>
+                  cir.cleanup.scope {
+                    %80 = cir.cast int_to_float %3 : !s32i -> !cir.float
+                    %81 = cir.get_member %26[0] {name = "x"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+                    %82 = cir.load align(4) %81 : !cir.ptr<!u32i>, !u32i
+                    %83 = cir.cast int_to_float %82 : !u32i -> !cir.float
+                    %84 = cir.fdiv %80, %83 : !cir.float
+                    %85 = cir.call @_ZSt4ceilf(%84) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+                    %86 = cir.cast float_to_int %85 : !cir.float -> !u64i
+                    %87 = cir.cast integral %86 : !u64i -> !u32i
+                    cir.call @_ZN4dim3C2Ejjj(%27, %87, %5, %5) {uniform_work_group_size} : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+                    cir.lifetime.start %28 : !cir.ptr<!rec_dim3>
+                    cir.cleanup.scope {
+                      %88 = cir.cast int_to_float %3 : !s32i -> !cir.float
+                      %89 = cir.get_member %26[0] {name = "x"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+                      %90 = cir.load align(4) %89 : !cir.ptr<!u32i>, !u32i
+                      %91 = cir.cast int_to_float %90 : !u32i -> !cir.float
+                      %92 = cir.fdiv %88, %91 : !cir.float
+                      %93 = cir.call @_ZSt4ceilf(%92) {uniform_work_group_size} : (!cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef})
+                      %94 = cir.cast float_to_int %93 : !cir.float -> !u64i
+                      %95 = cir.cast integral %94 : !u64i -> !u32i
+                      cir.call @_ZN4dim3C2Ejjj(%28, %95, %5, %5) {uniform_work_group_size} : (!cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}, !u32i {llvm.noundef}) -> ()
+                      cir.call @_Z21polybench_timer_startv() {uniform_work_group_size} : () -> ()
+                      cir.copy %27 align(4) to %29 align(4) : !cir.ptr<!rec_dim3>
+                      cir.copy %26 align(4) to %30 align(4) : !cir.ptr<!rec_dim3>
+                      %96 = cir.load align(4) %29 : !cir.ptr<!rec_dim3>, !rec_dim3
+                      %97 = cir.load align(4) %30 : !cir.ptr<!rec_dim3>, !rec_dim3
+                      %98 = cir.cast bitcast %11 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+                      cir.store %96, %98 : !rec_dim3, !cir.ptr<!rec_dim3>
+                      %99 = cir.get_member %11[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+                      %100 = cir.load %99 : !cir.ptr<!u64i>, !u64i
+                      %101 = cir.get_member %11[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+                      %102 = cir.load %101 : !cir.ptr<!u32i>, !u32i
+                      %103 = cir.cast bitcast %10 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+                      cir.store %97, %103 : !rec_dim3, !cir.ptr<!rec_dim3>
+                      %104 = cir.get_member %10[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+                      %105 = cir.load %104 : !cir.ptr<!u64i>, !u64i
+                      %106 = cir.get_member %10[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+                      %107 = cir.load %106 : !cir.ptr<!u32i>, !u32i
+                      %108 = cir.call @__cudaPushCallConfiguration(%100, %102, %105, %107, %2, %1) {uniform_work_group_size} : (!u64i, !u32i, !u64i, !u32i, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %109 = cir.cast int_to_bool %108 : !u32i -> !cir.bool
+                      cir.if %109 {
+                      } else {
+                        %157 = cir.load align(4) %12 : !cir.ptr<!s32i>, !s32i
+                        %158 = cir.load align(4) %13 : !cir.ptr<!s32i>, !s32i
+                        %159 = cir.load align(8) %21 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        %160 = cir.load align(8) %24 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        %161 = cir.load align(8) %25 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        cir.call @_Z27__device_stub__bicg_kernel1iiPfS_S___noalias(%157, %158, %159, %160, %161) {cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel1iiPfS_S___noalias">, uniform_work_group_size} : (!s32i {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}) -> ()
+                      }
+                      %110 = cir.call @cudaThreadSynchronize() {uniform_work_group_size} : () -> !u32i
+                      cir.copy %28 align(4) to %31 align(4) : !cir.ptr<!rec_dim3>
+                      cir.copy %26 align(4) to %32 align(4) : !cir.ptr<!rec_dim3>
+                      %111 = cir.load align(4) %31 : !cir.ptr<!rec_dim3>, !rec_dim3
+                      %112 = cir.load align(4) %32 : !cir.ptr<!rec_dim3>, !rec_dim3
+                      %113 = cir.cast bitcast %9 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+                      cir.store %111, %113 : !rec_dim3, !cir.ptr<!rec_dim3>
+                      %114 = cir.get_member %9[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+                      %115 = cir.load %114 : !cir.ptr<!u64i>, !u64i
+                      %116 = cir.get_member %9[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+                      %117 = cir.load %116 : !cir.ptr<!u32i>, !u32i
+                      %118 = cir.cast bitcast %8 : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!rec_dim3>
+                      cir.store %112, %118 : !rec_dim3, !cir.ptr<!rec_dim3>
+                      %119 = cir.get_member %8[0] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u64i>
+                      %120 = cir.load %119 : !cir.ptr<!u64i>, !u64i
+                      %121 = cir.get_member %8[1] {name = ""} : !cir.ptr<!rec_anon_struct> -> !cir.ptr<!u32i>
+                      %122 = cir.load %121 : !cir.ptr<!u32i>, !u32i
+                      %123 = cir.call @__cudaPushCallConfiguration(%115, %117, %120, %122, %2, %1) {uniform_work_group_size} : (!u64i, !u32i, !u64i, !u32i, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %124 = cir.cast int_to_bool %123 : !u32i -> !cir.bool
+                      cir.if %124 {
+                      } else {
+                        %157 = cir.load align(4) %12 : !cir.ptr<!s32i>, !s32i
+                        %158 = cir.load align(4) %13 : !cir.ptr<!s32i>, !s32i
+                        %159 = cir.load align(8) %21 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        %160 = cir.load align(8) %23 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        %161 = cir.load align(8) %22 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                        cir.call @_Z27__device_stub__bicg_kernel2iiPfS_S___noalias(%157, %158, %159, %160, %161) {cu.kernel_name = #cir.cu.kernel_name<"_Z12bicg_kernel2iiPfS_S___noalias">, uniform_work_group_size} : (!s32i {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}) -> ()
+                      }
+                      %125 = cir.call @cudaThreadSynchronize() {uniform_work_group_size} : () -> !u32i
+                      %126 = cir.get_global @printf : !cir.ptr<!cir.func<(!cir.ptr<!s8i>, ...) -> !s32i>>
+                      %127 = cir.get_global @".str.2" : !cir.ptr<!cir.array<!s8i x 22>>
+                      %128 = cir.cast array_to_ptrdecay %127 : !cir.ptr<!cir.array<!s8i x 22>> -> !cir.ptr<!s8i>
+                      %129 = cir.call @printf(%128) {uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}) -> !s32i
+                      cir.call @_Z20polybench_timer_stopv() {uniform_work_group_size} : () -> ()
+                      cir.call @_Z21polybench_timer_printv() {uniform_work_group_size} : () -> ()
+                      %130 = cir.load align(8) %19 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %131 = cir.cast bitcast %130 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %132 = cir.load align(8) %25 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %133 = cir.cast bitcast %132 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %134 = cir.mul %7, %6 : !u64i
+                      %135 = cir.call @cudaMemcpy(%131, %133, %134, %0) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                      %136 = cir.load align(8) %20 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %137 = cir.cast bitcast %136 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %138 = cir.load align(8) %22 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %139 = cir.cast bitcast %138 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %140 = cir.mul %7, %6 : !u64i
+                      %141 = cir.call @cudaMemcpy(%137, %139, %140, %0) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i
+                      %142 = cir.load align(8) %21 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %143 = cir.cast bitcast %142 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %144 = cir.call @cudaFree(%143) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %145 = cir.load align(8) %24 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %146 = cir.cast bitcast %145 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %147 = cir.call @cudaFree(%146) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %148 = cir.load align(8) %25 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %149 = cir.cast bitcast %148 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %150 = cir.call @cudaFree(%149) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %151 = cir.load align(8) %23 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %152 = cir.cast bitcast %151 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %153 = cir.call @cudaFree(%152) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      %154 = cir.load align(8) %22 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                      %155 = cir.cast bitcast %154 : !cir.ptr<!cir.float> -> !cir.ptr<!void>
+                      %156 = cir.call @cudaFree(%155) {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> !u32i
+                      cir.yield
+                    } cleanup all {
+                      cir.lifetime.end %28 : !cir.ptr<!rec_dim3>
+                      cir.yield
+                    }
+                    cir.yield
+                  } cleanup all {
+                    cir.lifetime.end %27 : !cir.ptr<!rec_dim3>
+                    cir.yield
+                  }
+                  cir.yield
+                } cleanup all {
+                  cir.lifetime.end %26 : !cir.ptr<!rec_dim3>
+                  cir.yield
+                }
+                cir.yield
+              } cleanup all {
+                cir.lifetime.end %25 : !cir.ptr<!cir.ptr<!cir.float>>
+                cir.yield
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %24 : !cir.ptr<!cir.ptr<!cir.float>>
+              cir.yield
+            }
+            cir.yield
+          } cleanup all {
+            cir.lifetime.end %23 : !cir.ptr<!cir.ptr<!cir.float>>
+            cir.yield
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %22 : !cir.ptr<!cir.ptr<!cir.float>>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %21 : !cir.ptr<!cir.ptr<!cir.float>>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func private @cudaMalloc(!cir.ptr<!cir.ptr<!void>> {llvm.noundef}, !u64i {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func private @cudaMemcpy(!cir.ptr<!void> {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}, !u64i {llvm.noundef}, !u32i {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func comdat alignment(2) linkonce_odr dso_local @_ZN4dim3C2Ejjj(%arg0: !cir.ptr<!rec_dim3> {llvm.align = 4 : i64, llvm.dereferenceable = 12 : i64, llvm.nonnull, llvm.noundef}, %arg1: !u32i {llvm.noundef}, %arg2: !u32i {llvm.noundef}, %arg3: !u32i {llvm.noundef}) func_info<#cir.cxx_ctor<!rec_dim3, default>> attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.get_member %arg0[0] {name = "x"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+      cir.store align(4) %arg1, %0 : !u32i, !cir.ptr<!u32i>
+      %1 = cir.get_member %arg0[1] {name = "y"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+      cir.store align(4) %arg2, %1 : !u32i, !cir.ptr<!u32i>
+      %2 = cir.get_member %arg0[2] {name = "z"} : !cir.ptr<!rec_dim3> -> !cir.ptr<!u32i>
+      cir.store align(4) %arg3, %2 : !u32i, !cir.ptr<!u32i>
+      cir.return
+    }
+    cir.func inline_hint comdat linkonce_odr dso_local @_ZSt4ceilf(%arg0: !cir.float {llvm.noundef}) -> (!cir.float {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.ceil %arg0 : !cir.float
+      cir.return %0 : !cir.float
+    }
+    cir.func dso_local @_Z21polybench_timer_startv() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      cir.call @_Z29polybench_prepare_instrumentsv() {uniform_work_group_size} : () -> ()
+      %0 = cir.call @_ZL7rtclockv() {uniform_work_group_size} : () -> (!cir.double {llvm.noundef})
+      %1 = cir.get_global @polybench_t_start : !cir.ptr<!cir.double>
+      cir.store align(8) %0, %1 : !cir.double, !cir.ptr<!cir.double>
+      cir.return
+    }
+    cir.func private @__cudaPushCallConfiguration(!u64i, !u32i, !u64i, !u32i, !u64i {llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func private @cudaThreadSynchronize() -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func dso_local @_Z20polybench_timer_stopv() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.call @_ZL7rtclockv() {uniform_work_group_size} : () -> (!cir.double {llvm.noundef})
+      %1 = cir.get_global @polybench_t_end : !cir.ptr<!cir.double>
+      cir.store align(8) %0, %1 : !cir.double, !cir.ptr<!cir.double>
+      cir.return
+    }
+    cir.func dso_local @_Z21polybench_timer_printv() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.get_global @printf : !cir.ptr<!cir.func<(!cir.ptr<!s8i>, ...) -> !s32i>>
+      %1 = cir.get_global @".str.5" : !cir.ptr<!cir.array<!s8i x 7>>
+      %2 = cir.cast array_to_ptrdecay %1 : !cir.ptr<!cir.array<!s8i x 7>> -> !cir.ptr<!s8i>
+      %3 = cir.get_global @polybench_t_end : !cir.ptr<!cir.double>
+      %4 = cir.load align(8) %3 : !cir.ptr<!cir.double>, !cir.double
+      %5 = cir.get_global @polybench_t_start : !cir.ptr<!cir.double>
+      %6 = cir.load align(8) %5 : !cir.ptr<!cir.double>, !cir.double
+      %7 = cir.fsub %4, %6 : !cir.double
+      %8 = cir.call @printf(%2, %7) {uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}, !cir.double {llvm.noundef}) -> !s32i
+      cir.return
+    }
+    cir.func private @cudaFree(!cir.ptr<!void> {llvm.noundef}) -> !u32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size}
+    cir.func dso_local @main(%arg0: !s32i {llvm.noundef}, %arg1: !cir.ptr<!cir.ptr<!s8i>> {llvm.noundef}) -> (!s32i {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<4> : !s32i
+      %1 = cir.const #cir.int<4096> : !s32i
+      %2 = cir.const #cir.int<0> : !s32i
+      %3 = cir.alloca "__retval" align(4) : !cir.ptr<!s32i>
+      %4 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %6 = cir.alloca "A" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>
+      %7 = cir.alloca "s" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %8 = cir.alloca "q" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %9 = cir.alloca "p" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %10 = cir.alloca "r" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %11 = cir.alloca "s_outputFromGpu" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      %12 = cir.alloca "q_outputFromGpu" align(8) : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+      cir.store %2, %3 : !s32i, !cir.ptr<!s32i>
+      cir.lifetime.start %4 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        cir.store align(4) %1, %4 : !s32i, !cir.ptr<!s32i>
+        cir.lifetime.start %5 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          cir.store align(4) %1, %5 : !s32i, !cir.ptr<!s32i>
+          cir.lifetime.start %6 : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>
+          cir.cleanup.scope {
+            %14 = cir.add nsw %1, %2 : !s32i
+            %15 = cir.add nsw %1, %2 : !s32i
+            %16 = cir.mul nsw %14, %15 : !s32i
+            %17 = cir.cast integral %16 : !s32i -> !u64i
+            %18 = cir.call @_Z20polybench_alloc_datayi(%17, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+            %19 = cir.cast bitcast %18 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>
+            cir.store align(8) %19, %6 : !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>
+            cir.lifetime.start %7 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+            cir.cleanup.scope {
+              %20 = cir.add nsw %1, %2 : !s32i
+              %21 = cir.cast integral %20 : !s32i -> !u64i
+              %22 = cir.call @_Z20polybench_alloc_datayi(%21, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+              %23 = cir.cast bitcast %22 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+              cir.store align(8) %23, %7 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+              cir.lifetime.start %8 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+              cir.cleanup.scope {
+                %24 = cir.add nsw %1, %2 : !s32i
+                %25 = cir.cast integral %24 : !s32i -> !u64i
+                %26 = cir.call @_Z20polybench_alloc_datayi(%25, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+                %27 = cir.cast bitcast %26 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                cir.store align(8) %27, %8 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                cir.lifetime.start %9 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                cir.cleanup.scope {
+                  %28 = cir.add nsw %1, %2 : !s32i
+                  %29 = cir.cast integral %28 : !s32i -> !u64i
+                  %30 = cir.call @_Z20polybench_alloc_datayi(%29, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+                  %31 = cir.cast bitcast %30 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                  cir.store align(8) %31, %9 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                  cir.lifetime.start %10 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                  cir.cleanup.scope {
+                    %32 = cir.add nsw %1, %2 : !s32i
+                    %33 = cir.cast integral %32 : !s32i -> !u64i
+                    %34 = cir.call @_Z20polybench_alloc_datayi(%33, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+                    %35 = cir.cast bitcast %34 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                    cir.store align(8) %35, %10 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                    cir.lifetime.start %11 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                    cir.cleanup.scope {
+                      %36 = cir.add nsw %1, %2 : !s32i
+                      %37 = cir.cast integral %36 : !s32i -> !u64i
+                      %38 = cir.call @_Z20polybench_alloc_datayi(%37, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+                      %39 = cir.cast bitcast %38 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                      cir.store align(8) %39, %11 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                      cir.lifetime.start %12 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                      cir.cleanup.scope {
+                        %40 = cir.add nsw %1, %2 : !s32i
+                        %41 = cir.cast integral %40 : !s32i -> !u64i
+                        %42 = cir.call @_Z20polybench_alloc_datayi(%41, %0) {uniform_work_group_size} : (!u64i {llvm.noundef}, !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+                        %43 = cir.cast bitcast %42 : !cir.ptr<!void> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                        cir.store align(8) %43, %12 : !cir.ptr<!cir.array<!cir.float x 4096>>, !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                        %44 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                        %45 = cir.load align(4) %5 : !cir.ptr<!s32i>, !s32i
+                        %46 = cir.load deref align(8) %6 : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>, !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>
+                        %47 = cir.cast array_to_ptrdecay %46 : !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %48 = cir.load deref align(8) %9 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %49 = cir.cast array_to_ptrdecay %48 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %50 = cir.load deref align(8) %10 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %51 = cir.cast array_to_ptrdecay %50 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        cir.call @_Z10init_arrayiiPA4096_fPfS1_(%44, %45, %47, %49, %51) {uniform_work_group_size} : (!s32i {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!cir.array<!cir.float x 4096>> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}) -> ()
+                        cir.call @_Z13GPU_argv_initv() {uniform_work_group_size} : () -> ()
+                        %52 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                        %53 = cir.load align(4) %5 : !cir.ptr<!s32i>, !s32i
+                        %54 = cir.load deref align(8) %6 : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>, !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>
+                        %55 = cir.cast array_to_ptrdecay %54 : !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>> -> !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %56 = cir.load deref align(8) %10 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %57 = cir.cast array_to_ptrdecay %56 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %58 = cir.load deref align(8) %7 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %59 = cir.cast array_to_ptrdecay %58 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %60 = cir.load deref align(8) %9 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %61 = cir.cast array_to_ptrdecay %60 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %62 = cir.load deref align(8) %8 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %63 = cir.cast array_to_ptrdecay %62 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %64 = cir.load deref align(8) %11 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %65 = cir.cast array_to_ptrdecay %64 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %66 = cir.load deref align(8) %12 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %67 = cir.cast array_to_ptrdecay %66 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        cir.call @_Z8bicgCudaiiPA4096_fPfS1_S1_S1_S1_S1_(%52, %53, %55, %57, %59, %61, %63, %65, %67) {uniform_work_group_size} : (!s32i {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!cir.array<!cir.float x 4096>> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}) -> ()
+                        %68 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                        %69 = cir.load align(4) %5 : !cir.ptr<!s32i>, !s32i
+                        %70 = cir.load deref align(8) %11 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %71 = cir.cast array_to_ptrdecay %70 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        %72 = cir.load deref align(8) %12 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %73 = cir.cast array_to_ptrdecay %72 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!cir.float>
+                        cir.call @_ZL11print_arrayiiPfS_(%68, %69, %71, %73) {uniform_work_group_size} : (!s32i {llvm.noundef}, !s32i {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}, !cir.ptr<!cir.float> {llvm.noundef}) -> ()
+                        %74 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %75 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>, !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>
+                        %76 = cir.cast bitcast %75 : !cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%76) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %77 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %78 = cir.load align(8) %10 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %79 = cir.cast bitcast %78 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%79) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %80 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %81 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %82 = cir.cast bitcast %81 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%82) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %83 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %84 = cir.load align(8) %9 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %85 = cir.cast bitcast %84 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%85) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %86 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %87 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %88 = cir.cast bitcast %87 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%88) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %89 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %90 = cir.load align(8) %11 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %91 = cir.cast bitcast %90 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%91) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        %92 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+                        %93 = cir.load align(8) %12 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>, !cir.ptr<!cir.array<!cir.float x 4096>>
+                        %94 = cir.cast bitcast %93 : !cir.ptr<!cir.array<!cir.float x 4096>> -> !cir.ptr<!void>
+                        cir.call @free(%94) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+                        cir.store %2, %3 : !s32i, !cir.ptr<!s32i>
+                        %95 = cir.load %3 : !cir.ptr<!s32i>, !s32i
+                        cir.return %95 : !s32i
+                      ^bb1:  // no predecessors
+                        cir.yield
+                      } cleanup all {
+                        cir.lifetime.end %12 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                        cir.yield
+                      }
+                      cir.yield
+                    } cleanup all {
+                      cir.lifetime.end %11 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                      cir.yield
+                    }
+                    cir.yield
+                  } cleanup all {
+                    cir.lifetime.end %10 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                    cir.yield
+                  }
+                  cir.yield
+                } cleanup all {
+                  cir.lifetime.end %9 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                  cir.yield
+                }
+                cir.yield
+              } cleanup all {
+                cir.lifetime.end %8 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+                cir.yield
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %7 : !cir.ptr<!cir.ptr<!cir.array<!cir.float x 4096>>>
+              cir.yield
+            }
+            cir.yield
+          } cleanup all {
+            cir.lifetime.end %6 : !cir.ptr<!cir.ptr<!cir.array<!cir.array<!cir.float x 4096> x 4096>>>
+            cir.yield
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %5 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %4 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      %13 = cir.load %3 : !cir.ptr<!s32i>, !s32i
+      cir.return %13 : !s32i
+    }
+    cir.func dso_local @_Z20polybench_alloc_datayi(%arg0: !u64i {llvm.noundef}, %arg1: !s32i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.alloca "n" align(8) init : !cir.ptr<!u64i>
+      %1 = cir.alloca "elt_size" align(4) init : !cir.ptr<!s32i>
+      %2 = cir.alloca "__retval" align(8) : !cir.ptr<!cir.ptr<!void>>
+      %3 = cir.alloca "val" align(8) init : !cir.ptr<!u64i>
+      %4 = cir.alloca "ret" align(8) init : !cir.ptr<!cir.ptr<!void>>
+      cir.store %arg0, %0 : !u64i, !cir.ptr<!u64i>
+      cir.store %arg1, %1 : !s32i, !cir.ptr<!s32i>
+      cir.lifetime.start %3 : !cir.ptr<!u64i>
+      cir.cleanup.scope {
+        %5 = cir.load align(8) %0 : !cir.ptr<!u64i>, !u64i
+        cir.store align(8) %5, %3 : !u64i, !cir.ptr<!u64i>
+        %6 = cir.load align(4) %1 : !cir.ptr<!s32i>, !s32i
+        %7 = cir.cast integral %6 : !s32i -> !u64i
+        %8 = cir.load align(8) %3 : !cir.ptr<!u64i>, !u64i
+        %9 = cir.mul %8, %7 : !u64i
+        cir.store align(8) %9, %3 : !u64i, !cir.ptr<!u64i>
+        cir.lifetime.start %4 : !cir.ptr<!cir.ptr<!void>>
+        cir.cleanup.scope {
+          %10 = cir.load align(8) %3 : !cir.ptr<!u64i>, !u64i
+          %11 = cir.call @_ZL7xmallocm(%10) {uniform_work_group_size} : (!u64i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef})
+          cir.store align(8) %11, %4 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+          %12 = cir.load align(8) %4 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+          cir.store %12, %2 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+          %13 = cir.load %2 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+          cir.return %13 : !cir.ptr<!void>
+        ^bb1:  // no predecessors
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %4 : !cir.ptr<!cir.ptr<!void>>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %3 : !cir.ptr<!u64i>
+        cir.yield
+      }
+      cir.unreachable
+    }
+    cir.func internal private dso_local @_ZL11print_arrayiiPfS_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<0> : !s32i
+      %1 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %2 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %3 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %4 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %5 = cir.alloca "__pb_checksum" align(4) init : !cir.ptr<!cir.float>
+      %6 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+      cir.store %arg0, %1 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %2 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %3 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %4 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %5 : !cir.ptr<!cir.float>
+      cir.cleanup.scope {
+        %7 = cir.cast int_to_float %0 : !s32i -> !cir.float
+        cir.store align(4) %7, %5 : !cir.float, !cir.ptr<!cir.float>
+        cir.lifetime.start %6 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          cir.scope {
+            cir.store align(4) %0, %6 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+              %29 = cir.load align(4) %2 : !cir.ptr<!s32i>, !s32i
+              %30 = cir.cmp lt %28, %29 : !s32i
+              cir.condition(%30)
+            } body {
+              cir.scope {
+                %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+                %29 = cir.cast integral %28 : !s32i -> !s64i
+                %30 = cir.load align(8) %3 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %31 = cir.ptr_stride %30, %29 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                %32 = cir.load align(4) %31 : !cir.ptr<!cir.float>, !cir.float
+                %33 = cir.load align(4) %5 : !cir.ptr<!cir.float>, !cir.float
+                %34 = cir.fadd %33, %32 : !cir.float
+                cir.store align(4) %34, %5 : !cir.float, !cir.ptr<!cir.float>
+              }
+              cir.yield
+            } step {
+              %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+              %29 = cir.inc nsw %28 : !s32i
+              cir.store align(4) %29, %6 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          cir.scope {
+            cir.store align(4) %0, %6 : !s32i, !cir.ptr<!s32i>
+            cir.for : cond {
+              %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+              %29 = cir.load align(4) %1 : !cir.ptr<!s32i>, !s32i
+              %30 = cir.cmp lt %28, %29 : !s32i
+              cir.condition(%30)
+            } body {
+              cir.scope {
+                %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+                %29 = cir.cast integral %28 : !s32i -> !s64i
+                %30 = cir.load align(8) %4 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                %31 = cir.ptr_stride %30, %29 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                %32 = cir.load align(4) %31 : !cir.ptr<!cir.float>, !cir.float
+                %33 = cir.load align(4) %5 : !cir.ptr<!cir.float>, !cir.float
+                %34 = cir.fadd %33, %32 : !cir.float
+                cir.store align(4) %34, %5 : !cir.float, !cir.ptr<!cir.float>
+              }
+              cir.yield
+            } step {
+              %28 = cir.load align(4) %6 : !cir.ptr<!s32i>, !s32i
+              %29 = cir.inc nsw %28 : !s32i
+              cir.store align(4) %29, %6 : !s32i, !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+          %8 = cir.get_global @fprintf : !cir.ptr<!cir.func<(!cir.ptr<!rec__IO_FILE>, !cir.ptr<!s8i>, ...) -> !s32i>>
+          %9 = cir.get_global @stderr : !cir.ptr<!cir.ptr<!rec__IO_FILE>>
+          %10 = cir.load align(8) %9 : !cir.ptr<!cir.ptr<!rec__IO_FILE>>, !cir.ptr<!rec__IO_FILE>
+          %11 = cir.get_global @".str.6" : !cir.ptr<!cir.array<!s8i x 2>>
+          %12 = cir.cast array_to_ptrdecay %11 : !cir.ptr<!cir.array<!s8i x 2>> -> !cir.ptr<!s8i>
+          %13 = cir.call @fprintf(%10, %12) nothrow {uniform_work_group_size} : (!cir.ptr<!rec__IO_FILE> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) -> !s32i
+          %14 = cir.get_global @fprintf : !cir.ptr<!cir.func<(!cir.ptr<!rec__IO_FILE>, !cir.ptr<!s8i>, ...) -> !s32i>>
+          %15 = cir.get_global @stderr : !cir.ptr<!cir.ptr<!rec__IO_FILE>>
+          %16 = cir.load align(8) %15 : !cir.ptr<!cir.ptr<!rec__IO_FILE>>, !cir.ptr<!rec__IO_FILE>
+          %17 = cir.get_global @".str.7" : !cir.ptr<!cir.array<!s8i x 8>>
+          %18 = cir.cast array_to_ptrdecay %17 : !cir.ptr<!cir.array<!s8i x 8>> -> !cir.ptr<!s8i>
+          %19 = cir.load align(4) %5 : !cir.ptr<!cir.float>, !cir.float
+          %20 = cir.cast floating %19 : !cir.float -> !cir.double
+          %21 = cir.call @fprintf(%16, %18, %20) nothrow {uniform_work_group_size} : (!cir.ptr<!rec__IO_FILE> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}, !cir.double {llvm.noundef}) -> !s32i
+          %22 = cir.get_global @fprintf : !cir.ptr<!cir.func<(!cir.ptr<!rec__IO_FILE>, !cir.ptr<!s8i>, ...) -> !s32i>>
+          %23 = cir.get_global @stderr : !cir.ptr<!cir.ptr<!rec__IO_FILE>>
+          %24 = cir.load align(8) %23 : !cir.ptr<!cir.ptr<!rec__IO_FILE>>, !cir.ptr<!rec__IO_FILE>
+          %25 = cir.get_global @".str.6" : !cir.ptr<!cir.array<!s8i x 2>>
+          %26 = cir.cast array_to_ptrdecay %25 : !cir.ptr<!cir.array<!s8i x 2>> -> !cir.ptr<!s8i>
+          %27 = cir.call @fprintf(%24, %26) nothrow {uniform_work_group_size} : (!cir.ptr<!rec__IO_FILE> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) -> !s32i
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %6 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %5 : !cir.ptr<!cir.float>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func private @free(!cir.ptr<!void> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", nothrow, uniform_work_group_size}
+    cir.func dso_local @_Z21polybench_flush_cachev() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<0> : !s32i
+      %1 = cir.const #cir.int<96> : !u32i
+      %2 = cir.const #cir.fp<1.000000e+01> : !cir.double
+      %3 = cir.const #cir.fp<0.000000e+00> : !cir.double
+      %4 = cir.const #cir.int<8> : !u64i
+      %5 = cir.const #cir.int<1024> : !s32i
+      %6 = cir.const #cir.int<32770> : !s32i
+      %7 = cir.alloca "cs" align(4) init : !cir.ptr<!s32i>
+      %8 = cir.alloca "flush" align(8) init : !cir.ptr<!cir.ptr<!cir.double>>
+      %9 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+      %10 = cir.alloca "tmp" align(8) init : !cir.ptr<!cir.double>
+      cir.lifetime.start %7 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        %11 = cir.mul nsw %6, %5 : !s32i
+        %12 = cir.cast integral %11 : !s32i -> !u64i
+        %13 = cir.div %12, %4 : !u64i
+        %14 = cir.cast integral %13 : !u64i -> !s32i
+        cir.store align(4) %14, %7 : !s32i, !cir.ptr<!s32i>
+        cir.lifetime.start %8 : !cir.ptr<!cir.ptr<!cir.double>>
+        cir.cleanup.scope {
+          %15 = cir.get_global @calloc : !cir.ptr<!cir.func<(!u64i, !u64i) -> !cir.ptr<!void>>>
+          %16 = cir.load align(4) %7 : !cir.ptr<!s32i>, !s32i
+          %17 = cir.cast integral %16 : !s32i -> !u64i
+          %18 = cir.call @calloc(%17, %4) nothrow {allocsize = array<i32: 0, 1>, uniform_work_group_size} : (!u64i {llvm.noundef}, !u64i {llvm.noundef}) -> !cir.ptr<!void>
+          %19 = cir.cast bitcast %18 : !cir.ptr<!void> -> !cir.ptr<!cir.double>
+          cir.store align(8) %19, %8 : !cir.ptr<!cir.double>, !cir.ptr<!cir.ptr<!cir.double>>
+          cir.lifetime.start %9 : !cir.ptr<!s32i>
+          cir.cleanup.scope {
+            cir.lifetime.start %10 : !cir.ptr<!cir.double>
+            cir.cleanup.scope {
+              cir.store align(8) %3, %10 : !cir.double, !cir.ptr<!cir.double>
+              cir.scope {
+                cir.store align(4) %0, %9 : !s32i, !cir.ptr<!s32i>
+                cir.for : cond {
+                  %25 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                  %26 = cir.load align(4) %7 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.cmp lt %25, %26 : !s32i
+                  cir.condition(%27)
+                } body {
+                  %25 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                  %26 = cir.cast integral %25 : !s32i -> !s64i
+                  %27 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.double>>, !cir.ptr<!cir.double>
+                  %28 = cir.ptr_stride %27, %26 : (!cir.ptr<!cir.double>, !s64i) -> !cir.ptr<!cir.double>
+                  %29 = cir.load align(8) %28 : !cir.ptr<!cir.double>, !cir.double
+                  %30 = cir.load align(8) %10 : !cir.ptr<!cir.double>, !cir.double
+                  %31 = cir.fadd %30, %29 : !cir.double
+                  cir.store align(8) %31, %10 : !cir.double, !cir.ptr<!cir.double>
+                  cir.yield
+                } step {
+                  %25 = cir.load align(4) %9 : !cir.ptr<!s32i>, !s32i
+                  %26 = cir.inc nsw %25 : !s32i
+                  cir.store align(4) %26, %9 : !s32i, !cir.ptr<!s32i>
+                  cir.yield
+                }
+              }
+              %20 = cir.load align(8) %10 : !cir.ptr<!cir.double>, !cir.double
+              %21 = cir.cmp le %20, %2 : !cir.double
+              cir.ternary(%21, true {
+                cir.yield
+              }, false {
+                %25 = cir.get_global @".str.3" : !cir.ptr<!cir.array<!s8i x 12>>
+                %26 = cir.cast array_to_ptrdecay %25 : !cir.ptr<!cir.array<!s8i x 12>> -> !cir.ptr<!s8i>
+                %27 = cir.get_global @".str.4" : !cir.ptr<!cir.array<!s8i x 88>>
+                %28 = cir.cast array_to_ptrdecay %27 : !cir.ptr<!cir.array<!s8i x 88>> -> !cir.ptr<!s8i>
+                %29 = cir.get_global @__PRETTY_FUNCTION__._Z21polybench_flush_cachev : !cir.ptr<!cir.array<!s8i x 29>>
+                %30 = cir.cast array_to_ptrdecay %29 : !cir.ptr<!cir.array<!s8i x 29>> -> !cir.ptr<!s8i>
+                cir.call @__assert_fail(%26, %28, %1, %30) nothrow {noreturn, uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}, !u32i {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) -> ()
+                cir.yield
+              }) : (!cir.bool) -> ()
+              %22 = cir.get_global @free : !cir.ptr<!cir.func<(!cir.ptr<!void>)>>
+              %23 = cir.load align(8) %8 : !cir.ptr<!cir.ptr<!cir.double>>, !cir.ptr<!cir.double>
+              %24 = cir.cast bitcast %23 : !cir.ptr<!cir.double> -> !cir.ptr<!void>
+              cir.call @free(%24) nothrow {uniform_work_group_size} : (!cir.ptr<!void> {llvm.noundef}) -> ()
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %10 : !cir.ptr<!cir.double>
+              cir.yield
+            }
+            cir.yield
+          } cleanup all {
+            cir.lifetime.end %9 : !cir.ptr<!s32i>
+            cir.yield
+          }
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %8 : !cir.ptr<!cir.ptr<!cir.double>>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %7 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func private @calloc(!u64i {llvm.noundef}, !u64i {llvm.noundef}) -> !cir.ptr<!void> attributes {allocsize = array<i32: 0, 1>, "cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", nothrow, uniform_work_group_size}
+    cir.func private @__assert_fail(!cir.ptr<!s8i> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}, !u32i {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", noreturn, nothrow, uniform_work_group_size}
+    cir.func dso_local @_Z29polybench_prepare_instrumentsv() attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      cir.call @_Z21polybench_flush_cachev() {uniform_work_group_size} : () -> ()
+      cir.return
+    }
+    cir.func internal private dso_local @_ZL7rtclockv() -> (!cir.double {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #cir.int<0> : !s32i
+      %1 = cir.const #cir.fp<9.9999999999999995E-7> : !cir.double
+      %2 = cir.const #cir.ptr<null> : !cir.ptr<!void>
+      %3 = cir.alloca "__retval" align(8) : !cir.ptr<!cir.double>
+      %4 = cir.alloca "Tp" align(8) : !cir.ptr<!rec_timeval>
+      %5 = cir.alloca "stat" align(4) : !cir.ptr<!s32i>
+      cir.lifetime.start %4 : !cir.ptr<!rec_timeval>
+      cir.cleanup.scope {
+        cir.lifetime.start %5 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          %6 = cir.call @gettimeofday(%4, %2) nothrow {uniform_work_group_size} : (!cir.ptr<!rec_timeval> {llvm.nonnull, llvm.noundef}, !cir.ptr<!void> {llvm.noundef}) -> !s32i
+          cir.store align(4) %6, %5 : !s32i, !cir.ptr<!s32i>
+          cir.scope {
+            %15 = cir.load align(4) %5 : !cir.ptr<!s32i>, !s32i
+            %16 = cir.cmp ne %15, %0 : !s32i
+            cir.if %16 {
+              %17 = cir.get_global @printf : !cir.ptr<!cir.func<(!cir.ptr<!s8i>, ...) -> !s32i>>
+              %18 = cir.get_global @".str.8" : !cir.ptr<!cir.array<!s8i x 35>>
+              %19 = cir.cast array_to_ptrdecay %18 : !cir.ptr<!cir.array<!s8i x 35>> -> !cir.ptr<!s8i>
+              %20 = cir.load align(4) %5 : !cir.ptr<!s32i>, !s32i
+              %21 = cir.call @printf(%19, %20) {uniform_work_group_size} : (!cir.ptr<!s8i> {llvm.noundef}, !s32i {llvm.noundef}) -> !s32i
+            }
+          }
+          %7 = cir.get_member %4[0] {name = "tv_sec"} : !cir.ptr<!rec_timeval> -> !cir.ptr<!s64i>
+          %8 = cir.load align(8) %7 : !cir.ptr<!s64i>, !s64i
+          %9 = cir.cast int_to_float %8 : !s64i -> !cir.double
+          %10 = cir.get_member %4[1] {name = "tv_usec"} : !cir.ptr<!rec_timeval> -> !cir.ptr<!s64i>
+          %11 = cir.load align(8) %10 : !cir.ptr<!s64i>, !s64i
+          %12 = cir.cast int_to_float %11 : !s64i -> !cir.double
+          %13 = cir.fmuladd %12, %1, %9 : !cir.double
+          cir.store %13, %3 : !cir.double, !cir.ptr<!cir.double>
+          %14 = cir.load %3 : !cir.ptr<!cir.double>, !cir.double
+          cir.return %14 : !cir.double
+        ^bb1:  // no predecessors
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %5 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %4 : !cir.ptr<!rec_timeval>
+        cir.yield
+      }
+      cir.unreachable
+    }
+    cir.func internal private dso_local @_ZL7xmallocm(%arg0: !u64i {llvm.noundef}) -> (!cir.ptr<!void> {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", uniform_work_group_size} {
+      %0 = cir.const #true
+      %1 = cir.const #cir.int<1> : !s32i
+      %2 = cir.const #cir.int<32> : !u64i
+      %3 = cir.const #cir.ptr<null> : !cir.ptr<!void>
+      %4 = cir.alloca "num" align(8) init : !cir.ptr<!u64i>
+      %5 = cir.alloca "__retval" align(8) : !cir.ptr<!cir.ptr<!void>>
+      %6 = cir.alloca "newA" align(8) init : !cir.ptr<!cir.ptr<!void>>
+      %7 = cir.alloca "ret" align(4) init : !cir.ptr<!s32i>
+      cir.store %arg0, %4 : !u64i, !cir.ptr<!u64i>
+      cir.lifetime.start %6 : !cir.ptr<!cir.ptr<!void>>
+      cir.cleanup.scope {
+        cir.store align(8) %3, %6 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+        cir.lifetime.start %7 : !cir.ptr<!s32i>
+        cir.cleanup.scope {
+          %8 = cir.load align(8) %4 : !cir.ptr<!u64i>, !u64i
+          %9 = cir.call @posix_memalign(%6, %2, %8) nothrow {uniform_work_group_size} : (!cir.ptr<!cir.ptr<!void>> {llvm.nonnull, llvm.noundef}, !u64i {llvm.noundef}, !u64i {llvm.noundef}) -> !s32i
+          cir.store align(4) %9, %7 : !s32i, !cir.ptr<!s32i>
+          cir.scope {
+            %12 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+            %13 = cir.cast ptr_to_bool %12 : !cir.ptr<!void> -> !cir.bool
+            %14 = cir.not %13 : !cir.bool
+            %15 = cir.ternary(%14, true {
+              cir.yield %0 : !cir.bool
+            }, false {
+              %16 = cir.load align(4) %7 : !cir.ptr<!s32i>, !s32i
+              %17 = cir.cast int_to_bool %16 : !s32i -> !cir.bool
+              cir.yield %17 : !cir.bool
+            }) : (!cir.bool) -> !cir.bool
+            cir.if %15 {
+              %16 = cir.get_global @fprintf : !cir.ptr<!cir.func<(!cir.ptr<!rec__IO_FILE>, !cir.ptr<!s8i>, ...) -> !s32i>>
+              %17 = cir.get_global @stderr : !cir.ptr<!cir.ptr<!rec__IO_FILE>>
+              %18 = cir.load align(8) %17 : !cir.ptr<!cir.ptr<!rec__IO_FILE>>, !cir.ptr<!rec__IO_FILE>
+              %19 = cir.get_global @".str.9" : !cir.ptr<!cir.array<!s8i x 51>>
+              %20 = cir.cast array_to_ptrdecay %19 : !cir.ptr<!cir.array<!s8i x 51>> -> !cir.ptr<!s8i>
+              %21 = cir.call @fprintf(%18, %20) nothrow {uniform_work_group_size} : (!cir.ptr<!rec__IO_FILE> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}) -> !s32i
+              %22 = cir.get_global @exit : !cir.ptr<!cir.func<(!s32i)>>
+              cir.call @exit(%1) nothrow {noreturn, uniform_work_group_size} : (!s32i {llvm.noundef}) -> ()
+            }
+          }
+          %10 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+          cir.store %10, %5 : !cir.ptr<!void>, !cir.ptr<!cir.ptr<!void>>
+          %11 = cir.load %5 : !cir.ptr<!cir.ptr<!void>>, !cir.ptr<!void>
+          cir.return %11 : !cir.ptr<!void>
+        ^bb1:  // no predecessors
+          cir.yield
+        } cleanup all {
+          cir.lifetime.end %7 : !cir.ptr<!s32i>
+          cir.yield
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %6 : !cir.ptr<!cir.ptr<!void>>
+        cir.yield
+      }
+      cir.unreachable
+    }
+    cir.func private @fprintf(!cir.ptr<!rec__IO_FILE> {llvm.noundef}, !cir.ptr<!s8i> {llvm.noundef}, ...) -> !s32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", nothrow, uniform_work_group_size}
+    cir.func private @gettimeofday(!cir.ptr<!rec_timeval> {llvm.noalias, llvm.nonnull, llvm.noundef}, !cir.ptr<!void> {llvm.noalias, llvm.noundef}) -> !s32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", nothrow, uniform_work_group_size}
+    cir.func private @posix_memalign(!cir.ptr<!cir.ptr<!void>> {llvm.nonnull, llvm.noundef}, !u64i {llvm.noundef}, !u64i {llvm.noundef}) -> !s32i attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", nothrow, uniform_work_group_size}
+    cir.func private @exit(!s32i {llvm.noundef}) attributes {"cir.target-cpu" = "x86-64", "cir.target-features" = "+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87", "cir.tune-cpu" = "generic", noreturn, nothrow, uniform_work_group_size}
+  }
+  module @device_cuda_nvptx64_nvidia_cuda__sm_86 attributes {cir.default_tls_model = #cir.tls_model<tls_dyn>, cir.int_type_width = 32 : i32, cir.lang = #cir.lang<cxx>, cir.lowering_lang_options = #cir.lowering_lang_options<exceptions = true, threadsafe_statics = false, cuda = true, cuda_is_device = true, hip = false, gpu_rdc = false, openmp = false, openmp_is_target_device = false, clang_abi_compat = 16>, cir.module_asm = [], cir.offload.bundle_id = "cuda-nvptx64-nvidia-cuda--sm_86", cir.offload.kind = #cir.offload<device>, cir.opt_info = #cir.opt_info<level = 3, size = 0>, cir.record_layouts = {__cuda_builtin_blockDim_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_blockIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>, __cuda_builtin_threadIdx_t = #cir.record_layout<arg_passing_kind = cannot_pass_in_regs, has_trivial_dtor = true, record_align = 1>}, cir.sdk_version = "12.8", cir.size_type_width = 64 : i32, cir.triple = "nvptx64-nvidia-cuda", dlti.dl_spec = #dlti.dl_spec<!llvm.ptr<6> = dense<32> : vector<4xi64>, i64 = dense<64> : vector<2xi64>, i128 = dense<128> : vector<2xi64>, i256 = dense<256> : vector<2xi64>, !llvm.ptr = dense<64> : vector<4xi64>, i1 = dense<8> : vector<2xi64>, i8 = dense<8> : vector<2xi64>, i16 = dense<16> : vector<2xi64>, i32 = dense<32> : vector<2xi64>, f16 = dense<16> : vector<2xi64>, f64 = dense<64> : vector<2xi64>, f128 = dense<128> : vector<2xi64>, "dlti.endianness" = "little", "dlti.legal_int_widths" = array<i32: 16, 32, 64>, !cir.ptr<!cir.void> = #cir.ptr_spec<size = 64, abi = 64, preferred = 64, index = 64>>} {
+    cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockIdx : !rec___cuda_builtin_blockIdx_t {alignment = 1 : i64}
+    cir.global "private" constant extern_weak dso_local  target_address_space(1) @blockDim : !rec___cuda_builtin_blockDim_t {alignment = 1 : i64}
+    cir.global "private" constant extern_weak dso_local  target_address_space(1) @threadIdx : !rec___cuda_builtin_threadIdx_t {alignment = 1 : i64}
+    cir.func no_inline dso_local @_Z12bicg_kernel1iiPfS_S_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4096> : !s32i
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.const #cir.fp<0.000000e+00> : !cir.float
+      %3 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "j" align(4) init : !cir.ptr<!s32i>
+      cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %4 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        %9 = cir.get_global @blockIdx : !cir.ptr<!rec___cuda_builtin_blockIdx_t, target_address_space(1)>
+        %10 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %11 = cir.get_global @blockDim : !cir.ptr<!rec___cuda_builtin_blockDim_t, target_address_space(1)>
+        %12 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %13 = cir.mul %10, %12 : !u32i
+        %14 = cir.get_global @threadIdx : !cir.ptr<!rec___cuda_builtin_threadIdx_t, target_address_space(1)>
+        %15 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %16 = cir.add %13, %15 : !u32i
+        %17 = cir.cast integral %16 : !u32i -> !s32i
+        cir.store align(4) %17, %8 : !s32i, !cir.ptr<!s32i>
+        cir.scope {
+          %18 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+          %19 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+          %20 = cir.cmp lt %18, %19 : !s32i
+          cir.if %20 {
+            %21 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+            %22 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+            %23 = cir.cast integral %22 : !s32i -> !s64i
+            %24 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+            %25 = cir.ptr_stride %24, %23 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+            cir.store align(4) %2, %25 : !cir.float, !cir.ptr<!cir.float>
+            cir.lifetime.start %21 : !cir.ptr<!s32i>
+            cir.cleanup.scope {
+              cir.scope {
+                cir.store align(4) %1, %21 : !s32i, !cir.ptr<!s32i>
+                cir.for : cond {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+                  %28 = cir.cmp lt %26, %27 : !s32i
+                  cir.condition(%28)
+                } body {
+                  cir.scope {
+                    %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %27 = cir.cast integral %26 : !s32i -> !s64i
+                    %28 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %29 = cir.ptr_stride %28, %27 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %30 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                    %31 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %32 = cir.mul nsw %31, %0 : !s32i
+                    %33 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %34 = cir.add nsw %32, %33 : !s32i
+                    %35 = cir.cast integral %34 : !s32i -> !s64i
+                    %36 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %37 = cir.ptr_stride %36, %35 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %38 = cir.load align(4) %37 : !cir.ptr<!cir.float>, !cir.float
+                    %39 = cir.fmul %30, %38 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    %40 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %41 = cir.cast integral %40 : !s32i -> !s64i
+                    %42 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %43 = cir.ptr_stride %42, %41 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %44 = cir.load align(4) %43 : !cir.ptr<!cir.float>, !cir.float
+                    %45 = cir.fadd %44, %39 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    cir.store align(4) %45, %43 : !cir.float, !cir.ptr<!cir.float>
+                  }
+                  cir.yield
+                } step {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.inc nsw %26 : !s32i
+                  cir.store align(4) %27, %21 : !s32i, !cir.ptr<!s32i>
+                  cir.yield
+                }
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %21 : !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func no_inline dso_local @_Z12bicg_kernel1iiPfS_S___noalias(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noalias, llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noalias, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noalias, llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4096> : !s32i
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.const #cir.fp<0.000000e+00> : !cir.float
+      %3 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "r" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "s" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "j" align(4) init : !cir.ptr<!s32i>
+      cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %4 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        %9 = cir.get_global @blockIdx : !cir.ptr<!rec___cuda_builtin_blockIdx_t, target_address_space(1)>
+        %10 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %11 = cir.get_global @blockDim : !cir.ptr<!rec___cuda_builtin_blockDim_t, target_address_space(1)>
+        %12 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %13 = cir.mul %10, %12 : !u32i
+        %14 = cir.get_global @threadIdx : !cir.ptr<!rec___cuda_builtin_threadIdx_t, target_address_space(1)>
+        %15 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %16 = cir.add %13, %15 : !u32i
+        %17 = cir.cast integral %16 : !u32i -> !s32i
+        cir.store align(4) %17, %8 : !s32i, !cir.ptr<!s32i>
+        cir.scope {
+          %18 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+          %19 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+          %20 = cir.cmp lt %18, %19 : !s32i
+          cir.if %20 {
+            %21 = cir.alloca "i" align(4) : !cir.ptr<!s32i>
+            %22 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+            %23 = cir.cast integral %22 : !s32i -> !s64i
+            %24 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+            %25 = cir.ptr_stride %24, %23 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+            cir.store align(4) %2, %25 : !cir.float, !cir.ptr<!cir.float>
+            cir.lifetime.start %21 : !cir.ptr<!s32i>
+            cir.cleanup.scope {
+              cir.scope {
+                cir.store align(4) %1, %21 : !s32i, !cir.ptr<!s32i>
+                cir.for : cond {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+                  %28 = cir.cmp lt %26, %27 : !s32i
+                  cir.condition(%28)
+                } body {
+                  cir.scope {
+                    %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %27 = cir.cast integral %26 : !s32i -> !s64i
+                    %28 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %29 = cir.ptr_stride %28, %27 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %30 = cir.load align(4) %29 : !cir.ptr<!cir.float>, !cir.float
+                    %31 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %32 = cir.mul nsw %31, %0 : !s32i
+                    %33 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %34 = cir.add nsw %32, %33 : !s32i
+                    %35 = cir.cast integral %34 : !s32i -> !s64i
+                    %36 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %37 = cir.ptr_stride %36, %35 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %38 = cir.load align(4) %37 : !cir.ptr<!cir.float>, !cir.float
+                    %39 = cir.fmul %30, %38 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    %40 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %41 = cir.cast integral %40 : !s32i -> !s64i
+                    %42 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %43 = cir.ptr_stride %42, %41 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %44 = cir.load align(4) %43 : !cir.ptr<!cir.float>, !cir.float
+                    %45 = cir.fadd %44, %39 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    cir.store align(4) %45, %43 : !cir.float, !cir.ptr<!cir.float>
+                  }
+                  cir.yield
+                } step {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.inc nsw %26 : !s32i
+                  cir.store align(4) %27, %21 : !s32i, !cir.ptr<!s32i>
+                  cir.yield
+                }
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %21 : !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ctaid.x"  : () -> !s32i
+      %1 = cir.cast integral %0 : !s32i -> !u32i
+      cir.return %1 : !u32i
+    }
+    cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.ntid.x"  : () -> !s32i
+      %1 = cir.cast integral %0 : !s32i -> !u32i
+      cir.return %1 : !u32i
+    }
+    cir.func always_inline comdat alignment(2) linkonce_odr dso_local @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() -> (!u32i {llvm.noundef}) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.call_llvm_intrinsic "nvvm.read.ptx.sreg.tid.x"  : () -> !s32i
+      %1 = cir.cast integral %0 : !s32i -> !u32i
+      cir.return %1 : !u32i
+    }
+    cir.func no_inline dso_local @_Z12bicg_kernel2iiPfS_S_(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4096> : !s32i
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.const #cir.fp<0.000000e+00> : !cir.float
+      %3 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "i" align(4) init : !cir.ptr<!s32i>
+      cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %4 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        %9 = cir.get_global @blockIdx : !cir.ptr<!rec___cuda_builtin_blockIdx_t, target_address_space(1)>
+        %10 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %11 = cir.get_global @blockDim : !cir.ptr<!rec___cuda_builtin_blockDim_t, target_address_space(1)>
+        %12 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %13 = cir.mul %10, %12 : !u32i
+        %14 = cir.get_global @threadIdx : !cir.ptr<!rec___cuda_builtin_threadIdx_t, target_address_space(1)>
+        %15 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %16 = cir.add %13, %15 : !u32i
+        %17 = cir.cast integral %16 : !u32i -> !s32i
+        cir.store align(4) %17, %8 : !s32i, !cir.ptr<!s32i>
+        cir.scope {
+          %18 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+          %19 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+          %20 = cir.cmp lt %18, %19 : !s32i
+          cir.if %20 {
+            %21 = cir.alloca "j" align(4) : !cir.ptr<!s32i>
+            %22 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+            %23 = cir.cast integral %22 : !s32i -> !s64i
+            %24 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+            %25 = cir.ptr_stride %24, %23 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+            cir.store align(4) %2, %25 : !cir.float, !cir.ptr<!cir.float>
+            cir.lifetime.start %21 : !cir.ptr<!s32i>
+            cir.cleanup.scope {
+              cir.scope {
+                cir.store align(4) %1, %21 : !s32i, !cir.ptr<!s32i>
+                cir.for : cond {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                  %28 = cir.cmp lt %26, %27 : !s32i
+                  cir.condition(%28)
+                } body {
+                  cir.scope {
+                    %26 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %27 = cir.mul nsw %26, %0 : !s32i
+                    %28 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %29 = cir.add nsw %27, %28 : !s32i
+                    %30 = cir.cast integral %29 : !s32i -> !s64i
+                    %31 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %32 = cir.ptr_stride %31, %30 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %33 = cir.load align(4) %32 : !cir.ptr<!cir.float>, !cir.float
+                    %34 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %35 = cir.cast integral %34 : !s32i -> !s64i
+                    %36 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %37 = cir.ptr_stride %36, %35 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %38 = cir.load align(4) %37 : !cir.ptr<!cir.float>, !cir.float
+                    %39 = cir.fmul %33, %38 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    %40 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %41 = cir.cast integral %40 : !s32i -> !s64i
+                    %42 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %43 = cir.ptr_stride %42, %41 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %44 = cir.load align(4) %43 : !cir.ptr<!cir.float>, !cir.float
+                    %45 = cir.fadd %44, %39 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    cir.store align(4) %45, %43 : !cir.float, !cir.ptr<!cir.float>
+                  }
+                  cir.yield
+                } step {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.inc nsw %26 : !s32i
+                  cir.store align(4) %27, %21 : !s32i, !cir.ptr<!s32i>
+                  cir.yield
+                }
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %21 : !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+    cir.func no_inline dso_local @_Z12bicg_kernel2iiPfS_S___noalias(%arg0: !s32i {llvm.noundef}, %arg1: !s32i {llvm.noundef}, %arg2: !cir.ptr<!cir.float> {llvm.dereferenceable = 67108864 : i64, llvm.noalias, llvm.noundef}, %arg3: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noalias, llvm.noundef}, %arg4: !cir.ptr<!cir.float> {llvm.dereferenceable = 16384 : i64, llvm.noalias, llvm.noundef}) cc(ptx_kernel) attributes {"cir.target-cpu" = "sm_86", "cir.target-features" = "+ptx87", convergent, uniform_work_group_size} {
+      %0 = cir.const #cir.int<4096> : !s32i
+      %1 = cir.const #cir.int<0> : !s32i
+      %2 = cir.const #cir.fp<0.000000e+00> : !cir.float
+      %3 = cir.alloca "nx" align(4) init : !cir.ptr<!s32i>
+      %4 = cir.alloca "ny" align(4) init : !cir.ptr<!s32i>
+      %5 = cir.alloca "A" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %6 = cir.alloca "p" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %7 = cir.alloca "q" align(8) init : !cir.ptr<!cir.ptr<!cir.float>>
+      %8 = cir.alloca "i" align(4) init : !cir.ptr<!s32i>
+      cir.store %arg0, %3 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg1, %4 : !s32i, !cir.ptr<!s32i>
+      cir.store %arg2, %5 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg3, %6 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.store %arg4, %7 : !cir.ptr<!cir.float>, !cir.ptr<!cir.ptr<!cir.float>>
+      cir.lifetime.start %8 : !cir.ptr<!s32i>
+      cir.cleanup.scope {
+        %9 = cir.get_global @blockIdx : !cir.ptr<!rec___cuda_builtin_blockIdx_t, target_address_space(1)>
+        %10 = cir.call @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %11 = cir.get_global @blockDim : !cir.ptr<!rec___cuda_builtin_blockDim_t, target_address_space(1)>
+        %12 = cir.call @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %13 = cir.mul %10, %12 : !u32i
+        %14 = cir.get_global @threadIdx : !cir.ptr<!rec___cuda_builtin_threadIdx_t, target_address_space(1)>
+        %15 = cir.call @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() {convergent, uniform_work_group_size} : () -> (!u32i {llvm.noundef})
+        %16 = cir.add %13, %15 : !u32i
+        %17 = cir.cast integral %16 : !u32i -> !s32i
+        cir.store align(4) %17, %8 : !s32i, !cir.ptr<!s32i>
+        cir.scope {
+          %18 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+          %19 = cir.load align(4) %3 : !cir.ptr<!s32i>, !s32i
+          %20 = cir.cmp lt %18, %19 : !s32i
+          cir.if %20 {
+            %21 = cir.alloca "j" align(4) : !cir.ptr<!s32i>
+            %22 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+            %23 = cir.cast integral %22 : !s32i -> !s64i
+            %24 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+            %25 = cir.ptr_stride %24, %23 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+            cir.store align(4) %2, %25 : !cir.float, !cir.ptr<!cir.float>
+            cir.lifetime.start %21 : !cir.ptr<!s32i>
+            cir.cleanup.scope {
+              cir.scope {
+                cir.store align(4) %1, %21 : !s32i, !cir.ptr<!s32i>
+                cir.for : cond {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.load align(4) %4 : !cir.ptr<!s32i>, !s32i
+                  %28 = cir.cmp lt %26, %27 : !s32i
+                  cir.condition(%28)
+                } body {
+                  cir.scope {
+                    %26 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %27 = cir.mul nsw %26, %0 : !s32i
+                    %28 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %29 = cir.add nsw %27, %28 : !s32i
+                    %30 = cir.cast integral %29 : !s32i -> !s64i
+                    %31 = cir.load align(8) %5 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %32 = cir.ptr_stride %31, %30 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %33 = cir.load align(4) %32 : !cir.ptr<!cir.float>, !cir.float
+                    %34 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                    %35 = cir.cast integral %34 : !s32i -> !s64i
+                    %36 = cir.load align(8) %6 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %37 = cir.ptr_stride %36, %35 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %38 = cir.load align(4) %37 : !cir.ptr<!cir.float>, !cir.float
+                    %39 = cir.fmul %33, %38 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    %40 = cir.load align(4) %8 : !cir.ptr<!s32i>, !s32i
+                    %41 = cir.cast integral %40 : !s32i -> !s64i
+                    %42 = cir.load align(8) %7 : !cir.ptr<!cir.ptr<!cir.float>>, !cir.ptr<!cir.float>
+                    %43 = cir.ptr_stride %42, %41 : (!cir.ptr<!cir.float>, !s64i) -> !cir.ptr<!cir.float>
+                    %44 = cir.load align(4) %43 : !cir.ptr<!cir.float>, !cir.float
+                    %45 = cir.fadd %44, %39 : !cir.float {fastmath_flags = #cir.fastmath<contract>}
+                    cir.store align(4) %45, %43 : !cir.float, !cir.ptr<!cir.float>
+                  }
+                  cir.yield
+                } step {
+                  %26 = cir.load align(4) %21 : !cir.ptr<!s32i>, !s32i
+                  %27 = cir.inc nsw %26 : !s32i
+                  cir.store align(4) %27, %21 : !s32i, !cir.ptr<!s32i>
+                  cir.yield
+                }
+              }
+              cir.yield
+            } cleanup all {
+              cir.lifetime.end %21 : !cir.ptr<!s32i>
+              cir.yield
+            }
+          }
+        }
+        cir.yield
+      } cleanup all {
+        cir.lifetime.end %8 : !cir.ptr<!s32i>
+        cir.yield
+      }
+      cir.return
+    }
+  }
+}
+

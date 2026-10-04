@@ -1,0 +1,138 @@
+; ModuleID = '/home/ubuntu/aa-deref-20261004/runs/JACOBI1D/B/raw.device.ll'
+source_filename = "device_cuda_nvptx64_nvidia_cuda__sm_86"
+target datalayout = "e-p6:32:32-i64:64-i128:128-i256:256-v16:16-v32:32-n16:32:64"
+target triple = "nvptx64-nvidia-cuda"
+
+; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind willreturn memory(argmem: readwrite)
+define dso_local ptx_kernel void @_Z21runJacobiCUDA_kernel1iPfS_(i32 noundef %0, ptr nofree noundef readonly captures(none) dereferenceable(16384) %1, ptr nofree noundef writeonly captures(none) dereferenceable(16384) %2) local_unnamed_addr #0 {
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x()
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  %8 = add i32 %6, %7
+  %9 = icmp sgt i32 %8, 0
+  %10 = add nsw i32 %0, -1
+  %11 = icmp slt i32 %8, %10
+  %12 = select i1 %9, i1 %11, i1 false
+  br i1 %12, label %13, label %27
+
+13:                                               ; preds = %3
+  %14 = zext nneg i32 %8 to i64
+  %15 = getelementptr [4 x i8], ptr %1, i64 %14
+  %16 = getelementptr i8, ptr %15, i64 -4
+  %17 = load float, ptr %16, align 4
+  %18 = load float, ptr %15, align 4
+  %19 = fadd contract float %17, %18
+  %20 = getelementptr i8, ptr %15, i64 4
+  %21 = load float, ptr %20, align 4
+  %22 = fadd contract float %19, %21
+  %23 = fpext float %22 to double
+  %24 = fmul contract double %23, 3.333300e-01
+  %25 = fptrunc double %24 to float
+  %26 = getelementptr [4 x i8], ptr %2, i64 %14
+  store float %25, ptr %26, align 4
+  br label %27
+
+27:                                               ; preds = %13, %3
+  ret void
+}
+
+; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind willreturn memory(argmem: readwrite)
+define dso_local ptx_kernel void @_Z21runJacobiCUDA_kernel1iPfS___noalias(i32 noundef %0, ptr noalias nofree noundef readonly captures(none) dereferenceable(16384) %1, ptr noalias nofree noundef writeonly captures(none) dereferenceable(16384) %2) local_unnamed_addr #0 {
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x()
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  %8 = add i32 %6, %7
+  %9 = icmp sgt i32 %8, 0
+  %10 = add nsw i32 %0, -1
+  %11 = icmp slt i32 %8, %10
+  %12 = select i1 %9, i1 %11, i1 false
+  br i1 %12, label %13, label %27
+
+13:                                               ; preds = %3
+  %14 = zext nneg i32 %8 to i64
+  %15 = getelementptr [4 x i8], ptr %1, i64 %14
+  %16 = getelementptr i8, ptr %15, i64 -4
+  %17 = load float, ptr %16, align 4
+  %18 = load float, ptr %15, align 4
+  %19 = fadd contract float %17, %18
+  %20 = getelementptr i8, ptr %15, i64 4
+  %21 = load float, ptr %20, align 4
+  %22 = fadd contract float %19, %21
+  %23 = fpext float %22 to double
+  %24 = fmul contract double %23, 3.333300e-01
+  %25 = fptrunc double %24 to float
+  %26 = getelementptr [4 x i8], ptr %2, i64 %14
+  store float %25, ptr %26, align 4
+  br label %27
+
+27:                                               ; preds = %13, %3
+  ret void
+}
+
+; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind willreturn memory(argmem: readwrite)
+define dso_local ptx_kernel void @_Z21runJacobiCUDA_kernel2iPfS_(i32 noundef %0, ptr nofree noundef writeonly captures(none) dereferenceable(16384) %1, ptr nofree noundef readonly captures(none) dereferenceable(16384) %2) local_unnamed_addr #0 {
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x()
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  %8 = add i32 %6, %7
+  %9 = icmp sgt i32 %8, 0
+  %10 = add nsw i32 %0, -1
+  %11 = icmp slt i32 %8, %10
+  %12 = select i1 %9, i1 %11, i1 false
+  br i1 %12, label %13, label %18
+
+13:                                               ; preds = %3
+  %14 = zext nneg i32 %8 to i64
+  %15 = getelementptr [4 x i8], ptr %1, i64 %14
+  %16 = getelementptr [4 x i8], ptr %2, i64 %14
+  %17 = load float, ptr %16, align 4
+  store float %17, ptr %15, align 4
+  br label %18
+
+18:                                               ; preds = %13, %3
+  ret void
+}
+
+; Function Attrs: mustprogress nofree noinline norecurse nosync nounwind willreturn memory(argmem: readwrite)
+define dso_local ptx_kernel void @_Z21runJacobiCUDA_kernel2iPfS___noalias(i32 noundef %0, ptr noalias nofree noundef writeonly captures(none) dereferenceable(16384) %1, ptr noalias nofree noundef readonly captures(none) dereferenceable(16384) %2) local_unnamed_addr #0 {
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x()
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  %8 = add i32 %6, %7
+  %9 = icmp sgt i32 %8, 0
+  %10 = add nsw i32 %0, -1
+  %11 = icmp slt i32 %8, %10
+  %12 = select i1 %9, i1 %11, i1 false
+  br i1 %12, label %13, label %18
+
+13:                                               ; preds = %3
+  %14 = zext nneg i32 %8 to i64
+  %15 = getelementptr [4 x i8], ptr %1, i64 %14
+  %16 = getelementptr [4 x i8], ptr %2, i64 %14
+  %17 = load float, ptr %16, align 4
+  store float %17, ptr %15, align 4
+  br label %18
+
+18:                                               ; preds = %13, %3
+  ret void
+}
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 2147483647) i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #1
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 1, 1025) i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #1
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 1024) i32 @llvm.nvvm.read.ptx.sreg.tid.x() #1
+
+attributes #0 = { mustprogress nofree noinline norecurse nosync nounwind willreturn memory(argmem: readwrite) "target-cpu"="sm_86" "target-features"="+ptx87,+ptx80" "uniform-work-group-size" }
+attributes #1 = { mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none) "target-cpu"="sm_86" "target-features"="+ptx80" }
+
+!llvm.module.flags = !{!0}
+
+!0 = !{i32 2, !"Debug Info Version", i32 3}

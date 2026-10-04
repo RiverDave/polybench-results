@@ -1,0 +1,1 @@
+/home/ubuntu/llvm-project/build/bin/cir-offload-merge -combine -input=/home/ubuntu/aa-deref-20261004/runs/FDTD-2D/host.raw.cir -input=/home/ubuntu/aa-deref-20261004/runs/FDTD-2D/device.raw.cir -targets=host-x86_64-unknown-linux-gnu,cuda-nvptx64-nvidia-cuda--sm_86 -output=/home/ubuntu/aa-deref-20261004/runs/FDTD-2D/A.combined.cir

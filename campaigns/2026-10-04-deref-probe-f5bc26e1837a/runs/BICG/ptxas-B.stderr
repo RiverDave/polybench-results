@@ -1,0 +1,21 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z12bicg_kernel2iiPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z12bicg_kernel2iiPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 7.158 ms
+ptxas info    : Compiling entry function '_Z12bicg_kernel2iiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z12bicg_kernel2iiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 6.994 ms
+ptxas info    : Compiling entry function '_Z12bicg_kernel1iiPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z12bicg_kernel1iiPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 6.317 ms
+ptxas info    : Compiling entry function '_Z12bicg_kernel1iiPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z12bicg_kernel1iiPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 6.562 ms

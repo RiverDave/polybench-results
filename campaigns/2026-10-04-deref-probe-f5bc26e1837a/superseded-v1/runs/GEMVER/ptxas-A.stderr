@@ -1,0 +1,31 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z14gemver_kernel3iffPfS_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel3iffPfS_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 0 barriers, 392 bytes cmem[0]
+ptxas info    : Compile time = 7.310 ms
+ptxas info    : Compiling entry function '_Z14gemver_kernel3iffPfS_S_' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel3iffPfS_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers, 392 bytes cmem[0]
+ptxas info    : Compile time = 7.210 ms
+ptxas info    : Compiling entry function '_Z14gemver_kernel2iffPfS_S_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel2iffPfS_S_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 400 bytes cmem[0]
+ptxas info    : Compile time = 6.500 ms
+ptxas info    : Compiling entry function '_Z14gemver_kernel2iffPfS_S_S_' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel2iffPfS_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 23 registers, used 0 barriers, 400 bytes cmem[0]
+ptxas info    : Compile time = 7.155 ms
+ptxas info    : Compiling entry function '_Z14gemver_kernel1iffPfS_S_S_S___noalias' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel1iffPfS_S_S_S___noalias
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 408 bytes cmem[0]
+ptxas info    : Compile time = 1.178 ms
+ptxas info    : Compiling entry function '_Z14gemver_kernel1iffPfS_S_S_S_' for 'sm_86'
+ptxas info    : Function properties for _Z14gemver_kernel1iffPfS_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 0 barriers, 408 bytes cmem[0]
+ptxas info    : Compile time = 1.273 ms
