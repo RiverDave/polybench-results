@@ -1,0 +1,53 @@
+{
+  "hostname": "158-101-118-28",
+  "timestamp_utc": "2026-10-04T10:02:38+00:00",
+  "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+  "cpu_count": "30",
+  "kernel": "6.8.0-60-generic",
+  "gpu": "NVIDIA A10",
+  "rocm_version": "",
+  "cuda_version": "12.8",
+  "driver_version": "570.148.08",
+  "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+  "os_release": "Ubuntu 22.04.5 LTS",
+  "campaign": {
+    "campaign": "kernel-cloning-external-polybench-f5bc26e1837a",
+    "arm": "B-cloning",
+    "compiler_pin": "f5bc26e1837a893954e06c75ddfb12222dd35fe9",
+    "cir_merge_inliner_scheduled": false,
+    "backend_inlining": "unchanged",
+    "experimental_toggle": "-fno-clangir-offload-merge-pointer-facts present only in A-control",
+    "subset": [
+      "2MM",
+      "3MM",
+      "GEMM",
+      "LU"
+    ],
+    "corpus_pin": "2a64b439206537f70278a227103943046d7ba059",
+    "other_merge_passes": "same schedule and defaults in both arms",
+    "argv": [
+      "--cuda",
+      "--runtime",
+      "--offload-merge",
+      "--accurate",
+      "--publish",
+      "--limit",
+      "4",
+      "--machine",
+      "nvidia",
+      "--arch",
+      "sm_86",
+      "--clang",
+      "/home/ubuntu/llvm-project/build/bin/clang++",
+      "--gcc-install-dir",
+      "/usr/lib/gcc/x86_64-linux-gnu/12",
+      "--cuda-root",
+      "/usr/local/cuda",
+      "--polybench-root",
+      "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus",
+      "--log-root",
+      "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/B-cloning"
+    ]
+  },
+  "polybench_commit": "2a64b439206537f70278a227103943046d7ba059"
+}

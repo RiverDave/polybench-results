@@ -1,0 +1,290 @@
+{
+  "kind": "runtime",
+  "arch": "sm_86",
+  "runs": 8,
+  "warmup": 3,
+  "jobs": 1,
+  "merge": true,
+  "pipelines": [
+    "CIR",
+    "CIR-merge"
+  ],
+  "clangir_commit": "f5bc26e18",
+  "scripts_commit": "81d3b96",
+  "polybench_root": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus",
+  "environment": {
+    "hostname": "158-101-118-28",
+    "timestamp_utc": "2026-10-04T10:03:32+00:00",
+    "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+    "cpu_count": "30",
+    "kernel": "6.8.0-60-generic",
+    "gpu": "NVIDIA A10",
+    "rocm_version": "",
+    "cuda_version": "12.8",
+    "driver_version": "570.148.08",
+    "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+    "os_release": "Ubuntu 22.04.5 LTS",
+    "polybench_commit": "2a64b43",
+    "compiler_version": "clang version 24.0.0git (https://github.com/RiverDave/llvm-project.git f5bc26e1837a893954e06c75ddfb12222dd35fe9)"
+  },
+  "no_cpu_ref": true,
+  "validate": true,
+  "results": [
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 39240,
+      "times": [
+        0.005406,
+        0.005411,
+        0.005407,
+        0.005412,
+        0.005409,
+        0.005404,
+        0.005399,
+        0.005415
+      ],
+      "wall_times": [
+        0.2223763100000724,
+        0.22010129099999176,
+        0.22013502800018614,
+        0.2207890800000314,
+        0.22104805799972382,
+        0.22311598799933563,
+        0.22188185200047883,
+        0.22607805099960387
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "2mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/2MM/2mm.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 51680,
+      "times": [
+        0.0024,
+        0.0024,
+        0.002401,
+        0.002398,
+        0.002403,
+        0.002399,
+        0.002402,
+        0.002402
+      ],
+      "wall_times": [
+        0.21805718900031934,
+        0.22022450599979493,
+        0.21915967599943542,
+        0.21880979200068396,
+        0.2185818299994935,
+        0.21710412000084034,
+        0.22468875400045363,
+        0.22071495599993796
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 43408,
+      "times": [
+        0.001381,
+        0.00138,
+        0.001363,
+        0.001376,
+        0.00137,
+        0.001376,
+        0.001377,
+        0.00138
+      ],
+      "wall_times": [
+        0.20841794200077857,
+        0.20994624299964926,
+        0.20723370799987606,
+        0.212609596999755,
+        0.2088667180005359,
+        0.21167709700057458,
+        0.2067024459993263,
+        0.20699758299997484
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "3mm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/3MM/3mm.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 60016,
+      "times": [
+        0.00063,
+        0.000633,
+        0.000632,
+        0.000635,
+        0.000635,
+        0.000637,
+        0.000641,
+        0.000634
+      ],
+      "wall_times": [
+        0.2037706459996116,
+        0.20750188199963304,
+        0.20468928099944605,
+        0.2067511570003262,
+        0.20838457900026697,
+        0.20744233599998552,
+        0.2068609429998105,
+        0.20655989899933047
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 30896,
+      "times": [
+        0.000463,
+        0.000463,
+        0.000459,
+        0.000459,
+        0.000459,
+        0.000462,
+        0.000463,
+        0.000454
+      ],
+      "wall_times": [
+        0.20521336999991036,
+        0.20958059300028253,
+        0.20369957099956082,
+        0.20369095600017317,
+        0.20188370199957717,
+        0.2082684960005281,
+        0.2042612650002411,
+        0.20174782800040703
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "gemm",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/GEMM/gemm.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 35064,
+      "times": [
+        0.000251,
+        0.000252,
+        0.00025,
+        0.000262,
+        0.000254,
+        0.000256,
+        0.00025,
+        0.000256
+      ],
+      "wall_times": [
+        0.20167202500033454,
+        0.20237831299982645,
+        0.2017096079998737,
+        0.20132648700018763,
+        0.20329433400002017,
+        0.2027550610000617,
+        0.20243811799991818,
+        0.2045995389999007
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/LU/lu.cu",
+      "pipeline": "CIR",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 30976,
+      "times": [
+        0.049888,
+        0.050058,
+        0.050325,
+        0.049927,
+        0.049679,
+        0.049787,
+        0.049644,
+        0.049714
+      ],
+      "wall_times": [
+        0.275928629000191,
+        0.2817248009996547,
+        0.2807581420001952,
+        0.27804325299985067,
+        0.283190588999787,
+        0.2757076199995936,
+        0.2812443259999782,
+        0.27862438000011025
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    },
+    {
+      "benchmark": "lu",
+      "source_set": "CUDA",
+      "file": "/home/ubuntu/aa-cloning-f5bc26e1837a-20261004/corpus/CUDA/LU/lu.cu",
+      "pipeline": "CIR-merge",
+      "arch": "sm_86",
+      "compile_ok": true,
+      "binary_bytes": 35200,
+      "times": [
+        0.049791,
+        0.049734,
+        0.050108,
+        0.049976,
+        0.049555,
+        0.050362,
+        0.050459,
+        0.050364
+      ],
+      "wall_times": [
+        0.2771687929998734,
+        0.27869209900018177,
+        0.2758060130008744,
+        0.27653934599948116,
+        0.2756142150001324,
+        0.27844557899970823,
+        0.2776618959996995,
+        0.28005738699994254
+      ],
+      "misses": 0,
+      "validation_status": "passed",
+      "first_error": ""
+    }
+  ]
+}
