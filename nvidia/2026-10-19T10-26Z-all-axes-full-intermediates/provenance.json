@@ -1,0 +1,444 @@
+{
+  "hostname": "157-151-182-78",
+  "timestamp_utc": "2026-10-19T08:39:41+00:00",
+  "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+  "cpu_count": "30",
+  "kernel": "6.8.0-60-generic",
+  "gpu": "NVIDIA A10",
+  "rocm_version": "",
+  "cuda_version": "12.8",
+  "driver_version": "570.148.08",
+  "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+  "os_release": "Ubuntu 22.04.5 LTS",
+  "pins": {
+    "llvm-project": "d8b4f7ed0725fecae93d90afb7ef58af1d4ee481",
+    "polybench-gpu-audit": "81d3b9630701a9321e1c28e334bd0491a93745f4",
+    "polybenchGpu": "2a64b439206537f70278a227103943046d7ba059"
+  },
+  "instance_id": "d08cedbae6a7479e89681336b1a3ae53",
+  "corpus_macros": "stock/default; no size or PB_SCALE overrides",
+  "native_arch": "sm_86",
+  "multi_arches": [
+    "sm_80",
+    "sm_86",
+    "sm_89",
+    "sm_90"
+  ],
+  "measurement_vs_diagnostics": "No save-temps/dump overhead in timed axes. Saved-temp replays emitted separately after ALL timed axes. Compiler internal auto-deleted temporaries cannot be retroactively recovered.",
+  "original_timed_argv": [
+    "python3",
+    "-u",
+    "run_polybench.py",
+    "--all",
+    "--cuda",
+    "--accurate-mode",
+    "--offload-merge",
+    "--machine",
+    "nvidia",
+    "--arch",
+    "sm_86",
+    "--clang",
+    "/home/ubuntu/aa-kernel-cloning-d8b4f7/llvm-project/build/bin/clang++",
+    "--polybench-root",
+    "/home/ubuntu/aa-kernel-cloning-d8b4f7/polybenchGpu",
+    "--cuda-root",
+    "/usr/local/cuda",
+    "--gcc-install-dir",
+    "/usr/lib/gcc/x86_64-linux-gnu/12",
+    "--log-root",
+    "/home/ubuntu/aa-kernel-cloning-d8b4f7/all-axes-full-intermediates/measured",
+    "-j",
+    "1"
+  ],
+  "publication_resume_argv": [
+    "/Users/davidfeliperiveraguerra/dev/lab/projects/gsoc-2026/aa-kernel-cloning-lambda-2026-10-19/all-axes-full-intermediates/publish-resume.py",
+    "--all",
+    "--cuda",
+    "--accurate-mode",
+    "--offload-merge",
+    "--machine",
+    "nvidia",
+    "--arch",
+    "sm_86",
+    "--clang",
+    "/home/ubuntu/aa-kernel-cloning-d8b4f7/llvm-project/build/bin/clang++",
+    "--polybench-root",
+    "/home/ubuntu/aa-kernel-cloning-d8b4f7/polybenchGpu",
+    "--cuda-root",
+    "/usr/local/cuda",
+    "--gcc-install-dir",
+    "/usr/lib/gcc/x86_64-linux-gnu/12",
+    "--log-root",
+    "/Users/davidfeliperiveraguerra/dev/lab/projects/gsoc-2026/aa-kernel-cloning-lambda-2026-10-19/all-axes-full-intermediates/remote-evidence/measured",
+    "-j",
+    "1",
+    "--publish"
+  ],
+  "publication_note": "Publication-only resumption with literal --publish after the already-running --all timed invocation, which omitted --publish. Worker callbacks verify and reuse all three completed axes; they do not remeasure. Pinned publisher source unchanged. Existing local authentication only, no credentials copied to VM.",
+  "audit": {
+    "axes": {
+      "compile-cuda-sm_86-j1-merge": {
+        "arms": 42,
+        "expected": 42,
+        "compile_ok": 42,
+        "arms_with_8_samples": 42,
+        "timed_samples": 336,
+        "by_arch": {
+          "sm_86": {
+            "benchmarks": 21,
+            "complete_successful_pairs": 21,
+            "merge_over_cir_compile_geomean": 1.0809804998957688,
+            "cir_mean_seconds": 1.4293649976548077,
+            "merge_mean_seconds": 1.5460760733095478
+          }
+        }
+      },
+      "multiarch-cuda-multi-j1-merge": {
+        "arms": 168,
+        "expected": 168,
+        "compile_ok": 168,
+        "arms_with_8_samples": 168,
+        "timed_samples": 1344,
+        "by_arch": {
+          "sm_80": {
+            "benchmarks": 21,
+            "complete_successful_pairs": 21,
+            "merge_over_cir_compile_geomean": 1.0808707685527705,
+            "cir_mean_seconds": 1.43353529640473,
+            "merge_mean_seconds": 1.5504567374940572
+          },
+          "sm_86": {
+            "benchmarks": 21,
+            "complete_successful_pairs": 21,
+            "merge_over_cir_compile_geomean": 1.0803918701610533,
+            "cir_mean_seconds": 1.435394946035677,
+            "merge_mean_seconds": 1.5518289606666962
+          },
+          "sm_89": {
+            "benchmarks": 21,
+            "complete_successful_pairs": 21,
+            "merge_over_cir_compile_geomean": 1.081514110125318,
+            "cir_mean_seconds": 1.4331926139761404,
+            "merge_mean_seconds": 1.5509862180595226
+          },
+          "sm_90": {
+            "benchmarks": 21,
+            "complete_successful_pairs": 21,
+            "merge_over_cir_compile_geomean": 1.0826497069039738,
+            "cir_mean_seconds": 1.439162598321494,
+            "merge_mean_seconds": 1.5592837626071947
+          }
+        }
+      },
+      "runtime": {
+        "arms": 42,
+        "expected": 42,
+        "compiled": 42,
+        "complete_gpu_and_wall_8_samples": 42,
+        "gpu_samples": 336,
+        "validation_passed": 40,
+        "all_21_gpu_speedup_geomean_not_correctness_qualified": 2.109451516803146,
+        "validated_pairs": 20,
+        "validated_gpu_speedup_geomean": 2.1873847209158916,
+        "merge_over_cir_size_geomean": 1.273556616638839
+      }
+    },
+    "validation_failures": [
+      {
+        "benchmark": "adi",
+        "pipeline": "CIR",
+        "validation_status": "mismatches",
+        "misses": 1,
+        "first_error": ""
+      },
+      {
+        "benchmark": "adi",
+        "pipeline": "CIR-merge",
+        "validation_status": "mismatches",
+        "misses": 1,
+        "first_error": ""
+      }
+    ],
+    "runtime_table": [
+      {
+        "benchmark": "2mm",
+        "cir_gpu_seconds_mean": 0.005423375,
+        "merge_gpu_seconds_mean": 0.0016505,
+        "cir_over_merge_gpu_speedup": 3.2858982126628296,
+        "merge_over_cir_binary_size": 1.2126401630988788,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "3mm",
+        "cir_gpu_seconds_mean": 0.0013815,
+        "merge_gpu_seconds_mean": 0.0004815,
+        "cir_over_merge_gpu_speedup": 2.8691588785046727,
+        "merge_over_cir_binary_size": 1.3826022852930335,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "adi",
+        "cir_gpu_seconds_mean": 0.016249875,
+        "merge_gpu_seconds_mean": 0.015914499999999998,
+        "cir_over_merge_gpu_speedup": 1.0210735492789595,
+        "merge_over_cir_binary_size": 1.4859051436205746,
+        "validated": false,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "atax",
+        "cir_gpu_seconds_mean": 0.0030315,
+        "merge_gpu_seconds_mean": 0.0007715,
+        "cir_over_merge_gpu_speedup": 3.9293583927414124,
+        "merge_over_cir_binary_size": 1.2374658158614402,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "bicg",
+        "cir_gpu_seconds_mean": 0.002391,
+        "merge_gpu_seconds_mean": 0.000679625,
+        "cir_over_merge_gpu_speedup": 3.518116608423763,
+        "merge_over_cir_binary_size": 1.2370758369391939,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "convolution-2d",
+        "cir_gpu_seconds_mean": 0.00035749999999999996,
+        "merge_gpu_seconds_mean": 0.000368125,
+        "cir_over_merge_gpu_speedup": 0.9711375212224107,
+        "merge_over_cir_binary_size": 1.1548540798094105,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "convolution-3d",
+        "cir_gpu_seconds_mean": 0.000953375,
+        "merge_gpu_seconds_mean": 0.00096875,
+        "cir_over_merge_gpu_speedup": 0.9841290322580646,
+        "merge_over_cir_binary_size": 1.1553832388905458,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "correlation",
+        "cir_gpu_seconds_mean": 1.67692475,
+        "merge_gpu_seconds_mean": 0.2384835,
+        "cir_over_merge_gpu_speedup": 7.031617491356845,
+        "merge_over_cir_binary_size": 1.6393188854489165,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "covariance",
+        "cir_gpu_seconds_mean": 1.67861375,
+        "merge_gpu_seconds_mean": 0.23445825,
+        "cir_over_merge_gpu_speedup": 7.159542263921188,
+        "merge_over_cir_binary_size": 1.4221995926680244,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "doitgen",
+        "cir_gpu_seconds_mean": 0.00476475,
+        "merge_gpu_seconds_mean": 0.00240075,
+        "cir_over_merge_gpu_speedup": 1.9846922836613556,
+        "merge_over_cir_binary_size": 1.528567768383295,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "fdtd-2d",
+        "cir_gpu_seconds_mean": 0.179701,
+        "merge_gpu_seconds_mean": 0.1811415,
+        "cir_over_merge_gpu_speedup": 0.9920476533538697,
+        "merge_over_cir_binary_size": 1.2396449704142012,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "gemm",
+        "cir_gpu_seconds_mean": 0.0004695,
+        "merge_gpu_seconds_mean": 0.000213375,
+        "cir_over_merge_gpu_speedup": 2.2003514938488578,
+        "merge_over_cir_binary_size": 1.1349041947177627,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "gemver",
+        "cir_gpu_seconds_mean": 0.0026953750000000003,
+        "merge_gpu_seconds_mean": 0.00123425,
+        "cir_over_merge_gpu_speedup": 2.1838160826412802,
+        "merge_over_cir_binary_size": 1.4228967203096354,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "gesummv",
+        "cir_gpu_seconds_mean": 0.001790125,
+        "merge_gpu_seconds_mean": 0.001133875,
+        "cir_over_merge_gpu_speedup": 1.578767500826811,
+        "merge_over_cir_binary_size": 1.1353383458646618,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "gramschmidt",
+        "cir_gpu_seconds_mean": 2.448072625,
+        "merge_gpu_seconds_mean": 1.0908731249999999,
+        "cir_over_merge_gpu_speedup": 2.2441405594257353,
+        "merge_over_cir_binary_size": 1.5714022480191634,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "jacobi-1d-imper",
+        "cir_gpu_seconds_mean": 0.13020437499999998,
+        "merge_gpu_seconds_mean": 0.129037375,
+        "cir_over_merge_gpu_speedup": 1.0090438913531834,
+        "merge_over_cir_binary_size": 1.1592203898050975,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "jacobi-2d-imper",
+        "cir_gpu_seconds_mean": 0.001000375,
+        "merge_gpu_seconds_mean": 0.0010258749999999999,
+        "cir_over_merge_gpu_speedup": 0.9751431704642379,
+        "merge_over_cir_binary_size": 1.1590296495956873,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "lu",
+        "cir_gpu_seconds_mean": 0.050205125,
+        "merge_gpu_seconds_mean": 0.0503595,
+        "cir_over_merge_gpu_speedup": 0.996934540652707,
+        "merge_over_cir_binary_size": 1.1363636363636365,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "mvt",
+        "cir_gpu_seconds_mean": 0.0030187499999999997,
+        "merge_gpu_seconds_mean": 0.000746125,
+        "cir_over_merge_gpu_speedup": 4.045903836488524,
+        "merge_over_cir_binary_size": 1.2377909630305797,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "syr2k",
+        "cir_gpu_seconds_mean": 0.01930525,
+        "merge_gpu_seconds_mean": 0.009577875,
+        "cir_over_merge_gpu_speedup": 2.015608890280986,
+        "merge_over_cir_binary_size": 1.1551312649164678,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      },
+      {
+        "benchmark": "syrk",
+        "cir_gpu_seconds_mean": 0.009952375,
+        "merge_gpu_seconds_mean": 0.002661375,
+        "cir_over_merge_gpu_speedup": 3.7395613169883983,
+        "merge_over_cir_binary_size": 1.134939134939135,
+        "validated": true,
+        "samples": [
+          8,
+          8
+        ]
+      }
+    ],
+    "pins": {
+      "llvm-project": "d8b4f7ed0725fecae93d90afb7ef58af1d4ee481",
+      "polybench-gpu-audit": "81d3b9630701a9321e1c28e334bd0491a93745f4",
+      "polybenchGpu": "2a64b439206537f70278a227103943046d7ba059"
+    },
+    "scope": "Same-compiler CIR no-merge versus CIR-merge entire pipeline, no causal cloning attribution. Arithmetic-mean GPU-region times; point estimates, not statistical significance."
+  },
+  "artifact_preservation": {
+    "persistent_path": "/lambda/nfs/cir-build-cache/aa-kernel-cloning-2026-10-19/all-axes-full-intermediates",
+    "persistent_errors": [],
+    "verified_files": 19343,
+    "archive": "/home/ubuntu/aa-kernel-cloning-d8b4f7/all-axes-full-intermediates.tar.gz",
+    "archive_sha256": "688e7a7f6e5e99f2631cfeaf53b6e9a3bd7a710a3bf53dfaecbe889dc59e9d6a",
+    "archive_bytes": 232342715,
+    "archive_regular_file_count": 19344,
+    "manifest_sha256": "2597de623f25d83adb428fc967a4a8749d42005fa57f733280865bec835720d7"
+  },
+  "diagnostic_completeness": {
+    "requests": 294,
+    "completed": 294,
+    "failed_job_replays": [],
+    "missing_or_unsupported": [
+      "Timed compilers auto-delete internal temporaries; measured commands deliberately unchanged. Every original measured tree retained in full.",
+      "Merged driver -save-temps=obj crashes at Cuda.cpp:914. Preserved exact crash output; alternate exact -### subprocess replay retains actual intermediate jobs.",
+      "cir-offload-merge does not register MLIR pass-manager printing options in this pin; true pre-container-pass dump unavailable. Inputs, combined post-pass container, split outputs retained from job replay.",
+      "No PTX embedded in a cubin-only measured executable is expected: empty cuobjdump PTX is not a real PTX artifact. Actual replay PTX is independently emitted."
+    ]
+  }
+}
