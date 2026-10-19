@@ -1,0 +1,116 @@
+{
+  "hostname": "157-151-182-78",
+  "timestamp_utc": "2026-10-19T08:10:37+00:00",
+  "cpu": "Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz",
+  "cpu_count": "30",
+  "kernel": "6.8.0-60-generic",
+  "gpu": "NVIDIA A10",
+  "rocm_version": "",
+  "cuda_version": "12.8",
+  "driver_version": "570.148.08",
+  "ptxas_version": "ptxas: NVIDIA (R) Ptx optimizing assembler",
+  "os_release": "Ubuntu 22.04.5 LTS",
+  "polybench_commit": "2a64b43",
+  "compiler_version": "clang version 24.0.0git (https://github.com/RiverDave/llvm-project.git d8b4f7ed0725fecae93d90afb7ef58af1d4ee481)",
+  "compiler_full_commit": "d8b4f7ed0725fecae93d90afb7ef58af1d4ee481",
+  "harness_full_commit": "81d3b9630701a9321e1c28e334bd0491a93745f4",
+  "corpus_full_commit": "2a64b439206537f70278a227103943046d7ba059",
+  "evaluation_spec": {
+    "compiler_pin": "d8b4f7ed0725fecae93d90afb7ef58af1d4ee481",
+    "harness_pin": "81d3b9630701a9321e1c28e334bd0491a93745f4",
+    "corpus_pin": "2a64b439206537f70278a227103943046d7ba059",
+    "corpus_branch": "master",
+    "corpus_url": "https://github.com/RiverDave/polybenchGpu.git",
+    "sources": [
+      "CUDA/2DCONV/2DConvolution.cu",
+      "CUDA/2MM/2mm.cu",
+      "CUDA/3DCONV/3DConvolution.cu",
+      "CUDA/3MM/3mm.cu",
+      "CUDA/ADI/adi.cu",
+      "CUDA/ATAX/atax.cu",
+      "CUDA/BICG/bicg.cu",
+      "CUDA/CORR/correlation.cu",
+      "CUDA/COVAR/covariance.cu",
+      "CUDA/DOITGEN/doitgen.cu",
+      "CUDA/FDTD-2D/fdtd2d.cu",
+      "CUDA/GEMM/gemm.cu",
+      "CUDA/GEMVER/gemver.cu",
+      "CUDA/GESUMMV/gesummv.cu",
+      "CUDA/GRAMSCHM/gramschmidt.cu",
+      "CUDA/JACOBI1D/jacobi1D.cu",
+      "CUDA/JACOBI2D/jacobi2D.cu",
+      "CUDA/LU/lu.cu",
+      "CUDA/MVT/mvt.cu",
+      "CUDA/SYR2K/syr2k.cu",
+      "CUDA/SYRK/syrk.cu"
+    ],
+    "source_count": 21,
+    "arms": [
+      "CIR",
+      "CIR-merge"
+    ],
+    "expected_arm_count": 42,
+    "expected_timed_samples_per_arm": 8,
+    "expected_warmups_per_arm": 3,
+    "expected_total_timed_samples": 336,
+    "expected_validation_executions": 42
+  },
+  "exact_argv": "python3 run_polybench.py --runtime --cuda --accurate-mode --publish --offload-merge --machine nvidia --arch sm_86 --clang /home/ubuntu/aa-kernel-cloning-d8b4f7/llvm-project/build/bin/clang++ --polybench-root /home/ubuntu/aa-kernel-cloning-d8b4f7/polybenchGpu --cuda-root /usr/local/cuda --gcc-install-dir /usr/lib/gcc/x86_64-linux-gnu/12 --log-root /home/ubuntu/aa-kernel-cloning-d8b4f7/evaluation -j 1",
+  "verification_audit": {
+    "audited_at_utc": "2026-10-19T08:10:55.208619+00:00",
+    "compiler_pin": "d8b4f7ed0725fecae93d90afb7ef58af1d4ee481",
+    "compiler_version": "clang version 24.0.0git (https://github.com/RiverDave/llvm-project.git d8b4f7ed0725fecae93d90afb7ef58af1d4ee481)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /home/ubuntu/aa-kernel-cloning-d8b4f7/llvm-project/build/bin\nBuild config: +assertions",
+    "compiler_identity_ok": true,
+    "source_clean": true,
+    "harness_pin": "81d3b9630701a9321e1c28e334bd0491a93745f4",
+    "corpus_pin": "2a64b439206537f70278a227103943046d7ba059",
+    "source_count": 21,
+    "expected_arms": 42,
+    "recorded_arms": 42,
+    "manifest_matches": true,
+    "compile_passed": 42,
+    "arms_with_all_8_samples": 42,
+    "recorded_gpu_samples": 336,
+    "expected_gpu_samples": 336,
+    "validation_passed": 40,
+    "jobs": 1,
+    "warmup": 3,
+    "runs": 8,
+    "pipelines": [
+      "CIR",
+      "CIR-merge"
+    ],
+    "validate": true,
+    "failures": [
+      {
+        "benchmark": "adi",
+        "pipeline": "CIR",
+        "reasons": [
+          "validation_mismatches"
+        ],
+        "sample_count": 8,
+        "misses": 1,
+        "first_error": ""
+      },
+      {
+        "benchmark": "adi",
+        "pipeline": "CIR-merge",
+        "reasons": [
+          "validation_mismatches"
+        ],
+        "sample_count": 8,
+        "misses": 1,
+        "first_error": ""
+      }
+    ],
+    "harness_pin_verified": true,
+    "corpus_pin_verified": true,
+    "harness_clean": true,
+    "corpus_clean": true,
+    "all_checks_passed": false
+  },
+  "publication_transport": "Existing local GitHub authentication; no credentials copied to VM. Unmodified pinned run_polybench.publish helper used after native VM --publish failed.",
+  "native_vm_publish_exit_code": 1,
+  "correctness_warning": "ADI has 1 CPU-reference mismatch in both CIR and CIR-merge; 40/42 arms validated. Native full-suite geomean includes ADI and is not an all-correct suite claim.",
+  "evidence_archive_sha256": "56f2c4c01e02771559e558c486c752d20a152d35fe3b5b1c03ce56c1f58d5690"
+}
